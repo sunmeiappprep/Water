@@ -1,5 +1,6 @@
 require_relative "boot"
-
+# Rails.autoloaders.main.ignore(Rails.root.join('app/path/to/dir'))
+# Rails.autoloaders.main.ignore(Rails.root.join('app/controllers'))
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
