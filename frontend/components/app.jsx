@@ -16,10 +16,10 @@ function App() {
     <div>   
     <Route path ="/" component={GreetingContainer}/>
     <Route exact path="/" component={SplashContainer} />
-    <Route path="/login" component={LoginFormContainer}/>
-    <Route path="/signup" component={SignupFormContainer} />
+    {/* <Route path="/login" component={LoginFormContainer}/>
+    <Route path="/signup" component={SignupFormContainer} /> */}
     <Switch>
-      <Route exact path="/show" component={ShowContainer} />
+      {/* <Route exact path="/show" component={ShowContainer} /> */}
     </Switch>
 
     </div>
