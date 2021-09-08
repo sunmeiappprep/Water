@@ -4,7 +4,7 @@ function Nav() {
     return (
         <div>
            {/* <img src={wire} alt="" /> */}
-            <h1>This is the nav</h1>
+            <h1>This is the nav2</h1>
         </div>
     )
 }
