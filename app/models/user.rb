@@ -2,9 +2,7 @@ class User < ApplicationRecord
     validates :username, :password_digest, :session_token, presence: true
     validates :username, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
-    validates_presence_of :first_name, message: "Please enter a first name."
-    validates_presence_of :last_name, message: "Please enter a last name"
-    validates_presence_of :email, message: "Please enter an email"
+  
 
     attr_reader :password
     after_initialize :ensure_session_token

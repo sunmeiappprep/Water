@@ -12,3 +12,10 @@ export const open = (modalType) => {
      type: MODAL_OFF
    })
 
+//    export const closeModal = () => dispatch => {
+//     dispatch(close());
+//   }
+  
+//   export const openModal = (modalType) => dispatch => {
+//     dispatch(open(modalType));
+//   }

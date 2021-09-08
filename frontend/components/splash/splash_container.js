@@ -1,15 +1,12 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
+import Splash from "./splash";
 
-import { logout } from '../../actions/session_actions';
-import Splash from './splash';
+const mSTP = () => {
+    return {
+    };
+};
 
-const mapStateToProps = state  => ({  
-    user: state.user,
-    session: state.session
+const mDTP = dispatch => ({
 });
 
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
-});
-
-export default connect(mapStateToProps,mapDispatchToProps)(Splash);
+export default connect(mSTP, mDTP)(Splash);
