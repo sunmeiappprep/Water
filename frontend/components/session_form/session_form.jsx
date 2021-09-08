@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
   }
 
   signupForm(){
-    const loggedIn = this.props.sessionId ? <Redirect to="/show" /> : null
+    const loggedIn = this.props.sessionId ? <Redirect to="/users/" /> : null
 
     return (
       <div className="signup-form-container">
@@ -56,6 +56,22 @@ class SessionForm extends React.Component {
           <div className = "session-form-errors">
             {this.renderErrors()}
           </div>
+          <label>Username:
+            <input type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="signup-input"
+            />
+          </label>
+
+          <label>Email:
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="signup-input"
+            />
+          </label>
+          
           <label>First name:
             <input type="text"
               value={this.state.first_name}
@@ -72,21 +88,9 @@ class SessionForm extends React.Component {
             />
           </label>
 
-          <label>Email:
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              className="signup-input"
-            />
-          </label>
+          
 
-          <label>Username:
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="signup-input"
-            />
-          </label>
+         
 
           <label>Password:
             <input type="password"
@@ -103,7 +107,7 @@ class SessionForm extends React.Component {
   }
 
   loginForm(){
-    const loggedIn = this.props.sessionId ? <Redirect to="/show" /> : null
+    const loggedIn = this.props.sessionId ? <Redirect to="/users/" /> : null
     return (
       <div className="login-form-container">
         {loggedIn}
