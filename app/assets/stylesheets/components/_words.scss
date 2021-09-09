@@ -176,11 +176,11 @@ label {
  
   .modal-background {
     position: fixed;
-    top: 500px;
-    bottom: 500px;
-    right: 500px;
-    left: 500px;
-    background: rgba(100, 28, 28, 0.7);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgb(34, 34, 34);
     z-index: 10;
   }
   
@@ -189,6 +189,10 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: white;
+    width: 20%;
+    height: 40%;
+    border-radius: 10px;
   }
 //  .card{
 //     background: url("https://a0.muscache.com/im/pictures/f3ebcc73-30b2-469f-b6ba-0578fdaaa649.jpg?im_q=medq&im_w=240") no-repeat fixed center;    
