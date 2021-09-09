@@ -86,8 +86,11 @@ class SessionForm extends React.Component {
               onChange={this.update('last_name')}
               className="signup-input"
             />
-          </label>          
+          </label>
 
+          
+
+         
 
           <label>Password:
             <input type="password"

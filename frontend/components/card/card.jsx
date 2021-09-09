@@ -9,11 +9,11 @@ class Card extends React.Component {
         return (
             <div className="card">
                 <img className='card2' src={Cardsmall} alt="cardsmall" />
-                <p> 
+                <div> 
                     <section className="upperText">{text} </section>
                     <section className="lowerText"> {text2}</section>
                    
-                </p>
+                </div>
                 
                
 

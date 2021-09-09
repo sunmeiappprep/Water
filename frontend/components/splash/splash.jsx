@@ -8,7 +8,7 @@ import Biggercard from '../biggercard/biggercard_container';
 // import Modal from 'react'
 import Logo from './logo.jpg'
 import Empty from '../empty/empty_container';
-
+import Modal from '../modal/modal_container'
 class Splash extends React.Component {
 
 
@@ -19,13 +19,18 @@ class Splash extends React.Component {
       <div>
           <div className="splash">
         <section className="navbar">            
-            <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
+            {/* <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link> */}
+            <Link to="/">AirBnb Logo</Link>
+
             <SearchContainer className="search_container"/>
-            <GreetingContainer className="greeting_container"/>
+            <Modal></Modal>
+            {/* <GreetingContainer className="greeting_container"/> */}
             {/* <Modal isOpen={true}>
               <h5>asd</h5>
               <p>asdasd</p>
             </Modal> */}
+           
+           
         </section>
         <Empty/>
   
