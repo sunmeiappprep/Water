@@ -14,10 +14,11 @@ function App() {
   return (
     <div>   
     {/* <Route path ="/" component={GreetingContainer}/> */}
-    <Route exact path="/" component={SplashContainer} />
     <Modal/>
+    <Route exact path="/" component={SplashContainer} />
+    
     <Route path="/login" component={LoginFormContainer}/>
-    <Route path="/signupz`" component={SignupFormContainer} />
+    <Route path="/signup`" component={SignupFormContainer} />
     <Switch>
       <Route exact path="/show" component={ShowContainer} />
     </Switch>

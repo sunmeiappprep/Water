@@ -32,9 +32,26 @@ label {
 
      height: 50px;
      width: 500px;
-    // align-content: center;
-    text-align: center;
-    margin-left: 500px;
+    // align-items: center;
+    // text-align: center;
+    // margin-left: 500px;
+    background-color: rgb(149, 149, 200);
+    //  margin-right: 500px;
+
+ }
+
+ .navbar0{
+    // position: absolute;
+     display: flex;
+     justify-content: center;   
+
+
+    //  height: 50px;
+    //  width: 500px;
+    // align-items: center;
+    // text-align: center;
+    // margin-left: 500px;
+    background-color: rgb(149, 149, 200);
     //  margin-right: 500px;
 
  }
@@ -159,11 +176,11 @@ label {
  
   .modal-background {
     position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
+    top: 500px;
+    bottom: 500px;
+    right: 500px;
+    left: 500px;
+    background: rgba(100, 28, 28, 0.7);
     z-index: 10;
   }
   

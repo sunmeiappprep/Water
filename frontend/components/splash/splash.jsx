@@ -18,7 +18,9 @@ class Splash extends React.Component {
     return (
       <div>
           <div className="splash">
-        <section className="navbar">            
+            <div className="navbar0">
+            <section className="navbar"> 
+            <Modal />           
             <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
             {/* <Link to="/">AirBnb Logo</Link> */}
 
@@ -32,6 +34,8 @@ class Splash extends React.Component {
            
            
         </section>
+            </div>
+            
         <Empty/>
   
 
