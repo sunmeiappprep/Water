@@ -51,72 +51,11 @@ class SessionForm extends React.Component {
 
     return (
       <div className="signup-form-container">
-        {loggedIn}
         <form onSubmit={this.handleSubmit} className="signup-form-box">
-          <div className = "session-form-errors">
+        <div onClick={this.props.closeModal} className="close-x">X</div>         
             {this.renderErrors()}
-          </div>
-          <label>Username:
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="signup-input"
-            />
-          </label>
-
-          <label>Email:
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              className="signup-input"
-            />
-          </label>
-          
-          <label>First name:
-            <input type="text"
-              value={this.state.first_name}
-              onChange={this.update('first_name')}
-              className="signup-input"
-            />
-          </label>
-
-          <label>Last name:
-            <input type="text"
-              value={this.state.last_name}
-              onChange={this.update('last_name')}
-              className="signup-input"
-            />
-          </label>
-
-          
-
-         
-
-          <label>Password:
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              className="signup-input"
-            />
-          </label>
-
-          <input className="session-submit" type="submit" value={this.props.formType} />
-        </form>
-      </div>
-    );
-  }
-
-  loginForm(){
-    const loggedIn = this.props.sessionId ? <Redirect to="/" /> : null
-    return (
-      <div className="login-form-container">
-        {loggedIn}
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div className = "session-form-errors">
-            {this.renderErrors()}
-          </div>
-          <div className="login-form">
-
+            <div className="login-form">
+            <br/>
             <label>Username:
               <input type="text"
                 value={this.state.username}
@@ -124,25 +63,47 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
-
+            <br/>
             <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
-            </label>
+            </label>          
+            <br/>
+            <label>Email:
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="signup-input"
+            />
+          </label>
+            <br/>                  
+          <label>First name:
+            <input type="text"
+              value={this.state.first_name}
+              onChange={this.update('first_name')}
+              className="signup-input"
+            />
+          </label>
+            <br/>
+          <label>Last name:
+            <input type="text"
+              value={this.state.last_name}
+              onChange={this.update('last_name')}
+              className="signup-input"
+            />
+          </label>       
 
-            <input className="session-submit" type="submit" value={this.props.formType} />
-
-          </div>
+            <input className="session-submit" type="submit" value={this.props.formType} />            
+          </div>          
         </form>
       </div>
     );
   }
 
-  render() {
-    // const loggedIn = this.props.sessionId ? <Redirect to="/" /> : null
+  loginForm(){
     return (
       <div className="login-form-container">
         {/* {loggedIn} */}
@@ -150,7 +111,7 @@ class SessionForm extends React.Component {
           {/* Login 
           <br/>
           Please {this.props.formType} or {this.props.otherForm} */}
-          <div onClick={this.props.closeModal} className="close-x"></div>
+          <div onClick={this.props.closeModal} className="close-x">X</div>
           {this.renderErrors()}
           <div className="login-form">
             <br/>
@@ -177,6 +138,17 @@ class SessionForm extends React.Component {
       </div>
       
     );
+  }
+
+  render() {   
+    {    
+      if(this.props.formType == 'login'){
+        return this.loginForm();
+      }
+      else{
+        return this.signupForm();
+      }
+    }
   }
 }
 
