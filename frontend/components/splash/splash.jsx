@@ -7,7 +7,7 @@ import Card from '../card/card_container';
 import Biggercard from '../biggercard/biggercard_container';
 // import Modal from 'react'
 import Logo from './logo.jpg'
-import Empty from '../Empty/empty_container';
+import Empty from '../empty/empty_container';
 
 class Splash extends React.Component {
 
