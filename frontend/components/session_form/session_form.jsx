@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
   }
 
   signupForm(){
-    const loggedIn = this.props.sessionId ? <Redirect to="/users/" /> : null
+    const loggedIn = this.props.sessionId ? <Redirect to="/" /> : null
 
     return (
       <div className="signup-form-container">
@@ -104,7 +104,7 @@ class SessionForm extends React.Component {
   }
 
   loginForm(){
-    const loggedIn = this.props.sessionId ? <Redirect to="/users/" /> : null
+    const loggedIn = this.props.sessionId ? <Redirect to="/" /> : null
     return (
       <div className="login-form-container">
         {loggedIn}
