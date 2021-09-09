@@ -6,7 +6,7 @@ import GreetingContainer from '../greeting/greeting_container';
 import Card from '../card/card_container';
 import Biggercard from '../biggercard/biggercard_container';
 // import Modal from 'react'
-import Logo from './logo.jpg'
+import Logo from './logo.png'
 import Empty from '../empty/empty_container';
 import Modal from '../modal/modal_container'
 class Splash extends React.Component {
@@ -19,12 +19,12 @@ class Splash extends React.Component {
       <div>
           <div className="splash">
         <section className="navbar">            
-            {/* <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link> */}
-            <Link to="/">AirBnb Logo</Link>
+            <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
+            {/* <Link to="/">AirBnb Logo</Link> */}
 
             <SearchContainer className="search_container"/>
-            <Modal></Modal>
-            {/* <GreetingContainer className="greeting_container"/> */}
+            {/* <Modal></Modal> */}
+            <GreetingContainer className="greeting_container"/>
             {/* <Modal isOpen={true}>
               <h5>asd</h5>
               <p>asdasd</p>

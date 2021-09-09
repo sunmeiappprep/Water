@@ -25,12 +25,22 @@ label {
 
 
  .navbar{
+    // position: absolute;
      display: flex;
      justify-content: space-between;   
-     height: 100px;
-    //  margin-left: 500px;
- }
 
+
+     height: 50px;
+     width: 500px;
+    // align-content: center;
+    text-align: center;
+    margin-left: 500px;
+    //  margin-right: 500px;
+
+ }
+//  div.splash > section{
+//     width: 500;
+//  }
  .greeting_container{
     font-size: large; 
    //  margin-left: 500px;
@@ -47,6 +57,7 @@ label {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+
  }
 
 
@@ -88,11 +99,11 @@ label {
 }
 
 .logo{
-    max-width:40%;
-    max-height:40%;  
-    height:auto;
-    justify-content: space-between;  
-    border-radius: 25px;
+    max-width:100%;
+    max-height:100%;  
+    // height:auto;
+    // justify-content: space-between;  
+    // border-radius: 25px;
 }
 
 // .search_bar{
