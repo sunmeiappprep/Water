@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import SearchContainer from '../search/search_container';
 import GreetingContainer from '../greeting/greeting_container';
 import Card from '../card/card_container';
+import Biggercard from '../biggercard/biggercard_container';
+// import Modal from 'react'
+import Logo from './logo.jpg'
 import Empty from '../Empty/empty_container';
 
 class Splash extends React.Component {
@@ -16,9 +19,13 @@ class Splash extends React.Component {
       <div>
           <div className="splash">
         <section className="navbar">            
-            <Link className="Splash" to="/">Airbnb2</Link>
-            <SearchContainer/>
-            <GreetingContainer/>
+            <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
+            <SearchContainer className="search_container"/>
+            <GreetingContainer className="greeting_container"/>
+            {/* <Modal isOpen={true}>
+              <h5>asd</h5>
+              <p>asdasd</p>
+            </Modal> */}
         </section>
         <Empty/>
   
@@ -43,7 +50,8 @@ class Splash extends React.Component {
         </Link> */}
       
       </div>
-      <h1 className='en'>Explore nearby</h1>
+      <div>
+        <h1 className='en'>Explore nearby</h1>
           <section className="explore_nearby">                   
               <Card/>
               <Card/>
@@ -57,6 +65,19 @@ class Splash extends React.Component {
               <Card/>       
           </section>
       </div>
+      <div>
+        <h1 className='en'>Live anywhere</h1>
+          <section className="Live_anywhere">                   
+              <Biggercard/>
+              <Biggercard/>
+              <Biggercard/>
+              <Biggercard/>       
+          </section>        
+      </div>
+     
+      </div>
+
+
       
     );
   };

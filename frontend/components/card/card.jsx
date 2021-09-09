@@ -1,11 +1,18 @@
 import React from 'react';
-
+import Text from 'react'
+import Cardsmall from './cardsmall.jpg'
 class Card extends React.Component {
 
     render() {
+        const text = 'Hawaii \n 7.5 Hour Flight';
         return (
             <div className="card">
-                <img src="https://a0.muscache.com/im/pictures/f3ebcc73-30b2-469f-b6ba-0578fdaaa649.jpg?im_q=medq&im_w=240" width="63" height="63" alt="" />
+                <img className='card2' src={Cardsmall} alt="cardsmall" />
+                <p className="display-linebreak"> 
+                    {text} 
+                </p>
+               
+
             </div>
         )
     }

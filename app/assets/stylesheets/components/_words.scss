@@ -23,11 +23,19 @@ label {
       height: 400;
     }
 
+
  .navbar{
      display: flex;
      justify-content: space-between;   
-    //  margin-top: 10px;
+    //  margin-left: 500px;
  }
+
+ .greeting_container{
+    font-size: large; 
+   //  margin-left: 500px;
+}
+
+
 
 
  
@@ -48,8 +56,8 @@ label {
     margin-top: 50px; 
     margin-left: 250px;
     margin-right: 250px;
-
-}
+    
+}   
 
 .explore_nearby2{
     display: flex;
@@ -66,6 +74,65 @@ label {
     font-size: 32px;
 }
 
+.card{
+    display: flex;    
+}
+
+.card2{
+    max-width:40%;
+    max-height:40%;  
+    height:auto;
+    justify-content: space-between;  
+    border-radius: 25px;
+}
+
+.logo{
+    max-width:40%;
+    max-height:40%;  
+    height:auto;
+    justify-content: space-between;  
+    border-radius: 25px;
+}
+
+.biggercard2{
+    max-width:50%;
+    max-width:50%;
+
+    height:auto;
+    justify-content: space-between;  
+    border-radius: 25px;
+    // background: #73AD21;
+    // padding: 20px;
+    // width: 200px;
+    // height: 150px;
+}
+.display-linebreak {
+    white-space: pre-line;
+    margin-top: 10%;
+    font-weight: 600;
+    font-size: 16px;
+    // margin-left: 5%;
+
+  }
+
+.Live_anywhere{
+    display: flex;
+    justify-content: space-between;  
+    margin-top: 50px; 
+    margin-left: 250px;
+    margin-right: 250px;
+
+}
+
+.display-linebreak2 {
+    white-space: pre-line;
+    justify-content: center;  
+    font-weight: 600;
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-top: 5px;
+
+  }
  
 //  .card{
 //     background: url("https://a0.muscache.com/im/pictures/f3ebcc73-30b2-469f-b6ba-0578fdaaa649.jpg?im_q=medq&im_w=240") no-repeat fixed center;    
