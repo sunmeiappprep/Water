@@ -83,7 +83,7 @@ label {
     max-height:40%;  
     height:auto;
     justify-content: space-between;  
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .logo{
@@ -106,14 +106,22 @@ label {
     // width: 200px;
     // height: 150px;
 }
-.display-linebreak {
+.upperText {
     white-space: pre-line;
-    margin-top: 10%;
+    margin-top: 2%;
     font-weight: 600;
     font-size: 16px;
-    // margin-left: 5%;
+    margin-left: 5%;
 
   }
+.lowerText {
+    white-space: pre-line;
+    margin-top: 2%;
+    // font-weight: 600;
+    font-size: 16px;
+    margin-left: 5%;
+
+}
 
 .Live_anywhere{
     display: flex;
