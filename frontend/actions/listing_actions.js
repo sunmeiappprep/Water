@@ -1,4 +1,4 @@
-import * as ListingUtils from '../util/listing_utils';
+import * as ListingUtils from '../util/listing_util';
 
 export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";

@@ -9,6 +9,7 @@ import GreetingContainer from "./greeting/greeting_container";
 import SplashContainer from "./splash/splash_container";
 import ShowContainer from "./show/show_container";
 import { Router, Switch, Route } from "react-router-dom";
+import ListingsIndexContainer from './listings_index/listing_index_container';
 import Modal from './modal/modal';
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
     <Route path="/signup`" component={SignupFormContainer} />
     <Switch>
       <Route exact path="/show" component={ShowContainer} />
+      <Route path="/listings" component={ListingsIndexContainer} />
     </Switch>
 
     </div>
