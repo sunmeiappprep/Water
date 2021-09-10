@@ -13,7 +13,7 @@ demo2 = User.create!(email: 'John@gmail.com', first_name: 'John', last_name: 'Do
 demo3 = User.create!(email: 'Sun@gmail.com', first_name: 'Sun', last_name: 'Mei', username: 'Sun', password: 'qweqwe')
 
 listing1 = Listing.create!(
-    title: "House 1",
+    title: "Crib",
     price: 100,
     address: "8451 ave",
     city: "Brooklyn",
@@ -26,7 +26,7 @@ listing1 = Listing.create!(
 )
 
 listing2 = Listing.create!(
-    title: "My house 2",
+    title: "House 2",
     price: 200,
     address: "8451 ave",
     city: "Queens",
