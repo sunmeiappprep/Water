@@ -4,18 +4,20 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div className="search_bar">
-                <label className="search_label" htmlFor="search-input">
-                    
-                </label>
-                    <input className="search-input"
-                        // id="search-input"
-                        type="search"
-                        placeholder="Where are you going?"
-                        // size="40"
-                    />
-                <SearchIcon/>
-            </div>
+        
+        // <div className='combined'>
+            <div className="search_bar">       
+                <input className="search-input"
+                    // id="search-input"
+                    type="search"
+                    placeholder="Where are you going?"
+                    // size="40"
+                />
+            <button className="searchbutton"><SearchIcon/></button>
+            {/* <button className="search-icon-button"><SearchIcon /></button> */}
+
+            {/* </div> */}
+         </div>
         )
     }
 }

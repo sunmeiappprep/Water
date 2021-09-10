@@ -1,8 +1,12 @@
-// label {
-//     font-weight: bold;
-//     color: rgb(245, 0, 0);
-//     font-size: 32px;
-//   }
+label {
+    border-radius: 25px;
+  }
+
+.bottomComp{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
 
 
 #background{
@@ -158,9 +162,39 @@
  }
 
  .search-input{
-    width: 200px;
-    height: 20px;
-    border-radius: 25px;
+    width: 300px;
+    height: 30px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;   
+    border-right: none;
+    // margin-right:auto;
+    // margin-left:auto;
+
+ }
+
+.combined{
+    margin-right:auto;
+    margin-left:auto;
+}
+
+ .searchbutton{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;  
+    border-left: none;
+    background-color: white;
+    margin: left;
+    // display: flex;
+    // size: 300px;
+    // border-color: gray;
+    // border
+}
+ .search_bar{
+     display: inline-flex;
+    //  align-content: center;
+   
+    margin-right:auto;
+    margin-left:auto;
+     border-color: gray;
 
  }
 
@@ -168,8 +202,8 @@
     display: flex;
     justify-content: space-between;  
     margin-top: 50px; 
-    margin-left: 250px;
-    margin-right: 250px;
+    // margin-left: 250px;
+    // margin-right: 250px;
     
 }   
 
@@ -177,13 +211,13 @@
     display: flex;
     justify-content: space-between;  
     margin-top: 50px; 
-    margin-left: 250px;
-    margin-right: 250px;
+    // margin-left: 250px;
+    // margin-right: 250px;
 }
 
 .en{
     margin-top: 50px;
-    margin-left: 250px;
+    // margin-left: 250px;
     font-family: cursive; 
     font-weight: 600;
     font-size: 32px;
@@ -214,22 +248,22 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
-    width: 55%;
-
-
+    width: 50%;
+    background-color: transparent;
+    margin-top: 4000px;
 }
 // .search_bar{
 //     width: 500px;
 // }
 .biggercard2{
-    max-width:70%;
-    max-width:70%;
+    max-width:100%;
+    // max-width:1000px;
 
     height:auto;
     justify-content: space-between;  
     border-radius: 25px;
     // background: #73AD21;
-    // padding: 20px;
+    padding: 20px;
     // width: 200px;
     // height: 150px;
 }
@@ -241,6 +275,8 @@
     margin-left: 5%;
 
   }
+
+
 .lowerText {
     white-space: pre-line;
     margin-top: 2%;

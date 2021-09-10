@@ -67,7 +67,9 @@ class Splash extends React.Component {
           <div className ="signup">Signup</div>
         </Link> */}
       
-      </div>
+      {/* </div>
+      <div className='bottomComp'>
+
       <div>
         <h1 className='en'>Explore nearby</h1>
           <section className="explore_nearby">                   
@@ -91,11 +93,13 @@ class Splash extends React.Component {
               <Biggercard/>
               <Biggercard/>       
           </section>        
-      </div>
+      </div> */}
         <div className='hosting'>
           <Longestcard/>
         </div>
       </div>
+      </div>
+      
 
 
       
