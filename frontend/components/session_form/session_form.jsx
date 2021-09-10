@@ -54,13 +54,13 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="signup-form-box">
         <div onClick={this.props.closeModal} className="close-x">X</div>         
             {this.renderErrors()}
-            <div className="login-form">
+            <div className="signup-input">
             <br/>
             <label>Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"
+                className="signup-input"
               />
             </label>
             <br/>
@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
+                className="signup-input"
               />
             </label>          
             <br/>

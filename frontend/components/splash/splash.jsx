@@ -9,6 +9,7 @@ import Biggercard from '../biggercard/biggercard_container';
 import Logo from './logo.png'
 import Empty from '../empty/empty_container';
 import Modal from '../modal/modal_container'
+import Longestcard from '../longestcard/longestcard';
 class Splash extends React.Component {
 
 
@@ -23,8 +24,12 @@ class Splash extends React.Component {
             <Modal />           
             <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
             {/* <Link to="/">AirBnb Logo</Link> */}
-
-            <SearchContainer className="search_container"/>
+            <section className='midLinkBundle'>
+              <Link to="/" className='midLink'>Places to stay</Link>
+              <Link to="/" className='midLink'>Experiences</Link>
+              <Link to="/" className='midLink'>Online Experiences</Link>
+            </section>
+          
             {/* <Modal></Modal> */}
             <GreetingContainer className="greeting_container"/>
             {/* <Modal isOpen={true}>
@@ -34,6 +39,10 @@ class Splash extends React.Component {
            
            
         </section>
+
+            </div>
+            <div className="search_container">
+            <SearchContainer/>
             </div>
             
         <Empty/>
@@ -83,7 +92,9 @@ class Splash extends React.Component {
               <Biggercard/>       
           </section>        
       </div>
-     
+        <div className='hosting'>
+          <Longestcard/>
+        </div>
       </div>
 
 

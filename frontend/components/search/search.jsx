@@ -8,10 +8,11 @@ class Search extends React.Component {
                 <label className="search_label" htmlFor="search-input">
                     
                 </label>
-                    <input
-                        id="search-input"
+                    <input className="search-input"
+                        // id="search-input"
                         type="search"
                         placeholder="Where are you going?"
+                        // size="40"
                     />
                 <SearchIcon/>
             </div>
