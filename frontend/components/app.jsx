@@ -10,6 +10,7 @@ import SplashContainer from "./splash/splash_container";
 import ShowContainer from "./show/show_container";
 import { Router, Switch, Route } from "react-router-dom";
 import ListingsIndexContainer from './listings_index/listing_index_container';
+import ListingShowContainer from './listings_show/listings_show_container';
 import Modal from './modal/modal';
 function App() {
   return (
@@ -18,10 +19,10 @@ function App() {
     <Modal/>
     <Route exact path="/" component={SplashContainer} />
     
-    <Route path="/login" component={LoginFormContainer}/>
-    <Route path="/signup`" component={SignupFormContainer} />
+    {/* <Route path="/login" component={LoginFormContainer}/>
+    <Route path="/signup`" component={SignupFormContainer} /> */}
     <Switch>
-      <Route exact path="/show" component={ShowContainer} />
+      <Route path="/listings/:listingid" component={ListingShowContainer} />
       <Route path="/listings" component={ListingsIndexContainer} />
     </Switch>
 
