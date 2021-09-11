@@ -37,3 +37,15 @@ listing2 = Listing.create!(
     longitude: -73.935242,
     host_id: demo3.id,
 )
+listing3 = Listing.create!(
+    title: "House 3",
+    price: 200,
+    address: "8451 ave",
+    city: "Queens",
+    num_guest: 25,
+    description: "firstlisting",
+    num_beds: 3,
+    latitude: 402.830610,
+    longitude: -73.935242,
+    host_id: 61,
+)
