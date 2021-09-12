@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-
+import CancelIcon from '@material-ui/icons/Cancel';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -52,9 +52,9 @@ class SessionForm extends React.Component {
     return (
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit} className="signup-form-box">
-        <div onClick={this.props.closeModal} className="close-x">X</div>         
-            {this.renderErrors()}
-            <div className="signup-input">
+        {this.renderErrors()}
+        <div onClick={this.props.closeModal} className="close-x"><CancelIcon/></div>         
+            <div >
             <br/>
             <label>Username:
               <input type="text"
@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
               />
             </label>          
             <br/>
-            <label>Email:
+            <label>Email:<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>          
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
@@ -88,15 +88,14 @@ class SessionForm extends React.Component {
             />
           </label>
             <br/>
-          <label>Last name:
+          <label>Last name:<span>&nbsp;</span>
             <input type="text"
               value={this.state.last_name}
               onChange={this.update('last_name')}
               className="signup-input"
             />
           </label>       
-
-            <input className="session-submit" type="submit" value={this.props.formType} />            
+            <input className="session-submit" type="submit" value='Sign Up' />       
           </div>          
         </form>
       </div>
@@ -106,17 +105,13 @@ class SessionForm extends React.Component {
   loginForm(){
     return (
       <div className="login-form-container">
-        {/* {loggedIn} */}
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          {/* Login 
-          <br/>
-          Please {this.props.formType} or {this.props.otherForm} */}
-          <div onClick={this.props.closeModal} className="close-x">X</div>
+        <form onSubmit={this.handleSubmit} className="login-form-box">     
           {this.renderErrors()}
+          <div onClick={this.props.closeModal} className="close-x"><CancelIcon/></div>
           <div className="login-form">
             <br/>
             <label>Username:
-              <input type="text"
+              <input className='blank' type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
@@ -124,14 +119,15 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <label>Password:
-              <input type="password"
+              <input className='blank' type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
             </label>          
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+
+            <input className="session-submit" type="submit" value='Login' />
             <input className="session-submit" type="submit" value="Demo Login" onClick={this.demoLogin}/>
           </div>
         </form>

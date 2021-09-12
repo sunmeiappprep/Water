@@ -5,9 +5,8 @@ const Greeting = ({ currentUser, logout, openModal }) => {
 
   const sessionLinks = () => (
     <nav className="login-signup">
-      <button onClick={() => openModal('login')}>Login</button>
-      {/* &nbsp;or&nbsp; */}
-      <button onClick={() => openModal('signup')}>Signup</button>
+      <button className="login-signup" onClick={() => openModal('login')}>Login</button>
+      <button className="login-signup" onClick={() => openModal('signup')}>Signup</button>
     </nav>
   );
   const personalGreeting = () => (
@@ -21,6 +20,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     currentUser ?
     personalGreeting(currentUser, logout) :
     sessionLinks()
+    // sessionLinks()
   );
 }
 

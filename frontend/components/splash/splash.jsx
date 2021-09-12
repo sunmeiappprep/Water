@@ -10,32 +10,37 @@ import Logo from './logo.png'
 import Empty from '../empty/empty_container';
 import Modal from '../modal/modal_container'
 import Longestcard from '../longestcard/longestcard';
+import Dropdown from 'react-dropdown'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 class Splash extends React.Component {
 
 
-
+  
 
   render() {
+    // const loginB = <GreetingContainer/>
+    {/* const signUp = <button onClick={() => openModal('signup')}>Signup</button> */}
+
+    // const options = [
+    //   loginB
+    // ];
+
     return (
       <div>
           <div className="splash">
             <div className="navbar0">
             <section className="navbar"> 
-            <Modal />           
+            {/* <Modal />            */}
             <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
             {/* <Link to="/">AirBnb Logo</Link> */}
             <section className='midLinkBundle'>
               <Link to="/" className='midLink'>Places to stay</Link>
               <Link to="/" className='midLink'>Experiences</Link>
               <Link to="/" className='midLink'>Online Experiences</Link>
-            </section>
-          
-            {/* <Modal></Modal> */}
-            <GreetingContainer className="greeting_container"/>
-            {/* <Modal isOpen={true}>
-              <h5>asd</h5>
-              <p>asdasd</p>
-            </Modal> */}
+            </section>         
+            {/* <div class="dropdown"> */}
+            {/* <Dropdown options={options} value={"My Profile"}/> */}
+            <GreetingContainer/>
            
            
         </section>
@@ -67,7 +72,7 @@ class Splash extends React.Component {
           <div className ="signup">Signup</div>
         </Link> */}
       
-      {/* </div>
+      </div>
       <div className='bottomComp'>
 
       <div>
@@ -93,7 +98,7 @@ class Splash extends React.Component {
               <Biggercard/>
               <Biggercard/>       
           </section>        
-      </div> */}
+      </div>
         <div className='hosting'>
           <Longestcard/>
         </div>
@@ -107,4 +112,4 @@ class Splash extends React.Component {
   };
 }
 
-export default Splash;
+export default Splash

@@ -1,13 +1,21 @@
 label {
-    border-radius: 25px;
+  // color: #d9d9d9;
+  // background: #e8e8e8;
+  text-shadow: -1px -1px 1px rgba(100,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+  // color: #d9d9d9;
+  // background: #e8e8e8;
   }
 
 .bottomComp{
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
+    // width: 1000px;
 }
 
+.hosting{
+  display: flex;
+
+}
 
 #background{
     
@@ -74,61 +82,108 @@ label {
 
 .signup-form-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 100px;
     
 }
 
-.signup-form {
+.signup-form.login-form {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-content: space-between;
   }
- 
-  .signup-input {
-    margin-left: 20px;
+ .close-x{
+   color: red;
+  //  background-color: red;
+ }
+  .signup-input,.login-input {
+    // margin-left: 500px;
+    // margin-right: auto;
+    display: flex;
+    flex-direction: column;
   }
  
   .signup-form-box {
-    outline: 1px solid black;
-    padding: 20px;
-    background: white;
+    // outline: 1px solid black;
+    // padding: 20px;
+    // background: white;
     position: relative;
   }
   
 
 
-// .login-form-container{
-//  background-color: #fefefe;
-//   margin: 15% auto; /* 15% from the top and centered */
-// //   padding: 20px;
-//   border: 1px solid #888;
-//   width: 80%; /* Could be more or less, depending on screen size */
-// }
 
-.login-form-container {
+
+
+.login-form-container,.signup-form-container {
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    font-size: 20px;
+    border-radius: 250px;
+
   }
  
-  .login-form {
+  .login-form,.signup-form {
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
  
-  .login-input {
-    margin-left: 20px;
+  .login-input,.signup-input {
+    // margin-left: 20px;
+    border-radius: 250px;
+    width: 80%;
+    padding: 5px;
+    font-size: 16px;
+    border-width: 7px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 32px;
+    box-shadow: 8px 0px 16px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    
   }
  
-  .login-form-box {
-    outline: 1px solid black;
-    padding: 20px;
+  .login-form-box,.signup-form-box{
+    // outline: 1px solid black;
+    // padding: 20px;
     background: white;
     position: relative;
   }
   
+  .session-submit{
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    background-color:#7892c2;
+    border-radius:10px;
+    border:1px solid #4e6096;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:19px;
+    padding:12px 37px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+    width: 100%;
+
+  }
+
+  .session-submit:hover {
+    background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    background-color:#476e9e;
+  }
+  .session-submit:active {
+    position:relative;
+    top:1px;
+  }
+  
+          
 
  
  .splash{
@@ -202,7 +257,7 @@ label {
     display: flex;
     justify-content: space-between;  
     margin-top: 50px; 
-    // margin-left: 250px;
+    margin-left: 250px;
     // margin-right: 250px;
     
 }   
@@ -211,6 +266,8 @@ label {
     display: flex;
     justify-content: space-between;  
     margin-top: 50px; 
+    margin-left: 250px;
+
     // margin-left: 250px;
     // margin-right: 250px;
 }
@@ -221,6 +278,7 @@ label {
     font-family: cursive; 
     font-weight: 600;
     font-size: 32px;
+    margin-left: 250px;
 }
 
 .card{
@@ -242,15 +300,21 @@ label {
     // justify-content: space-between;  
     // border-radius: 25px;
 }
+.Longestcarddiv{
+  display:flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .Longestcard{
-    display: block;
+    // display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
     width: 50%;
     background-color: transparent;
-    margin-top: 4000px;
+    // margin-top: 4000px;
 }
 // .search_bar{
 //     width: 500px;
@@ -258,12 +322,12 @@ label {
 .biggercard2{
     max-width:100%;
     // max-width:1000px;
-
-    height:auto;
+    display: flex;
+    height:300px;
     justify-content: space-between;  
     border-radius: 25px;
     // background: #73AD21;
-    padding: 20px;
+    // padding: 200px;
     // width: 200px;
     // height: 150px;
 }
@@ -289,9 +353,12 @@ label {
 .Live_anywhere{
     display: flex;
     justify-content: space-between;  
-    margin-top: 50px; 
+    // margin-top: 10px; 
+    // padding: 20px;
     margin-left: 250px;
     margin-right: 250px;
+    // margin-left: auto;
+    // margin-right: auto;
 
 }
 
@@ -302,6 +369,7 @@ label {
     font-size: 18px;
     font-family: sans-serif;
     margin-top: 5px;
+    // margin-left: 250px;
 
   }
 
@@ -321,7 +389,7 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: transparent;
     width: 20%;
     height: 40%;
     border-radius: 10px;

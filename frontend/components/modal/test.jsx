@@ -24,7 +24,7 @@ signupForm(){
               />
             </label>          
             <br/>
-            <label>Email:
+            <label>Email&nbsp&nbsp&nbsp&nbsp&nbspd:
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
