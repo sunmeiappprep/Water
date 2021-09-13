@@ -18,7 +18,6 @@ class ListingsIndex extends React.Component {
 
     render(){
         const listing2 = []
-        const {asd} = this.props
         const {listings} = this.props;
         for (let i = 0; i < listings.length;i++){
             if (listings[i].city === "Brooklyn"){
@@ -28,8 +27,6 @@ class ListingsIndex extends React.Component {
         if (!listings) return null;
         return(            
             <div className="listings-index-box">
-                        {console.log(123)}
-
                 <div className="navbar0">
             <section className="navbar"> 
             <Modal />           
@@ -64,7 +61,6 @@ class ListingsIndex extends React.Component {
                                     key={listing.id}
                                 />
                                 </Link>
-                                
                             ))
                         }
                     </ul>

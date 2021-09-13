@@ -13,17 +13,24 @@ import Longestcard from '../longestcard/longestcard';
 import Dropdown from 'react-dropdown'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 class Splash extends React.Component {
-
+  constructor(props){
+    super(props)
+    // this.openModal = this.openModal.bind(this)
+  }
 
   
 
   render() {
-    // const loginB = <GreetingContainer/>
+    const loginB = <GreetingContainer/>
+    const icon = <AccountCircleIcon/>
     {/* const signUp = <button onClick={() => openModal('signup')}>Signup</button> */}
-
     // const options = [
-    //   loginB
-    // ];
+    //   <button className="login-signup" onClick={() => openModal('login')}>Login</button>,
+    //   <button className="login-signup" onClick={() => openModal('signup')}>Signup</button>
+    //   ];
+    const options = [
+      loginB
+    ];
 
     return (
       <div>
@@ -39,9 +46,9 @@ class Splash extends React.Component {
               <Link to="/" className='midLink'>Online Experiences</Link>
             </section>         
             {/* <div class="dropdown"> */}
-            {/* <Dropdown options={options} value={"My Profile"}/> */}
-            <GreetingContainer/>
-           
+            {/* <Dropdown options={options} value={"My Profile"}/>   */}
+            {/* <GreetingContainer/> */}
+            <Dropdown options={options} onChange={this._onSelect} value={"Profile"} placeholder={icon} />
            
         </section>
 
@@ -78,25 +85,26 @@ class Splash extends React.Component {
       <div>
         <h1 className='en'>Explore nearby</h1>
           <section className="explore_nearby">                   
-              <Card/>
-              <Card/>
-              <Card/>
-              <Card/>       
+              <Card site="https://a0.muscache.com/im/pictures/be4d3ba5-08d7-4afe-95a7-f2da6453886a.jpg?im_q=medq&im_w=240" name="New York" drive="1"/>
+              <Card site="https://a0.muscache.com/im/pictures/7253e011-7c22-48fd-b75d-d0da35372397.jpg?im_q=medq&im_w=240" name="Washington" drive="5"/>
+              <Card site="https://a0.muscache.com/im/pictures/76e5f1c6-a788-418c-a28b-f0ee29cffd41.jpg?im_q=medq&im_w=240" name="New York" drive="2"/>
+              <Card site="https://a0.muscache.com/im/pictures/847cfb7f-788d-42dc-9148-f375348dde76.jpg?im_q=medq&im_w=240" name="New York" drive="5"/>    
           </section>
           <section className="explore_nearby2">                   
-              <Card/>
-              <Card/>
-              <Card/>
-              <Card/>       
+              <Card site="https://a0.muscache.com/im/pictures/560c06e1-a396-4414-9e38-4fbe8e9f04c4.jpg?im_q=medq&im_w=240" name="Ailington" drive="5"/>
+              <Card site="https://a0.muscache.com/im/pictures/a161fb95-6875-4aaa-aecd-3a46dead3220.jpg?im_q=medq&im_w=240" name="Virginia Beach" drive="8"/>
+              <Card site="https://a0.muscache.com/im/pictures/71ae2609-6082-4f31-aa20-8629d7fab7d7.jpg?im_q=medq&im_w=240" name="Portland" drive="7"/>    
+              <Card site="https://a0.muscache.com/im/pictures/f7ac6e57-65cb-446b-8631-331072463af4.jpg?im_q=medq&im_w=240" name="North Bergen" drive="1"/>    
+
           </section>
       </div>
       <div>
         <h1 className='en'>Live anywhere</h1>
           <section className="Live_anywhere">                   
-              <Biggercard/>
-              <Biggercard/>
-              <Biggercard/>
-              <Biggercard/>       
+              <Biggercard site="https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480" category="Outdoor Getaways"/>
+              <Biggercard site="https://a0.muscache.com/im/pictures/36f53e61-db8d-403c-9122-5b761c0e4264.jpg?im_w=480" category="Unique stays"/>
+              <Biggercard site="https://a0.muscache.com/im/pictures/7d82ca14-56e5-4465-8218-dcfa7d69b6ac.jpg?im_w=480" category="Entire homes" />
+              <Biggercard site="https://a0.muscache.com/im/pictures/10a638e1-6aff-4313-8033-1275cec83987.jpg?im_w=480" category="Pets allowed" />       
           </section>        
       </div>
         <div className='hosting'>

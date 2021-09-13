@@ -17,3 +17,20 @@
   border-radius: 25px;
   color: aqua;
 }
+.listingpage{
+  display:flex
+}
+
+.leftside{
+  flex:1
+}
+
+.rightside{
+  flex:2;
+  font-size:400px;
+}
+
+.rightside2{
+  flex:1;
+  font-size:400px;
+}

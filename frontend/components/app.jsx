@@ -23,7 +23,7 @@ function App() {
     <Route path="/signup`" component={SignupFormContainer} /> */}
     <Switch>
       <Route path="/listings/:listingid" component={ListingShowContainer} />
-      <Route path="/listings" component={ListingsIndexContainer} />
+      <Route path="/listings" component={ListingsIndexContainer} asd="asddd" />
     </Switch>
 
     </div>

@@ -4,11 +4,11 @@ import Cardsmall from './cardsmall.jpg'
 class Card extends React.Component {
 
     render() {
-        const text = 'Hawaii \n ';
-        const text2 = '7.5 Hour Drive'
+        const text = `${this.props.name} \n` ;
+        const text2 = `${this.props.drive} Hour Drive`
         return (
             <div className="card">
-                <img className='card2' src={Cardsmall} alt="cardsmall" />
+                <img className='card2' src={this.props.site} alt="cardsmall" />
                 <div className='test'> 
                     <section className="upperText">{text} </section>
                     <div>
