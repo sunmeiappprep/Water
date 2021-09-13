@@ -1,6 +1,7 @@
 import React from 'react';
 import Text from 'react'
 import Cardsmall from './cardsmall.jpg'
+// import listing_index_container from '../listings_index/listing_index_container';
 class Card extends React.Component {
 
     render() {
@@ -17,7 +18,7 @@ class Card extends React.Component {
                    
                 </div>
                 
-               
+               {/* <listing_index_container testing = "asd"/> */}
 
             </div>
         )

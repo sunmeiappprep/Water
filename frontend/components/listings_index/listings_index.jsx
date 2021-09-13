@@ -17,19 +17,10 @@ class ListingsIndex extends React.Component {
     }
 
     render(){
-        const listing2 = []
-        const {asd} = this.props
-        const {listings} = this.props;
-        for (let i = 0; i < listings.length;i++){
-            if (listings[i].city === "Brooklyn"){
-                listing2.push(listings[i])
-            }
-        }
+        const {listings} = this.props;        
         if (!listings) return null;
         return(            
             <div className="listings-index-box">
-                        {console.log(123)}
-
                 <div className="navbar0">
             <section className="navbar"> 
             <Modal />           
@@ -58,13 +49,17 @@ class ListingsIndex extends React.Component {
                 <h2 className="main-index-title">All Listings</h2>
                     <ul className="list-indexes">
                         {
-                            listing2.map((listing, i) => (
-                               <Link key ={i} to={`/listings/${listing.id}`} style={{ textDecoration: 'none' }}> <ListingIndexItem 
+                            listings.map((listing, i) => (
+                                <ListingIndexItem 
                                     listing= {listing}
                                     key={listing.id}
                                 />
-                                </Link>
-                                
+                            //link dont work
+                            //     <Link key ={i} to={`/listings/${listing.id}`} style={{ textDecoration: 'none' }}> <ListingIndexItem 
+                            //     listing= {listing}
+                            //     key={listing.id}
+                            // />
+                            // </Link>
                             ))
                         }
                     </ul>
