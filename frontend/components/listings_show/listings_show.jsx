@@ -1,35 +1,57 @@
-import React, {useState} from 'react';
-
+import React from 'react';
+import Modal from '../modal/modal';
+import Logo from '../splash/logo.png'
+import {Link} from 'react-router-dom'
+import GreetingContainer from '../greeting/greeting_container';
+import SearchContainer  from '../search/search_container';
 class ListingShow extends React.Component {
     constructor(props){
         super(props);    
     }
 
     componentDidMount(){
-        this.props.fetchListing(this.props.match.params.listingid);
-    }   
+        this.props.fetchListing(this.props.match.params.listingid);    }   
 
-
-    render(){
-        
-        const { listing } = this.props;
-        
-        if (!listing) return null;     
-      
+    render(){        
+        const { listing } = this.props;        
+        if (!listing) return null;           
         return(
             <div className= "listing-show-box">
-                <div className="top-show">
-                    <h3 className="listing-title">{listing.title}</h3>                    
-                    <h3 className="listing-title">{listing.price}</h3>                    
-                    <h3 className="listing-title">{listing.address}</h3>                    
-                    <h3 className="listing-title">{listing.city}</h3>                    
-                    <h3 className="listing-title">{listing.num_guest}</h3>                    
-                    <h3 className="listing-title">{listing.description}</h3>     
-                    <h3 className="listing-title">{listing.latitude}</h3>                   
-                    <h3 className="listing-title">{listing.longitude}</h3>                   
-                    <h3 className="listing-title">{listing.host_id}</h3>                    
-
-                </div>                
+                <div className="listings-index-box">
+                    <div className="navbar0">
+                        <section className="navbar"> 
+                            <Modal />           
+                            <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
+                            <section className='midLinkBundle'>
+                                <Link to="/" className='midLink'>Places to stay</Link>
+                                <Link to="/" className='midLink'>Experiences</Link>
+                                <Link to="/" className='midLink'>Online Experiences</Link>
+                            </section>          
+                            <GreetingContainer className="greeting_container"/>      
+                         </section>
+                    </div>
+                <div className="search_container">
+                <SearchContainer/>
+                </div > 
+            </div>
+            <div className="show-page0">
+                <div className="show-page">
+                    <h3 className="listing-info">{listing.title}</h3>    
+                    <h3 className="listing-info">{"Review place holder  "}{listing.city}</h3>                   
+                        <div className='showing-bundle'>
+                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
+                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
+                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
+                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
+                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
+                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
+                        </div>                
+                    <h3 className="listing-info">{listing.description}</h3>
+                    <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
+                    <h3 className="listing-info">{listing.price}{"/night"}</h3>              
+                </div>               
+            </div>
+                 
             </div>
         )
     }

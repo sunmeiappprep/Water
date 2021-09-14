@@ -8,8 +8,8 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   const sessionLinks = () => (
     
     <nav className="login-signup">
-      <button className="login-signup" onClick={() => openModal('login')}>Login</button>
-      <button className="login-signup" onClick={() => openModal('signup')}>Signup</button>
+      <button className="login-signup-button" onClick={() => openModal('login')}>Login</button>
+      <button className="login-signup-button" onClick={() => openModal('signup')}>Signup</button>
     </nav>
     
   );

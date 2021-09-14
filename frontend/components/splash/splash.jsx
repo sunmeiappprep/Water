@@ -48,8 +48,8 @@ class Splash extends React.Component {
             </section>         
             {/* <div class="dropdown"> */}
             {/* <Dropdown options={options} value={"My Profile"}/>   */}
-            {/* <GreetingContainer/> */}
-            <Dropdown options={options} onChange={this._onSelect} value={"Profile"} placeholder={icon} />
+            <GreetingContainer/>
+            {/* <Dropdown options={options} onChange={this._onSelect} value={"Profile"} placeholder={icon} /> */}
            
         </section>
 

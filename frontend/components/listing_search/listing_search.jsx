@@ -1,11 +1,10 @@
 import React from 'react';
-import ListingIndexItem from './listing_index_item';
+// import ListingSearchItem from './listing_search_items';
 import {Link} from 'react-router-dom'
 import Modal from '../modal/modal';
-import Logo from '../splash/logo.png'
 import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
-class ListingsIndex extends React.Component {
+class ListingSearch extends React.Component {
     constructor(props){
         super(props);
     }
@@ -17,13 +16,7 @@ class ListingsIndex extends React.Component {
     }
 
     render(){
-        const listing2 = []
-        const {listings} = this.props;
-        for (let i = 0; i < listings.length;i++){
-            if (listings[i].city === "Brooklyn"){
-                listing2.push(listings[i])
-            }
-        }
+        const {listings} = this.props;        
         if (!listings) return null;
         return(            
             <div className="listings-index-box">
@@ -55,12 +48,17 @@ class ListingsIndex extends React.Component {
                 <h2 className="main-index-title">All Listings</h2>
                     <ul className="list-indexes">
                         {
-                            listing2.map((listing, i) => (
-                               <Link key ={i} to={`/listings/${listing.id}`} style={{ textDecoration: 'none' }}> <ListingIndexItem 
+                            listings.map((listing, i) => (
+                                <ListingIndexItem 
                                     listing= {listing}
                                     key={listing.id}
                                 />
-                                </Link>
+                            //link dont work
+                            //     <Link key ={i} to={`/listings/${listing.id}`} style={{ textDecoration: 'none' }}> <ListingIndexItem 
+                            //     listing= {listing}
+                            //     key={listing.id}
+                            // />
+                            // </Link>
                             ))
                         }
                     </ul>
@@ -71,5 +69,4 @@ class ListingsIndex extends React.Component {
 
 }
 
-export default ListingsIndex;
-
+export default ListingSearch;

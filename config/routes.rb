@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :listings
     resources :reviews
   end
+
   root to: "static_pages#root"
 end

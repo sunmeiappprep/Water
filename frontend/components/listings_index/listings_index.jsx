@@ -5,6 +5,7 @@ import Modal from '../modal/modal';
 import Logo from '../splash/logo.png'
 import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
+import ListingMapContainer from '../listing_map/listing_map_container';
 class ListingsIndex extends React.Component {
     constructor(props){
         super(props);
@@ -21,48 +22,45 @@ class ListingsIndex extends React.Component {
         if (!listings) return null;
         return(            
             <div className="listings-index-box">
-                <div className="navbar0">
-            <section className="navbar"> 
-            <Modal />           
-            <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
-            {/* <Link to="/">AirBnb Logo</Link> */}
-            <section className='midLinkBundle'>
-              <Link to="/" className='midLink'>Places to stay</Link>
-              <Link to="/" className='midLink'>Experiences</Link>
-              <Link to="/" className='midLink'>Online Experiences</Link>
-            </section>
-          
-            {/* <Modal></Modal> */}
-            <GreetingContainer className="greeting_container"/>
-            {/* <Modal isOpen={true}>
-              <h5>asd</h5>
-              <p>asdasd</p>
-            </Modal> */}
-           
-           
-        </section>
-
-            </div>
+                {/* <div className="navbar0"> */}
+                    <section className="navbar"> 
+                        <Modal />           
+                        <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>                      
+                        <section className='midLinkBundle'>
+                            <Link to="/" className='midLink'>Washington</Link>
+                            <Link to="/" className='midLink'>Add Dates</Link>
+                            <Link to="/" className='midLink'>Guest</Link>
+                        </section>
+                <GreetingContainer className="greeting_container2"/>
+                    </section>
+            {/* </div> */}
             <div className="search_container">
             <SearchContainer/>
-            </div>                
-                <h2 className="main-index-title">All Listings</h2>
-                    <ul className="list-indexes">
-                        {
-                            listings.map((listing, i) => (
-                                <ListingIndexItem 
-                                    listing= {listing}
-                                    key={listing.id}
-                                />
-                            //link dont work
-                            //     <Link key ={i} to={`/listings/${listing.id}`} style={{ textDecoration: 'none' }}> <ListingIndexItem 
-                            //     listing= {listing}
-                            //     key={listing.id}
-                            // />
-                            // </Link>
-                            ))
-                        }
-                    </ul>
+            </div > 
+
+                <div className="index-listing-con">
+                    <div className='index-left'>
+                    <h1 className="place-holderstay">Placeholder Stays</h1>
+                    <h1 className="every-listing">Every Listings</h1>
+                            <ul className="list-indexes">
+                                {   
+                                    listings.map((listing, i) => (
+                                    <Link key ={i} to={`/listings/${listing.id}`} > 
+                                    <ListingIndexItem listing= {listing}  key={listing.id}/>
+                                    </Link>
+                                    ))
+                                }
+                            </ul>   
+                    </div>
+                    
+
+                
+
+                <div className='index-right'>
+                    <ListingMapContainer/>
+                </div>      
+                </div>               
+                
             </div>
         )
     }

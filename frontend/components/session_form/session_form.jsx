@@ -28,9 +28,14 @@ class SessionForm extends React.Component {
     console.log(this.props)
   }
 
+
+  componentWillUnmount() {
+    this.props.resetSessionErrors();
+  }
+  
   renderErrors() {
     return(
-      <ul>
+      <ul className='errorsCss'>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
