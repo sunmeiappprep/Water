@@ -4,7 +4,7 @@ import Logo from '../splash/logo.png'
 import {Link} from 'react-router-dom'
 import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
-import ListingMapContainer from '../listing_map/listing_map_container';
+import ListingMapSingle from '../listing_map_single/listing_map_single_container';
 
 class ListingShow extends React.Component {
     constructor(props){
@@ -53,7 +53,7 @@ class ListingShow extends React.Component {
                     <h3 className="listing-info">{listing.price}{"/night"}</h3>              
                 </div>               
             </div>
-                <ListingMapContainer/>
+                <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>
             </div>
         )
     }

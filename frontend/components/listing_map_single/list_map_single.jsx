@@ -6,49 +6,44 @@ import RoomIcon from '@material-ui/icons/Room';
 
 const AnyReactComponent = ({ img }) => <div>{img}</div>;
 
-class ListingMap extends Component {
+class ListingMapSingle extends Component {
   constructor(props){
     super(props);
   }
 
-  static defaultProps = {
-    center: {
-      lat: 	40.730610,
-      lng: -73.935242
-    },
-    zoom: 11
-  };
-  
   componentDidMount(){
-    this.props.fetchListings()
+    this.props.fetchListing()
   }
 
   render() {
-    const {listings} = this.props
+    const {listing} = this.props
+
+    const thisProps = {
+        center: {
+          lat: 	listing.latitude,
+          lng: listing.longitude
+        },
+        zoom: 20
+      };
+    
     
     return (      
       <div className='map' style={{ height: '1000px', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "" }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          defaultCenter={thisProps.center}
+          defaultZoom={thisProps.zoom}
         >
-          {   
-            listings.map((listing, i) => {
-              console.log(listing.photo)
-              return (
-                <AnyReactComponent
-                  lat={listing.latitude}
-                  lng={listing.longitude}
-                  img={<RoomIcon className="marker"/>}
-                  key={listing.id}/>
+        {console.log(listing.latitude)}
+        <AnyReactComponent
+        lat={listing.latitude}
+        lng={listing.longitude}
+        img={<RoomIcon className="marker"/>}
+        key={listing.id}/>
                   
-                    )
-                  
-               })
+           
                
-          }
-
+          
 
           {/* {console.log(this.props.listing.photo)} */}
           {/* <AnyReactComponent
@@ -62,4 +57,4 @@ class ListingMap extends Component {
   }
 }
 
-export default ListingMap;
+export default ListingMapSingle;
