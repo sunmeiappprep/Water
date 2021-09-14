@@ -4,6 +4,8 @@ import Logo from '../splash/logo.png'
 import {Link} from 'react-router-dom'
 import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
+import ListingMapContainer from '../listing_map/listing_map_container';
+
 class ListingShow extends React.Component {
     constructor(props){
         super(props);    
@@ -39,19 +41,19 @@ class ListingShow extends React.Component {
                     <h3 className="listing-info">{listing.title}</h3>    
                     <h3 className="listing-info">{"Review place holder  "}{listing.city}</h3>                   
                         <div className='showing-bundle'>
-                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
-                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
-                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
-                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
-                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
-                            <img className="photo" src="https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200" alt="photo" />
+                            <img className="photo" src={listing.photoAWS} alt="photo" />
+                            <img className="photo" src={listing.photoAWS} alt="photo" />
+                            <img className="photo" src={listing.photoAWS} alt="photo" />
+                            <img className="photo" src={listing.photoAWS} alt="photo" />
+                            <img className="photo" src={listing.photoAWS} alt="photo" />
+                            <img className="photo" src={listing.photoAWS} alt="photo" />
                         </div>                
                     <h3 className="listing-info">{listing.description}</h3>
                     <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
                     <h3 className="listing-info">{listing.price}{"/night"}</h3>              
                 </div>               
             </div>
-                 
+                <ListingMapContainer/>
             </div>
         )
     }

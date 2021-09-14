@@ -9,7 +9,7 @@ class ListingIndexItem extends React.Component {
              <div className='leftside'>
                 <li className="listing-list">
                 <div className="listing-picture">
-                    <img className="index-img" src='https://a0.muscache.com/im/pictures/adb982df-43bf-461e-815f-c138ce0a52a3.jpg?im_w=1200' alt="house" />
+                    <img className="index-img" src={listing.photoAWS} />
                 </div>
             <div className="listing-info">            
                 <h3 className="listing-title">{listing.title}</h3>                
