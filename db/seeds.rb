@@ -59,19 +59,11 @@ listing3 = Listing.create!(
 )
 
 
-# list2 =  URI.open("app/assets/images/kirby.png")
-# listing1.photo.attach(io: list2, filename: 'kirby2')
-# listing2.photo.attach(io: list2, filename: 'kirby2')
-# listing3.photo.attach(io: list2, filename: 'kirby2')
 
-# file5 = URI.open('app/assets/images/kirby.png')
-# listing1.photo.attach(io: file5, filename: 'kirby2.png')
-# listing2.photo.attach(io: file5, filename: 'kirby2.png')
-# listing3.photo.attach(io: file5, filename: 'kirby2.png')
 
 
 file1 = URI.open('app/assets/images/listing1.jpg')
-file2 = URI.open('app/assets/images/listing3.jpeg')
+file2 = URI.open('app/assets/images/listing23.jpeg')
 file3 = URI.open('app/assets/images/listing3.jpg')
 
 listing1.photo.attach(io: file1, filename: 'listing1')
@@ -85,7 +77,7 @@ review1 = Review.create!(
     listing_id: listing1.id)
 
 review2 = Review.create!(
-    description:"Review1",
+    description:"Review2",
     rating:5 ,
     reviewer_id: demo2.id, 
     listing_id: listing2.id)
