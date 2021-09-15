@@ -16,12 +16,14 @@ class Api::ReviewsController < ApplicationController
         render "api/reviews/index"
     end
 
-    def index
-        @reviews = Review.all
-        if @reviews
-            render :index
-        end
+    def index 
+        currentuser = current_user 
+        @reviews = currentuser.reviews 
+        render "api/reviews/index"
     end
+
+    
+end
 
  
     

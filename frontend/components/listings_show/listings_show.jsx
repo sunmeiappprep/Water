@@ -42,18 +42,19 @@ class ListingShow extends React.Component {
                     <h3 className="listing-info">{"Review place holder  "}{listing.city}</h3>                   
                         <div className='showing-bundle'>
                             <img className="photo" src={listing.photoAWS} alt="photo" />
+                            {/* <img className="photo" src={listing.photoAWS} alt="photo" />
                             <img className="photo" src={listing.photoAWS} alt="photo" />
                             <img className="photo" src={listing.photoAWS} alt="photo" />
                             <img className="photo" src={listing.photoAWS} alt="photo" />
-                            <img className="photo" src={listing.photoAWS} alt="photo" />
-                            <img className="photo" src={listing.photoAWS} alt="photo" />
+                            <img className="photo" src={listing.photoAWS} alt="photo" /> */}
                         </div>                
                     <h3 className="listing-info">{listing.description}</h3>
                     <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
-                    <h3 className="listing-info">{listing.price}{"/night"}</h3>              
+                    <h3 className="listing-info">{listing.price}{"/night"}</h3>   
+                    <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>           
                 </div>               
             </div>
-                <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>
+                
             </div>
         )
     }

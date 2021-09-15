@@ -22,7 +22,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   const logouter = () => (
     <div className="header-group">
       {/* <h2>Hi, {currentUser.username}!</h2> */}
-      <button onClick={logout}>Log Out</button>
+      <button className="logout" onClick={logout}>Log Out</button>
     </div>
   );
 

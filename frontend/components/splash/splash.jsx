@@ -13,6 +13,7 @@ import Longestcard from '../longestcard/longestcard';
 import Dropdown from 'react-dropdown'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ListingIndexItem from '../listings_index/listing_index_item';
+import ShowBookings from '../show_bookings/show_bookings_container';
 class Splash extends React.Component {
   constructor(props){
     super(props)
@@ -38,47 +39,27 @@ class Splash extends React.Component {
           <div className="splash">
             <div className="navbar0">
             <section className="navbar"> 
-            {/* <Modal />            */}
             <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
-            {/* <Link to="/">AirBnb Logo</Link> */}
             <section className='midLinkBundle'>
-              <Link to="/" className='midLink'>Places to stay</Link>
+            <SearchContainer/>
+              {/* <Link to="/" className='midLink'>Places to stay</Link>
               <Link to="/" className='midLink'>Experiences</Link>
-              <Link to="/" className='midLink'>Online Experiences</Link>
+              <Link to="/" className='midLink'>Online Experiences</Link> */}
             </section>         
-            {/* <div class="dropdown"> */}
-            {/* <Dropdown options={options} value={"My Profile"}/>   */}
             <GreetingContainer/>
-            {/* <Dropdown options={options} onChange={this._onSelect} value={"Profile"} placeholder={icon} /> */}
+            <ShowBookings/>
            
         </section>
 
             </div>
             <div className="search_container">
-            <SearchContainer/>
+            {/* <SearchContainer/> */}
             </div>
             
         <Empty/>
   
 
-    
-        {/* <section className = 'EN'> */}
-          
-        {/* </section> */}
-       
 
-
-
-        {/* <Link to="/">
-          <div className ="leftlogo">Logo PlaceHolder</div>
-        </Link>       
-          <div className ="search">Search PlaceHolder</div>
-        <Link to="/login">        
-          <div className ="login">Login</div>
-        </Link>
-        <Link to="/signup">        
-          <div className ="signup">Signup</div>
-        </Link> */}
       
       </div>
       <div className='bottomComp'>

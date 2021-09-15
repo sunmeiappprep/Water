@@ -4,7 +4,7 @@ class Api::BookingsController < ApplicationController
     def create 
         @booking = Booking.new(booking_params)        
         if @booking.save! 
-            render 'api/bookings/index'
+            render :index 
         else  
             render json: @booking.errors.full_messages, status: 422
         end
@@ -13,10 +13,16 @@ class Api::BookingsController < ApplicationController
     def index 
         @bookings = Booking.all
         if @bookings
-            render :index        
+            render :index 
         end
-        
     end
+
+    def destroy 
+        @booking = Booking.find(params[:id])
+        @booking.destroy
+        render :index 
+    end
+
 
     def booking_params
         params.require(:booking).permit(:check_in, :check_out, :listing_id, :renter_id) 

@@ -23,14 +23,14 @@ class ListingMapSingle extends Component {
           lat: 	listing.latitude,
           lng: listing.longitude
         },
-        zoom: 20
+        zoom: 13
       };
     
     
     return (      
-      <div className='map' style={{ height: '1000px', width: '100%' }}>
+      <div className='mapSingle' style={{ height: '400px', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "" }}
+          bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
           defaultCenter={thisProps.center}
           defaultZoom={thisProps.zoom}
         >

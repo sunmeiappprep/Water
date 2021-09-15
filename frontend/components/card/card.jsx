@@ -9,7 +9,6 @@ class Card extends React.Component {
         const text2 = `${this.props.drive} Hour Drive`
         return (
             <div className="card">
-                {/* <Link to={this.props.myroute} onClick='hello()'>Here</Link> */}
                 <img className='card2' src={this.props.site} alt="cardsmall" />
                 <div className='test'> 
                     <section className="upperText">{text} </section>

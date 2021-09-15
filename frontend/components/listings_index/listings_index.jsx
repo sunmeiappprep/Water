@@ -6,6 +6,7 @@ import Logo from '../splash/logo.png'
 import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
 import ListingMapContainer from '../listing_map/listing_map_container';
+import { NavLink } from 'react-router-dom';
 class ListingsIndex extends React.Component {
     constructor(props){
         super(props);
@@ -27,7 +28,8 @@ class ListingsIndex extends React.Component {
                         <Modal />           
                         <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>                      
                         <section className='midLinkBundle'>
-                            <Link to="/" className='midLink'>Washington</Link>
+                       
+                            <Link to="/bookings" className='midLink'>My Bookings</Link>
                             <Link to="/" className='midLink'>Add Dates</Link>
                             <Link to="/" className='midLink'>Guest</Link>
                         </section>
@@ -51,11 +53,7 @@ class ListingsIndex extends React.Component {
                                     ))
                                 }
                             </ul>   
-                    </div>
-                    
-
-                
-
+                    </div>                 
                 <div className='index-right'>
                     <ListingMapContainer/>
                 </div>      

@@ -11,6 +11,8 @@ import ShowContainer from "./show/show_container";
 import { Router, Switch, Route } from "react-router-dom";
 import ListingsIndexContainer from './listings_index/listing_index_container';
 import ListingShowContainer from './listings_show/listings_show_container';
+import BookingIndexContainer from './bookings/booking_container';
+
 import Modal from './modal/modal';
 function App() {
   return (
@@ -23,7 +25,11 @@ function App() {
     <Route path="/signup`" component={SignupFormContainer} /> */}
     <Switch>
       <Route path="/listings/:listingid" component={ListingShowContainer} />
+      {/* <Route path="/bookings/:bookingId" component={BookingShowContainer} /> */}
+      
       <Route path="/listings" component={ListingsIndexContainer} asd="asddd" />
+      <Route path="/bookings" component={BookingIndexContainer} />
+
     </Switch>
 
     </div>
