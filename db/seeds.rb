@@ -105,12 +105,12 @@ listing6 = Listing.create!(
 
 
 
-file1 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
-file2 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
-file3 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
-file4 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
-file5 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
-file6 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
+# file1 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
+# file2 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
+# file3 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
+# file4 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
+# file5 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
+# file6 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
 # file7 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
 # file8 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
 # file9 = URI.open('https://water-seeds.s3.amazonaws.com/listing3.jpg')
