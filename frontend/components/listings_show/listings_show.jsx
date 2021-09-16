@@ -25,15 +25,17 @@ class ListingShow extends React.Component {
                             <Modal />           
                             <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
                             <section className='midLinkBundle'>
-                                <Link to="/" className='midLink'>Places to stay</Link>
+                                {/* <Link to="/" className='midLink'>Places to stay</Link>
                                 <Link to="/" className='midLink'>Experiences</Link>
-                                <Link to="/" className='midLink'>Online Experiences</Link>
+                                <Link to="/" className='midLink'>Online Experiences</Link> */}
+                            <SearchContainer/>
+
                             </section>          
                             <GreetingContainer className="greeting_container"/>      
                          </section>
                     </div>
                 <div className="search_container">
-                <SearchContainer/>
+                {/* <SearchContainer/> */}
                 </div > 
             </div>
             <div className="show-page0">

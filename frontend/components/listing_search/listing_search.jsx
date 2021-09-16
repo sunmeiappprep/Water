@@ -20,16 +20,18 @@ class ListingSearch extends React.Component {
         if (!listings) return null;
         return(            
             <div className="listings-index-box">
-                <div className="navbar0">
-            <section className="navbar"> 
-            <Modal />           
-            <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
-            {/* <Link to="/">AirBnb Logo</Link> */}
-            <section className='midLinkBundle'>
-              <Link to="/" className='midLink'>Places to stay</Link>
-              <Link to="/" className='midLink'>Experiences</Link>
-              <Link to="/" className='midLink'>Online Experiences</Link>
-            </section>
+                <div className='navbar-1'>
+                <div className="navbar00">
+                    <section className="navbar"> 
+                    <Modal />           
+                    <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
+                    <section className='midLinkBundle'>
+                    <SearchContainer/>
+
+                {/* <Link to="/" className='midLink'>Places to stay</Link>
+                <Link to="/" className='midLink'>Experiences</Link>
+                <Link to="/" className='midLink'>Online Experiences</Link> */}
+                 </section>
           
             {/* <Modal></Modal> */}
             <GreetingContainer className="greeting_container"/>
@@ -43,8 +45,9 @@ class ListingSearch extends React.Component {
 
             </div>
             <div className="search_container">
-            <SearchContainer/>
-            </div>                
+            </div>     
+                </div>
+                           
                 <h2 className="main-index-title">All Listings</h2>
                     <ul className="list-indexes">
                         {

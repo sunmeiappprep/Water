@@ -20,11 +20,33 @@ class ListingsIndex extends React.Component {
     }
 
     render(){
-        const {listings} = this.props;        
+        // console.log(this.props)
+        const filterListing = [];
+        const {listings,location} = this.props;        
         if (!listings) return null;
+        // if (location.filtercity) {
+        //     for (let x = 0; x < listings.length; x++){
+        //         if (listings[x].city === filtercity){
+        //             filterListing.push(listings[x])
+        //         }
+        //     }
+        // }
+        // console.log(location.filtercity)
+        const realcity = []
+        // const realcity = location.filtercity
+        if (location.filtercity){
+            const realcity = location.filtercity
+        }
+        const real = realcity(Object.values(realcity)[0])  
+        console.log(real)  
+        
+        // return null;
         return(            
             <div className="listings-index-box">
+                <div className='fixedNav'>
                     <Nav/>
+                </div>
+                    
                 <div className="index-listing-con">
                     <div className='index-left'>
                     <h1 className="place-holderstay">Placeholder Stays</h1>

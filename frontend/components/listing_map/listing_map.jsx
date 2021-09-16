@@ -27,7 +27,7 @@ class ListingMap extends Component {
     const {listings} = this.props
     
     return (      
-      <div className='map' style={{ height: '1000px', width: '100%' }}>
+      <div className='map' style={{ height: '1200px', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
           defaultCenter={this.props.center}

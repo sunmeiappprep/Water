@@ -4,7 +4,8 @@ import { fetchListings } from '../../actions/listing_actions'
 
 
 const mSTP = (state = {}) =>({    
-    listings: Object.values(state.entities.listings)
+    listings: Object.values(state.entities.listings),
+    // filtercity: Object.values(state.filtercity)
 })
 
 const mDTP = dispatch => ({

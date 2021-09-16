@@ -49,7 +49,8 @@ label {
      background-color: skyblue;
      border-bottom: 1px solid;
     padding: 10px;
-    box-shadow: 5px 10px #888888;
+    // box-shadow: 5px 10px #888888;
+
    
 
 
@@ -66,10 +67,25 @@ label {
     width: 100%;
     text-align:center;
  }
+ .listings-index-box{
+  //  position: fixed !important;
+ }
+ 
+.fixedNav{
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+a{
+ text-decoration: none; 
+}
 
  .navbar0{
     // position: absolute;
      display: flex;
+     width: 100%;
+    position: fixed !important;
      justify-content: center;   
 // 
 
@@ -316,11 +332,12 @@ label {
 }
 
 .card2{
-    max-width:50%;
-    max-height:50%;  
-    height:auto;
-    justify-content: space-between;  
-    border-radius: 10px;
+    // max-width:50% !important;
+    max-height:50% !important;  
+    height:auto !important;
+    justify-content: space-between !important;  
+    border-radius: 10px !important;
+
 }
 
 .logo{
