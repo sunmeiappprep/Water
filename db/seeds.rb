@@ -60,15 +60,69 @@ listing3 = Listing.create!(
 
 
 
+listing4 = Listing.create!(
+    title: "Four Sails - X-tra Large Oceanfront Balcony!",
+    price: 450,
+    address: "8451 ave",
+    city: "Miami",
+    num_guest: 2,
+    description: "Entire condominium (condo) hosted by Bruce",
+    num_beds: 1, 
+    latitude: 250.783981315764517,
+    longitude: 89.12781938977339,
+    host_id: demo2.id,
+)
+
+
+listing5 = Listing.create!(
+    title: "Beach Quarters - Oceanfront Unit on the Boardwalk",
+    price: 201,
+    address: "8451 ave",
+    city: "Miami",
+    num_guest: 2,
+    description: "Entire condominium (condo) hosted by Ryan",
+    num_beds: 1, 
+    latitude: 25.783981315764517,
+    longitude: -800.12781938977339,
+    host_id: demo3.id,
+)
+
+
+listing6 = Listing.create!(
+    title: "We have it all",
+    price: 321,
+    address: "8451 ave",
+    city: "Miami",
+    num_guest: 2,
+    description: "Entire rental unit hosted by Len",
+    num_beds: 1, 
+    latitude: 40.783981315764517,
+    longitude: -80.12781938977339,
+    host_id: demo2.id,
+)
+
+
+
 
 
 file1 = URI.open('app/assets/images/listing1.jpg')
 file2 = URI.open('app/assets/images/listing23.jpeg')
 file3 = URI.open('app/assets/images/listing3.jpg')
+file4 = URI.open('app/assets/images/listing4.jpg')
+file5 = URI.open('app/assets/images/listing5.jpeg')
+file6 = URI.open('app/assets/images/listing6.jpeg')
+# file7 = URI.open('app/assets/images/listing7')
+# file8 = URI.open('app/assets/images/listing8')
+# file9 = URI.open('app/assets/images/listing9')
+# file10 = URI.open('app/assets/images/listing10')
+
 
 listing1.photo.attach(io: file1, filename: 'listing1')
 listing2.photo.attach(io: file2, filename: 'listing2')
 listing3.photo.attach(io: file3, filename: 'listing3')
+listing4.photo.attach(io: file4, filename: 'listing4')
+listing5.photo.attach(io: file5, filename: 'listing5')
+listing6.photo.attach(io: file6, filename: 'listing6')
 
 review1 = Review.create!(
     description:"Review1",
