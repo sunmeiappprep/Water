@@ -7,6 +7,7 @@ import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
 import ListingMapContainer from '../listing_map/listing_map_container';
 import { NavLink } from 'react-router-dom';
+import Nav from '../nav/nav';
 class ListingsIndex extends React.Component {
     constructor(props){
         super(props);
@@ -23,23 +24,7 @@ class ListingsIndex extends React.Component {
         if (!listings) return null;
         return(            
             <div className="listings-index-box">
-                {/* <div className="navbar0"> */}
-                    <section className="navbar"> 
-                        <Modal />           
-                        <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>                      
-                        <section className='midLinkBundle'>
-                       
-                            <Link to="/bookings" className='midLink'>My Bookings</Link>
-                            <Link to="/" className='midLink'>Add Dates</Link>
-                            <Link to="/" className='midLink'>Guest</Link>
-                        </section>
-                <GreetingContainer className="greeting_container2"/>
-                    </section>
-            {/* </div> */}
-            <div className="search_container">
-            <SearchContainer/>
-            </div > 
-
+                    <Nav/>
                 <div className="index-listing-con">
                     <div className='index-left'>
                     <h1 className="place-holderstay">Placeholder Stays</h1>

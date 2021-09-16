@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Dropdown from 'react-dropdown'
 
 const Greeting = ({ currentUser, logout, openModal }) => {
- 
+
 
   const sessionLinks = () => (
     
@@ -22,7 +22,8 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   const logouter = () => (
     <div className="header-group">
       {/* <h2>Hi, {currentUser.username}!</h2> */}
-      <button className="logout" onClick={logout}>Log Out</button>
+      {/* <button className="logout" onClick={logout}>Log Out</button> */}
+      <Link to="/" className='logout' onClick={logout}>Log Out</Link>
     </div>
   );
 

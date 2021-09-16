@@ -7,6 +7,7 @@ import { removeBooking } from '../../actions/booking_actions'
 const mSTP = (state = {}) =>({    
     bookings: Object.values(state.entities.bookings),
     currentUser:Object.values(state.entities.users)
+    
 })
 
 const mDTP = dispatch => ({
