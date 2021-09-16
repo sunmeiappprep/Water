@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2021_09_14_192518) do
     t.index ["listing_id"], name: "index_reviews_on_listing_id"
   end
 
+
+  
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "password_digest", null: false
