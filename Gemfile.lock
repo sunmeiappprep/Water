@@ -134,6 +134,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.4-x64-mingw32)
       racc (~> 1.4)
+    open-uri (0.1.0)
     pg (1.2.3-x64-mingw32)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -233,6 +234,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.7)
   jquery-rails
+  open-uri
   pg (~> 1.1)
   pry-rails
   puma (~> 5.0)
