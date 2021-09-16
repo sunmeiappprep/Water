@@ -20,13 +20,9 @@ class Api::ReviewsController < ApplicationController
         currentuser = current_user 
         @reviews = currentuser.reviews 
         render "api/reviews/index"
-    end
+    end  
 
-    
-end
 
- 
-    
 
     def review_params
         params.require(:review).permit(:description, :rating, :reviewer_id, :listing_id,)
