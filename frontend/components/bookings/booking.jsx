@@ -23,8 +23,8 @@ class Booking extends React.Component {
         const {bookings,removeBooking} = this.props;
         // debugger
         e.preventDefault(e);
-        console.log(bookings[0].id)
-        removeBooking(bookings[0].id)       
+        // console.log(bookings[0].id)
+        removeBooking(key)       
           this.props.history.push("/")
       }
 
@@ -41,7 +41,7 @@ class Booking extends React.Component {
     }
 
     render(){
-        const {bookings,removeBooking} = this.props;
+        const {bookings,removeBooking,history} = this.props;
         // booking2 = []
         // bookings.each 
         const currentUserId = this.props.currentUser[0].id
@@ -63,7 +63,7 @@ class Booking extends React.Component {
                     
                     // booking.renter_id === currentUserId ?             
                     <Link key ={i} to={`/listings/${booking.listing_id}`}> 
-                    <BookingIndexItem removeBooking={removeBooking} booking= {booking}  key={booking.id}/>
+                    <BookingIndexItem removeBooking={removeBooking} booking= {booking} history={history} key={booking.id} button className="delete-booking" onClick={this.handleDelete} key={booking.id} reduceBook={reduceBook}/>
                     </Link > 
                     // console.log(booking.id) : console.log("Asd")
                     // <button className="delete-booking" onClick={this.handleDelete}>Delete booking</button> : null
@@ -73,14 +73,14 @@ class Booking extends React.Component {
                 {
                            
                 }
-                {   
+                {/* {   
                     reduceBook.map((booking, i) => (     
                     
                     // booking.renter_id === currentUserId ?         
-                    <button className="delete-booking" onClick={this.handleDelete}>Delete booking</button> 
+                    <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
                     
                     ))
-                }
+                } */}
 
                 </ul>
                    
