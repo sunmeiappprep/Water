@@ -88,7 +88,7 @@ listing5 = Listing.create!(
 )
 
 
-listing6 = Listing.create!(
+listing19 = Listing.create!(
     title: "We have it all",
     price: 321,
     address: "8451 ave",
@@ -298,7 +298,7 @@ file15 = URI.open('https://water-seeds.s3.amazonaws.com/listing15.jpeg')
 file16 = URI.open('https://water-seeds.s3.amazonaws.com/listing16.jpg')
 file17 = URI.open('https://water-seeds.s3.amazonaws.com/listing17.jpg')
 file18 = URI.open('https://water-seeds.s3.amazonaws.com/listing18.jpeg')
-# file19 = URI.open('https://water-seeds.s3.amazonaws.com/listing19.jpg')
+file19 = URI.open('https://water-seeds.s3.amazonaws.com/listing19.jpg')
 # file20 = URI.open('https://water-seeds.s3.amazonaws.com/listing20.jpg')
 # file21 = URI.open('https://water-seeds.s3.amazonaws.com/listing21.jpg')
 # file22 = URI.open('https://water-seeds.s3.amazonaws.com/listing22.jpg')
@@ -325,7 +325,7 @@ listing15.photo.attach(io: file15, filename: 'listing15')
 listing16.photo.attach(io: file16, filename: 'listing16')
 listing17.photo.attach(io: file17, filename: 'listing17')
 listing18.photo.attach(io: file18, filename: 'listing18')
-
+listing19.photo.attach(io: file19, filename: 'listing19')
 
 
 
