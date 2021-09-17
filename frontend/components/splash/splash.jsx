@@ -39,7 +39,7 @@ class Splash extends React.Component {
           <div className="splash">
             <div className="navbar0">
             <section className="navbar"> 
-            <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
+            <Link to="/"><img className='logo' src={'https://water-seeds.s3.amazonaws.com/logo.png'} alt="cardsmall"/></Link>
             <section className='midLinkBundle'>
             <SearchContainer/>
               {/* <Link to="/" className='midLink'>Places to stay</Link>
@@ -68,9 +68,9 @@ class Splash extends React.Component {
         <h1 className='en'>Explore nearby</h1>
           <section className="explore_nearby">                   
               <Card site="https://a0.muscache.com/im/pictures/be4d3ba5-08d7-4afe-95a7-f2da6453886a.jpg?im_q=medq&im_w=240" onChange={this._onSelect} name="Miami" drive="1" />
-              <Card site="https://a0.muscache.com/im/pictures/7253e011-7c22-48fd-b75d-d0da35372397.jpg?im_q=medq&im_w=240" name="Washington" drive="5"/>
+              <Card site="https://a0.muscache.com/im/pictures/7253e011-7c22-48fd-b75d-d0da35372397.jpg?im_q=medq&im_w=240" name="Cancun" drive="5"/>
               <Card site="https://a0.muscache.com/im/pictures/76e5f1c6-a788-418c-a28b-f0ee29cffd41.jpg?im_q=medq&im_w=240" name="Renaissance Island" drive="2"/>
-              <Card site="https://a0.muscache.com/im/pictures/847cfb7f-788d-42dc-9148-f375348dde76.jpg?im_q=medq&im_w=240" name="Boston" drive="5"/>    
+              <Card site="https://a0.muscache.com/im/pictures/847cfb7f-788d-42dc-9148-f375348dde76.jpg?im_q=medq&im_w=240" name="Maui" drive="5"/>    
           </section>
           <section className="explore_nearby2">                   
               <Card site="https://a0.muscache.com/im/pictures/560c06e1-a396-4414-9e38-4fbe8e9f04c4.jpg?im_q=medq&im_w=240" name="Honolulu" drive="5"/>

@@ -9,7 +9,6 @@ class Show extends React.Component {
     return (
       <div className="show">
         <div>
-          {/* {console.log(props)} */}
         </div>
       </div>
     );

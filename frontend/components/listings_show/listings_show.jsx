@@ -23,7 +23,7 @@ class ListingShow extends React.Component {
                     <div className="navbar0">
                         <section className="navbar"> 
                             <Modal />           
-                            <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
+                            <Link to="/"><img className='logo' src={'https://water-seeds.s3.amazonaws.com/logo.png'} alt="cardsmall"/></Link>
                             <section className='midLinkBundle'>
                                 {/* <Link to="/" className='midLink'>Places to stay</Link>
                                 <Link to="/" className='midLink'>Experiences</Link>

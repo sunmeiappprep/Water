@@ -5,7 +5,6 @@ const ShowBookings = ({ currentUser }) => {
   
   const Mybooking = () => (
     <div className="header-group">
-       {/* { console.log("asd")} */}
        <button className="My-Profile"> <NavLink to="/bookings"> My booking</NavLink>  </button>
     </div>
   );

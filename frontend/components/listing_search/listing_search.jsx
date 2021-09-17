@@ -24,7 +24,7 @@ class ListingSearch extends React.Component {
                 <div className="navbar00">
                     <section className="navbar"> 
                     <Modal />           
-                    <Link to="/"><img className='logo' src={Logo} alt="cardsmall"/></Link>
+                    <Link to="/"><img className='logo' src={'https://water-seeds.s3.amazonaws.com/logo.png'} alt="cardsmall"/></Link>
                     <section className='midLinkBundle'>
                     <SearchContainer/>
 

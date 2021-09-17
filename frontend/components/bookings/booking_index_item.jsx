@@ -7,20 +7,17 @@ class BookingIndexItem extends React.Component {
     }
    
     handleDelete(e){
-        // debugger
+        
         const {bookings,removeBooking} = this.props;
-        // debugger
+        
         e.preventDefault(e);
-        console.log(this.props)
         removeBooking(this.props.booking.id)       
           this.props.history.push("/")
       }
 
     render(){
-        // console.log(this.props)
         const {booking,removeBooking} = this.props;       
         const onelisting = booking.listing
-        // console.log(onelisting)
     return(
         <div className="bookingpage">
             <div className="bookingpage1">

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import RoomIcon from '@material-ui/icons/Room';
-// debugger
+
 
 const AnyReactComponent = ({ img }) => <div>{img}</div>;
 
@@ -34,7 +34,6 @@ class ListingMapSingle extends Component {
           defaultCenter={thisProps.center}
           defaultZoom={thisProps.zoom}
         >
-        {console.log(listing.latitude)}
         <AnyReactComponent
         lat={listing.latitude}
         lng={listing.longitude}
@@ -45,7 +44,6 @@ class ListingMapSingle extends Component {
                
           
 
-          {/* {console.log(this.props.listing.photo)} */}
           {/* <AnyReactComponent
             lat={40.730610}
             lng={-73.935242}

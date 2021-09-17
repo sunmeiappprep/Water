@@ -20,30 +20,21 @@ class ListingsIndex extends React.Component {
     }
 
     render(){
-        // console.log(this.props)
         const filterListing = [];
         const {listings,location} = this.props;        
         if (!listings) return null;
-        // if (location.filtercity) {
-        //     for (let x = 0; x < listings.length; x++){
-        //         if (listings[x].city === filtercity){
-        //             filterListing.push(listings[x])
-        //         }
-        //     }
-        // }
+
         let city = []
         if(location.filtercity){
             city = (Object.values(location.filtercity))
             
         }
-        // console.log(city[0])
         let listing2 = []
         if (city != undefined)
         {
             for (let x = 0; x < this.props.listings.length; x++){              
                 if (this.props.listings[x]["city"] === city[0]){
-                    // console.log("asd")
-                    // console.log(this.props.listings[x].city)
+                   
                     listing2.push(this.props.listings[x])
                 }
             }            
@@ -55,8 +46,7 @@ class ListingsIndex extends React.Component {
             }            
         }
         
-        // console.log(listing2)
-        // console.log(city)
+  
         
         return(            
             <div className="listings-index-box">

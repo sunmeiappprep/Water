@@ -19,11 +19,11 @@ class Booking extends React.Component {
     }
 
     handleDelete(e){
-        // debugger
+        
         const {bookings,removeBooking} = this.props;
-        // debugger
+       
         e.preventDefault(e);
-        // console.log(bookings[0].id)
+        
         removeBooking(key)       
           this.props.history.push("/")
       }
@@ -34,7 +34,6 @@ class Booking extends React.Component {
             if(bookings[x].renter.id === id){
                 booking2.push(bookings[x])
             }else{
-                // console.log(bookings[x].id,id)
             }
         }
         return booking2
@@ -47,10 +46,7 @@ class Booking extends React.Component {
         const currentUserId = this.props.currentUser[0].id
 
         const reduceBook = this.reduceBooking(bookings,currentUserId)
-        console.log(reduceBook)  
-        // {console.log(this.props)}
-        // {console.log(currentUserId)}
-        // {console.log(this.props)}
+
 
         return(            
             <div className="bookingpage">           
@@ -65,7 +61,6 @@ class Booking extends React.Component {
                     <Link key ={i} to={`/listings/${booking.listing_id}`}> 
                     <BookingIndexItem removeBooking={removeBooking} booking= {booking} history={history} key={booking.id} button className="delete-booking" onClick={this.handleDelete} key={booking.id} reduceBook={reduceBook}/>
                     </Link > 
-                    // console.log(booking.id) : console.log("Asd")
                     // <button className="delete-booking" onClick={this.handleDelete}>Delete booking</button> : null
                     
                     ))

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import RoomIcon from '@material-ui/icons/Room';
-// debugger
+
 
 const AnyReactComponent = ({ img }) => <div>{img}</div>;
 
@@ -24,13 +24,11 @@ class ListingMap extends Component {
   }
 
   render() {
-    // console.log(this.props)
-    // debugger
+ 
     
     // let lat = ""
     // let long = ""
     const {listings,place} = this.props
-    // console.log(Object.values(place.latitude))
     // if (place.latitude){
     //   lat = place.latitude
     // }
@@ -48,7 +46,6 @@ class ListingMap extends Component {
         >
           {   
             listings.map((listing, i) => {
-              console.log(listing.photo)
               return (
                 <AnyReactComponent
                   lat={listing.latitude}
@@ -63,7 +60,6 @@ class ListingMap extends Component {
           }
 
 
-          {/* {console.log(this.props.listing.photo)} */}
           {/* <AnyReactComponent
             lat={40.730610}
             lng={-73.935242}
