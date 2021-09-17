@@ -167,6 +167,58 @@ listing10 = Listing.create!(
     host_id: demo2.id,
 )
 
+# listing11 = Listing.create!(
+#     title: "Vistalmar King Suite with Ocean View Balcony",
+#     price: 123,
+#     address: "8451 ave",
+#     city: "Renaissance Island",
+#     num_guest: 2,
+#     description: "Room in aparthotel hosted by Esther",
+#     num_beds: 1, 
+#     latitude: 12.47912581657533,
+#     longitude:  -69.98422964261388, 
+#     host_id: demo2.id,
+# )
+
+# listing12 = Listing.create!(
+#     title: "Vistalmar King Suite with Ocean View Balcony",
+#     price: 123,
+#     address: "8451 ave",
+#     city: "Renaissance Island",
+#     num_guest: 2,
+#     description: "Room in aparthotel hosted by Esther",
+#     num_beds: 1, 
+#     latitude: 12.47912581657533,
+#     longitude:  -69.98422964261388, 
+#     host_id: demo2.id,
+# )
+
+# listing13 = Listing.create!(
+#     title: "Vistalmar King Suite with Ocean View Balcony",
+#     price: 123,
+#     address: "8451 ave",
+#     city: "Renaissance Island",
+#     num_guest: 2,
+#     description: "Room in aparthotel hosted by Esther",
+#     num_beds: 1, 
+#     latitude: 12.47912581657533,
+#     longitude:  -69.98422964261388, 
+#     host_id: demo2.id,
+# )
+
+# listing14 = Listing.create!(
+#     title: "Vistalmar King Suite with Ocean View Balcony",
+#     price: 123,
+#     address: "8451 ave",
+#     city: "Renaissance Island",
+#     num_guest: 2,
+#     description: "Room in aparthotel hosted by Esther",
+#     num_beds: 1, 
+#     latitude: 12.47912581657533,
+#     longitude:  -69.98422964261388, 
+#     host_id: demo2.id,
+# )
+
 
 
 
@@ -181,6 +233,21 @@ file7 = URI.open('https://water-seeds.s3.amazonaws.com/listing7.jpg')
 file8 = URI.open('https://water-seeds.s3.amazonaws.com/listing8.jpg')
 file9 = URI.open('https://water-seeds.s3.amazonaws.com/listing9.jpg')
 file10 = URI.open('https://water-seeds.s3.amazonaws.com/listing10.jpeg')
+# file11 = URI.open('https://water-seeds.s3.amazonaws.com/listing11.jpg')
+# file12 = URI.open('https://water-seeds.s3.amazonaws.com/listing12.jpg')
+# file13 = URI.open('https://water-seeds.s3.amazonaws.com/listing13.jpg')
+# file14 = URI.open('https://water-seeds.s3.amazonaws.com/listing14.jpg')
+# file15 = URI.open('https://water-seeds.s3.amazonaws.com/listing15.jpeg')
+# file16 = URI.open('https://water-seeds.s3.amazonaws.com/listing16.jpg')
+# file17 = URI.open('https://water-seeds.s3.amazonaws.com/listing17.jpg')
+# file18 = URI.open('https://water-seeds.s3.amazonaws.com/listing18.jpeg')
+# file19 = URI.open('https://water-seeds.s3.amazonaws.com/listing19.jpg')
+# file20 = URI.open('https://water-seeds.s3.amazonaws.com/listing20.jpg')
+# file21 = URI.open('https://water-seeds.s3.amazonaws.com/listing21.jpg')
+# file22 = URI.open('https://water-seeds.s3.amazonaws.com/listing22.jpg')
+# file23 = URI.open('https://water-seeds.s3.amazonaws.com/listing2.jpg')
+
+
 
 
 listing1.photo.attach(io: file1, filename: 'listing1')
