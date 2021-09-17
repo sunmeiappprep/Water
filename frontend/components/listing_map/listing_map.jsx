@@ -24,7 +24,20 @@ class ListingMap extends Component {
   }
 
   render() {
-    const {listings} = this.props
+    // console.log(this.props)
+    // debugger
+    
+    // let lat = ""
+    // let long = ""
+    const {listings,place} = this.props
+    // console.log(Object.values(place.latitude))
+    // if (place.latitude){
+    //   lat = place.latitude
+    // }
+    // if (place.longitude){
+    //   long = place.longitude
+    // }
+  
     
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>

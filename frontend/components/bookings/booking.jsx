@@ -56,7 +56,7 @@ class Booking extends React.Component {
             <div className="bookingpage">           
                 <Nav/>
 
-                <h1>This is Bookings</h1>              
+                <h1 className='bookingpagetxt'>This is Bookings</h1>              
                 <ul className="list-indexes">
                 {   
                     reduceBook.map((booking, i) => (     

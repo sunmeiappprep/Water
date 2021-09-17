@@ -31,16 +31,33 @@ class ListingsIndex extends React.Component {
         //         }
         //     }
         // }
-        // console.log(location.filtercity)
-        const realcity = []
-        // const realcity = location.filtercity
-        if (location.filtercity){
-            const realcity = location.filtercity
+        let city = []
+        if(location.filtercity){
+            city = (Object.values(location.filtercity))
+            
         }
-        const real = realcity(Object.values(realcity)[0])  
-        console.log(real)  
+        // console.log(city[0])
+        let listing2 = []
+        if (city != undefined)
+        {
+            for (let x = 0; x < this.props.listings.length; x++){              
+                if (this.props.listings[x]["city"] === city[0]){
+                    // console.log("asd")
+                    // console.log(this.props.listings[x].city)
+                    listing2.push(this.props.listings[x])
+                }
+            }            
+        }
+
+        if (listing2.length === 0){
+            for (let x = 0; x < this.props.listings.length; x++){            
+                    listing2.push(this.props.listings[x])
+            }            
+        }
         
-        // return null;
+        // console.log(listing2)
+        // console.log(city)
+        
         return(            
             <div className="listings-index-box">
                 <div className='fixedNav'>
@@ -53,7 +70,7 @@ class ListingsIndex extends React.Component {
                     <h1 className="every-listing">Every Listings</h1>
                             <ul className="list-indexes">
                                 {   
-                                    listings.map((listing, i) => (
+                                    listing2.map((listing, i) => (
                                     <Link key ={i} to={`/listings/${listing.id}`} > 
                                     <ListingIndexItem listing= {listing}  key={listing.id}/>
                                     </Link>
@@ -62,7 +79,7 @@ class ListingsIndex extends React.Component {
                             </ul>   
                     </div>                 
                 <div className='index-right'>
-                    <ListingMapContainer/>
+                    <ListingMapContainer place={listing2[listing2.length-1]}/>
                 </div>      
                 </div>               
                 

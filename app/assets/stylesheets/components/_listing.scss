@@ -19,7 +19,7 @@
 }
 .listingpage{
   display:flex;
-  background-color: slategrey;
+  // background-color: slategrey;
 }
 
 .leftside{
@@ -50,7 +50,7 @@
 
 .index-listing-con{
   // border-color: aqua;
-  background-color: crimson;
+  // background-color: crimson;
   display: flex;
   // align-items: center;
   // flex-direction: row;
@@ -63,7 +63,7 @@
 // }
 
 .index-left{  
-  background-color: darkcyan;
+  // background-color: darkcyan;
   // display: flex;
   max-width: 500px;
   // flex: 1;
@@ -154,6 +154,13 @@
 
   
 }
+.bookingpage1{
+  background-color: aqua;
+  padding: 10px;
+  margin:10px;
+  border-radius: 25px;
+}
+
 
 .bookingpagetxt{
   font-family: 'Montserrat', sans-serif;

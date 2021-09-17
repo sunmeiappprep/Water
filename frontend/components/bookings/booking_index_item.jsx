@@ -23,11 +23,14 @@ class BookingIndexItem extends React.Component {
         // console.log(onelisting)
     return(
         <div className="bookingpage">
-            <h1 className="bookingpagetxt">You are checking in on {booking.check_in}</h1>
-            <h1 className="bookingpagetxt">You are checking out on {booking.check_out}</h1>
-            <h1 className="bookingpagetxt">Visiting {onelisting.title}</h1>
-            <h1 className="bookingpagetxt">In {onelisting.city}</h1>
-            <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
+            <div className="bookingpage1">
+                <h1 className="bookingpagetxt">You are checking in on {booking.check_in}</h1>
+                <h1 className="bookingpagetxt">You are checking out on {booking.check_out}</h1>
+                <h1 className="bookingpagetxt">Visiting {onelisting.title}</h1>
+                <h1 className="bookingpagetxt">In {onelisting.city}</h1>
+                <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
+            </div>
+           
             {/* <button className="delete-photo" onClick={this.handleDelete}>Delete Photo</button>  */}
 
             {/* <div className="listing-picture"> */}

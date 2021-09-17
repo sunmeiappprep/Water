@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class Card extends React.Component {
 
     render() {
-        console.log("asd")
+        // console.log("asd")
         const text = `${this.props.name} \n` ;
         const text2 = `${this.props.drive} Hour Drive`
         const filtercity = `${this.props.name}`
