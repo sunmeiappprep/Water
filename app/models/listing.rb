@@ -29,11 +29,37 @@ class Listing < ApplicationRecord
     foreign_key: :listing_id,
     class_name: :Review
 
-    has_many :booked,
+    has_many :bookings,
     primary_key: :id,
     foreign_key: :listing_id,
     class_name: :Booking
 
     has_one_attached :photo
     
+    def self.search(searchparams)
+
+        arr = []
+        listings = Listing.all
+        listings.each do |listing|
+            if listing.city.downcase === searchparams.downcase
+                arr.push(listing)
+            end
+        end
+        return arr
+    end
+    
+
+    def self.reviews(listing_id)
+        arr = []
+    
+        reviews = Review.all 
+        reviews.each do |review|
+            if review.listing_id == listing_id.to_i
+                arr.push(review)
+            end
+            
+        end
+        return arr
+     
+      end
 end

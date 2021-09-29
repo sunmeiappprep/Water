@@ -4,14 +4,20 @@ class Api::BookingsController < ApplicationController
     def create 
         @booking = Booking.new(booking_params)        
         if @booking.save! 
-            render :index 
+            render :show 
         else  
             render json: @booking.errors.full_messages, status: 422
         end
     end
 
+    def show 
+        @booking = Booking.find(params[:id])
+        render :show
+    end
+
     def index 
-        @bookings = Booking.all
+        user = current_user
+        @bookings = user.bookings
         if @bookings
             render :index 
         end
@@ -20,7 +26,16 @@ class Api::BookingsController < ApplicationController
     def destroy 
         @booking = Booking.find(params[:id])
         @booking.destroy
-        render :index 
+        render :show 
+    end
+
+    def update         
+        @booking = Booking.find(params[:id])
+        if @booking.update_attributes(booking_params)
+            render :show
+        else
+            render json: ["Booking cannot be changed"], status: 404
+        end
     end
 
 

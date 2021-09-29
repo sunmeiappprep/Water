@@ -25,6 +25,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
+    console.log(this.props)
   }
 
 
@@ -100,6 +101,7 @@ class SessionForm extends React.Component {
             />
           </label>       
             <input className="session-submit" type="submit" value='Sign Up' />     
+            <input className="session-submit" type="submit" value="Demo Login" onClick={this.demoLogin}/>  
           </div>          
         </form>
       </div>

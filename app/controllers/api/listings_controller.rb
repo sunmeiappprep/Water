@@ -24,6 +24,13 @@ class Api::ListingsController < ApplicationController
 
     end
 
+    def search
+        @search = Listing.search(params[:searchparams])
+        if @search
+            render :index
+        end
+    end
+
 
     def destroy
         @listing = Listing.find(params[:id])
