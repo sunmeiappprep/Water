@@ -7,7 +7,6 @@
 #  rating      :integer          not null
 #  reviewer_id :integer          not null
 #  listing_id  :integer          not null
-#  booking_id  :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

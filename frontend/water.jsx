@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './components/store/store';
-
-
+import {fetchListings} from './actions/listing_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -24,6 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    
+    window.fetchListings = fetchListings;
   });
-  

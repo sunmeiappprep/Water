@@ -29,7 +29,7 @@ function App() {
       <Route exact path="/bookings/:bookingId" component={BookingIndexContainer}/>
       <Route path="/listings" component={ListingsIndexContainer} asd="asddd" />
       <Route path="/bookings" component={BookingIndexContainer} />
-
+    
     </Switch>
 
     </div>

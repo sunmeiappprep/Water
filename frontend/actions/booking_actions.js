@@ -31,11 +31,11 @@ export const fetchBooking = bookingId => dispatch => {
     .then(booking => dispatch(receiveOneBooking(booking))))
 }
 
-// export const createBooking = booking => dispatch => {    
-//     return(
-//     BookingUtil.createBooking(booking)
-//     .then(booking => dispatch(receiveOneBooking(booking))))
-// }
+export const createBooking = booking => dispatch => {    
+    return(
+    BookingUtil.createBooking(booking)
+    .then(booking => dispatch(receiveOneBooking(booking))))
+}
 
 export const removeBooking = bookingId => dispatch => {    
     return(
