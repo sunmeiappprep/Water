@@ -1,24 +1,32 @@
-# README
+# WaterBnb
+Live Demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WaterBnb is a clone of AirBnb
 
-Things you may want to cover:
+## Technology
+* Ruby on Rails
+* PostgreSQL
+* Rails Active Storage with Amazon's S3
+* React.js
+* Redux
 
-* Ruby version
+# Core Features
 
-* System dependencies
+* Photos 
+  * Are match to each listing
+* Each listing 
+  * Shows listing info
+  * Shows map belonging to that listing
+* My booking
+  * Can delete a pre-made booking
+  * Booking can be linked-to listing
+* Filter
+  * Can filter certain city
 
-* Configuration
 
-* Database creation
+# Possible Future Features
+* Search
+* Robust seeding
+* Bookings 
+* Review & Rating
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

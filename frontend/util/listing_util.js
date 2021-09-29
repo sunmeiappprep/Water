@@ -6,6 +6,7 @@ export const fetchListings = ()  => {
 };
 
 export const fetchListing = listingid => {
+    // debugger
     return(
     $.ajax({
         method: "GET",
