@@ -4,11 +4,11 @@ const ListingsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_LISTINGS:          
-        debugger
+        // debugger
 
             return action.listings
         case RECEIVE_LISTING:
-            debugger
+            // debugger
             const oneListing = {[action.listing.id]: action.listing};
             return Object.assign({}, state, oneListing)
         default:

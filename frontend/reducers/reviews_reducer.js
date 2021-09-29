@@ -1,18 +1,18 @@
 import { RECEIVE_REVIEW, RECEIVE_REVIEWS, REMOVE_REVIEW} from '../actions/review_actions';
-debugger
+// debugger
 
 const ReviewsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_REVIEWS:
-            debugger
+            // debugger
             return Object.assign({}, state, action.reviews)
         case RECEIVE_REVIEW:
-            debugger
+            // debugger
 
             return Object.assign({}, state, {[action.review.id]: action.review})
         case REMOVE_REVIEW:
-            debugger
+            // debugger
 
             let nextState = Object.assign({}, state)
             delete nextState[action.reviewId]

@@ -5,9 +5,10 @@ import { fetchListingReviews } from '../../actions/review_actions';
 
 const mSTP = (state, ownProps) => (
     {
+    state: state,
     listing: state.entities.listings[ownProps.match.params.listingid],
     currentUser: state.session.id,
-    reviews: state.entities.reviews[ownProps.match.params.listingid]
+    reviews: Object.values(state.entities.reviews)
     
 });
 

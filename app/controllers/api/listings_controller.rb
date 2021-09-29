@@ -39,6 +39,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def index 
+        # debugger
         @listings = Listing.all
         if @listings
             render :index

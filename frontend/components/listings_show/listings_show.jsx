@@ -9,23 +9,45 @@ import BookingFormContainer from '../bookings/booking_form_container';
 class ListingShow extends React.Component {
     constructor(props){
         super(props);    
-        // debugger
+        this.state = {
+            reviews: [],
+            listings:[],
+
+        }
     }
 
     componentDidMount(){
         // debugger
         
         this.props.fetchListing(this.props.match.params.listingid);  
-        debugger
-        this.props.fetchListingReviews(this.props.match.params.listingid);    
-        debugger
-        console.log(this.props)
+        // debugger
+        this.props.fetchListingReviews(this.props.match.params.listingid).then(() =>
+            this.setState({
+                reviews: this.props.reviews,
+                listings: this.props.listing
+              })
+        );    
+        // console.log(this.state)
+        // debugger
+
+        // this.setState({listings:this.props.listing})
+        // this.setState({reviews:this.props.review})
+        // console.log(state.entities.listings[ownProps.match.params.listingid])
+        console.log(this.state)
+        // console.log(this.state)
+        
     }   
         // fetchListingReviews: listingId => dispatch(fetchListingReviews(listingId)) 
 
     render(){        
         // debugger
-        const { listing } = this.props;        
+        const { listing,reviews } = this.props; 
+        let arr = []
+        if (reviews){
+            reviews.map(review =>{
+                arr.push(review.description)
+            })
+        }       
         if (!listing) return null;           
         return(
             <div className= "listing-show-box">
@@ -63,6 +85,7 @@ class ListingShow extends React.Component {
                     <h3 className="listing-info">{listing.description}</h3>
                     <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
                     <h3 className="listing-info">{listing.price}{"/night"}</h3>   
+                    {arr}
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
                     {/* <BookingFormContainer listingId={listing.id}/> */}
 

@@ -14,12 +14,16 @@ class Api::ReviewsController < ApplicationController
     end
 
     def show 
+        # debugger
         listing = Listing.find(params[:id])
+        # debugger
         @reviews = listing.reviews
-        render :index
+        # debugger
+        render "api/reviews/index"
     end
 
     def index 
+        # debugger
         currentuser = current_user 
         @reviews = currentuser.reviews 
         render :index

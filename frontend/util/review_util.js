@@ -6,7 +6,7 @@ export const fetchUserReviews = () => (
 )
 
 export const fetchListingReviews = (listingId) => {
-    debugger
+    // debugger
     return(
     $.ajax({
         method: 'GET',

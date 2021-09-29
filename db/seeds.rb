@@ -347,6 +347,19 @@ rating:5 ,
 reviewer_id: demo1.id, 
 listing_id: listing3.id)
 
+review4 = Review.create!(
+    description:"Review4",
+    rating:5 ,
+    reviewer_id: demo1.id, 
+    listing_id: listing1.id)
+
+
+review5 = Review.create!(
+    description:"Review5",
+    rating:2 ,
+    reviewer_id: demo1.id, 
+    listing_id: listing1.id)
+
 
 booking1 = Booking.create!(
     check_in: "01/02/2018",

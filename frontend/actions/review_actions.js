@@ -25,7 +25,7 @@ export const fetchUserReviews = () => dispatch => (
 )
 
 export const fetchListingReviews = listingId => dispatch => {
-    debugger
+    // debugger
     return (
     
     ReviewUtils.fetchListingReviews(listingId)
