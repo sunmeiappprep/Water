@@ -6,7 +6,8 @@ createReview
 const mSTP = (state, ownProps) => (
     {
     state: state,
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    users:Object.values(state.entities.users)
 });
 
 const mDTP = dispatch => ({

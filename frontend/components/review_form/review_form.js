@@ -4,10 +4,10 @@ export class ReviewForm extends Component {
     constructor(props){
         super(props)
         this.state = {
-            description:"Review9",
+            description:"Review21",
             rating:5,
-            reviewer_id:9,
-            listing_id:39
+            reviewer_id:6,
+            listing_id:20
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -19,7 +19,9 @@ export class ReviewForm extends Component {
 
 
     render() {
-        console.log(this.state.description)
+        // const {users} = this.props
+        
+        // console.log(this.state.description)
         return (
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit} className="review-form-container">
