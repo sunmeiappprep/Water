@@ -6,6 +6,7 @@ import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
 import ListingMapSingle from '../listing_map_single/listing_map_single_container';
 import BookingFormContainer from '../bookings/booking_form_container';
+import ReviewFormContainer from '../review_form/review_form_container';
 class ListingShow extends React.Component {
     constructor(props){
         super(props);    
@@ -27,20 +28,12 @@ class ListingShow extends React.Component {
                 listings: this.props.listing
               })
         );    
-        // console.log(this.state)
-        // debugger
-
-        // this.setState({listings:this.props.listing})
-        // this.setState({reviews:this.props.review})
-        // console.log(state.entities.listings[ownProps.match.params.listingid])
+     
         console.log(this.state)
-        // console.log(this.state)
         
     }   
-        // fetchListingReviews: listingId => dispatch(fetchListingReviews(listingId)) 
 
     render(){        
-        // debugger
         const { listing,reviews } = this.props; 
         let arr = []
         if (reviews){
@@ -86,6 +79,7 @@ class ListingShow extends React.Component {
                     <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
                     <h3 className="listing-info">{listing.price}{"/night"}</h3>   
                     {arr}
+                    <ReviewFormContainer/>
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
                     {/* <BookingFormContainer listingId={listing.id}/> */}
 

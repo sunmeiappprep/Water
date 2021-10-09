@@ -3,6 +3,8 @@ import * as ReviewUtils from '../util/review_util'
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
+export const REVIEW_ERRORS = "REVIEW_ERRORS";
+
 
 const receiveReviews = reviews => ({
     type: RECEIVE_REVIEWS,
@@ -17,6 +19,11 @@ const receiveReview = review => ({
 const removeReview = reviewId => ({
     type: REMOVE_REVIEW,
     reviewId
+})
+
+const reviewErrors = errors => ({
+    type: REVIEW_ERRORS,
+    errors
 })
 
 export const fetchUserReviews = () => dispatch => (
@@ -41,13 +48,13 @@ export const createReview = review => dispatch => {
     return(
     ReviewUtils.createReview(review)
     .then(review => dispatch(receiveReview(review)), 
-    err => (dispatch(receiveReviewErrors(err.responseJSON)))))
+    err => (dispatch(reviewErrors(err.responseJSON)))))
 }
 
 export const updateReview = review => dispatch => (
     ReviewUtils.updateReview(review)
     .then(review => dispatch(receiveReview(review)),
-    err => (dispatch(receiveReviewErrors(err.responseJSON))))
+    err => (dispatch(reviewErrors(err.responseJSON))))
 )
 
 export const deleteReview = reviewId => dispatch => (
