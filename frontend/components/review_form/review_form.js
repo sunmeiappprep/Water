@@ -6,8 +6,8 @@ export class ReviewForm extends Component {
         this.state = {
             description:"Review21",
             rating:5,
-            reviewer_id:6,
-            listing_id:20
+            reviewer_id:props.user,
+            listing_id:props.listing
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -15,18 +15,29 @@ export class ReviewForm extends Component {
     handleSubmit(){
         const newReview = this.state
         this.props.createReview(newReview)
+        
     }
+
+    // componentDidUpdate(){
+
+    // }
 
 
     render() {
         // const {users} = this.props
-        
+        // if (users){
+        //     this.setState({reviewer_id:users})
+        // }
+        // if (listing){
+        //     this.setState({listing_id:listing})
+        // }
+        // console.log("asd"+ users)
         // console.log(this.state.description)
         return (
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit} className="review-form-container">
                     <label>Description:
-                        <input type="text"
+                        <input type="textarea"
                         value={this.state.description}
                         onChange={(e)=> this.setState({description:e.target.value})}
                         className="description-input"
