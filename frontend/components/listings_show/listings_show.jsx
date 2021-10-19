@@ -29,18 +29,34 @@ class ListingShow extends React.Component {
               })
         );    
      
-        console.log(this.state)
         
     }   
 
     render(){        
-        const { listing,reviews } = this.props; 
+        let reviewerName = ""
+        let reviewerId = 0
+        const { listing,reviews,users } = this.props; 
+        if (users){
+            reviewerName = users[0].username
+            reviewerId = users[0].id
+        }
+        if (reviewerId) console.log(reviewerId)
+   
+
         let arr = []
         if (reviews){
             reviews.map(review =>{
                 arr.push(review.description)
+                arr.push(review.reviewer.first_name)
+                // arr.push(review.rating)
+                let createdMonth = review.created_at.slice(0,8) 
+                arr.push(createdMonth)
+
+
             })
         }       
+
+        
         if (!listing) return null;           
         return(
             <div className= "listing-show-box">
