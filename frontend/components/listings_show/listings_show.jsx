@@ -7,6 +7,7 @@ import SearchContainer  from '../search/search_container';
 import ListingMapSingle from '../listing_map_single/listing_map_single_container';
 import BookingFormContainer from '../bookings/booking_form_container';
 import ReviewFormContainer from '../review_form/review_form_container';
+import DeleteEditContainer from '../deleteEdit/deleteEditContainer';
 class ListingShow extends React.Component {
     constructor(props){
         super(props);    
@@ -15,6 +16,8 @@ class ListingShow extends React.Component {
             listings:[],
 
         }
+        this.handleDelete = this.handleDelete.bind(this)
+
     }
 
     componentDidMount(){
@@ -39,6 +42,9 @@ class ListingShow extends React.Component {
       
     //   }
 
+    handleDelete(reviewId){
+        this.props.deleteReview(reviewId)
+    }
 
 
     render(){        
@@ -60,9 +66,17 @@ class ListingShow extends React.Component {
                 // arr.push(review.rating)
                 let createdMonth = review.created_at.slice(0,8) 
                 arr.push(createdMonth)
+                arr.push(<DeleteEditContainer deleteId={review.id}/>)
+// {                <button>
+//   Activate Lasers
+// </button>}
+//                 {<DeleteEditContainer/>}
+                
 
 
-            })
+            }
+            
+            )
         }       
 
         
@@ -113,6 +127,7 @@ class ListingShow extends React.Component {
 
                 </div>               
             </div>
+            {<DeleteEditContainer/>}
                 
             </div>
         )
