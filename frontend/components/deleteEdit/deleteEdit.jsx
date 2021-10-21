@@ -20,11 +20,13 @@ class DeleteEdit extends React.Component {
 
 
     render(){        
-        
+        let reviewid = this.props.deleteId
+        let deletethis = this.handleDelete(reviewid)
         return(
-            <button onClick={this.handleDelete(this.props.deleteId)}>
-            {this.props.deleteId}
-          </button>
+            <form onSubmit={deletethis}>
+            <button type="submit">{this.props.deleteId}</button>
+            </form>
+    
         )
     }
 }
