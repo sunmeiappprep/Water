@@ -12,9 +12,11 @@ export class ReviewForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(){
+    handleSubmit(e){
+        e.preventDefault()
         const newReview = this.state
         this.props.createReview(newReview)
+        window.location.reload()
         
     }
 

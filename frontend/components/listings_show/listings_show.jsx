@@ -60,13 +60,20 @@ class ListingShow extends React.Component {
         
 
         let arr = []
-        if (reviews){
+        if (reviews && users[0]){
+            reviews.map(review =>{
+                arr.push(<ReviewShowContainer review={review} user={users[0].id}/>)
+            }
+            
+            )
+        }
+        else if (reviews){
             reviews.map(review =>{
                 arr.push(<ReviewShowContainer review={review}/>)
             }
             
             )
-        }       
+        }
 
         
         if (!listing) return null;           
