@@ -50,7 +50,7 @@ export class ReviewForm extends Component {
                         className="rating-input"
                     />
                     </label>
-                    <label>Reviewer_id:
+                    {/* <label>Reviewer_id:
                         <input type="number"
                         value={this.state.reviewer_id}
                         onChange={(e)=> this.setState({reviewer_id:e.target.value})}
@@ -63,7 +63,7 @@ export class ReviewForm extends Component {
                         onChange={(e)=> this.setState({listing_id:e.target.value})}
                         className="listing_id-input"
                     />
-                    </label>
+                    </label> */}
                     <input className="review-submit" type="submit" value='Create Review' />
                 </form>
             </div>
