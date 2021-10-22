@@ -28,20 +28,29 @@ class ListingShow extends React.Component {
                 listings: this.props.listing
               })
         );    
-     
+        // if (this.props !== prevProps) {
+        //     window.location.reload(false);
+        // }
         
     }   
+
+    // componentDidUpdate(prevProps) {
+    //     // Typical usage (don't forget to compare props):
+      
+    //   }
+
+
 
     render(){        
         let reviewerName = ""
         let reviewerId = 0
         const { listing,reviews,users } = this.props; 
-        if (users){
+        if (users[0]){
             reviewerName = users[0].username
             reviewerId = users[0].id
         }
         if (reviewerId) console.log(reviewerId)
-   
+        
 
         let arr = []
         if (reviews){
@@ -58,6 +67,7 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
+        console.log(listing.id)
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">
@@ -95,7 +105,9 @@ class ListingShow extends React.Component {
                     <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
                     <h3 className="listing-info">{listing.price}{"/night"}</h3>   
                     {arr}
-                    <ReviewFormContainer/>
+                    {
+                    (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null
+                    }
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
                     {/* <BookingFormContainer listingId={listing.id}/> */}
 
