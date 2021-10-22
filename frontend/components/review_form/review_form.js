@@ -12,11 +12,15 @@ export class ReviewForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(){
+    handleSubmit(e){
+        e.preventDefault()
         const newReview = this.state
         this.props.createReview(newReview)
+        window.location.reload()
         
     }
+
+ 
 
     // componentDidUpdate(){
 
@@ -50,6 +54,7 @@ export class ReviewForm extends Component {
                         className="rating-input"
                     />
                     </label>
+
                     {/* <label>Reviewer_id:
                         <input type="number"
                         value={this.state.reviewer_id}
@@ -66,6 +71,7 @@ export class ReviewForm extends Component {
                     </label> */}
                     <input className="review-submit" type="submit" value='Create Review' />
                 </form>
+
             </div>
 
 

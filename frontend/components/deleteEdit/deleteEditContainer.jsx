@@ -1,16 +1,11 @@
 import { connect } from 'react-redux';
-import ListingShow from './listings_show';
+import DeleteEdit from './deleteEdit';
 import { fetchListing } from '../../actions/listing_actions';
 import { fetchListingReviews,deleteReview } from '../../actions/review_actions';
 
 
 const mSTP = (state, ownProps) => (
     {
-    state: state,
-    listing: state.entities.listings[ownProps.match.params.listingid],
-    currentUser: state.session.id,
-    reviews: Object.values(state.entities.reviews),
-    users:Object.values(state.entities.users)
     
 });
 
@@ -21,4 +16,4 @@ const mDTP = dispatch => ({
 
 })
 
-export default connect(mSTP, mDTP)(ListingShow);
+export default connect(mSTP, mDTP)(DeleteEdit);

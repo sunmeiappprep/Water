@@ -7,6 +7,8 @@ import SearchContainer  from '../search/search_container';
 import ListingMapSingle from '../listing_map_single/listing_map_single_container';
 import BookingFormContainer from '../bookings/booking_form_container';
 import ReviewFormContainer from '../review_form/review_form_container';
+import DeleteEditContainer from '../deleteEdit/deleteEditContainer';
+import ReviewShowContainer from '../reviewShow/reviewShowContainer';
 class ListingShow extends React.Component {
     constructor(props){
         super(props);    
@@ -15,6 +17,8 @@ class ListingShow extends React.Component {
             listings:[],
 
         }
+        this.handleDelete = this.handleDelete.bind(this)
+
     }
 
     componentDidMount(){
@@ -39,6 +43,9 @@ class ListingShow extends React.Component {
       
     //   }
 
+    handleDelete(reviewId){
+        this.props.deleteReview(reviewId)
+    }
 
 
     render(){        
@@ -53,17 +60,20 @@ class ListingShow extends React.Component {
         
 
         let arr = []
-        if (reviews){
+        if (reviews && users[0]){
             reviews.map(review =>{
-                arr.push(review.description)
-                arr.push(review.reviewer.first_name)
-                // arr.push(review.rating)
-                let createdMonth = review.created_at.slice(0,8) 
-                arr.push(createdMonth)
-
-
-            })
-        }       
+                arr.push(<ReviewShowContainer review={review} user={users[0].id}/>)
+            }
+            
+            )
+        }
+        else if (reviews){
+            reviews.map(review =>{
+                arr.push(<ReviewShowContainer review={review}/>)
+            }
+            
+            )
+        }
 
         
         if (!listing) return null;           
@@ -104,15 +114,26 @@ class ListingShow extends React.Component {
                     <h3 className="listing-info">{listing.description}</h3>
                     <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
                     <h3 className="listing-info">{listing.price}{"/night"}</h3>   
+                    {/* if (reviews){ */}
+                    {/* {
+                        reviews.map(review =>{
+                            <ReviewShowContainer review={review}/>
+                                }
+                        
+                        )
+                    }    */}
                     {arr}
+                    
+                  
+
                     {
                     (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null
                     }
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
                     {/* <BookingFormContainer listingId={listing.id}/> */}
-
                 </div>               
             </div>
+            {/* {<DeleteEditContainer/>} */}
                 
             </div>
         )

@@ -39,10 +39,6 @@ export const fetchListingReviews = listingId => dispatch => {
         .then(reviews => dispatch(receiveReviews(reviews)))
 )}
 
-export const fetchSingleReview = reviewId => dispatch => (
-    ReviewUtils.fetchSingleReview(reviewId)
-    .then(review => dispatch(receiveReview(review)))
-)
 
 export const createReview = review => dispatch => {
     return(
