@@ -14,6 +14,7 @@ export const fetchListingReviews = (listingId) => {
     }))
 }
 
+
 export const createReview = review => (
     $.ajax({
         method: "POST",
