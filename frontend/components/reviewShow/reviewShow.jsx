@@ -18,7 +18,7 @@ class ReviewShow extends React.Component {
     handleDelete(e){
         e.preventDefault()
         this.props.deleteReview(e.target.value)
-        window.location.reload()
+        // window.location.reload()
     }
 
     // testing(){

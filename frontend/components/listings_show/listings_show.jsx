@@ -38,10 +38,16 @@ class ListingShow extends React.Component {
         
     }   
 
-    // componentDidUpdate(prevProps) {
-    //     // Typical usage (don't forget to compare props):
-      
-    //   }
+    componentDidUpdate(prevProps, prevState){
+        
+       
+        if (prevState.reviews.length !== this.state.reviews.length){
+            this.setState({
+                reviews: this.state.reviews
+            })
+        } 
+
+    }
 
     handleDelete(reviewId){
         this.props.deleteReview(reviewId)
