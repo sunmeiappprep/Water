@@ -35,20 +35,19 @@ class Api::ReviewsController < ApplicationController
         render :show
     end
 
-    def update         
-        @review = Review.find(params[:id])      
-        if @review.update_attributes(review_params)
-            render :show         
+    def update
+        @review = Review.find_by(id: params[:id])
+        p @review
+        if @review.update(review_params)
+          render :show
         else
-            render json: ["Could not update review"], status: 404
+          render json: @review.errors.full_messages, status: 401
         end
-    end
-
-    
+      end
 
 
     def review_params
-        params.require(:review).permit(:description, :rating, :reviewer_id, :listing_id,)
+        params.require(:review).permit(:id,:description, :rating, :reviewer_id, :listing_id,)
     end
 
 end
