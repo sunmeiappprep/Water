@@ -41,12 +41,15 @@ class ListingShow extends React.Component {
     componentDidUpdate(prevProps, prevState){
         
        
-        if (prevState.reviews.length !== this.state.reviews.length){
+        if (prevProps.reviews.length !== this.props.reviews.length){
             this.setState({
                 reviews: this.state.reviews
             })
         } 
-
+        // else if (prevProps.reviews.length !== this.props.reviews.length) {
+        //     this.props.fetchListingReviews(this.props.listingId)
+        //         .then(reviews => this.setState({ reviews }))
+        // }
     }
 
     handleDelete(reviewId){
@@ -66,15 +69,31 @@ class ListingShow extends React.Component {
         
 
         let arr = []
-        if (reviews && users[0]){
-            reviews.map(review =>{
+        console.log(reviews)
+        let nondupid = []
+        let newarr = []
+        for (let x = reviews.length-1 ; x > 0; x--){
+            // console.log(reviews[x])
+            if (nondupid.includes(reviews[x].id)){
+                
+            }else{
+                nondupid.push(reviews[x].id)
+                newarr.push(reviews[x])
+            }
+        }
+        console.log(newarr)
+        if (newarr && users[0]){
+            newarr.map(review =>{
+                // console.log("asd")
                 arr.push(<ReviewShowContainer review={review} user={users[0].id}/>)
             }
             
             )
         }
-        else if (reviews){
-            reviews.map(review =>{
+        else if (newarr){
+            newarr.map(review =>{
+                // console.log("asd")
+
                 arr.push(<ReviewShowContainer review={review}/>)
             }
             

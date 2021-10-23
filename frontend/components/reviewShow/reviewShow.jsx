@@ -3,6 +3,7 @@ class ReviewShow extends React.Component {
     constructor(props){
         super(props);    
         this.state = {
+            reviews:[],
             id:"",
             description:"",
             rating:null,
@@ -14,6 +15,18 @@ class ReviewShow extends React.Component {
     }
 
 
+
+
+    componentDidUpdate(prevProps, prevState){
+        
+       
+        if (prevState.reviews.length !== this.state.reviews.length){
+            this.setState({
+                reviews: this.state.reviews
+            })
+        } 
+
+    }
 
     handleDelete(e){
         e.preventDefault()
@@ -46,7 +59,7 @@ class ReviewShow extends React.Component {
             reviewer_id: arr[4],
 
         }
-        window.location.reload()
+        // window.location.reload()
 
         console.log(review)
         // console.log(arr[0])
