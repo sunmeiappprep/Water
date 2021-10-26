@@ -12,7 +12,8 @@ class BookingIndexItem extends React.Component {
         
         e.preventDefault(e);
         removeBooking(this.props.booking.id)       
-          this.props.history.push("/")
+        // window.location.reload()
+        
       }
 
     render(){

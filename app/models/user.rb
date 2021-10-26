@@ -31,7 +31,7 @@ class User < ApplicationRecord
   foreign_key: :reviewer_id,
   class_name: :Review
 
-  has_many :booking,
+  has_many :bookings,
   primary_key: :id,
   foreign_key: :renter_id,
   class_name: :Booking

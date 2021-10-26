@@ -3,12 +3,13 @@ class ReviewShow extends React.Component {
     constructor(props){
         super(props);    
         this.state = {
-            reviews:[],
+            reviews:this.props.review,
             id:"",
             description:"",
             rating:null,
             listing_id:null,
             reviewer_id:null,
+            deleted:false,
         }
         this.handleDelete = this.handleDelete.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
@@ -20,9 +21,9 @@ class ReviewShow extends React.Component {
     componentDidUpdate(prevProps, prevState){
         
        
-        if (prevState.reviews.length !== this.state.reviews.length){
+        if (prevState.deleted === true){
             this.setState({
-                reviews: this.state.reviews
+                deleted: false
             })
         } 
 
@@ -31,7 +32,12 @@ class ReviewShow extends React.Component {
     handleDelete(e){
         e.preventDefault()
         this.props.deleteReview(e.target.value)
-        // window.location.reload()
+        // console.log(this.props.cdp())
+        // this.props.cdp()
+        // this.setState({
+        //     deleted: true
+        // })
+        window.location.reload()
     }
 
     // testing(){
@@ -89,6 +95,9 @@ class ReviewShow extends React.Component {
 
     render(){        
         const {review,user} = this.props
+        // console.log(this.state)
+        // console.log(this.props.cdp)  
+        // console.log(review)
         // console.log(this.props)
         return(
             <div>

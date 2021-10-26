@@ -8,30 +8,34 @@ export default class BookingForm extends Component {
     constructor(props){
         super(props)
 
-        this.handleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this)
+        
     }
 
-    handleClick() {
-        console.log(this.props)
-        const booking = {
+    handleClick(e) {
+        e.preventDefault()
+        const booking2 = {
             check_in:"01/02/2000",
             check_out:"01/02/2001",
-            renter_id:this.currentUser,   
-            listing_id:this.listingId,
+            renter_id:this.props.currentUser,   
+            listing_id:this.props.listingId,
 
+            
         }        
-        this.props.createBooking(booking);
+        console.log(booking2)
+
+        this.props.createBooking(booking2);
         
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
-                {console.log(this.props)}
             
                     <label>
                     Name:
-                    <button onSubmit={this.handleClick}>asd</button>
+                    <button onClick={this.handleClick}>asd</button>
 
                     </label>
          
