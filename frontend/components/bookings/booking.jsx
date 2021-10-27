@@ -22,29 +22,26 @@ class Booking extends React.Component {
         console.log(this.state.bookings)
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        
-        if (prevState.bookings.length !== this.state.bookings.length) {
-            this.setState({ bookings:this.props.bookings })
-        }
-        if (prevProps.filter !== this.props.filter) {
-            this.props.fetchBookings()
-                .then(bookings => this.setState({ bookings }))
-                
-        }
 
-    }
 
     handleDelete(e){
         
         const {bookings,removeBooking} = this.props;
        
-        e.preventDefault(e);
+        e.preventDefault();
         
         removeBooking(key)       
-          this.props.history.push("/")
+        // window.location.reload()
       }
 
+    componentDidUpdate(prevState) {
+    
+        if (this.state.bookings.bookings.length == undefined || prevState.bookings.length !== this.state.bookings.bookings.length) {
+            this.props.fetchBookings().then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
+            
+                .then(bookings => this.setState({ bookings }))
+    }
+}
     // reduceBooking(bookings,id){
     //     let booking2 = []
     //     if(bookings[0] && id){
