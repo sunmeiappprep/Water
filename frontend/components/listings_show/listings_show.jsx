@@ -10,7 +10,7 @@ import ReviewFormContainer from '../review_form/review_form_container';
 import DeleteEditContainer from '../deleteEdit/deleteEditContainer';
 import ReviewShowContainer from '../reviewShow/reviewShowContainer';
 import React, { useState } from "react";
-// import BookingDate from '../bookings/BookingDate
+import BookingDate from '../bookings/BookingDate';
 
 // import "react-datepicker/dist/react-datepicker.css";
 class ListingShow extends React.Component {
@@ -160,7 +160,7 @@ class ListingShow extends React.Component {
                     }
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
                     <BookingFormContainer listingId={listing.id}/>
-                    {/* <BookingDate/> */}
+                    <BookingDate/>
                 </div>               
             </div>
             {/* {<DeleteEditContainer/>} */}
