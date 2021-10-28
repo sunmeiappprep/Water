@@ -30,16 +30,16 @@ class Booking extends React.Component {
        
         e.preventDefault();
         
-        removeBooking(key)       
-        // window.location.reload()
+        removeBooking(key)
       }
 
-    componentDidUpdate(prevState) {
+    componentDidUpdate(pP,prevState) {
     
-        if (this.state.bookings.bookings.length == undefined || prevState.bookings.length !== this.state.bookings.bookings.length) {
-            this.props.fetchBookings().then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
-            
+        if (prevState.bookings.length !== this.state.bookings.length) {
+            this.props.fetchBookings()
+                .then(console.log(prevState))
                 .then(bookings => this.setState({ bookings }))
+                .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
     }
 }
     // reduceBooking(bookings,id){

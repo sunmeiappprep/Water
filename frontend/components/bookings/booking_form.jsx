@@ -7,16 +7,20 @@ export default class BookingForm extends Component {
 // #  listing_id :integer          not null
     constructor(props){
         super(props)
-
+        this.state = {
+            in:'02/02/2000',
+            out:'02/12/2001'
+        }
         this.handleClick = this.handleClick.bind(this)
         
     }
 
     handleClick(e) {
         e.preventDefault()
+        console.log(e)
         const booking2 = {
-            check_in:"01/02/2000",
-            check_out:"01/02/2001",
+            check_in:this.state.in,
+            check_out:this.state.out,   
             renter_id:this.props.currentUser,   
             listing_id:this.props.listingId,
 
@@ -30,12 +34,28 @@ export default class BookingForm extends Component {
 
     render() {
         console.log(this.props)
+        // const ci = '02/02/2000'
+        // const co = "09/02/2001"
+        // this.setState
         return (
             <div>
-            
+                <label>Check In:
+                    <input type="text"
+                    value={this.state.in}
+                    onChange={(e)=> this.setState({in:e.target.value})}
+                    className="check-in"
+                />
+                </label>
+                <label>Check Out:
+                    <input type="text"
+                    value={this.state.out}
+                    onChange={(e)=> this.setState({out:e.target.value})}
+                    className="check-out"
+                />
+                </label>
                     <label>
-                    Name:
-                    <button onClick={this.handleClick}>asd</button>
+                    Submit
+                    <button  onClick={this.handleClick}>asd</button>
 
                     </label>
          

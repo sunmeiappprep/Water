@@ -4,7 +4,8 @@ class BookingIndexItem extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            bookings    :"",
+            booking :"",
+            deleted : false
         }
         this.handleDelete = this.handleDelete.bind(this);
     }
@@ -19,11 +20,11 @@ class BookingIndexItem extends React.Component {
           });
       }
 
-    componentDidUpdate(prevState){
-        if (this.state.booking !== prevState.booking && this.state.booking !== false){
-          
-        }
-    }
+    // componentDidUpdate(pp,prevState){
+    //    if (this.state.deleted === true){
+            
+    //    }
+    // }
 
    
     handleDelete(e){
@@ -31,7 +32,11 @@ class BookingIndexItem extends React.Component {
         const {bookings,removeBooking} = this.props;
         
         e.preventDefault();
+        this.setState({booking:""})
         removeBooking(this.props.booking.id)
+        window.location.reload()
+        
+        
 
         
         
