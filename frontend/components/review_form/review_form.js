@@ -16,7 +16,7 @@ export class ReviewForm extends Component {
         e.preventDefault()
         const newReview = this.state
         this.props.createReview(newReview)
-        window.location.reload()
+        // window.location.reload()
         
     }
 

@@ -3,6 +3,13 @@ class ReviewShow extends React.Component {
     constructor(props){
         super(props);    
         this.state = {
+            reviews:this.props.review,
+            id:"",
+            description:"",
+            rating:null,
+            listing_id:null,
+            reviewer_id:null,
+            deleted:false,
         }
         this.handleDelete = this.handleDelete.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
@@ -10,24 +17,76 @@ class ReviewShow extends React.Component {
 
 
 
+
+    componentDidUpdate(prevProps, prevState){
+        
+       
+        if (prevState.deleted === true){
+            this.setState({
+                deleted: false
+            })
+        } 
+
+    }
+
     handleDelete(e){
         e.preventDefault()
         this.props.deleteReview(e.target.value)
+        // console.log(this.props.cdp())
+        // this.props.cdp()
+        // this.setState({
+        //     deleted: true
+        // })
         window.location.reload()
     }
 
-    testing(){
-        console.log("asd")
-    }
+    // testing(){
+    //     console.log("asd")
+    // }
 
     handleEdit(e){
         e.preventDefault()
         // console.log(this.state)
-        
-        this.setState({reviews:"asd"})  
-        console.log(e.target.id)
-        console.log(e.target.description)
-        console.log(e.target.rating)
+        let arr = e.target.id.split(",")
+   
+        // this.setState({id:arr[0]}) 
+        // this.setState({description:arr[1]+"asd"})  
+
+        // this.setState({rating:arr[2]})  
+
+        // this.setState({listing_id:arr[3]})  
+
+        // this.setState({reviewer_id:arr[4]})     
+        const review = {
+            id: arr[0],
+            rating: arr[2],
+            description: arr[1]+"asd",
+            listing_id: arr[3],
+            reviewer_id: arr[4],
+
+        }
+        // window.location.reload()
+
+        console.log(review)
+        // console.log(arr[0])
+        // console.log(arr[1])
+        // console.log(arr[2])
+        // console.log(arr[3])
+        // console.log(arr[4])
+        this.props.updateReview(review)
+
+        // setTimeout(() => {
+        //     console.log(this.state)
+        // }, 1000);
+
+
+
+        // console.log(e.target.id[2])
+
+        // console.log(e.target.id[3])
+        // console.log(e.target.id[4])
+
+
 
         // this.props.deleteReview(e.target.value)
         // window.location.reload()
@@ -36,6 +95,9 @@ class ReviewShow extends React.Component {
 
     render(){        
         const {review,user} = this.props
+        // console.log(this.state)
+        // console.log(this.props.cdp)  
+        // console.log(review)
         // console.log(this.props)
         return(
             <div>
@@ -52,16 +114,17 @@ class ReviewShow extends React.Component {
                     :
                     null
                 }
-                    {/* <button className="EditReview" value={review.id} onClick={this.handleEdit}>Edit</button> */}
+                    <button className="EditReview" id={[review.id,review.description,review.rating,review.listing_id,review.reviewer_id]} onClick={this.handleEdit}>Edit</button>
+                
 
-                {
+                {/* {
                     (review.reviewer.id === user)
                     ?
-                    <button className="EditReview" id={review.description} description={review.description} rating={review.rating} listing={review.listing_id} reviewer_id={review.reviewer_id} onClick={this.handleEdit}>Edit</button>
+                    <button className="EditReview" id={[review.id,review.description,review.rating,review.listing_id,review.reviewer_id]} onClick={this.handleEdit}>Edit</button>
 
                     :
                     null
-                }
+                } */}
 
             </div>
     

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import Modal from '../modal/modal';
 import Logo from '../splash/logo.png'
 import {Link} from 'react-router-dom'
@@ -9,6 +9,10 @@ import BookingFormContainer from '../bookings/booking_form_container';
 import ReviewFormContainer from '../review_form/review_form_container';
 import DeleteEditContainer from '../deleteEdit/deleteEditContainer';
 import ReviewShowContainer from '../reviewShow/reviewShowContainer';
+import React, { useState } from "react";
+import BookingDate from '../bookings/BookingDate';
+
+// import "react-datepicker/dist/react-datepicker.css";
 class ListingShow extends React.Component {
     constructor(props){
         super(props);    
@@ -31,17 +35,26 @@ class ListingShow extends React.Component {
                 reviews: this.props.reviews,
                 listings: this.props.listing
               })
-        );    
+        );      
         // if (this.props !== prevProps) {
         //     window.location.reload(false);
         // }
         
     }   
 
-    // componentDidUpdate(prevProps) {
-    //     // Typical usage (don't forget to compare props):
-      
-    //   }
+    componentDidUpdate(prevProps, prevState){
+        
+       
+        if (prevProps.reviews.length !== this.props.reviews.length){
+            this.setState({
+                reviews: this.state.reviews
+            })
+        } 
+        // else if (prevProps.reviews.length !== this.props.reviews.length) {
+        //     this.props.fetchListingReviews(this.props.listingId)
+        //         .then(reviews => this.setState({ reviews }))
+        // }
+    }
 
     handleDelete(reviewId){
         this.props.deleteReview(reviewId)
@@ -56,20 +69,36 @@ class ListingShow extends React.Component {
             reviewerName = users[0].username
             reviewerId = users[0].id
         }
-        if (reviewerId) console.log(reviewerId)
+        // if (reviewerId) console.log(reviewerId)
         
 
         let arr = []
-        if (reviews && users[0]){
-            reviews.map(review =>{
-                arr.push(<ReviewShowContainer review={review} user={users[0].id}/>)
+        // console.log(reviews)
+        let nondupid = []
+        let newarr = []
+        for (let x = reviews.length-1 ; x >= 0; x--){
+            // console.log(reviews[x])
+            if (nondupid.includes(reviews[x].id)){
+                
+            }else{
+                nondupid.push(reviews[x].id)
+                newarr.push(reviews[x])
+            }
+        }
+        // console.log(newarr)
+        if (newarr && users[0]){
+            newarr.map(review =>{
+                // console.log(newarr)
+                arr.push(<ReviewShowContainer  key={review.id} cdp={this.componentDidUpdate} review={review} user={users[0].id}/>)
             }
             
             )
         }
-        else if (reviews){
-            reviews.map(review =>{
-                arr.push(<ReviewShowContainer review={review}/>)
+        else if (newarr){
+            newarr.map(review =>{
+                // console.log("asd")
+
+                arr.push(<ReviewShowContainer key={review.id} cdp={this.componentDidUpdate}  review={review}/>)
             }
             
             )
@@ -77,7 +106,7 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
-        console.log(listing.id)
+        // console.log(listing.id)
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">
@@ -130,7 +159,8 @@ class ListingShow extends React.Component {
                     (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null
                     }
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
-                    {/* <BookingFormContainer listingId={listing.id}/> */}
+                    <BookingFormContainer listingId={listing.id}/>
+                    <BookingDate/>
                 </div>               
             </div>
             {/* {<DeleteEditContainer/>} */}

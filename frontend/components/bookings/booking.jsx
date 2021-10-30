@@ -10,56 +10,73 @@ import Nav from '../nav/nav';
 class Booking extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            bookings:[],
+        }
         this.handleDelete = this.handleDelete.bind(this);
     }
     
     
     componentDidMount() {        
-        this.props.fetchBookings();
+        this.props.fetchBookings().then(bookings => this.setState({bookings}))
+        console.log(this.state.bookings)
     }
+
+
 
     handleDelete(e){
         
         const {bookings,removeBooking} = this.props;
        
-        e.preventDefault(e);
+        e.preventDefault();
         
-        removeBooking(key)       
-          this.props.history.push("/")
+        removeBooking(key)
       }
 
-    reduceBooking(bookings,id){
-        let booking2 = []
-        for (let x = 0; x < bookings.length; x++){
-            if(bookings[x].renter.id === id){
-                booking2.push(bookings[x])
-            }else{
-            }
-        }
-        return booking2
+    componentDidUpdate(pP,prevState) {
+    
+        if (prevState.bookings.length !== this.state.bookings.length) {
+            this.props.fetchBookings()
+                .then(console.log(prevState))
+                .then(bookings => this.setState({ bookings }))
+                .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
     }
+}
+    // reduceBooking(bookings,id){
+    //     let booking2 = []
+    //     if(bookings[0] && id){
+    //         for (let x = 0; x < bookings.length; x++){
+    //             if(bookings[x].renter.id === id){
+    //                 booking2.push(bookings[x])
+    //             }else{
+    //             }
+    //         }
+    //         return booking2
+    //     }
+     
+    // }
 
     render(){
-        const {bookings,removeBooking,history} = this.props;
+        const {removeBooking,history} = this.props;
         // booking2 = []
         // bookings.each 
-        const currentUserId = this.props.currentUser[0].id
+        // const currentUserId = this.props.currentUser[0].id
 
-        const reduceBook = this.reduceBooking(bookings,currentUserId)
+        // const reduceBook = this.reduceBooking(bookings,currentUserId)
 
-
+        const {bookings} = this.props
         return(            
             <div className="bookingpage">           
-                <Nav/>
+                {/* <Nav/>
 
                 <h1 className='bookingpagetxt'>This is Bookings</h1>              
-                <ul className="list-indexes">
+                <ul className="list-indexes"> */}
                 {   
-                    reduceBook.map((booking, i) => (     
+                    bookings.map((booking, i) => (     
                     
                     // booking.renter_id === currentUserId ?             
                     <Link key ={i} to={`/listings/${booking.listing_id}`}> 
-                    <BookingIndexItem removeBooking={removeBooking} booking= {booking} history={history} key={booking.id} button className="delete-booking" onClick={this.handleDelete} key={booking.id} reduceBook={reduceBook}/>
+                    <BookingIndexItem removeBooking={removeBooking} booking= {booking} history={history} key={booking.id} button className="delete-booking" onClick={this.handleDelete} />
                     </Link > 
                     // <button className="delete-booking" onClick={this.handleDelete}>Delete booking</button> : null
                     
@@ -77,9 +94,10 @@ class Booking extends React.Component {
                     ))
                 } */}
 
-                </ul>
+                {/* </ul> */}
                    
             </div>
+            // <div>Asd</div>
         )
     }
 

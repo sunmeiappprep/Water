@@ -7,31 +7,55 @@ export default class BookingForm extends Component {
 // #  listing_id :integer          not null
     constructor(props){
         super(props)
-
-        this.handleClick.bind(this)
+        this.state = {
+            in:'02/02/2000',
+            out:'02/12/2001'
+        }
+        this.handleClick = this.handleClick.bind(this)
+        
     }
 
-    handleClick() {
-        console.log(this.props)
-        const booking = {
-            check_in:"01/02/2000",
-            check_out:"01/02/2001",
-            renter_id:this.currentUser,   
-            listing_id:this.listingId,
+    handleClick(e) {
+        e.preventDefault()
+        console.log(e)
+        const booking2 = {
+            check_in:this.state.in,
+            check_out:this.state.out,   
+            renter_id:this.props.currentUser,   
+            listing_id:this.props.listingId,
 
+            
         }        
-        this.props.createBooking(booking);
+        console.log(booking2)
+
+        this.props.createBooking(booking2);
         
     }
 
     render() {
+        console.log(this.props)
+        // const ci = '02/02/2000'
+        // const co = "09/02/2001"
+        // this.setState
         return (
             <div>
-                {console.log(this.props)}
-            
+                <label>Check In:
+                    <input type="text"
+                    value={this.state.in}
+                    onChange={(e)=> this.setState({in:e.target.value})}
+                    className="check-in"
+                />
+                </label>
+                <label>Check Out:
+                    <input type="text"
+                    value={this.state.out}
+                    onChange={(e)=> this.setState({out:e.target.value})}
+                    className="check-out"
+                />
+                </label>
                     <label>
-                    Name:
-                    <button onSubmit={this.handleClick}>asd</button>
+                    Submit
+                    <button  onClick={this.handleClick}>asd</button>
 
                     </label>
          

@@ -3,21 +3,54 @@ import React from 'react';
 class BookingIndexItem extends React.Component {   
     constructor(props){
         super(props);
+        this.state = {
+            booking :"",
+            deleted : false
+        }
         this.handleDelete = this.handleDelete.bind(this);
     }
+
+    componentDidMount() {
+        // console.log(this.props.booking)
+        // this.setState({booking:2}), ()=>{
+        //     (console.log(this.state)) 
+        // } 
+        this.setState({ booking: this.props.booking }, () => {
+            // console.log(this.state.booking);
+          });
+      }
+
+    // componentDidUpdate(pp,prevState){
+    //    if (this.state.deleted === true){
+            
+    //    }
+    // }
+
    
     handleDelete(e){
-        
+        console.log(e)
         const {bookings,removeBooking} = this.props;
         
-        e.preventDefault(e);
-        removeBooking(this.props.booking.id)       
-          this.props.history.push("/")
+        e.preventDefault();
+        this.setState({booking:""})
+        removeBooking(this.props.booking.id)
+        window.location.reload()
+        
+        
+
+        
+        
+   
+            
+      
+       
+        
       }
 
     render(){
         const {booking,removeBooking} = this.props;       
         const onelisting = booking.listing
+        if (!onelisting) return null
     return(
         <div className="bookingpage">
             <div className="bookingpage1">

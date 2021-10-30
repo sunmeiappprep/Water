@@ -15,12 +15,19 @@ class Api::BookingsController < ApplicationController
         render :show
     end
 
+    # def index 
+    #     user = current_user
+    #     @bookings = user.bookings
+    #     if @bookings
+    #         render :index 
+    #     end
+    # end
+
     def index 
         user = current_user
         @bookings = user.bookings
-        if @bookings
-            render :index 
-        end
+
+        render '/api/bookings/index'
     end
 
     def destroy 
