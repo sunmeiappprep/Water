@@ -8,11 +8,30 @@ export default class BookingForm extends Component {
     constructor(props){
         super(props)
         this.state = {
-            in:'02/02/2000',
-            out:'02/12/2001'
+            in:'',
+            out:'   '
         }
         this.handleClick = this.handleClick.bind(this)
         
+    }
+
+    componentDidUpdate(pp,ps){
+        if (pp.in === this.props.in){
+
+        }
+        else{
+            this.setState({in:this.props.in})
+
+        }
+        if (pp.out === this.props.out){
+
+        }
+        else{
+            this.setState({out:this.props.out})
+
+        }
+
+
     }
 
     handleClick(e) {

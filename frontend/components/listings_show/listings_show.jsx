@@ -19,6 +19,8 @@ class ListingShow extends React.Component {
         this.state = {
             reviews: [],
             listings:[],
+            check_in:"",
+            check_out:"",
 
         }
         this.handleDelete = this.handleDelete.bind(this)
@@ -60,8 +62,18 @@ class ListingShow extends React.Component {
         this.props.deleteReview(reviewId)
     }
 
+    handlecheckin = (checkin) => {
+        this.setState({check_in: checkin});
+    }
+
+    handlecheckout = (checkout) => {
+        this.setState({check_out: checkout});
+    }
+
+
 
     render(){        
+        console.log(this.state.check_in)
         let reviewerName = ""
         let reviewerId = 0
         const { listing,reviews,users } = this.props; 
@@ -159,8 +171,9 @@ class ListingShow extends React.Component {
                     (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null
                     }
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
-                    <BookingFormContainer listingId={listing.id}/>
-                    <BookingDate/>
+                    <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/>
+                    <div ><BookingDate onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
+                    
                 </div>               
             </div>
             {/* {<DeleteEditContainer/>} */}
