@@ -42,10 +42,20 @@ onhandlecheckout = (e) => {
 
 disableDate(e){
   // e.preventDefault()
-  e.date.getDay() ===git  0
-  console.log(e === 0)
+  // e => date.getDay()  10
+  // console.log(e.date.getDay())
   // activeStartDate
 }
+
+isDateDisabled = ({date, view}) => {
+  console.log(date)
+  return (
+    date.getDate() === 5 && date.getFullYear() === 2021 
+    // date.getFullYear() === 2022 
+    // &&
+    // !dates.includes(formatISO(date, {representation: 'date'}))
+  );
+};
 
     render() {
     // console.log(this.props)
@@ -56,7 +66,7 @@ disableDate(e){
           <Calendar
           onChange={this.onhandlecheckin}
           value={this.state.value}
-          tileDisabled={this.disableDate}
+          tileDisabled={this.isDateDisabled}
         />
         <Calendar
           onChange={this.onhandlecheckout}
