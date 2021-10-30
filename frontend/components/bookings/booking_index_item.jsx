@@ -28,7 +28,7 @@ class BookingIndexItem extends React.Component {
 
    
     handleDelete(e){
-        
+        console.log(e)
         const {bookings,removeBooking} = this.props;
         
         e.preventDefault();
