@@ -32,7 +32,7 @@ class ReviewShow extends React.Component {
         // this.props.deleteReview(e.target.value)
         // window.location.reload()
     }
-
+// 
 
     render(){        
         const {review,user} = this.props
