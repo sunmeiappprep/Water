@@ -262,14 +262,30 @@ isDateDisabled = ({date, view}) => {
   // let b = `${date.getMonth()}${date.getDate()}${date.getFullYear()}`
   // console.log(x  )
   // console.log(x)
-  let finalarr = [
-    new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2021, 11,17) 
-    && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2021, 11,24), 
-    new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2022, 1,1) 
-    && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2022, 1,12),
-    new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2022, 3,3) 
-    && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2022, 3,20)
+  let bookings = [
+    [2021, 11,17,2021,11,24],
+    [2022, 1,1,2022, 1,12],
+    [2022, 3,3,2022, 3,20],
+    [2022, 4,17,2022, 6,20],
+
+
   ]
+
+  let finalarr2 = []
+
+  for (let x = 0; x < bookings.length; x++){
+    finalarr2.push( new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(bookings[x][0], bookings[x][1],bookings[x][2]) 
+    && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(bookings[x][3], bookings[x][4],bookings[x][5]))
+  }
+
+  // let finalarr = [
+  //   new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2021, 11,17) 
+  //   && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2021, 11,24), 
+  //   new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2022, 1,1) 
+  //   && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2022, 1,12),
+  //   new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2022, 3,3) 
+  //   && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2022, 3,20)
+  // ]
   
 
   // let test = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 2-1,24) 
@@ -298,12 +314,14 @@ isDateDisabled = ({date, view}) => {
   // for (let x = 0; x < ; x++ ){
   //   console.log(x)
   // }
-  if( finalarr.length === undefined )return null
+  if( finalarr2.length === undefined )return null
+    console.log(finalarr2)
+
   return (
-    // console.log(finalarr)
   //  (finalarr.length === 0 ) ?
   //  null :
-  checkarry(finalarr)
+  checkarry(finalarr2)
+  
 
 
 
