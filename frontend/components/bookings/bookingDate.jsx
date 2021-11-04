@@ -263,20 +263,22 @@ isDateDisabled = ({date, view}) => {
   // console.log(x  )
   // console.log(x)
   let finalarr = [
-    new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 11-1,17) 
-    && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2021, 11-1,24), 
-    new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2022, 0-1,1) 
-    && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2022, 0-1,12)
+    new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2021, 11,17) 
+    && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2021, 11,24), 
+    new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2022, 1,1) 
+    && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2022, 1,12),
+    new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(2022, 3,3) 
+    && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(2022, 3,20)
   ]
   
 
-  let test = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 2-1,24) 
-  && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2021, 11-1,31); 
-  // let test4 = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 2-1,24) 
+  // let test = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 2-1,24) 
   // && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2021, 11-1,31); 
+  // // let test4 = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 2-1,24) 
+  // // && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2021, 11-1,31); 
 
-  let test4 = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2022, 0-1,1) 
-  && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2022, 0-1,12); 
+  // let test4 = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2022, 0-1,1) 
+  // && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2022, 0-1,12); 
 
   // let finalarr = [test,test4]
   // let test = date.getMonth() === 10 && date.getDate() >= 17 && date.getFullYear() <= 2021 && 
@@ -292,7 +294,7 @@ isDateDisabled = ({date, view}) => {
   // let test2 =  date.getMonth() > 5 && date.getFullYear() === 2022 &&
   // date.getMonth() <= 7 && date.getFullYear() === 2022 &&  !(date.getMonth() > 10 && date.getFullYear() === 2022) 
   // test += `${test || date.getMonth() === 6 && date.getFullYear() <= 2022}`
-  let test3 = test || test4
+  // let test3 = test || test4
   // for (let x = 0; x < ; x++ ){
   //   console.log(x)
   // }
