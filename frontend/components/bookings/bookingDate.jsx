@@ -215,31 +215,12 @@ onhandlecheckout = (e) => {
 }
 
 
-disableDate(e){
-  // e.preventDefault()
-  // e => date.getDay()  10
-  // console.log(e.date.getDay())
-  // activeStartDate
-}
 
-datedisabler(check_in,check_out){
-  for (const [index, value] of elements.entries()) {
-    if (asd){
-      console.log("asd")
-    }
-  } 
-}
-
-datechecker(x){
-  console.log(x)
-  return ("asd")
-}
 
 checkarry(array){
   if (array.includes(true)){
     return true
   }
-  // console.log(this.state.bookings)git
 }
 
 isDateDisabled = ({date, view}) => {
@@ -247,75 +228,38 @@ isDateDisabled = ({date, view}) => {
   if (this.state.bookings !== null){
     console.log(this.state)
   }
-  // let arr = []
-  // let check = (Date.parse("11-14-21"))
-  // let check =  new Date(2021, 12,25); 
-  // let from = new Date(2021, 10-1,24); 
-  // let to = new Date(2022, 11-1,31); 
-  // let check = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()); 
-  // check > from && check < to
+
   let checkarry = this.checkarry
-  // for (let x = 0; x < 4; x++ ){
-  //   console.log(x)
-  // }
-  // let realdate = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()); 
-  // let b = `${date.getMonth()}${date.getDate()}${date.getFullYear()}`
-  // console.log(x  )
-  // console.log(x)
-  let finalarr = [
-    new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 11-1,17) 
-    && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2021, 11-1,24), 
-    new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2022, 0-1,1) 
-    && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2022, 0-1,12)
+
+  let bookings = [
+    [2021, 11,17,2021,11,24],
+    [2022, 1,1,2022, 1,12],
+    [2022, 3,3,2022, 3,20],
+    [2022, 4,17,2022, 6,20],
+
+
   ]
+
+  let finalarr2 = []
+
+  for (let x = 0; x < bookings.length; x++){
+    finalarr2.push( new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) >= new Date(bookings[x][0], bookings[x][1],bookings[x][2]) 
+    && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) <= new Date(bookings[x][3], bookings[x][4],bookings[x][5]))
+  }
+
+
   
 
-  let test = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 2-1,24) 
-  && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2021, 11-1,31); 
-  // let test4 = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 2-1,24) 
-  // && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2021, 11-1,31); 
 
-  let test4 = new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2022, 0-1,1) 
-  && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2022, 0-1,12); 
+  if( finalarr2.length === undefined )return null
 
-  // let finalarr = [test,test4]
-  // let test = date.getMonth() === 10 && date.getDate() >= 17 && date.getFullYear() <= 2021 && 
-  // !(date.getMonth() < 11 && date.getDate() <= 24 && date.getFullYear() <= 2021)
 
-  // date.getMonth() >= 0 && date.getFullYear() <= 2022 &&  !(date.getMonth() > 2 && date.getFullYear() <= 2022) 
-  // console.log(arr)
-  // let test2 = date.getMonth() >= 11 && date.getDate() >= 25 && date.getFullYear() <= 2021 && 
-  // (date.getMonth() <= 11 && date.getDate() <= 31 && date.getFullYear() <= 2021)
-
-  // let test4 = date.getMonth() >= 5 && date.getDate() >= 11 && date.getFullYear() <= 2022 && 
-  // (date.getMonth() <= 7 && date.getDate() <= 25 && date.getFullYear() <= 2022)
-  // let test2 =  date.getMonth() > 5 && date.getFullYear() === 2022 &&
-  // date.getMonth() <= 7 && date.getFullYear() === 2022 &&  !(date.getMonth() > 10 && date.getFullYear() === 2022) 
-  // test += `${test || date.getMonth() === 6 && date.getFullYear() <= 2022}`
-  let test3 = test || test4
-  // for (let x = 0; x < ; x++ ){
-  //   console.log(x)
-  // }
-  if( finalarr.length === undefined )return null
   return (
-    // console.log(finalarr)
-  //  (finalarr.length === 0 ) ?
-  //  null :
-  checkarry(finalarr)
+
+  checkarry(finalarr2)
+  
 
 
-
-     
-  // this.state.finalarr.some()
-
-    
-    // date.getMonth() === 1 && date.getDate() > 5 && date.getFullYear() <= 2022
-
-    // date.getMonth() === 1 && date.getDate() === 5 && date.getFullYear() === 2022
-    // this.datedisabler()
-    // date.getFullYear() === 2022 
-    // &&
-    // !dates.includes(formatISO(date, {representation: 'date'}))
   );
 };
 
