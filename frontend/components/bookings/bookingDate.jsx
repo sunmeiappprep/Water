@@ -217,7 +217,7 @@ onhandlecheckout = (e) => {
 
 
 
-checkarry(array){
+checkifarrayhastrue(array){
   if (array.includes(true)){
     return true
   }
@@ -225,11 +225,11 @@ checkarry(array){
 
 isDateDisabled = ({date, view}) => {
   // console.log(x)
-  if (this.state.bookings !== null){
-    console.log(this.state)
-  }
+  // if (this.state.bookings !== null){
+  //   console.log(this.state)
+  // }
 
-  let checkarry = this.checkarry
+  let checkifarrayhastrue = this.checkifarrayhastrue
 
   let bookings = [
     [2021, 11,17,2021,11,24],
@@ -256,7 +256,7 @@ isDateDisabled = ({date, view}) => {
 
   return (
 
-  checkarry(finalarr2)
+  checkifarrayhastrue(finalarr2)
   
 
 
@@ -264,11 +264,10 @@ isDateDisabled = ({date, view}) => {
 };
 
     render() {
-    console.log(this.state.in)
-    console.log(this.state.out)
+    // console.log(this.state.in)
+    // console.log(this.state.out)
 
  
-      // const [value, onChange] = useState(new Date());
         return (
         <div className="two-calendar">
           <Calendar
@@ -279,6 +278,7 @@ isDateDisabled = ({date, view}) => {
         <Calendar
           onChange={this.onhandlecheckout}
           value={this.state.value}
+          tileDisabled={this.isDateDisabled}
         />
         </div>
         )

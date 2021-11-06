@@ -11,6 +11,7 @@ import DeleteEditContainer from '../deleteEdit/deleteEditContainer';
 import ReviewShowContainer from '../reviewShow/reviewShowContainer';
 import React, { useState } from "react";
 import BookingDate from '../bookings/BookingDate';
+import Perks from '../perks/perks';
 
 // import "react-datepicker/dist/react-datepicker.css";
 class ListingShow extends React.Component {
@@ -21,10 +22,24 @@ class ListingShow extends React.Component {
             listings:[],
             check_in:"",
             check_out:"",
+            reviewsAvg:0
 
         }
         this.handleDelete = this.handleDelete.bind(this)
 
+    }
+
+
+    avgReview(){
+        let total = 0
+        let totalAvg = this.state.reviews.length
+        // console.log(this.state.reviews[0].rating)
+        for(let x  = 0; x < this.state.reviews.length; x++) {
+            total += this.state.reviews[x].rating
+        }
+        let answer = (total/totalAvg)
+        // console.log(answer.toFixed(2))
+        return answer.toFixed(2)
     }
 
     componentDidMount(){
@@ -37,7 +52,11 @@ class ListingShow extends React.Component {
                 reviews: this.props.reviews,
                 listings: this.props.listing
               })
-        );      
+        ).then(()=> this.avgReview());      
+
+     
+
+
         // if (this.props !== prevProps) {
         //     window.location.reload(false);
         // }
@@ -52,10 +71,7 @@ class ListingShow extends React.Component {
                 reviews: this.state.reviews
             })
         } 
-        // else if (prevProps.reviews.length !== this.props.reviews.length) {
-        //     this.props.fetchListingReviews(this.props.listingId)
-        //         .then(reviews => this.setState({ reviews }))
-        // }
+
     }
 
     handleDelete(reviewId){
@@ -74,6 +90,20 @@ class ListingShow extends React.Component {
 
     render(){        
         console.log(this.state.check_in)
+        let reviewAvg = this.avgReview()
+        if (reviewAvg !== NaN){
+            console.log(reviewAvg)
+        }
+        let total = 0
+        // if (this.state.reviews){
+        //     for (let x = 0; x < 1; x++){
+        //         total += this.state.review[x].rating
+        //     }
+        //     console.log(total)
+        // }
+        // console.log(this.state.reviews[0])
+        
+
         let reviewerName = ""
         let reviewerId = 0
         const { listing,reviews,users } = this.props; 
@@ -142,19 +172,32 @@ class ListingShow extends React.Component {
             </div>
             <div className="show-page0">
                 <div className="show-page">
-                    <h3 className="listing-info">{listing.title}</h3>    
-                    <h3 className="listing-info">{"Review place holder  "}{listing.city}</h3>                   
+                    <h3 className="listing-info">{listing.title}</h3>
+                    <h3 className="listing-info">{"Review place holder  "}{listing.city}</h3>   
+                    {
+                        {reviewAvg} ?
+                        <h6>{reviewAvg}</h6>
+                        :
+                        null
+
+                    }                
                         <div className='showing-bundle'>
-                            <img className="photo" src={listing.photoAWS} alt="photo" />
-                            {/* <img className="photo" src={listing.photoAWS} alt="photo" />
-                            <img className="photo" src={listing.photoAWS} alt="photo" />
-                            <img className="photo" src={listing.photoAWS} alt="photo" />
-                            <img className="photo" src={listing.photoAWS} alt="photo" />
-                            <img className="photo" src={listing.photoAWS} alt="photo" /> */}
+                            <div className='showing-bundle-left'>
+                                <img className="photo" src={listing.photoAWS} alt="photo" width="500px"/>
+                            </div>
+                            <div className='showing-bundle-right'>
+                            <img className="photo21" src={listing.photoAWS} alt="photo" />
+                            <img className="photo22" src={listing.photoAWS} alt="photo" />
+                            <img className="photo23" src={listing.photoAWS} alt="photo" />
+                            <img className="photo24" src={listing.photoAWS} alt="photo" />
+                            </div>
+      
+                            {/* <img className="photo" src={listing.photoAWS} alt="photo" /> */}
                         </div>                
                     <h3 className="listing-info">{listing.description}</h3>
                     <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
                     <h3 className="listing-info">{listing.price}{"/night"}</h3>   
+                    <Perks avgRating={reviewAvg}/>
                     {/* if (reviews){ */}
                     {/* {
                         reviews.map(review =>{
