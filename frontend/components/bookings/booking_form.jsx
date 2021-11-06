@@ -74,7 +74,7 @@ export default class BookingForm extends Component {
                 </label>
                     <label>
                     Submit
-                    <button  onClick={this.handleClick}>asd</button>
+                    <button  onClick={this.handleClick}>Create Booking</button>
 
                     </label>
          
