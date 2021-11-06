@@ -22,7 +22,20 @@ class ListingShow extends React.Component {
             listings:[],
             check_in:"",
             check_out:"",
-            reviewsAvg:0
+            reviewsAvg:0,
+            randomDescriptions:[
+                // [
+                //  `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${listing.city}, which are a short bus ride or Uber away.
+
+                //  Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
+                // ],
+                // [
+                // `Experience this exclusive retreat nestled on the quiet, lush slopes of near the city. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
+                // ],
+                // [
+                //  `Freshly renovated modern place 20 min from the city, with FREE parking. avenue(the main strip in Waikiki) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your Hawaii getaway.`   
+                // ]
+            ]
 
         }
         this.handleDelete = this.handleDelete.bind(this)
@@ -52,7 +65,20 @@ class ListingShow extends React.Component {
                 reviews: this.props.reviews,
                 listings: this.props.listing
               })
-        ).then(()=> this.avgReview());      
+        ).then(()=> this.avgReview()
+        ).then(()=> this.setState({randomDescriptions:[
+            [
+             `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
+
+             Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
+            ],
+            [
+            `Experience this exclusive retreat nestled on the quiet, lush slopes of near the ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
+            ],
+            [
+             `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
+            ]
+        ]}));      
 
      
 
@@ -89,11 +115,17 @@ class ListingShow extends React.Component {
 
 
     render(){        
-        console.log(this.state.check_in)
+        // console.log(this.state.check_in)
         let reviewAvg = this.avgReview()
         if (reviewAvg !== NaN){
             console.log(reviewAvg)
         }
+        let randomNum 
+        if (this.state.listings && this.state.randomDescriptions.length !== 0){
+            randomNum = this.state.listings.id%this.state.randomDescriptions.length
+
+        }
+        // console.log(randomNum)
         let total = 0
         // if (this.state.reviews){
         //     for (let x = 0; x < 1; x++){
@@ -148,7 +180,7 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
-        // console.log(listing.id)
+        console.log()
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">
@@ -173,7 +205,7 @@ class ListingShow extends React.Component {
             <div className="show-page0">
                 <div className="show-page">
                     <h3 className="listing-info">{listing.title}</h3>
-                    <h3 className="listing-info">{"Review place holder  "}{listing.city}</h3>   
+                    <h3 className="listing-info">{reviewAvg}{`(${this.state.reviews.length} reviews)`}{listing.city}</h3>   
                     {
                         {reviewAvg} ?
                         <h6>{reviewAvg}</h6>
@@ -197,7 +229,23 @@ class ListingShow extends React.Component {
                     <h3 className="listing-info">{listing.description}</h3>
                     <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
                     <h3 className="listing-info">{listing.price}{"/night"}</h3>   
-                    <Perks avgRating={reviewAvg}/>
+                    <div className="listing-mid-section">
+                        <div className="mid-left-section">
+                            <Perks avgRating={reviewAvg} listingId={listing.id}/>
+                            <div>
+                                {
+                                    (randomNum)?
+                                   
+                                    <h1>{this.state.randomDescriptions[0]}</h1>
+                                    :this.state.randomDescriptions[0]
+                                }
+                                
+                            </div>
+                        </div>
+                        <div className="mid-right-section">
+                            <Perks avgRating={reviewAvg} listingId={listing.id}/>
+                        </div>
+                    </div>
                     {/* if (reviews){ */}
                     {/* {
                         reviews.map(review =>{
@@ -207,6 +255,7 @@ class ListingShow extends React.Component {
                         )
                     }    */}
                     {arr}
+              
                     
                   
 
