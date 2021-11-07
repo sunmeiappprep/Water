@@ -290,9 +290,10 @@ class ListingShow extends React.Component {
                                     </div>
                                     <div className="left-bar">
                         
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+    
+                                    <ProgressBar className="progress" labelSize="0"  bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                    <ProgressBar className="progress" labelSize="0"  bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                    <ProgressBar className="progress" labelSize="0"  bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
 
 
                                     </div>
