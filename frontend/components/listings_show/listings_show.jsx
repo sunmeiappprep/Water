@@ -12,6 +12,10 @@ import ReviewShowContainer from '../reviewShow/reviewShowContainer';
 import React, { useState } from "react";
 import BookingDate from '../bookings/BookingDate';
 import Perks from '../perks/perks';
+import Checkin from '../checkin/checkin';
+// import 'bootstrap/dist/css/bootstrap.css';
+import ProgressBar from "@ramonak/react-progress-bar";
+
 
 // import "react-datepicker/dist/react-datepicker.css";
 class ListingShow extends React.Component {
@@ -66,19 +70,21 @@ class ListingShow extends React.Component {
                 listings: this.props.listing
               })
         ).then(()=> this.avgReview()
-        ).then(()=> this.setState({randomDescriptions:[
-            [
-             `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
+        // ).then(()=> this.setState({randomDescriptions:[
+        //     [
+        //      `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
 
-             Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
-            ],
-            [
-            `Experience this exclusive retreat nestled on the quiet, lush slopes of near the ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
-            ],
-            [
-             `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
-            ]
-        ]}));      
+        //      Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
+        //     ],
+        //     [
+        //     `Experience this exclusive retreat nestled on the quiet, lush slopes of near the ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
+        //     ],
+        //     [
+        //      `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
+        //     ]
+        // ]}
+        // )
+        );      
 
      
 
@@ -96,7 +102,23 @@ class ListingShow extends React.Component {
             this.setState({
                 reviews: this.state.reviews
             })
-        } 
+        }
+        // if (this.state.listings.city !== prevState.listings.city){
+        //     this.setState({randomDescriptions:[
+        //         [
+        //          `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
+    
+        //          Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
+        //         ],
+        //         [
+        //         `Experience this exclusive retreat nestled on the quiet, lush slopes of near the ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
+        //         ],
+        //         [
+        //          `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
+        //         ]
+        //     ]}
+        //     )
+        // }
 
     }
 
@@ -118,7 +140,7 @@ class ListingShow extends React.Component {
         // console.log(this.state.check_in)
         let reviewAvg = this.avgReview()
         if (reviewAvg !== NaN){
-            console.log(reviewAvg)
+            // console.log(reviewAvg)
         }
         let randomNum 
         if (this.state.listings && this.state.randomDescriptions.length !== 0){
@@ -232,6 +254,8 @@ class ListingShow extends React.Component {
                     <div className="listing-mid-section">
                         <div className="mid-left-section">
                             <Perks avgRating={reviewAvg} listingId={listing.id}/>
+                            <div ><BookingDate onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
+                                
                             <div>
                                 {
                                     (randomNum)?
@@ -243,7 +267,7 @@ class ListingShow extends React.Component {
                             </div>
                         </div>
                         <div className="mid-right-section">
-                            <Perks avgRating={reviewAvg} listingId={listing.id}/>
+                            <Checkin avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length}/>
                         </div>
                     </div>
                     {/* if (reviews){ */}
@@ -254,19 +278,45 @@ class ListingShow extends React.Component {
                         
                         )
                     }    */}
-                    {arr}
               
                     
                   
+                    <div className="review-outer-con">
+                                    <div className="left-attr">
+                                        <h1>Cleanliness</h1>
+                                        <h1>Communication</h1>
+                                        <h1>Check-in</h1>
 
+                                    </div>
+                                    <div className="left-bar">
+                        
+                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+
+
+                                    </div>
+                                    <div className="right-attr">
+                                        <h1>Accuracy</h1>
+                                        <h1>Location</h1>
+                                        <h1>Value</h1>
+                                    </div>
+                                    <div className="right-bar">
+                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                    </div>
+
+                                </div>
+                    {arr}
+                    
                     {
                     (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null
                     }
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
                     <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/>
-                    <div ><BookingDate onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
                     
-                </div>               
+,                 </div>               
             </div>
             {/* {<DeleteEditContainer/>} */}
                 

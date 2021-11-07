@@ -399,3 +399,55 @@ img {
 .mid-right-section{
   width: 30%;
 }
+
+.CheckinOuter{
+  border: 2px solid;
+  border-color: black;
+  border-radius: 26px;
+}
+
+.priceReview{
+  display: flex ;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.checkinCheckout{
+  display: flex;
+  justify-content: center;
+
+}
+
+.review-outer-con{
+  display: flex;
+}
+
+.review-outer-con div{
+  width: 25%;
+}
+
+.right-bar{
+  // background-color: black;
+  text-align: center;
+}
+
+.left-bar{
+  // background-color: black;
+  text-align: center;
+}
+
+
+
+.progress{
+  // color:red;
+  // background-color: red;
+  padding:10px
+}
+
+// .left-attr{
+//   text-align: center;
+// }
+
+// .right  -attr{
+//   text-align: center;
+// }

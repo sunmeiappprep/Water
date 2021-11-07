@@ -27,8 +27,8 @@ export default class Perks extends Component {
     }
 
     render() {
-        console.log(this.props.avgRating)
-        console.log(typeof(this.props.avgRating))
+        // console.log(this.props.avgRating)
+        // console.log(typeof(this.props.avgRating))
         return (
             <div>
                 <h2>
