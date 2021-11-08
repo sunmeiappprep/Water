@@ -167,7 +167,7 @@
   // margin-left: auto;
   // margin-right: auto;
   justify-content: flex-start;
-  width: 1000px;
+  width: 65%;
   // align-items: center;
   // flex-basis: 1250px;
   flex-wrap: wrap;
@@ -420,10 +420,11 @@ img {
 
 .review-outer-con{
   display: flex;
+  justify-content: space-evenly;
 }
 
 .review-outer-con div{
-  width: 25%;
+  width: 50%;
 }
 
 .right-bar{
@@ -441,13 +442,53 @@ img {
 .progress{
   // color:red;
   // background-color: red;
-  padding:10px
+  padding:10px;
+  // width: 200px;
+
 }
 
-// .left-attr{
-//   text-align: center;
+.left-attr{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right-attr{
+  display: flex;
+
+}
+
+.calendar{
+  color:red;
+  background-color: gray;
+  border-radius: 25px;
+  border-color: black;
+  padding: 10px;
+}
+
+// .react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth{
+// color:red;
 // }
 
-// .right  -attr{
-//   text-align: center;
-// }
+.top-text{
+  font-size: 22px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+}
+
+.sub-text{
+  font-size: 14px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+}
+
+.calendar-con{
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  // border-top: 50px;
+  border-top: solid;
+  border-bottom:solid;
+  // border-color: ;
+  border-color: lightgray;
+  // border-width: 90%;
+}

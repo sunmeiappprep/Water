@@ -282,29 +282,17 @@ class ListingShow extends React.Component {
                     
                   
                     <div className="review-outer-con">
-                                    <div className="left-attr">
-                                        <h1>Cleanliness</h1>
-                                        <h1>Communication</h1>
-                                        <h1>Check-in</h1>
+                                    <div >
+                                        <div className="left-attr">Cleanliness <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        <div className="left-attr">Communication <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        <div className="left-attr">Check-in <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
 
                                     </div>
-                                    <div className="left-bar">
-                        
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
 
-
-                                    </div>
                                     <div className="right-attr">
-                                        <h1>Accuracy</h1>
-                                        <h1>Location</h1>
-                                        <h1>Value</h1>
-                                    </div>
-                                    <div className="right-bar">
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                        <div>Accuracy <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        <div>Location <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        <div>Value <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
                                     </div>
 
                                 </div>

@@ -11,177 +11,10 @@ class BookingDate extends React.Component {
         value : new Date(),
         in: "",
         out: "",
-      //   bookings:[
-      //     {
-      //         "id": 109,
-      //         "check_in": "2000-02-01",
-      //         "check_out": "2001-02-01",
-      //         "listing_id": 20,
-      //         "renter_id": 6,
-      //         "renter": {
-      //             "id": 6,
-      //             "username": "Sun",
-      //             "password_digest": "$2a$12$aRTc/Vb6m7NS06Z.TjZTfO9Wz4ihCew8OBQoJLye5rchamRhjk3BC",
-      //             "session_token": "YDZiKBk971jYN81JfkE-kw",
-      //             "email": "Sun@gmail.com",
-      //             "first_name": "Sun",
-      //             "last_name": "Mei",
-      //             "created_at": "2021-10-20T01:18:03.323Z",
-      //             "updated_at": "2021-10-27T00:39:30.301Z"
-      //         },
-      //         "listing": {
-      //             "id": 20,
-      //             "title": "Bright and Spacious 1-Bedroom with Full Kitchen!",
-      //             "price": 61,
-      //             "address": "8451 ave",
-      //             "city": "Honolulu",
-      //             "description": "Entire rental unit hosted by Ian",
-      //             "num_guest": 3,
-      //             "num_beds": 1,
-      //             "longitude": -158.045553575206,
-      //             "latitude": 21.3042696563979,
-      //             "host_id": 4,
-      //             "created_at": "2021-10-20T01:18:03.393Z",
-      //             "updated_at": "2021-10-20T01:18:22.107Z"
-      //         }
-      //     },
-      //     {
-      //         "id": 110,
-      //         "check_in": "2000-02-02",
-      //         "check_out": "2001-12-02",
-      //         "listing_id": 20,
-      //         "renter_id": 6,
-      //         "renter": {
-      //             "id": 6,
-      //             "username": "Sun",
-      //             "password_digest": "$2a$12$aRTc/Vb6m7NS06Z.TjZTfO9Wz4ihCew8OBQoJLye5rchamRhjk3BC",
-      //             "session_token": "YDZiKBk971jYN81JfkE-kw",
-      //             "email": "Sun@gmail.com",
-      //             "first_name": "Sun",
-      //             "last_name": "Mei",
-      //             "created_at": "2021-10-20T01:18:03.323Z",
-      //             "updated_at": "2021-10-27T00:39:30.301Z"
-      //         },
-      //         "listing": {
-      //             "id": 20,
-      //             "title": "Bright and Spacious 1-Bedroom with Full Kitchen!",
-      //             "price": 61,
-      //             "address": "8451 ave",
-      //             "city": "Honolulu",
-      //             "description": "Entire rental unit hosted by Ian",
-      //             "num_guest": 3,
-      //             "num_beds": 1,
-      //             "longitude": -158.045553575206,
-      //             "latitude": 21.3042696563979,
-      //             "host_id": 4,
-      //             "created_at": "2021-10-20T01:18:03.393Z",
-      //             "updated_at": "2021-10-20T01:18:22.107Z"
-      //         }
-      //     },
-      //     {
-      //         "id": 111,
-      //         "check_in": "2000-04-02",
-      //         "check_out": "2001-11-02",
-      //         "listing_id": 20,
-      //         "renter_id": 6,
-      //         "renter": {
-      //             "id": 6,
-      //             "username": "Sun",
-      //             "password_digest": "$2a$12$aRTc/Vb6m7NS06Z.TjZTfO9Wz4ihCew8OBQoJLye5rchamRhjk3BC",
-      //             "session_token": "YDZiKBk971jYN81JfkE-kw",
-      //             "email": "Sun@gmail.com",
-      //             "first_name": "Sun",
-      //             "last_name": "Mei",
-      //             "created_at": "2021-10-20T01:18:03.323Z",
-      //             "updated_at": "2021-10-27T00:39:30.301Z"
-      //         },
-      //         "listing": {
-      //             "id": 20,
-      //             "title": "Bright and Spacious 1-Bedroom with Full Kitchen!",
-      //             "price": 61,
-      //             "address": "8451 ave",
-      //             "city": "Honolulu",
-      //             "description": "Entire rental unit hosted by Ian",
-      //             "num_guest": 3,
-      //             "num_beds": 1,
-      //             "longitude": -158.045553575206,
-      //             "latitude": 21.3042696563979,
-      //             "host_id": 4,
-      //             "created_at": "2021-10-20T01:18:03.393Z",
-      //             "updated_at": "2021-10-20T01:18:22.107Z"
-      //         }
-      //     },
-      //     {
-      //         "id": 112,
-      //         "check_in": "2021-10-07",
-      //         "check_out": "2021-10-23",
-      //         "listing_id": 20,
-      //         "renter_id": 6,
-      //         "renter": {
-      //             "id": 6,
-      //             "username": "Sun",
-      //             "password_digest": "$2a$12$aRTc/Vb6m7NS06Z.TjZTfO9Wz4ihCew8OBQoJLye5rchamRhjk3BC",
-      //             "session_token": "YDZiKBk971jYN81JfkE-kw",
-      //             "email": "Sun@gmail.com",
-      //             "first_name": "Sun",
-      //             "last_name": "Mei",
-      //             "created_at": "2021-10-20T01:18:03.323Z",
-      //             "updated_at": "2021-10-27T00:39:30.301Z"
-      //         },
-      //         "listing": {
-      //             "id": 20,
-      //             "title": "Bright and Spacious 1-Bedroom with Full Kitchen!",
-      //             "price": 61,
-      //             "address": "8451 ave",
-      //             "city": "Honolulu",
-      //             "description": "Entire rental unit hosted by Ian",
-      //             "num_guest": 3,
-      //             "num_beds": 1,
-      //             "longitude": -158.045553575206,
-      //             "latitude": 21.3042696563979,
-      //             "host_id": 4,
-      //             "created_at": "2021-10-20T01:18:03.393Z",
-      //             "updated_at": "2021-10-20T01:18:22.107Z"
-      //         }
-      //     },
-      //     {
-      //         "id": 113,
-      //         "check_in": "2023-10-11",
-      //         "check_out": "2024-04-26",
-      //         "listing_id": 20,
-      //         "renter_id": 6,
-      //         "renter": {
-      //             "id": 6,
-      //             "username": "Sun",
-      //             "password_digest": "$2a$12$aRTc/Vb6m7NS06Z.TjZTfO9Wz4ihCew8OBQoJLye5rchamRhjk3BC",
-      //             "session_token": "YDZiKBk971jYN81JfkE-kw",
-      //             "email": "Sun@gmail.com",
-      //             "first_name": "Sun",
-      //             "last_name": "Mei",
-      //             "created_at": "2021-10-20T01:18:03.323Z",
-      //             "updated_at": "2021-10-27T00:39:30.301Z"
-      //         },
-      //         "listing": {
-      //             "id": 20,
-      //             "title": "Bright and Spacious 1-Bedroom with Full Kitchen!",
-      //             "price": 61,
-      //             "address": "8451 ave",
-      //             "city": "Honolulu",
-      //             "description": "Entire rental unit hosted by Ian",
-      //             "num_guest": 3,
-      //             "num_beds": 1,
-      //             "longitude": -158.045553575206,
-      //             "latitude": 21.3042696563979,
-      //             "host_id": 4,
-      //             "created_at": "2021-10-20T01:18:03.393Z",
-      //             "updated_at": "2021-10-20T01:18:22.107Z"
-      //         }
-      //     }
-      // ],
+        today:new Date(),
+
       bookings: "booking",
-        // finalarr:[[new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2021, 2-1,24) 
-        //   && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2021, 11-1,31), new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) > new Date(2022, 0-1,1) 
-        //   && new Date(date.getFullYear(), parseInt(date.getMonth())-1,date.getDate()) < new Date(2022, 0-1,12) ]]
+    
     }
     
     // this.onhandlecheckin = onhandlecheckin.bind(this)
@@ -236,6 +69,7 @@ isDateDisabled = ({date, view}) => {
     [2022, 1,1,2022, 1,12],
     [2022, 3,3,2022, 3,20],
     [2022, 4,17,2022, 6,20],
+    [2021, 11,1,2021,11,2]
 
 
   ]
@@ -264,22 +98,36 @@ isDateDisabled = ({date, view}) => {
 };
 
     render() {
-    // console.log(this.state.in)
-    // console.log(this.state.out)
+    console.log(this.state.in)
+    console.log(this.state.out)
 
  
         return (
-        <div className="two-calendar">
-          <Calendar
-          onChange={this.onhandlecheckin}
-          value={this.state.value}
-          tileDisabled={this.isDateDisabled}
-        />
-        <Calendar
+        <div className="calendar-con">
+          
+          <div className="top-text">Select check-in date</div>
+          <div className="sub-text">Add your travel dates for exact pricing</div>
+          <div className='two-calendar'>
+          <div className="calendar">
+            <Calendar 
+            onChange={this.onhandlecheckin}
+            value={this.state.value}
+            showNeighboringMonth={false}
+            tileDisabled={this.isDateDisabled}
+            // minDate={this.state.today}
+          />
+          </div>
+
+        <Calendar className="calendar"
           onChange={this.onhandlecheckout}
           value={this.state.value}
+          showNeighboringMonth={false}
           tileDisabled={this.isDateDisabled}
+          // minDate={new Date()}
+
         />
+          </div>
+
         </div>
         )
     }
