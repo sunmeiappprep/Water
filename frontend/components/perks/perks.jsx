@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PerksText from './perksText'
 
 export default class Perks extends Component {
     constructor(props){
@@ -31,14 +32,15 @@ export default class Perks extends Component {
         // console.log(typeof(this.props.avgRating))
         return (
             <div>
-                <h2>
-                {this.state.standard[0][0]}
-
+                <PerksText upper={this.state.standard[0][0]}
+                lower={this.state.standard[0][1]} image={'https://i.imgur.com/M5a2gh8.png'} />
+                {/* <h2>
+                
                 </h2>
-                <h6>
-                {this.state.standard[0][1]}
+                <h6> */}
+                
 
-                </h6>
+                {/* </h6> */}
                 {
                     (parseInt(this.props.avgRating) >= 4.5) ?
                     <div>
