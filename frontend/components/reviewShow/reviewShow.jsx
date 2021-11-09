@@ -112,7 +112,7 @@ class ReviewShow extends React.Component {
             
 
             <div className='singleReview'>
-                <div>
+                <div >
                     <div className='singleReviewUpperCon'>
                         <div className="personIconCircle">
                             <div className="personalicon">
@@ -121,18 +121,20 @@ class ReviewShow extends React.Component {
                             </div>
                         </div>
                         <div>
-                            <div>
+                            <div className="reviewerName">
                             {review.reviewer.first_name}
 
                             </div>
-                            <div>
+                            <div className="reviewerYear">
                             {month}-{dateYear}
 
                             </div>
 
                         </div>
                     </div>
+                    <div className="reviewDes">
                     {review.description}
+                    </div>
                 </div>
                 
 
