@@ -421,6 +421,9 @@ img {
 .review-outer-con{
   display: flex;
   justify-content: space-evenly;
+  border-bottom:solid;
+  border-color: lightgray;
+  padding:32px
 }
 
 .review-outer-con div{
@@ -449,11 +452,12 @@ img {
 
 .left-attr{
   display: flex;
-  justify-content: flex-end;
+  justify-content:space-between;
 }
 
 .right-attr{
   display: flex;
+  justify-content:space-between;
 
 }
 
@@ -462,7 +466,7 @@ img {
   background-color: gray;
   border-radius: 25px;
   border-color: black;
-  padding: 10px;
+  padding: 32px;
 }
 
 // .react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth{
@@ -488,7 +492,100 @@ img {
   // border-top: 50px;
   border-top: solid;
   border-bottom:solid;
-  // border-color: ;
   border-color: lightgray;
+
+  // border-color: ;
   // border-width: 90%;
 }
+
+.perkcommentcon{
+  display: flex;
+  padding: 10px;
+}
+
+.perkCommentCon2{
+  display: flex;
+  flex-direction: column;
+  vertical-align: text-top;
+  text-align: left;
+  // padding: 01
+  // align-items: flex-end;
+}
+
+.perkCommentCon div{
+  margin-left: 10px; 
+  width: 100%;
+}
+
+.perkImg {
+  width: 30px;
+}
+
+.listing-info-des{
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 22px !important;
+  line-height: 20px !important;
+}
+
+.listing-info-guest{
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+
+.random-description{
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  // border-top: solid;
+  border-bottom:solid;
+  border-color: lightgray;
+  padding:32px
+}
+
+.reviewStar{
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  line-height: 20px !important
+}
+
+.singleReviewOuterDiv{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.singleReview{
+  width: 50% ;
+}
+
+.singleReviewUpperCon{
+  display: flex;
+}
+
+.personIconCircle{
+  background-color: red;
+  border-radius: 25px;
+  // width: 50%;
+  // height: 50%;
+  // margin-left: 100px;
+  // margin-right: auto;
+
+}
+
+.personIconCircle > * {
+
+  // margin-right: auto;
+
+}
+
+// .personalicon{
+  // margin-left: 50%;
+//   margin-right: 50%;
+// }

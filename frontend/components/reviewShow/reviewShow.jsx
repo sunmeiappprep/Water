@@ -1,4 +1,5 @@
 import React from 'react';
+import PersonIcon from '@mui/icons-material/Person';
 class ReviewShow extends React.Component {
     constructor(props){
         super(props);    
@@ -99,13 +100,43 @@ class ReviewShow extends React.Component {
         // console.log(this.props.cdp)  
         // console.log(review)
         // console.log(this.props)
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+        let dateString = review.created_at.slice(0,7)
+        let dateMonth = dateString.slice(5,7)
+        let dateYear = dateString.slice(0,4)
+        let month = monthNames[dateMonth-1]
+        console.log(dateYear)
         return(
-            <div>
-                {review.description}
-                {review.reviewer.first_name}
+           
+            
+
+            <div className='singleReview'>
+                <div>
+                    <div className='singleReviewUpperCon'>
+                        <div className="personIconCircle">
+                            <div className="personalicon">
+                            <PersonIcon fontSize={"large"}/>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                            {review.reviewer.first_name}
+
+                            </div>
+                            <div>
+                            {month}-{dateYear}
+
+                            </div>
+
+                        </div>
+                    </div>
+                    {review.description}
+                </div>
+                
 
                 {review.rating}
-                {review.created_at.slice(0,8)}
                 {/* {review.reviewer} */}
                 {
                     (review.reviewer.id === user)
