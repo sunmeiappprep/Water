@@ -15,6 +15,7 @@ import Perks from '../perks/perks';
 import Checkin from '../checkin/checkin';
 // import 'bootstrap/dist/css/bootstrap.css';
 import ProgressBar from "@ramonak/react-progress-bar";
+import StarRateIcon from '@mui/icons-material/StarRate';
 
 
 // import "react-datepicker/dist/react-datepicker.css";
@@ -70,20 +71,20 @@ class ListingShow extends React.Component {
                 listings: this.props.listing
               })
         ).then(()=> this.avgReview()
-        // ).then(()=> this.setState({randomDescriptions:[
-        //     [
-        //      `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
+        ).then(()=> this.setState({randomDescriptions:[
+            [
+             `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
 
-        //      Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
-        //     ],
-        //     [
-        //     `Experience this exclusive retreat nestled on the quiet, lush slopes of near the ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
-        //     ],
-        //     [
-        //      `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
-        //     ]
-        // ]}
-        // )
+             Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
+            ],
+            [
+            `Experience this exclusive retreat nestled on the quiet, lush slopes of near the ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
+            ],
+            [
+             `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
+            ]
+        ]}
+        )
         );      
 
      
@@ -226,15 +227,23 @@ class ListingShow extends React.Component {
             </div>
             <div className="show-page0">
                 <div className="show-page">
-                    <h3 className="listing-info">{listing.title}</h3>
-                    <h3 className="listing-info">{reviewAvg}{`(${this.state.reviews.length} reviews)`}{listing.city}</h3>   
-                    {
+                    <h3 className="listing-info-title">{listing.title}</h3>
+                    <div className="listing-info-review-title">
+                        <div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div>
+
+                        <div className="asdasd">
+                        {reviewAvg} {`(${this.state.reviews.length} reviews)`} {listing.city}
+                        </div>
+                    </div>
+                        
+
+                    {/* {
                         {reviewAvg} ?
                         <h6>{reviewAvg}</h6>
                         :
                         null
 
-                    }                
+                    }                 */}
                         <div className='showing-bundle'>
                             <div className='showing-bundle-left'>
                                 <img className="photo" src={listing.photoAWS} alt="photo" width="500px"/>
@@ -248,15 +257,15 @@ class ListingShow extends React.Component {
       
                             {/* <img className="photo" src={listing.photoAWS} alt="photo" /> */}
                         </div>                
-                    <h3 className="listing-info">{listing.description}</h3>
-                    <h4 className="listing-info">{listing.num_guest} guests. {listing.num_beds} bedrooms</h4>
-                    <h3 className="listing-info">{listing.price}{"/night"}</h3>   
+                    <h3 className="listing-info-des">{listing.description}</h3>
+                    <h4 className="listing-info-guest">{listing.num_guest} guests • {listing.num_beds} bedrooms</h4>
+                    {/* <h3 className="listing-info">{listing.price}{"/night"}</h3>    */}
                     <div className="listing-mid-section">
                         <div className="mid-left-section">
                             <Perks avgRating={reviewAvg} listingId={listing.id}/>
                             <div ><BookingDate onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
                                 
-                            <div>
+                            <div className="random-description">
                                 {
                                     (randomNum)?
                                    
@@ -280,35 +289,28 @@ class ListingShow extends React.Component {
                     }    */}
               
                     
-                  
+                    <div className="reviewStar"><StarRateIcon htmlColor={'red'} fontSize={"small"}/> {reviewAvg} <span>•</span> {this.state.reviews.length}  reviews</div>
                     <div className="review-outer-con">
-                                    <div className="left-attr">
-                                        <h1>Cleanliness</h1>
-                                        <h1>Communication</h1>
-                                        <h1>Check-in</h1>
+                                    <div >
+                                        <div className="left-attr">Cleanliness <ProgressBar className="progress" bgColor="black" width="200%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        <div className="left-attr">Responsive <ProgressBar className="progress" bgColor="black" width="200%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        <div className="left-attr">Check-in <ProgressBar className="progress" bgColor="black" width="200%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
 
                                     </div>
-                                    <div className="left-bar">
-                        
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
 
-
-                                    </div>
-                                    <div className="right-attr">
-                                        <h1>Accuracy</h1>
-                                        <h1>Location</h1>
-                                        <h1>Value</h1>
-                                    </div>
-                                    <div className="right-bar">
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
-                                    <ProgressBar className="progress" bgColor="black" width="80%" labelColor="transparent" height="3px" completed={reviewAvg*20} />
+                                    <div>
+                                    <div className="right-attr">Accuracy <ProgressBar className="progress" bgColor="black" width="200%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                    <div className="right-attr">Location <ProgressBar className="progress" bgColor="black" width="200%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                    <div className="right-attr">Value <ProgressBar className="progress" bgColor="black" width="200%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        {/* <div>Accuracy <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        <div>Location <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
+                                        <div>Value <ProgressBar className="progress" bgColor="black" width="280%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div> */}
                                     </div>
 
                                 </div>
-                    {arr}
+                    <div className='singleReviewOuterDiv'>
+                        {arr}
+                    </div>
                     
                     {
                     (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null

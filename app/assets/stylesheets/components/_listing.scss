@@ -167,7 +167,7 @@
   // margin-left: auto;
   // margin-right: auto;
   justify-content: flex-start;
-  width: 1000px;
+  width: 65%;
   // align-items: center;
   // flex-basis: 1250px;
   flex-wrap: wrap;
@@ -402,8 +402,11 @@ img {
 
 .CheckinOuter{
   border: 2px solid;
-  border-color: black;
+  border-color: gray;
+  -webkit-box-shadow: 1px 2px 15px 7px #CCCCCC; 
+  box-shadow: 1px 2px 15px 7px #CCCCCC;
   border-radius: 26px;
+  padding: 10px;  
 }
 
 .priceReview{
@@ -420,10 +423,14 @@ img {
 
 .review-outer-con{
   display: flex;
+  justify-content: space-evenly;
+  border-bottom:solid;
+  border-color: lightgray;
+  padding:32px
 }
 
 .review-outer-con div{
-  width: 25%;
+  width: 50%;
 }
 
 .right-bar{
@@ -441,13 +448,245 @@ img {
 .progress{
   // color:red;
   // background-color: red;
-  padding:10px
+  padding:10px;
+  // width: 200px;
+
 }
 
-// .left-attr{
-//   text-align: center;
+.left-attr{
+  display: flex;
+  justify-content:space-between;
+}
+
+.right-attr{
+  display: flex;
+  justify-content:space-between;
+
+}
+
+.calendar{
+  color: black;
+
+  background-color:white;
+  border-radius: 25px;
+  border-color: black;
+  padding: 32px;
+}
+
+// .react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth{
+// color:red;
 // }
 
-// .right  -attr{
-//   text-align: center;
+.top-text{
+  font-size: 22px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+}
+
+.sub-text{
+  font-size: 14px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+}
+
+.calendar-con{
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  // border-top: 50px;
+  border-top: solid;
+  border-bottom:solid;
+  border-color: lightgray;
+
+  // border-color: ;
+  // border-width: 90%;
+}
+
+.perkcommentcon{
+  display: flex;
+  padding: 10px;
+}
+
+.perkCommentCon2{
+  display: flex;
+  flex-direction: column;
+  vertical-align: text-top;
+  text-align: left;
+  // padding: 01
+  // align-items: flex-end;
+}
+
+.perkCommentCon div{
+  margin-left: 10px; 
+  width: 100%;
+}
+
+.perkImg {
+  width: 30px;
+}
+
+.listing-info-des{
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 22px !important;
+  line-height: 20px !important;
+}
+
+.listing-info-guest{
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+
+.random-description{
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  // border-top: solid;
+  border-bottom:solid;
+  border-color: lightgray;
+  padding:32px
+}
+
+.reviewStar{
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  line-height: 20px !important
+}
+
+.singleReviewOuterDiv{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.singleReview{
+  width: 50% ;
+}
+
+.singleReviewUpperCon{
+  display: flex;
+}
+
+.personIconCircle{
+  background-color: red;
+  border-radius: 25px;
+  // width: 50%;
+  // height: 50%;
+  // margin-left: 100px;
+  // margin-right: auto;
+
+}
+
+.personIconCircle > * {
+
+  // margin-right: auto;
+
+}
+
+// .personalicon{
+  // margin-left: 50%;
+//   margin-right: 50%;
 // }
+
+.listing-info-title{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 26px !important;
+  line-height: 30px !important;
+  font-weight: 600 !important;
+}
+
+.listing-info-review-title{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 30px !important;
+
+  display: flex;
+  flex-direction: row;
+}
+
+// .asd{
+//   vertical-align: text-top;
+
+// }
+
+.calendar-con button {
+  border:none;
+  background-color: white;
+  padding: 10px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 550 !important;
+  // color:white;
+}
+
+.calendar-con button:hover {
+  background-color: rgb(228, 53, 0);
+}
+
+// .checkinDiv{
+//   // width: 50%;
+// }
+
+// .checkoutDiv{
+// }
+
+.CheckTextBox{
+  width: 90%;
+}
+
+.checkAva {
+	box-shadow:inset 0px 1px 0px 0px #f5978e;
+	background:linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+	background-color:#f24537;
+  background-image: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+	border-radius:14px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:16px 76px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+}
+.checkAva:hover {
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	background-color:#c62d1f;
+}
+.checkAva:active {
+	position:relative;
+	top:1px;
+}
+
+
+.checkPrice{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 550 !important;
+
+}
+
+.night{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16px !important;
+}
+
+.checkinreviewText{
+
+}
+
+.avaSum{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16gitpx !important;
+  text-decoration: underline;
+  color: gray
+}
