@@ -402,8 +402,11 @@ img {
 
 .CheckinOuter{
   border: 2px solid;
-  border-color: black;
+  border-color: gray;
+  -webkit-box-shadow: 1px 2px 15px 7px #CCCCCC; 
+  box-shadow: 1px 2px 15px 7px #CCCCCC;
   border-radius: 26px;
+  padding: 10px;  
 }
 
 .priceReview{
@@ -462,8 +465,9 @@ img {
 }
 
 .calendar{
-  color:red;
-  background-color: gray;
+  color: black;
+
+  background-color:white;
   border-radius: 25px;
   border-color: black;
   padding: 32px;
@@ -589,3 +593,100 @@ img {
   // margin-left: 50%;
 //   margin-right: 50%;
 // }
+
+.listing-info-title{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 26px !important;
+  line-height: 30px !important;
+  font-weight: 600 !important;
+}
+
+.listing-info-review-title{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 30px !important;
+
+  display: flex;
+  flex-direction: row;
+}
+
+// .asd{
+//   vertical-align: text-top;
+
+// }
+
+.calendar-con button {
+  border:none;
+  background-color: white;
+  padding: 10px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 550 !important;
+  // color:white;
+}
+
+.calendar-con button:hover {
+  background-color: rgb(228, 53, 0);
+}
+
+// .checkinDiv{
+//   // width: 50%;
+// }
+
+// .checkoutDiv{
+// }
+
+.CheckTextBox{
+  width: 90%;
+}
+
+.checkAva {
+	box-shadow:inset 0px 1px 0px 0px #f5978e;
+	background:linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+	background-color:#f24537;
+  background-image: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+	border-radius:14px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:16px 76px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+}
+.checkAva:hover {
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	background-color:#c62d1f;
+}
+.checkAva:active {
+	position:relative;
+	top:1px;
+}
+
+
+.checkPrice{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 550 !important;
+
+}
+
+.night{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16px !important;
+}
+
+.checkinreviewText{
+
+}
+
+.avaSum{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16gitpx !important;
+  text-decoration: underline;
+  color: gray
+}

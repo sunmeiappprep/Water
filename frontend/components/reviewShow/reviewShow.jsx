@@ -136,7 +136,7 @@ class ReviewShow extends React.Component {
                 </div>
                 
 
-                {review.rating}
+                {/* {review.rating} */}
                 {/* {review.reviewer} */}
                 {
                     (review.reviewer.id === user)

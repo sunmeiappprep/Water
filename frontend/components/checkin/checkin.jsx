@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import StarRateIcon from '@mui/icons-material/StarRate';
 
 export default class Checkin extends Component {
     constructor(props){
@@ -25,18 +26,24 @@ export default class Checkin extends Component {
             <div>
                 <div className="CheckinOuter">
                     <div className="priceReview">
-                        <h1>
-                            {this.props.price}/night
-                        </h1>
-                        <h2>
-                            {this.props.avg}({this.props.reviewnumber} reviews)
-                        </h2>
+                        <div >
+                            <span className="checkPrice">
+                            ${this.props.price}
+                            </span>
+                            <span className="night">
+                            /night
+                            </span>
+                           
+                        </div>
+                        <div className="checkinreviewText">
+                            <StarRateIcon htmlColor={'red'} fontSize={"small"}/>{this.props.avg}({this.props.reviewnumber} reviews)
+                        </div>
 
                     </div>
                     <div className="checkinCheckout">
                         <div className="checkinDiv">
                             <label>Check In:
-                                <input type="text" size="13"
+                                <input className="CheckTextBox" type="text"
                                 value={this.state.in}
                                 onChange={(e)=> this.setState({in:e.target.value})}
                                 // className="check-in"
@@ -45,10 +52,10 @@ export default class Checkin extends Component {
                         </div>
                         <div className="checkoutDiv">
                             <label>Check Out:
-                                <input type="text" size="13"
+                                <input  className="CheckTextBox" type="text" 
                                 value={this.state.out}
                                 onChange={(e)=> this.setState({out:e.target.value})}
-                                className="check-out"
+                                // className="check-out"
                                 />
                             </label>
     
@@ -67,13 +74,13 @@ export default class Checkin extends Component {
                     <div className="ava">
                     <label>
                         Submit
-                        <button onClick={this.toggle}>Check Availability</button>
+                        <button className="checkAva" onClick={this.toggle}>Check Availability</button>
                     </label>
                     </div>
                     <div>
                         {
                             (this.state.totalToggleOn === true) ?
-                            <h1>Total {this.props.price * Math.floor(Math.random() * 30)}</h1>
+                            <div className="avaSum">Total {this.props.price * Math.floor(Math.random() * 30)}</div>
                             :
                             null
                         }

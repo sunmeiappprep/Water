@@ -227,15 +227,23 @@ class ListingShow extends React.Component {
             </div>
             <div className="show-page0">
                 <div className="show-page">
-                    <h3 className="listing-info">{listing.title}</h3>
-                    <h3 className="listing-info">{reviewAvg}{`(${this.state.reviews.length} reviews)`}{listing.city}</h3>   
-                    {
+                    <h3 className="listing-info-title">{listing.title}</h3>
+                    <div className="listing-info-review-title">
+                        <div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div>
+
+                        <div className="asdasd">
+                        {reviewAvg} {`(${this.state.reviews.length} reviews)`} {listing.city}
+                        </div>
+                    </div>
+                        
+
+                    {/* {
                         {reviewAvg} ?
                         <h6>{reviewAvg}</h6>
                         :
                         null
 
-                    }                
+                    }                 */}
                         <div className='showing-bundle'>
                             <div className='showing-bundle-left'>
                                 <img className="photo" src={listing.photoAWS} alt="photo" width="500px"/>
