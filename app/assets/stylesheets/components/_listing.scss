@@ -407,7 +407,10 @@ img {
   box-shadow: 1px 2px 15px 7px #CCCCCC;
   border-radius: 26px;
   padding: 10px;  
-}
+  // position: -webkit-sticky;
+  // position: sticky;
+  // top: 60%;
+  }
 
 .priceReview{
   display: flex ;

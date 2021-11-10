@@ -68,7 +68,7 @@ class ReviewShow extends React.Component {
         }
         // window.location.reload()
 
-        console.log(review)
+        // console.log(review)
         // console.log(arr[0])
         // console.log(arr[1])
         // console.log(arr[2])
@@ -106,7 +106,7 @@ class ReviewShow extends React.Component {
         let dateMonth = dateString.slice(5,7)
         let dateYear = dateString.slice(0,4)
         let month = monthNames[dateMonth-1]
-        console.log(dateYear)
+        // console.log(dateYear)
         return(
            
             

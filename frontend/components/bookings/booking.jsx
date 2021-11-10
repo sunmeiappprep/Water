@@ -19,7 +19,7 @@ class Booking extends React.Component {
     
     componentDidMount() {        
         this.props.fetchBookings().then(bookings => this.setState({bookings}))
-        console.log(this.state.bookings)
+        // console.log(this.state.bookings)
     }
 
 
@@ -37,9 +37,9 @@ class Booking extends React.Component {
     
         if (prevState.bookings.length !== this.state.bookings.length) {
             this.props.fetchBookings()
-                .then(console.log(prevState))
+                // .then(console.log(prevState))
                 .then(bookings => this.setState({ bookings }))
-                .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
+                // .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
     }
 }
     // reduceBooking(bookings,id){

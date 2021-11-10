@@ -36,7 +36,7 @@ export default class BookingForm extends Component {
 
     handleClick(e) {
         e.preventDefault()
-        console.log(e)
+        // console.log(e)
         const booking2 = {
             check_in:this.state.in,
             check_out:this.state.out,   
@@ -45,14 +45,14 @@ export default class BookingForm extends Component {
 
             
         }        
-        console.log(booking2)
+        // console.log(booking2)
 
         this.props.createBooking(booking2);
         
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         // const ci = '02/02/2000'
         // const co = "09/02/2001"
         // this.setState

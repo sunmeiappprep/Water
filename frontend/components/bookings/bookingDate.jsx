@@ -12,6 +12,9 @@ class BookingDate extends React.Component {
         in: "",
         out: "",
         today:new Date(),
+        valueCheckin:  new Date(),
+        valueCheckOut: new Date(),
+        min:new Date(),
 
       bookings: "booking",
     
@@ -21,13 +24,13 @@ class BookingDate extends React.Component {
 }
 
 console(e){
-  console.log(e)
+  // console.log(e)
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
   const month = e.getMonth()+1;
   const date = e.getDate()
   const year = e.getFullYear()
-  console.log(date,month,year)
+  // console.log(date,month,year)
 }
   
 onhandlecheckin = (e) => {
@@ -35,6 +38,7 @@ onhandlecheckin = (e) => {
   const date = e.getDate()
   const year = e.getFullYear()
   this.props.onCheckin(`${date}/${month}/${year}`);    
+  // console.logx
   this.setState({in:[date,month,year]})        
 
 }
@@ -44,7 +48,9 @@ onhandlecheckout = (e) => {
   const date = e.getDate()
   const year = e.getFullYear()
   this.props.onCheckout(`${date}/${month}/${year}`);    
-  this.setState({out:[date,month,year]})        
+  this.setState({out:[date,month,year]})       
+  console.log(e)
+  this.setState({min:e}) 
 }
 
 
@@ -98,8 +104,6 @@ isDateDisabled = ({date, view}) => {
 };
 
     render() {
-    console.log(this.state.in)
-    console.log(this.state.out)
 
  
         return (
@@ -111,19 +115,19 @@ isDateDisabled = ({date, view}) => {
           <div className="calendar">
             <Calendar 
             onChange={this.onhandlecheckin}
-            value={this.state.value}
+            value={this.state.valueCheckin}
             showNeighboringMonth={false}
             tileDisabled={this.isDateDisabled}
-            // minDate={this.state.today}
+            minDate={this.state.min}
           />
           </div>
 
         <Calendar className="calendar"
           onChange={this.onhandlecheckout}
-          value={this.state.value}
+          value={this.state.valueCheckOut}
           showNeighboringMonth={false}
           tileDisabled={this.isDateDisabled}
-          // minDate={new Date()}
+          minDate={new Date()}
 
         />
           </div>

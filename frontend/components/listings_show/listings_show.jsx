@@ -138,7 +138,7 @@ class ListingShow extends React.Component {
 
 
     render(){        
-        // console.log(this.state.check_in)
+        // console.log(this.state.check_out)
         let reviewAvg = this.avgReview()
         if (reviewAvg !== NaN){
             // console.log(reviewAvg)
@@ -203,7 +203,7 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
-        console.log()
+        // console.log()
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">
@@ -276,7 +276,7 @@ class ListingShow extends React.Component {
                             </div>
                         </div>
                         <div className="mid-right-section">
-                            <Checkin avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length}/>
+                            <Checkin avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length} check_in={this.state.check_in} check_out={this.state.check_out}/>
                         </div>
                     </div>
                     {/* if (reviews){ */}
