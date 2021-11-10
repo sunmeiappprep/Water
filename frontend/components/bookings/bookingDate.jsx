@@ -38,7 +38,7 @@ componentDidMount(){
   //   }
     
   // }
-  console.log(this.state.bookings)
+  // console.log(this.state.bookings)
 
   // this.setState({listingBookingArr:newArr})
 }
@@ -52,7 +52,7 @@ componentDidUpdate(pP,pS){
         
       }
       else{
-        console.log(this.state.bookings[x].listing_id,this.props.listingId)
+        // console.log(this.state.bookings[x].listing_id,this.props.listingId)
       }
       
     }

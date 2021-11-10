@@ -17,9 +17,23 @@ class Booking extends React.Component {
     }
     
     
-    componentDidMount() {        
-        this.props.fetchBookings().then(bookings => this.setState({bookings}))
-        // console.log(this.state.bookings)
+    componentDidMount() {     
+        let arr = [];
+        let bookings = {}
+        this.props.fetchBookings().then(bookings => this.setState({bookings})).then(() =>{
+            for (let x = 0; x < this.state.bookings.bookings.length; x++){
+                if (this.state.bookings.bookings[x].renter.id === this.props.currentUser[0].id){
+                    arr.push(this.state.bookings.bookings[x])
+                }
+            }
+            console.log(arr)
+
+        }).then(()=>{
+            bookings:
+            this.setState({bookings:arr})
+        })
+        // let bk = this.state.bookings.bookings;
+        
     }
 
 
@@ -60,8 +74,15 @@ class Booking extends React.Component {
         const {removeBooking,history} = this.props;
         // booking2 = []
         // bookings.each 
-        // const currentUserId = this.props.currentUser[0].id
+        const currentUserId = this.props.currentUser[0].id
 
+        
+        // setInterval(() => {
+        //     console.log(currentUserId)
+        //     console.log(this.state.bookings.bookings)
+            
+        // }, 1000);
+        // setInterval( )
         // const reduceBook = this.reduceBooking(bookings,currentUserId)
 
         const {bookings} = this.props
@@ -76,7 +97,7 @@ class Booking extends React.Component {
                     
                     // booking.renter_id === currentUserId ?             
                     <Link key ={i} to={`/listings/${booking.listing_id}`}> 
-                    <BookingIndexItem removeBooking={removeBooking} booking= {booking} history={history} key={booking.id} button className="delete-booking" onClick={this.handleDelete} />
+                    <BookingIndexItem removeBooking={removeBooking} booking= {this.state.bookings} history={history} key={booking.id} button className="delete-booking" onClick={this.handleDelete} />
                     </Link > 
                     // <button className="delete-booking" onClick={this.handleDelete}>Delete booking</button> : null
                     
