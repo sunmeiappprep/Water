@@ -15,12 +15,14 @@ class BookingDate extends React.Component {
         valueCheckin:  new Date(),
         valueCheckOut: new Date(),
         min:new Date(),
+        today:new Date(),
+        dateDiff:-1,
 
       bookings: "booking",
     
     }
     
-    // this.onhandlecheckin = onhandlecheckin.bind(this)
+    this.dateCallback  = this.dateCallback.bind(this)
 }
 
 console(e){
@@ -51,9 +53,25 @@ onhandlecheckout = (e) => {
   this.setState({out:[date,month,year]})       
   console.log(e)
   this.setState({min:e}) 
+
+  var date1 = (this.state.today);
+  var date2 = (this.state.min);
+  var Difference_In_Time = date2.getTime() - date1.getTime();
+  var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+  this.setState({dateDiff:Difference_In_Days})
+  if(this.state.dateDiff >= 0){
+    this.setState({min:e}) 
+  }
+
+  
 }
 
+dateCallback(){
+  this.setState({min:this.state.today})
+  console.log("asdsad12312a")
+  console.log(this.state.min)
 
+}
 
 
 checkifarrayhastrue(array){
@@ -104,7 +122,9 @@ isDateDisabled = ({date, view}) => {
 };
 
     render() {
-
+      console.log(this.state.dateDiff)
+      console.log("asds")
+      
  
         return (
         <div className="calendar-con">
@@ -118,7 +138,8 @@ isDateDisabled = ({date, view}) => {
             value={this.state.valueCheckin}
             showNeighboringMonth={false}
             tileDisabled={this.isDateDisabled}
-            minDate={this.state.min}
+            minDate={new Date()}
+
           />
           </div>
 
@@ -127,7 +148,8 @@ isDateDisabled = ({date, view}) => {
           value={this.state.valueCheckOut}
           showNeighboringMonth={false}
           tileDisabled={this.isDateDisabled}
-          minDate={new Date()}
+          minDate={this.state.min}
+          onClickDay={this.dateCallback}
 
         />
           </div>

@@ -15,20 +15,8 @@ export default class Checkin extends Component {
             total:0,
         }
         this.toggle = this.toggle.bind(this)
-        this.diffDateFun = this.diffDateFun.bind(this)
     }
 
-    diffDateFun(){
-        var date1 = new Date(this.state.checkinMMDDYYYY);
-        var date2 = new Date(this.state.checkoutMMDDYYYY);
-        var Difference_In_Time = date2.getTime() - date1.getTime();
-        var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-        this.setState({dateDiff:Difference_In_Days})
-        let ceilifference_In = Math.ceil(Difference_In_Days)
-        let total = Math.ceil(this.props.price * ceilifference_In)
-        this.setState({total:total})
-        
-    }
 
     convertFormatIn(dateString){
         let x = dateString.split("/")
@@ -53,6 +41,7 @@ export default class Checkin extends Component {
         else{
             this.setState({check_in:this.props.check_in})
             this.convertFormatIn(this.props.check_in)
+            this.setState({totalToggleOn:false})
 
         }
         if (pP.check_out === this.props.check_out){
@@ -60,6 +49,8 @@ export default class Checkin extends Component {
         else{
             this.setState({check_out:this.props.check_out})
             this.convertFormatOut(this.props.check_out)
+            this.setState({totalToggleOn:false})
+
 
 
         }
@@ -81,14 +72,16 @@ export default class Checkin extends Component {
         var Difference_In_Time = date2.getTime() - date1.getTime();
         var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
         this.setState({dateDiff:Difference_In_Days})
-        let total = Math.floor(this.props.price * Difference_In_Days)
+        let ceilifference_In = Math.ceil(Difference_In_Days + 1)
+        let total = Math.ceil(this.props.price * ceilifference_In)
+        // let total = Math.floor(this.props.price * Difference_In_Days)
         this.setState({total:total})
     }   
 
     render() {
 
         
-        console.log((this.state.dateDiff))
+        // console.log((this.state.dateDiff))
         // console.log()
 
         return (
