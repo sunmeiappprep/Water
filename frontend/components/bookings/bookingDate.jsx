@@ -51,7 +51,7 @@ onhandlecheckout = (e) => {
   const year = e.getFullYear()
   this.props.onCheckout(`${date}/${month}/${year}`);    
   this.setState({out:[date,month,year]})       
-  console.log(e)
+  // console.log(e)
   this.setState({min:e}) 
 
   var date1 = (this.state.today);
@@ -63,13 +63,16 @@ onhandlecheckout = (e) => {
     this.setState({min:e}) 
   }
 
-  
+  // setTimeout(() => {
+  // this.setState({min:this.state.today})
+    
+  // }, 1000);
 }
 
-dateCallback(){
-  this.setState({min:this.state.today})
-  console.log("asdsad12312a")
-  console.log(this.state.min)
+dateCallback(date,event){
+  // this.setState({min:this.state.today})
+  console.log(date)
+  console.log(event)
 
 }
 
