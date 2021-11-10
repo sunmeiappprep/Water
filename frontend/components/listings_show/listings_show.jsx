@@ -10,9 +10,9 @@ import ReviewFormContainer from '../review_form/review_form_container';
 import DeleteEditContainer from '../deleteEdit/deleteEditContainer';
 import ReviewShowContainer from '../reviewShow/reviewShowContainer';
 import React, { useState } from "react";
-import BookingDate from '../bookings/BookingDate';
+import BookingDate from '../bookings/bookingDateContainer';
 import Perks from '../perks/perks';
-import Checkin from '../checkin/checkin';
+import Checkin from '../checkin/checkin_container';
 // import 'bootstrap/dist/css/bootstrap.css';
 import ProgressBar from "@ramonak/react-progress-bar";
 import StarRateIcon from '@mui/icons-material/StarRate';
@@ -71,7 +71,16 @@ class ListingShow extends React.Component {
                 listings: this.props.listing
               })
         ).then(()=> this.avgReview()
-        ).then(()=> this.setState({randomDescriptions:[
+        );      
+
+     
+
+
+
+    }   
+
+    componentWillMount() {
+        this.setState({ randomDescriptions: [
             [
              `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
 
@@ -83,18 +92,17 @@ class ListingShow extends React.Component {
             [
              `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
             ]
-        ]}
-        )
-        );      
+        ] });
+        this.props.fetchListing(this.props.match.params.listingid);
+        this.props.fetchListingReviews(this.props.match.params.listingid).then(() =>
+        this.setState({
+            reviews: this.props.reviews,
+            listings: this.props.listing
+          })
+        ).then(()=> this.avgReview()
+        ); 
 
-     
-
-
-        // if (this.props !== prevProps) {
-        //     window.location.reload(false);
-        // }
-        
-    }   
+    }
 
     componentDidUpdate(prevProps, prevState){
         
@@ -148,16 +156,7 @@ class ListingShow extends React.Component {
             randomNum = this.state.listings.id%this.state.randomDescriptions.length
 
         }
-        // console.log(randomNum)
-        let total = 0
-        // if (this.state.reviews){
-        //     for (let x = 0; x < 1; x++){
-        //         total += this.state.review[x].rating
-        //     }
-        //     console.log(total)
-        // }
-        // console.log(this.state.reviews[0])
-        
+
 
         let reviewerName = ""
         let reviewerId = 0
@@ -166,7 +165,7 @@ class ListingShow extends React.Component {
             reviewerName = users[0].username
             reviewerId = users[0].id
         }
-        // if (reviewerId) console.log(reviewerId)
+
         
 
         let arr = []
@@ -263,7 +262,7 @@ class ListingShow extends React.Component {
                     <div className="listing-mid-section">
                         <div className="mid-left-section">
                             <Perks avgRating={reviewAvg} listingId={listing.id}/>
-                            <div ><BookingDate onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
+                            <div ><BookingDate listingId={listing.id} onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
                                 
                             <div className="random-description">
                                 {
@@ -276,7 +275,7 @@ class ListingShow extends React.Component {
                             </div>
                         </div>
                         <div className="mid-right-section">
-                            <Checkin avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length} check_in={this.state.check_in} check_out={this.state.check_out}/>
+                            <Checkin  listingId={listing.id} avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length} check_in={this.state.check_in} check_out={this.state.check_out}/>
                         </div>
                     </div>
                     {/* if (reviews){ */}
@@ -316,7 +315,7 @@ class ListingShow extends React.Component {
                     (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null
                     }
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
-                    <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/>
+                    {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}
                     
 ,                 </div>               
             </div>

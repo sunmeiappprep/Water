@@ -11,13 +11,18 @@ class ReviewShow extends React.Component {
             listing_id:null,
             reviewer_id:null,
             deleted:false,
+            flag:"",
         }
         this.handleDelete = this.handleDelete.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
     }
 
 
-
+    // componentWillMount(){
+    //     this.setState({
+    //         flag: "b"
+    //     })
+    // }
 
     componentDidUpdate(prevProps, prevState){
         
@@ -41,9 +46,6 @@ class ReviewShow extends React.Component {
         window.location.reload()
     }
 
-    // testing(){
-    //     console.log("asd")
-    // }
 
     handleEdit(e){
         e.preventDefault()
@@ -76,9 +78,7 @@ class ReviewShow extends React.Component {
         // console.log(arr[4])
         this.props.updateReview(review)
 
-        // setTimeout(() => {
-        //     console.log(this.state)
-        // }, 1000);
+
 
 
 

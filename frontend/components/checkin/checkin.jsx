@@ -13,8 +13,29 @@ export default class Checkin extends Component {
             checkoutMMDDYYYY:"",
             dateDiff:0,
             total:0,
+            in:'',
+            out:'',
         }
+        this.handleClick = this.handleClick.bind(this)
         this.toggle = this.toggle.bind(this)
+    }
+
+    handleClick(e) {
+        e.preventDefault()
+        // console.log(e)
+        const booking2 = {
+            check_in:this.state.check_in,
+            check_out:this.state.check_out,   
+            renter_id:this.props.currentUser,   
+            listing_id:this.props.listingId,
+
+            
+        }        
+        // console.log(booking2)
+
+        this.props.createBooking(booking2);
+        window.location.reload()
+
     }
 
 
@@ -80,7 +101,7 @@ export default class Checkin extends Component {
 
     render() {
 
-        
+        console.log(this.props)
         // console.log((this.state.dateDiff))
         // console.log()
 
@@ -141,7 +162,19 @@ export default class Checkin extends Component {
                     <div>
                         {
                             (this.state.totalToggleOn === true) ?
+                            <div>
                             <div className="avaSum">Total {this.state.total}</div>
+                            <div>
+
+                            <label>
+                            Submit
+                            <button  onClick={this.handleClick}>Create Booking</button>
+
+                            </label>
+                            </div>
+
+
+                            </div>
                             :
                             null
                         }

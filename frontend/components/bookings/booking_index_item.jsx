@@ -13,7 +13,7 @@ class BookingIndexItem extends React.Component {
     componentDidMount() {
         // console.log(this.props.booking)
         // this.setState({booking:2}), ()=>{
-        //     (console.log(this.state)) 
+
         // } 
         this.setState({ booking: this.props.booking }, () => {
             // console.log(this.state.booking);

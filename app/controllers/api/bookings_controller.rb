@@ -25,7 +25,7 @@ class Api::BookingsController < ApplicationController
 
     def index 
         user = current_user
-        @bookings = user.bookings
+        @bookings = Booking.all
 
         render '/api/bookings/index'
     end
