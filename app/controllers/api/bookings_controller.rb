@@ -30,15 +30,24 @@ class Api::BookingsController < ApplicationController
         render :show 
     end
 
-    def update         
-        # debugger
-        @booking = Booking.find(params[:id])
-        if @booking.update_attributes(booking_params)
-            render :show
+    # def update         
+    #     @booking = Booking.find(params[:id])
+    #     if @booking.update_attribute(booking_params)
+    #         render :show
+    #     else
+    #         render json: ["Can't Change booking"], status: 404
+    #     end
+    # end
+
+    def update
+        @booking = Booking.find_by(id: params[:id])
+        
+        if @booking && @booking.update(booking_params)
+          render :show
         else
-            render json: ["Can't Change booking"], status: 404
+          render json: @booking.errors.full_messages, status: 401
         end
-    end
+      end
 
 
     def booking_params
