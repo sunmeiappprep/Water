@@ -1,7 +1,7 @@
 // import React from 'react'
 import React, { useState,Component } from 'react';
 import Calendar from 'react-calendar';
-
+import BookingIndexItem from './booking_index_item_container';
 
 class BookingDate extends React.Component {
     constructor(props){
@@ -19,6 +19,7 @@ class BookingDate extends React.Component {
         dateDiff:-1,
         bookings: [],
         listingBookingArr:[],
+        firstbooking:"a"
     
     }
     
@@ -37,7 +38,7 @@ componentDidMount(){
   //     newArr.push(bookingsArr[x])
   //   }
     
-  // }
+  // }BookingIndexItem
   // console.log(this.state.bookings)
 
   // this.setState({listingBookingArr:newArr})
@@ -115,6 +116,22 @@ dateCallback(date,event){
 
 }
 
+checkIfcurrentuserhavebooking(){
+  for (let x = 0; x < this.state.listingBookingArr.length; x++){
+    if (this.state.listingBookingArr[x].renter_id === this.props.currentUser && this.state.firstbooking === "a"){
+       this.setState({firstbooking:this.state.listingBookingArr[x]})
+    }
+  }
+}
+
+showBooking(){
+  <div>
+    {
+  this.state.firstbooking.id
+
+    }
+  </div>
+}
 
 checkifarrayhastrue(array){
   if (array.includes(true)){
@@ -190,10 +207,21 @@ isDateDisabled = ({date, view}) => {
       //   console.log(bookingsArr[x])
       // // }
       // setInterval(() => {
-      // console.log(this.state.listingBookingArr)
-        
-      // }, 1000);
+      //       console.log(this.state.firstbooking)
 
+        
+      //   }, 1000);
+      let checkIfcurrentuserhavebooking = this.checkIfcurrentuserhavebooking()
+      let showBooking = this.showBooking()
+
+      checkIfcurrentuserhavebooking
+
+      // if (this.state.firstbooking === "a"){
+
+      // }
+      // else{
+
+      // }
  
         return (
         <div className="calendar-con">
@@ -217,12 +245,16 @@ isDateDisabled = ({date, view}) => {
           value={this.state.valueCheckOut}
           showNeighboringMonth={false}
           tileDisabled={this.isDateDisabled}
-          minDate={this.state.min}
+          minDate={new Date()}
           onClickDay={this.dateCallback}
 
         />
           </div>
-
+          {
+            (this.state.firstbooking === "a") ?
+            null :
+            <BookingIndexItem booking={this.state.firstbooking}/>
+          }
         </div>
         )
     }

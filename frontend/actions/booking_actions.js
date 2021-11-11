@@ -43,4 +43,7 @@ export const removeBooking = bookingId => dispatch => {
     .then(() => dispatch(removeOneBooking(bookingId))))
 }
 
-
+export const updateBooking = booking => dispatch => (
+    BookingUtil.updateBooking(booking)
+    .then(booking => dispatch(receiveOneBooking(booking)))
+)

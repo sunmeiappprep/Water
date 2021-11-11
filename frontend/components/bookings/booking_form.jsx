@@ -52,7 +52,7 @@ export default class BookingForm extends Component {
     }
 
     render() {
-        // console.log(this.props)
+        console.log(this.state.check_in)
         // const ci = '02/02/2000'
         // const co = "09/02/2001"
         // this.setState

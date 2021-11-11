@@ -15,11 +15,31 @@ export default class Checkin extends Component {
             total:0,
             in:'',
             out:'',
+            bookings:[],
         }
         this.handleClick = this.handleClick.bind(this)
         this.toggle = this.toggle.bind(this)
     }
 
+    // componentWillMount() {     
+    //     let arr = [];
+    //     let bookings = {}
+    //     this.props.fetchBookings().then(bookings => this.setState({bookings})).then(() =>{
+    //         for (let x = 0; x < this.state.bookings.bookings.length; x++){
+    //             if (this.state.bookings.bookings[x].renter.id === this.props.currentUser[0].id){
+    //                 arr.push(this.state.bookings.bookings[x])
+    //             }
+    //         }
+    //         console.log(arr)
+
+    //     }).then(()=>{
+    //         bookings:
+    //         this.setState({bookings:arr})
+    //     })
+    //     // let bk = this.state.bookings.bookings;
+        
+    // }
+    
     handleClick(e) {
         e.preventDefault()
         // console.log(e)
@@ -31,10 +51,10 @@ export default class Checkin extends Component {
 
             
         }        
-        // console.log(booking2)
+        console.log(booking2)
 
         this.props.createBooking(booking2);
-        window.location.reload()
+        // window.location.reload()
 
     }
 
@@ -101,9 +121,14 @@ export default class Checkin extends Component {
 
     render() {
 
-        console.log(this.props)
+        // console.log(this.props)
         // console.log((this.state.dateDiff))
         // console.log()
+    //   setInterval(() => {
+    //   console.log(this.state.bookings.bookings)
+        
+    //   }, 1000);
+
 
         return (
             <div>
@@ -177,6 +202,10 @@ export default class Checkin extends Component {
                             </div>
                             :
                             null
+                        }
+
+                        {
+
                         }
                     </div>
                 </div>
