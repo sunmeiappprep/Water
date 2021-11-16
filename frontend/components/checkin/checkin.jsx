@@ -54,7 +54,7 @@ export default class Checkin extends Component {
         console.log(booking2)
 
         this.props.createBooking(booking2);
-        // window.location.reload()
+        window.location.reload()
 
     }
 

@@ -35,18 +35,19 @@ class BookingIndexItem extends React.Component {
         e.preventDefault();
         this.setState({booking:""})
         this.props.removeBooking(this.props.booking.id)
-        // window.location.reload()
+        window.location.reload()
 
       }
 
       handleEdit(e){
         e.preventDefault();
+        console.log(this.props)
         let testing ={
             id:this.props.booking.id,
-            check_in:"1/2/2022",
-            check_out: "11/2/2022",
-            renter_id: 6,
-            listing_id: 29,
+            check_in:`${this.props.in[0]}/${this.props.in[1]}/${this.props.in[2]}`,
+            check_out:`${this.props.out[0]}/${this.props.out[1]}/${this.props.out[2]}`,
+            renter_id: this.props.renter_id,
+            listing_id: this.props.booking.listing_id,
         }
         this.props.updateBooking(testing)
         // window.location.reload()
@@ -55,6 +56,7 @@ class BookingIndexItem extends React.Component {
 
     render(){
         // console.log("asd")
+        console.log(this.props)
         const {booking,removeBooking} = this.props;       
         const onelisting = booking.listing
         if (!onelisting) return null

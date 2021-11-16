@@ -22,7 +22,7 @@ class BookingDate extends React.Component {
         firstbooking:"a"
     
     }
-    
+    this.removeOne = this.removeOne.bind(this)
     this.dateCallback  = this.dateCallback.bind(this)
     this.checkIfcurrentuserhavebooking = this.checkIfcurrentuserhavebooking.bind(this)
 
@@ -44,6 +44,26 @@ componentDidMount(){
   // console.log(this.state.bookings)
 
   // this.setState({listingBookingArr:newArr})
+}
+
+removeOne(){
+  // for (let x = 0; x <this.state.listingBookingArr.length; x++){
+  //   if (this.state.listingBookingArr === this.props.listingId){
+
+  //     newArr.push(this.state.bookings[x])
+      
+  //   }
+  //   else{
+  //     // console.log(this.state.bookings[x].listing_id,this.props.listingId)
+  //   }
+    
+  // }
+  if (this.state.listingBookingArr.length > 0){
+    let choseOne = this.state.listingBookingArr[0]
+    console.log(choseOne)
+    this.setState({listingBookingArr:[choseOne]})
+  }
+
 }
 
 componentDidUpdate(pP,pS){
@@ -189,23 +209,23 @@ isDateDisabled = ({date, view}) => {
   }
 
 
+  console.log(this.state.listingBookingArr)
   
 
 
   if( finalarr2.length === undefined )return null
 
+  console.log("this is listingBookingArr",this.state.listingBookingArr)
 
   return (
-
   checkifarrayhastrue(finalarr2)
-  
 
 
   );
 };
 
     render() {
-      // console.log(this.state.firstbooking)
+      // console.log(this.state.listingBookingArr)
       if (this.state.listingBookingArr){
         this.checkIfcurrentuserhavebooking()
       }
@@ -232,6 +252,8 @@ isDateDisabled = ({date, view}) => {
       // else{
 
       // }
+      // const removeOne = this.removeOne;
+
  
         return (
         <div className="calendar-con">
@@ -260,10 +282,12 @@ isDateDisabled = ({date, view}) => {
 
         />
           </div>
+
+          <button onClick={this.removeOne}>Delete One</button>
           {
             (this.state.firstbooking === "a") ?
             null :
-            <BookingIndexItem booking={this.state.firstbooking}/>
+            <BookingIndexItem in={this.state.in} out={this.state.out} booking={this.state.firstbooking}/>
           }
         </div>
         )
