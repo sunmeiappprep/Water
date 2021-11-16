@@ -46,7 +46,7 @@ class BookingIndexItem extends React.Component {
             check_in:"1/2/2022",
             check_out: "11/2/2022",
             renter_id: 6,
-            listing_id: 20,
+            listing_id: 29,
         }
         this.props.updateBooking(testing)
         // window.location.reload()
@@ -65,14 +65,17 @@ class BookingIndexItem extends React.Component {
                 <h1 className="bookingpagetxt">You are checking out on {booking.check_out}</h1>
                 <h1 className="bookingpagetxt">Visiting {onelisting.title}</h1>
                 <h1 className="bookingpagetxt">In {onelisting.city}</h1>
-                <div>
-                <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
+                <div className="deleteandedit">
+                    <div>
+                    <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
 
-                </div>
-                <div>
-                <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Edit booking</button> 
+                    </div>
+                    <div>
+                    <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Edit booking</button> 
 
+                    </div>
                 </div>
+
             </div>
            
             {/* <button className="delete-photo" onClick={this.handleDelete}>Delete Photo</button>  */}

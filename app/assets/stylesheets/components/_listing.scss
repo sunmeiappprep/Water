@@ -172,7 +172,7 @@
   // flex-basis: 1250px;
   flex-wrap: wrap;
 
-  
+git  
 }
 .bookingpage1{
   background-color: aqua;
@@ -223,29 +223,29 @@
 
 
 
-.delete-booking {
-	box-shadow:inset 0px 39px 0px -24px #e67a73;
-	background-color:#e4685d;
-	border-radius:4px;
-	border:1px solid #ffffff;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #e6170c;
+
+
+.delete-booking,.edit-booking {
+	box-shadow:inset 0px 39px 0px -24px #e67a73 !important;
+	background-color:#e4685d  !important;
+	border-radius:23px  !important;
+	border:6px solid #ffffff  !important;
+	display:inline-block  !important;
+	cursor:pointer  !important;
+	color:#ffffff  !important;
+	font-family:Arial  !important;
+	font-size:23px  !important;
+	padding:11px 42px  !important;
+	text-decoration:none  !important;
+	text-shadow:0px 1px 0px #b23e35  !important;
 }
 .delete-booking:hover {
-	background-color:#eb675e;
+	background-color:#eb675e  !important;
 }
 .delete-booking:active {
-	position:relative;
-	top:1px;
+	position:relative  !important;
+	top:1px  !important;
 }
-
-        
         
 
 .photo{
@@ -726,4 +726,9 @@ img {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-size: 16px !important;
   word-wrap: break-word;
+}
+
+.deleteandedit{
+  display: flex;
+  justify-content: space-between;
 }

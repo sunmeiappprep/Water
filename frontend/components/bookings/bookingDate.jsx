@@ -24,6 +24,8 @@ class BookingDate extends React.Component {
     }
     
     this.dateCallback  = this.dateCallback.bind(this)
+    this.checkIfcurrentuserhavebooking = this.checkIfcurrentuserhavebooking.bind(this)
+
 }
 
 componentWillMount(){
@@ -49,6 +51,7 @@ componentDidUpdate(pP,pS){
     let newArr = [];
     for (let x = 0; x <this.state.bookings.length; x++){
       if (this.state.bookings[x].listing_id === this.props.listingId){
+
         newArr.push(this.state.bookings[x])
         
       }
@@ -58,8 +61,8 @@ componentDidUpdate(pP,pS){
       
     }
     // console.log(this.state.bookings.bookings[0].listing_id === this.props.listingId)
-  
-    this.setState({listingBookingArr:newArr})
+  this.setState({listingBookingArr:newArr})
+  this.checkIfcurrentuserhavebooking()
   }
   
  
@@ -117,11 +120,14 @@ dateCallback(date,event){
 }
 
 checkIfcurrentuserhavebooking(){
+  // console.log("checkifcurrent")
+  // console.log(this.state.listingBookingArr.length)
   for (let x = 0; x < this.state.listingBookingArr.length; x++){
     if (this.state.listingBookingArr[x].renter_id === this.props.currentUser && this.state.firstbooking === "a"){
        this.setState({firstbooking:this.state.listingBookingArr[x]})
     }
   }
+
 }
 
 showBooking(){
@@ -199,6 +205,11 @@ isDateDisabled = ({date, view}) => {
 };
 
     render() {
+      // console.log(this.state.firstbooking)
+      if (this.state.listingBookingArr){
+        this.checkIfcurrentuserhavebooking()
+      }
+      // console.log(this.state.bookings.length)
       // console.log(this.state.dateDiff)
       // console.log("asds")
       // console.log(this.state.bookings)
@@ -211,10 +222,9 @@ isDateDisabled = ({date, view}) => {
 
         
       //   }, 1000);
-      let checkIfcurrentuserhavebooking = this.checkIfcurrentuserhavebooking()
-      let showBooking = this.showBooking()
+      // let showBooking = this.showBooking()
 
-      checkIfcurrentuserhavebooking
+      // checkIfcurrentuserhavebooking
 
       // if (this.state.firstbooking === "a"){
 
