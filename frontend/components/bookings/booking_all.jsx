@@ -20,9 +20,9 @@ class BookingAll extends React.Component {
 
     }
 
-    componentDidMount() {
-        this.recomp()
-      }
+    // componentDidMount() {
+    //     this.recomp()
+    //   }
 
     componentDidUpdate(pP,pS){
         // let arr = []
@@ -42,34 +42,32 @@ class BookingAll extends React.Component {
     }
 
     recomp(){
-        if (this.state.bookings){
+        // if (this.state.bookings){
             
-        }
+        // }
 
     }
     
     handleDelete(e){
-        // // console.log(e)
-        // const {bookings,removeBooking} = this.props;
+        // console.log(e)
         
-        // e.preventDefault();
-        // this.setState({booking:""})
-        // this.props.removeBooking(this.props.booking.id)
-        // // window.location.reload()
+        e.preventDefault();
+        this.props.removeBooking(this.props.booking.id)
+        window.location.reload()
 
       }
 
       handleEdit(e){
-        // e.preventDefault();
-        // let testing ={
-        //     id:this.props.booking.id,
-        //     check_in:"1/2/2022",
-        //     check_out: "11/2/2022",
-        //     renter_id: 6,
-        //     listing_id: 29,
-        // }
-        // this.props.updateBooking(testing)
-        // // window.location.reload()
+        e.preventDefault();
+        let testing ={
+            id:this.props.booking.id,
+            check_in:"1/2/2022",
+            check_out: "11/2/2022",
+            renter_id: 6,
+            listing_id: 29,
+        }
+        this.props.updateBooking(testing)
+        window.location.reload()
       }
 
 
@@ -81,17 +79,27 @@ class BookingAll extends React.Component {
         // const onelisting = booking.listing
         // if (!onelisting) return null
         // console.log(this.state.edited)
-        console.log(this.props)
+        // console.log(this.props)
         // const {booking} = this.props
         // if (!this.state.bookings) return null
 
     return(
-        <div className="bookingpage">
+        <div className="bookingpage1">
             <div>
                 <div className="bookingpagetxt">You are checking in on {this.props.booking.check_in}
                     <div className="bookingpagetxt">You are checking out on {this.props.booking.check_out}</div>
                     <div className="bookingpagetxt">Visiting {this.props.booking.listing.title}</div>
                     <div className="bookingpagetxt">In {this.props.booking.listing.city}</div>
+                </div>
+                <div className="deleteandedit">
+                    <div>
+                    <button className="delete-booking" onClick={this.handleDelete} key={this.props.booking.id}>Delete booking</button> 
+
+                    </div>
+                    <div>
+                    <button className="edit-booking" onClick={this.handleEdit} key={this.props.booking.id*2}>Edit booking</button> 
+
+                    </div>
                 </div>
         </div>
             {/* {

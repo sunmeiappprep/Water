@@ -80,9 +80,9 @@ class Booking extends React.Component {
                     }
                 )
                 .then(
-                    // console.log(this.state.edited)
+                    console.log(this.state.edited)
                 )
-                // .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
+                .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
     }   
 
         // let arr = []
@@ -133,23 +133,40 @@ class Booking extends React.Component {
         const {edited} = this.state
         const {bookings} = this.props
         // console.log(filterbooking)
-        console.log(this.state.edited)
+        // console.log(this.state.edited)   
         if (!edited) return null
         return(            
             
             <div className="bookingpage"> 
-                {/* <h1>ASD</h1>           */}
-                {/* <Nav/>
 
-                <h1 className='bookingpagetxt'>This is Bookings</h1>              
-                <ul className="list-indexes"> */}
+                <div className="listings-index-box2">
+                    <div className="navbar0">
+                        <section className="navbar"> 
+                            <Modal />           
+                            <Link to="/"><img className='logo' src={'https://water-seeds.s3.amazonaws.com/logo.png'} alt="cardsmall"/></Link>
+                            <section className='midLinkBundle'>
+                                {/* <Link to="/" className='midLink'>Places to stay</Link>
+                                <Link to="/" className='midLink'>Experiences</Link>
+                                <Link to="/" className='midLink'>Online Experiences</Link> */}
+                            <SearchContainer/>
+
+                            </section>          
+                            <GreetingContainer className="greeting_container"/>      
+                        </section>
+                    </div>
+                    <div className="search_container">
+                    {/* <SearchContainer/> */}
+                    </div > 
+                </div>
+                <div className="bookingpage2">
+                <h1>These are your bookings</h1>
                 {   
                     edited.map((booking, i) => (     
                     booking.renter_id === currentUserId ?             
                     <Link key ={i} to={`/listings/${booking.listing_id}`}> 
                     {/* <h1>{i}</h1> */}
                     {/* <BookingAll removeBooking={removeBooking} currentUserId={this.props.currentUser} bookings= {this.state.bookings} history={history} key={booking.id} button className="delete-booking" onClick={this.handleDelete} /> */}
-                    <BookingAll currentUserId={currentUserId} booking={booking} key={booking.id} button className="delete-booking" onClick={this.handleDelete} />
+                    <BookingAll removeBooking={removeBooking} currentUserId={currentUserId} booking={booking} key={booking.id} button className="delete-booking" onClick={this.handleDelete} />
 
                     </Link > :
                     null
@@ -160,16 +177,10 @@ class Booking extends React.Component {
                 {
                            
                 }
-                {/* {   
-                    reduceBook.map((booking, i) => (     
-                    
-                    // booking.renter_id === currentUserId ?         
-                    <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
-                    
-                    ))
-                } */}
 
-                {/* </ul> */}
+                </div>
+
+
                    
             </div>
             // <div>Asd</div>

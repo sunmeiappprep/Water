@@ -1,4 +1,4 @@
-// import React from 'react';
+
 import Modal from '../modal/modal';
 import Logo from '../splash/logo.png'
 import {Link} from 'react-router-dom'
@@ -83,7 +83,6 @@ class ListingShow extends React.Component {
         this.setState({ randomDescriptions: [
             [
              `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
-
              Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
             ],
             [
@@ -241,7 +240,6 @@ class ListingShow extends React.Component {
                         <h6>{reviewAvg}</h6>
                         :
                         null
-
                     }                 */}
                         <div className='showing-bundle'>
                             <div className='showing-bundle-left'>
