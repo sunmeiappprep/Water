@@ -296,7 +296,7 @@ isDateDisabled = ({date, view}) => {
         />
           </div>
 
-          <button onClick={this.removeOne}>Delete One</button>
+          <button onClick={this.removeOne}>Remove own Booking to edit</button>
           {
             (this.state.firstbooking === "a") ?
             null :

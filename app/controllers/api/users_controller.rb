@@ -28,6 +28,7 @@ class Api::UsersController < ApplicationController
     else
       render json: ["Update user info did not work"], status: 422
     end
+  end
 
     
 

@@ -50,7 +50,7 @@ class BookingIndexItem extends React.Component {
             listing_id: this.props.booking.listing_id,
         }
         this.props.updateBooking(testing)
-        // window.location.reload()
+        window.location.reload()
       }
 
 
@@ -73,7 +73,7 @@ class BookingIndexItem extends React.Component {
 
                     </div>
                     <div>
-                    <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Edit booking</button> 
+                    <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Submit new edited dates</button> 
 
                     </div>
                 </div>
