@@ -1,4 +1,4 @@
-// import React from 'react';
+
 import Modal from '../modal/modal';
 import Logo from '../splash/logo.png'
 import {Link} from 'react-router-dom'
@@ -10,9 +10,9 @@ import ReviewFormContainer from '../review_form/review_form_container';
 import DeleteEditContainer from '../deleteEdit/deleteEditContainer';
 import ReviewShowContainer from '../reviewShow/reviewShowContainer';
 import React, { useState } from "react";
-import BookingDate from '../bookings/BookingDate';
+import BookingDate from '../bookings/bookingDateContainer';
 import Perks from '../perks/perks';
-import Checkin from '../checkin/checkin';
+import Checkin from '../checkin/checkin_container';
 // import 'bootstrap/dist/css/bootstrap.css';
 import ProgressBar from "@ramonak/react-progress-bar";
 import StarRateIcon from '@mui/icons-material/StarRate';
@@ -40,7 +40,10 @@ class ListingShow extends React.Component {
                 // [
                 //  `Freshly renovated modern place 20 min from the city, with FREE parking. avenue(the main strip in Waikiki) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your Hawaii getaway.`   
                 // ]
-            ]
+            ],
+            description:"",
+            rating:0,
+            datesInvalid:[],
 
         }
         this.handleDelete = this.handleDelete.bind(this)
@@ -71,10 +74,18 @@ class ListingShow extends React.Component {
                 listings: this.props.listing
               })
         ).then(()=> this.avgReview()
-        ).then(()=> this.setState({randomDescriptions:[
+        );      
+
+     
+
+
+
+    }   
+
+    componentWillMount() {
+        this.setState({ randomDescriptions: [
             [
              `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
-
              Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
             ],
             [
@@ -83,18 +94,17 @@ class ListingShow extends React.Component {
             [
              `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
             ]
-        ]}
-        )
-        );      
+        ] });
+        this.props.fetchListing(this.props.match.params.listingid);
+        this.props.fetchListingReviews(this.props.match.params.listingid).then(() =>
+        this.setState({
+            reviews: this.props.reviews,
+            listings: this.props.listing
+          })
+        ).then(()=> this.avgReview()
+        ); 
 
-     
-
-
-        // if (this.props !== prevProps) {
-        //     window.location.reload(false);
-        // }
-        
-    }   
+    }
 
     componentDidUpdate(prevProps, prevState){
         
@@ -135,10 +145,23 @@ class ListingShow extends React.Component {
         this.setState({check_out: checkout});
     }
 
+    handleDescription = (description) => {
+        this.setState({description: description});
+    }
+
+    handleRating = (rating) => {
+        this.setState({rating: rating});
+    }
+
+    
+    onhandleDates = (datesArray) => {
+        this.setState({datesInvalid: datesArray});
+    }
+
 
 
     render(){        
-        // console.log(this.state.check_in)
+        // console.log(this.state.check_out)
         let reviewAvg = this.avgReview()
         if (reviewAvg !== NaN){
             // console.log(reviewAvg)
@@ -148,16 +171,7 @@ class ListingShow extends React.Component {
             randomNum = this.state.listings.id%this.state.randomDescriptions.length
 
         }
-        // console.log(randomNum)
-        let total = 0
-        // if (this.state.reviews){
-        //     for (let x = 0; x < 1; x++){
-        //         total += this.state.review[x].rating
-        //     }
-        //     console.log(total)
-        // }
-        // console.log(this.state.reviews[0])
-        
+
 
         let reviewerName = ""
         let reviewerId = 0
@@ -166,7 +180,7 @@ class ListingShow extends React.Component {
             reviewerName = users[0].username
             reviewerId = users[0].id
         }
-        // if (reviewerId) console.log(reviewerId)
+
         
 
         let arr = []
@@ -186,7 +200,7 @@ class ListingShow extends React.Component {
         if (newarr && users[0]){
             newarr.map(review =>{
                 // console.log(newarr)
-                arr.push(<ReviewShowContainer  key={review.id} cdp={this.componentDidUpdate} review={review} user={users[0].id}/>)
+                arr.push(<ReviewShowContainer editRating={this.state.rating} editDescription={this.state.description}  key={review.id} cdp={this.componentDidUpdate} review={review} user={users[0].id}/>)
             }
             
             )
@@ -195,7 +209,7 @@ class ListingShow extends React.Component {
             newarr.map(review =>{
                 // console.log("asd")
 
-                arr.push(<ReviewShowContainer key={review.id} cdp={this.componentDidUpdate}  review={review}/>)
+                arr.push(<ReviewShowContainer editDescription={this.state.description} key={review.id} cdp={this.componentDidUpdate}  review={review}/>)
             }
             
             )
@@ -203,7 +217,9 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
-        console.log()
+        // console.log(this.state.description,this.state.rating)
+        // console.log("these are invaild",this.state.datesInvalid)
+
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">
@@ -231,9 +247,17 @@ class ListingShow extends React.Component {
                     <div className="listing-info-review-title">
                         <div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div>
 
-                        <div className="asdasd">
-                        {reviewAvg} {`(${this.state.reviews.length} reviews)`} {listing.city}
-                        </div>
+                        {
+                            reviewAvg >=0 ?
+                            <div className="asdasd">
+                            {reviewAvg} {`(${this.state.reviews.length} reviews)`} {listing.city}
+                            </div>
+                            :
+                            <div className="asdasd">
+                            No review Yet {`(${this.state.reviews.length} reviews)`} {listing.city}
+                            </div>
+                        }
+                  
                     </div>
                         
 
@@ -242,7 +266,6 @@ class ListingShow extends React.Component {
                         <h6>{reviewAvg}</h6>
                         :
                         null
-
                     }                 */}
                         <div className='showing-bundle'>
                             <div className='showing-bundle-left'>
@@ -263,7 +286,7 @@ class ListingShow extends React.Component {
                     <div className="listing-mid-section">
                         <div className="mid-left-section">
                             <Perks avgRating={reviewAvg} listingId={listing.id}/>
-                            <div ><BookingDate onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
+                            <div ><BookingDate onhandleDates={this.onhandleDates} listingId={listing.id} onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
                                 
                             <div className="random-description">
                                 {
@@ -276,7 +299,7 @@ class ListingShow extends React.Component {
                             </div>
                         </div>
                         <div className="mid-right-section">
-                            <Checkin avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length}/>
+                            <Checkin datesInvalid={this.state.datesInvalid} listingId={listing.id} avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length} check_in={this.state.check_in} check_out={this.state.check_out}/>
                         </div>
                     </div>
                     {/* if (reviews){ */}
@@ -288,8 +311,15 @@ class ListingShow extends React.Component {
                         )
                     }    */}
               
+                    {
+                        reviewAvg >= 0 ?
+                        <div className="reviewStar"><StarRateIcon htmlColor={'red'} fontSize={"small"}/> {reviewAvg} <span>•</span> {this.state.reviews.length}  reviews</div>
+                        :
+                        <div className="reviewStar"><StarRateIcon htmlColor={'red'} fontSize={"small"}/> No Review Yet <span>•</span> {this.state.reviews.length}  reviews</div>
+
+                        
+                    }
                     
-                    <div className="reviewStar"><StarRateIcon htmlColor={'red'} fontSize={"small"}/> {reviewAvg} <span>•</span> {this.state.reviews.length}  reviews</div>
                     <div className="review-outer-con">
                                     <div >
                                         <div className="left-attr">Cleanliness <ProgressBar className="progress" bgColor="black" width="200%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
@@ -313,10 +343,10 @@ class ListingShow extends React.Component {
                     </div>
                     
                     {
-                    (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null
+                    (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id} onhandleDescription={this.handleDescription} onRating={this.handleRating}/> : null
                     }
-                    {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
-                    <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/>
+                    <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
+                    {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}
                     
 ,                 </div>               
             </div>

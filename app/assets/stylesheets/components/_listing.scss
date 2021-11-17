@@ -19,11 +19,13 @@
 }
 .listingpage{
   display:flex;
+  flex-direction: row;
   // background-color: slategrey;
 }
 
 .leftside{
-  flex:1
+  display: flex !important;
+  // flex:1
 }
 
 .rightside{
@@ -174,6 +176,15 @@
 
   
 }
+// .bookingpage2{
+//   margin-top:100px;
+// }
+
+.listings-index-box2{
+  padding-bottom: 100px;
+}
+
+
 .bookingpage1{
   background-color: aqua;
   padding: 10px;
@@ -196,7 +207,7 @@
   // margin-right: 40%;
   align-items:flex-start
 }
-
+  
 .Delete-Booking,.logout{
 	box-shadow: 3px 8px 0px 0px #8a2a21;
 	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
@@ -223,29 +234,29 @@
 
 
 
-.delete-booking {
-	box-shadow:inset 0px 39px 0px -24px #e67a73;
-	background-color:#e4685d;
-	border-radius:4px;
-	border:1px solid #ffffff;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #e6170c;
+
+
+.delete-booking,.edit-booking {
+	box-shadow:inset 0px 39px 0px -24px #e67a73 !important;
+	background-color:#e4685d  !important;
+	border-radius:23px  !important;
+	border:6px solid #ffffff  !important;
+	display:inline-block  !important;
+	cursor:pointer  !important;
+	color:#ffffff  !important;
+	font-family:Arial  !important;
+	font-size:23px  !important;
+	padding:11px 42px  !important;
+	text-decoration:none  !important;
+	text-shadow:0px 1px 0px #b23e35  !important;
 }
 .delete-booking:hover {
-	background-color:#eb675e;
+	background-color:#eb675e  !important;
 }
 .delete-booking:active {
-	position:relative;
-	top:1px;
+	position:relative  !important;
+	top:1px  !important;
 }
-
-        
         
 
 .photo{
@@ -407,7 +418,10 @@ img {
   box-shadow: 1px 2px 15px 7px #CCCCCC;
   border-radius: 26px;
   padding: 10px;  
-}
+  // position: -webkit-sticky;
+  // position: sticky;
+  // top: 60%;
+  }
 
 .priceReview{
   display: flex ;
@@ -723,4 +737,13 @@ img {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-size: 16px !important;
   word-wrap: break-word;
+}
+
+.deleteandedit{
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-des{
+  width: 1000px;
 }

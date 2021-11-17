@@ -35,7 +35,7 @@ class ListingMap extends Component {
     // if (place.longitude){
     //   long = place.longitude
     // }
-  
+    //AIzaSyBrMVK-YDcMWpVmebeqPksZs3g1MhGjotM
     
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>

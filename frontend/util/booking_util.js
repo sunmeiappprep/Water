@@ -30,3 +30,11 @@ export const removeBooking = bookingId => {
         url: `/api/bookings/${bookingId}`
     }))
 }
+
+export const updateBooking = booking => (
+    $.ajax({
+        method: "PATCH",
+        url: `/api/bookings/${booking.id}`,
+        data: {booking}
+    })
+)

@@ -11,13 +11,18 @@ class ReviewShow extends React.Component {
             listing_id:null,
             reviewer_id:null,
             deleted:false,
+            flag:"",
         }
         this.handleDelete = this.handleDelete.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
     }
 
 
-
+    // componentWillMount(){
+    //     this.setState({
+    //         flag: "b"
+    //     })
+    // }
 
     componentDidUpdate(prevProps, prevState){
         
@@ -41,9 +46,6 @@ class ReviewShow extends React.Component {
         window.location.reload()
     }
 
-    // testing(){
-    //     console.log("asd")
-    // }
 
     handleEdit(e){
         e.preventDefault()
@@ -60,15 +62,15 @@ class ReviewShow extends React.Component {
         // this.setState({reviewer_id:arr[4]})     
         const review = {
             id: arr[0],
-            rating: arr[2],
-            description: arr[1]+"asd",
+            rating: this.props.editRating,
+            description: this.props.editDescription,
             listing_id: arr[3],
             reviewer_id: arr[4],
 
         }
-        // window.location.reload()
+        window.location.reload()
 
-        console.log(review)
+        // console.log(review)
         // console.log(arr[0])
         // console.log(arr[1])
         // console.log(arr[2])
@@ -76,9 +78,7 @@ class ReviewShow extends React.Component {
         // console.log(arr[4])
         this.props.updateReview(review)
 
-        // setTimeout(() => {
-        //     console.log(this.state)
-        // }, 1000);
+
 
 
 
@@ -106,7 +106,7 @@ class ReviewShow extends React.Component {
         let dateMonth = dateString.slice(5,7)
         let dateYear = dateString.slice(0,4)
         let month = monthNames[dateMonth-1]
-        console.log(dateYear)
+        // console.log(dateYear)
         return(
            
             
