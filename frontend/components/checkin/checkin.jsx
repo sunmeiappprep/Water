@@ -144,7 +144,18 @@ export default class Checkin extends Component {
                            
                         </div>
                         <div className="checkinreviewText">
+                            {
+                                this.props.avg >= 0 ?
+                            <span>
                             <StarRateIcon htmlColor={'red'} fontSize={"small"}/>{this.props.avg}({this.props.reviewnumber} reviews)
+
+                            </span>:
+                            <span>
+                            <StarRateIcon htmlColor={'red'} fontSize={"small"}/>({this.props.reviewnumber} reviews)
+
+                            </span>
+
+                            }
                         </div>
 
                     </div>

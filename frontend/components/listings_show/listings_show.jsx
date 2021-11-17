@@ -203,7 +203,7 @@ class ListingShow extends React.Component {
             newarr.map(review =>{
                 // console.log("asd")
 
-                arr.push(<ReviewShowContainer  editRating={this.state.rating} editDescription={this.state.description} key={review.id} cdp={this.componentDidUpdate}  review={review}/>)
+                arr.push(<ReviewShowContainer editDescription={this.state.description} key={review.id} cdp={this.componentDidUpdate}  review={review}/>)
             }
             
             )
@@ -211,7 +211,7 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
-        // console.log(this.state.description,this.state.rating)
+        console.log(this.state.description,this.state.rating)
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">
@@ -239,9 +239,17 @@ class ListingShow extends React.Component {
                     <div className="listing-info-review-title">
                         <div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div>
 
-                        <div className="asdasd">
-                        {reviewAvg} {`(${this.state.reviews.length} reviews)`} {listing.city}
-                        </div>
+                        {
+                            reviewAvg >=0 ?
+                            <div className="asdasd">
+                            {reviewAvg} {`(${this.state.reviews.length} reviews)`} {listing.city}
+                            </div>
+                            :
+                            <div className="asdasd">
+                            No review Yet {`(${this.state.reviews.length} reviews)`} {listing.city}
+                            </div>
+                        }
+                  
                     </div>
                         
 
@@ -295,8 +303,15 @@ class ListingShow extends React.Component {
                         )
                     }    */}
               
+                    {
+                        reviewAvg >= 0 ?
+                        <div className="reviewStar"><StarRateIcon htmlColor={'red'} fontSize={"small"}/> {reviewAvg} <span>•</span> {this.state.reviews.length}  reviews</div>
+                        :
+                        <div className="reviewStar"><StarRateIcon htmlColor={'red'} fontSize={"small"}/> No Review Yet <span>•</span> {this.state.reviews.length}  reviews</div>
+
+                        
+                    }
                     
-                    <div className="reviewStar"><StarRateIcon htmlColor={'red'} fontSize={"small"}/> {reviewAvg} <span>•</span> {this.state.reviews.length}  reviews</div>
                     <div className="review-outer-con">
                                     <div >
                                         <div className="left-attr">Cleanliness <ProgressBar className="progress" bgColor="black" width="200%" labelColor="transparent" height="3px" completed={reviewAvg*20} /></div>
@@ -322,7 +337,7 @@ class ListingShow extends React.Component {
                     {
                     (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id} onhandleDescription={this.handleDescription} onRating={this.handleRating}/> : null
                     }
-                    {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
+                    <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
                     {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}
                     
 ,                 </div>               

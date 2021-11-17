@@ -68,7 +68,7 @@ class ReviewShow extends React.Component {
             reviewer_id: arr[4],
 
         }
-        // window.location.reload()
+        window.location.reload()
 
         // console.log(review)
         // console.log(arr[0])

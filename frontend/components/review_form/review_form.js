@@ -17,9 +17,31 @@ export class ReviewForm extends Component {
 
     handleSubmit(e){
         e.preventDefault()
-        const newReview = this.state
-        this.props.createReview(newReview)
-        // window.location.reload()
+        const numbers = ["1","2","3","4","5"]
+        if(!numbers.includes(this.state.rating) && this.state.description.length === 0){
+            alert("Rating Must be from either 1,2,3,4,5 and description cannot be empty")
+        }
+        else if (this.state.description.length === 0){
+            alert("Review cant be empty")
+        
+        }
+        else if (!numbers.includes(this.state.rating)){
+            alert("Rating Must be from either 1,2,3,4,5")
+
+        
+        }
+        else {
+            const newReview = this.state
+            this.props.createReview(newReview)
+            window.location.reload()
+        }
+
+
+       
+        
+        
+
+
         
     }
 
@@ -71,7 +93,7 @@ export class ReviewForm extends Component {
         return (
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit} className="review-form-container">
-                    <label>Description:
+                    <label>Review Editor:
                         
                         <textarea classname="review-des" type="textarea" rows="4" cols="50" 
                         value={this.state.description}
