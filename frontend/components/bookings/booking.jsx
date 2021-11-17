@@ -79,10 +79,10 @@ class Booking extends React.Component {
                         // this.setState({bookings:this.props.bookings.bookings})
                     }
                 )
-                .then(
-                    console.log(this.state.edited)
-                )
-                .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
+                // .then(
+                //     console.log(this.state.edited)
+                // )
+                // .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
     }   
 
         // let arr = []

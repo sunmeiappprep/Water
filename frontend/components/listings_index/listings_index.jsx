@@ -58,7 +58,7 @@ class ListingsIndex extends React.Component {
                     <div className='index-left'>
                     <h1 className="place-holderstay">Placeholder Stays</h1>
                     <h1 className="every-listing">Every Listings</h1>
-                            <ul className="list-indexes">
+                            <ul className="">
                                 {   
                                     listing2.map((listing, i) => (
                                     <Link key ={i} to={`/listings/${listing.id}`} > 

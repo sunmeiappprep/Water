@@ -19,11 +19,13 @@
 }
 .listingpage{
   display:flex;
+  flex-direction: row;
   // background-color: slategrey;
 }
 
 .leftside{
-  flex:1
+  display: flex !important;
+  // flex:1
 }
 
 .rightside{

@@ -40,7 +40,9 @@ class ListingShow extends React.Component {
                 // [
                 //  `Freshly renovated modern place 20 min from the city, with FREE parking. avenue(the main strip in Waikiki) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your Hawaii getaway.`   
                 // ]
-            ]
+            ],
+            description:"",
+            rating:0,
 
         }
         this.handleDelete = this.handleDelete.bind(this)
@@ -142,6 +144,14 @@ class ListingShow extends React.Component {
         this.setState({check_out: checkout});
     }
 
+    handleDescription = (description) => {
+        this.setState({description: description});
+    }
+
+    handleRating = (rating) => {
+        this.setState({rating: rating});
+    }
+
 
 
     render(){        
@@ -184,7 +194,7 @@ class ListingShow extends React.Component {
         if (newarr && users[0]){
             newarr.map(review =>{
                 // console.log(newarr)
-                arr.push(<ReviewShowContainer  key={review.id} cdp={this.componentDidUpdate} review={review} user={users[0].id}/>)
+                arr.push(<ReviewShowContainer editRating={this.state.rating} editDescription={this.state.description}  key={review.id} cdp={this.componentDidUpdate} review={review} user={users[0].id}/>)
             }
             
             )
@@ -193,7 +203,7 @@ class ListingShow extends React.Component {
             newarr.map(review =>{
                 // console.log("asd")
 
-                arr.push(<ReviewShowContainer key={review.id} cdp={this.componentDidUpdate}  review={review}/>)
+                arr.push(<ReviewShowContainer  editRating={this.state.rating} editDescription={this.state.description} key={review.id} cdp={this.componentDidUpdate}  review={review}/>)
             }
             
             )
@@ -201,7 +211,7 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
-        // console.log()
+        console.log(this.state.description,this.state.rating)
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">
@@ -310,7 +320,7 @@ class ListingShow extends React.Component {
                     </div>
                     
                     {
-                    (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id}/> : null
+                    (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id} onhandleDescription={this.handleDescription} onRating={this.handleRating}/> : null
                     }
                     {/* <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>    */}
                     {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}

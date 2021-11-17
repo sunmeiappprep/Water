@@ -4,12 +4,15 @@ export class ReviewForm extends Component {
     constructor(props){
         super(props)
         this.state = {
-            description:"Review21",
-            rating:5,
+            description:"",
+            rating:"",
             reviewer_id:props.user,
             listing_id:props.listing
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.descriptionOnchange = this.descriptionOnchange.bind(this);
+        this.ratingOnchange = this.ratingOnchange.bind(this);
+
     }
 
     handleSubmit(e){
@@ -20,12 +23,38 @@ export class ReviewForm extends Component {
         
     }
 
+    // onhandleDescription = (e) => {
+    //     e.preventDefault()
+    //     // console.logx
+    //     this.props.onCheckin(`${date}/${month}/${year}`);    
+
+     
+    // }
+
+    
+
+    descriptionOnchange(e){
+        // this.props.onhandleDescription(e)
+
+        e.preventDefault()
+
+        this.setState({description:e.target.value})
+        this.props.onhandleDescription(e.target.value);    
+
+    }
+
+    ratingOnchange(e){
+        e.preventDefault()
+        this.setState({rating:e.target.value})
+        this.props.onRating(e.target.value);    
+
+    }
+
  
 
     // componentDidUpdate(){
 
     // }
-
 
     render() {
         // const {users} = this.props
@@ -37,20 +66,22 @@ export class ReviewForm extends Component {
         // }
         // console.log("asd"+ users)
         // console.log(this.state.description)
+        // const descriptionOnchange = this.descriptionOnchange()
+        // console.log(this.state.description)
         return (
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit} className="review-form-container">
                     <label>Description:
                         <input type="textarea"
                         value={this.state.description}
-                        onChange={(e)=> this.setState({description:e.target.value})}
+                        onChange={this.descriptionOnchange}
                         className="description-input"
                     />
                     </label>
                     <label>Rating:
                         <input type="number"
                         value={this.state.rating}
-                        onChange={(e)=> this.setState({rating:e.target.value})}
+                        onChange={this.ratingOnchange}
                         className="rating-input"
                     />
                     </label>

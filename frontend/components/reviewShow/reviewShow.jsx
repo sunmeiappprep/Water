@@ -62,8 +62,8 @@ class ReviewShow extends React.Component {
         // this.setState({reviewer_id:arr[4]})     
         const review = {
             id: arr[0],
-            rating: arr[2],
-            description: arr[1]+"asd",
+            rating: this.props.editRating,
+            description: this.props.editDescription,
             listing_id: arr[3],
             reviewer_id: arr[4],
 

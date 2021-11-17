@@ -58,10 +58,18 @@ removeOne(){
   //   }
     
   // }
+  let newListingBookingArr = []
+
   if (this.state.listingBookingArr.length > 0){
-    let choseOne = this.state.listingBookingArr[0]
-    console.log(choseOne)
-    this.setState({listingBookingArr:[choseOne]})
+    for (let x = 0; x < this.state.listingBookingArr.length; x++){
+      if (this.state.listingBookingArr[x].renter_id !== this.props.currentUser){
+        newListingBookingArr.push(this.state.listingBookingArr[x])
+      }
+      // this.state.listingBookingArr[x]
+    }
+    // let choseOne = this.state.listingBookingArr[0]
+    // console.log(newListingBookingArr)
+    this.setState({listingBookingArr:newListingBookingArr})
   }
 
 }
@@ -105,7 +113,6 @@ onhandlecheckin = (e) => {
   this.props.onCheckin(`${date}/${month}/${year}`);    
   // console.logx
   this.setState({in:[date,month,year]})        
-
 }
 
 onhandlecheckout = (e) => {
@@ -209,13 +216,13 @@ isDateDisabled = ({date, view}) => {
   }
 
 
-  console.log(this.state.listingBookingArr)
+  // console.log(this.state.listingBookingArr)
   
 
 
   if( finalarr2.length === undefined )return null
 
-  console.log("this is listingBookingArr",this.state.listingBookingArr)
+  // console.log("this is listingBookingArr",this.state.listingBookingArr)
 
   return (
   checkifarrayhastrue(finalarr2)
