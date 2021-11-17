@@ -18,8 +18,10 @@ label {
 }
 
 .hosting{
-  display: flex;
-
+  // display: flex;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -297,7 +299,9 @@ a{
     display: flex;
     justify-content: space-between;  
     margin-top: 50px; 
-    margin-left: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1120px;
     // margin-right: 250px;
     
 }   
@@ -306,7 +310,11 @@ a{
     display: flex;
     justify-content: space-between;  
     margin-top: 50px; 
-    margin-left: 250px;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 1120px;
+
 
     // margin-left: 250px;
     // margin-right: 250px;
@@ -318,8 +326,8 @@ a{
     font-family: cursive; 
     font-weight: 600;
     font-size: 32px;
-    margin-left: 250px;
-    margin-bottom: 50px;
+    // margin-left: 250px;
+    // margin-bottom: 50px;
 }
 
 .card{
@@ -360,7 +368,7 @@ a{
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
-    width: 80%;
+    // width: 80%;
     background-color: transparent;
     // margin-top: 4000px;
 }
@@ -407,7 +415,7 @@ a{
     max-width:100%;
     // max-width:1000px;
     display: flex;
-    height:300px;
+    height:250px;
     justify-content: space-between;  
     border-radius: 25px;
     // background: #73AD21;
@@ -439,8 +447,8 @@ a{
     justify-content: space-between;  
     // margin-top: 10px; 
     // padding: 20px;
-    margin-left: 250px;
-    margin-right: 250px;
+    // margin-left: 250px;
+    // margin-right: 250px;
     // margin-left: auto;
     // margin-right: auto;
 
@@ -519,3 +527,16 @@ a{
 //         z-index: 1;    
 //     }  
   
+
+.Explore_nearby_con{
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.live_Anywhere_con{
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}

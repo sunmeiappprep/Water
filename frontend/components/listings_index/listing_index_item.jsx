@@ -1,31 +1,85 @@
 import React from 'react';
+import StarRateIcon from '@mui/icons-material/StarRate';
 
 class ListingIndexItem extends React.Component {   
 
+    reviewsAvg(){
+        let sum = 0
+        if (this.props.listing.reviews.length > 0){
+            for(let x = 0; x < this.props.listing.reviews.length; x++){
+                sum += this.props.listing.reviews[x].rating
+            }
+            return (sum/this.props.listing.reviews.length).toFixed(2)
+        }
+        else{
+            return "No review Yet"
+        }
+
+        
+    }
+
+    reviewCount(){
+        if (this.props.listing.reviews.length > 0){
+            return this.props.listing.reviews.length 
+        }
+        else{
+            return null
+        }
+    }
+
     render(){
         const {listing} = this.props;
+        // console.log(listing.reviews)
+
+        const reviewAvg = this.reviewsAvg()
+        const reviewCount = this.reviewCount()
+
     return(
-        <div className="listingpage">
-            <div className='leftside'>
-                <li className="">
-                    <div className="">
-                        <img className="" src={listing.photoAWS} />
-                     </div>
-                    <div className="listing-info">            
-                    <h3 className="listing-title">{listing.title}</h3>                
-                    <p>{listing.num_guest} guests- {listing.num_beds} bedrooms</p>
-                    <p>${listing.price}/night</p>
+        <div className="leftside">  
+            <li>
+                <div className="leftsidePic">
+                    <div className="leftsidePic3">
+                        <img className="leftsidePic2" src={listing.photoAWS} width="250px" height="250px" />
                     </div>
+                    <div className="listing-info">   
+                        <div  className="listing-info1">
+                            {listing.title}            
+                        </div>         
+                        <div className="listing-info2">
+                            <br></br>
+                        </div>
+                        <div>
+                            <br></br>
+                        </div>
+                        <div className="listing-info3">
+                            {listing.num_guest} guests- {listing.num_beds} bedrooms
+                        </div>
+                        <div>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
 
-                </li>
-        
-            </div>
-       
- 
+                        </div>
+                        <div className="listing-info4">
+                            <div className="listing-info42">
+                                {reviewAvg}<div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div><div className="listing-info422">{reviewCount}(reviews)</div>
+                            </div>
+                            <div className="listing-info43">
+                                ${listing.price}/night
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>                      
+
         </div>
-       
-
-       
     )}
 }
 

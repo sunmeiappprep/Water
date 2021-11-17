@@ -25,7 +25,7 @@
 
 .leftside{
   display: flex !important;
-  // flex:1
+  text-decoration: none;
 }
 
 .rightside{
@@ -137,6 +137,7 @@
 
 .every-listing{
   font-size: 26px;
+  margin-top: 100px;
 }
 
 .list-indexes{
@@ -269,6 +270,18 @@
   // flex-wrap: wrap;
 }
 
+.leftsidePic2{
+  max-height: 200px;
+  max-width: 300px;
+  object-fit:cover; 
+  // padding-bottom: 10px;
+  border-radius: 25px;
+}
+
+.leftsidePic3{
+  border-radius: 25px;
+}
+
 .photo21{
   height: 50%;
   width: 49%;
@@ -360,19 +373,72 @@ img {
 
         
 
-.listing-info{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 26px;
-  letter-spacing: 2px;
-  word-spacing: 2px;
-  color: #000000;
-  font-weight: normal;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: normal;
-  text-transform: none;
+.listing-info1{
+  // font-family: 'Montserrat', sans-serif;
+  // font-size: 26px;
+  // letter-spacing: 2px;
+  // word-spacing: 2px;
+  // color: #000000;
+  // font-weight: normal;
+  // text-decoration: none;
+  // font-style: normal;
+  // font-variant: normal;
+  // text-transform: none;
   // margin-right: 40%;
-  align-items:flex-start
+  // align-items:flex-start
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  margin: 0;
+  text-decoration: none;
+
+  // border-bottom: gray solid 1px;
+
+
+
+}
+
+.listing-info2{
+  width: 10%;
+  border-bottom: gray solid 1px;
+  text-decoration: none;
+
+
+}
+
+.listing-info3{
+  color: #222222 !important;
+  font-size: 16px !important;
+  text-decoration: none;
+
+}
+
+.listing-info4{
+  display: flex;
+  flex-direction: row;
+    // text-align-last: right;
+    // text-align: right;
+    justify-content:space-between;
+    font-size: 20px !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+.listing-info42{
+  display: inline-flex;
+  justify-content:space-between !important;
+
+    //  text-align-last: right;
+
+}
+
+.listing-info422{
+  font-size: 14px !important;
+  font-weight: 300;
+  color:gray;
 }
 // .portrait {
  
@@ -747,3 +813,23 @@ img {
 .review-des{
   width: 1000px;
 }
+
+.leftsidePic{
+  display: flex;
+  padding: 10px;
+  border-bottom: gray solid 1px;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+
+// .explore_Nearby{
+//   max-width: 1120px;
+// }
