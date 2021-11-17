@@ -72,7 +72,8 @@ export class ReviewForm extends Component {
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit} className="review-form-container">
                     <label>Description:
-                        <input type="textarea"
+                        
+                        <textarea classname="review-des" type="textarea" rows="4" cols="50" 
                         value={this.state.description}
                         onChange={this.descriptionOnchange}
                         className="description-input"

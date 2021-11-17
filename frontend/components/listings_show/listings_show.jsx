@@ -211,7 +211,7 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
-        console.log(this.state.description,this.state.rating)
+        // console.log(this.state.description,this.state.rating)
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">

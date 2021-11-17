@@ -56,7 +56,7 @@ class BookingIndexItem extends React.Component {
 
     render(){
         // console.log("asd")
-        console.log(this.props)
+        // console.log(this.props)
         const {booking,removeBooking} = this.props;       
         const onelisting = booking.listing
         if (!onelisting) return null
