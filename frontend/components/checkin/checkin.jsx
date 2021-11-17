@@ -199,13 +199,17 @@ export default class Checkin extends Component {
                         {
                             (this.state.totalToggleOn === true) ?
                             <div>
-                            <div className="avaSum">Total {this.state.total}</div>
+                            {
+                                this.state.total > 0 ? 
+                                <div className="avaSum">Total {this.state.total}</div>
+                                :
+                                null
+
+                            }
                             <div>
 
                             <label>
-                            Submit
                             <button  onClick={this.handleClick}>Create Booking</button>
-
                             </label>
                             </div>
 
