@@ -129,7 +129,7 @@ export default class Checkin extends Component {
         
     //   }, 1000);
 
-
+        console.log(this.props.datesInvalid )
         return (
             <div>
                 <div className="CheckinOuter">

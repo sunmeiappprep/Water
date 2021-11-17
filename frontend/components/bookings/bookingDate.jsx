@@ -69,10 +69,16 @@ removeOne(){
     }
     // let choseOne = this.state.listingBookingArr[0]
     // console.log(newListingBookingArr)
+    
     this.setState({listingBookingArr:newListingBookingArr})
+    // newListingBookingArr.push('asdas')
+    
+    this.props.onhandleDates(newListingBookingArr)
   }
 
 }
+
+
 
 componentDidUpdate(pP,pS){
   if(pS.bookings.length !== this.state.bookings.length){

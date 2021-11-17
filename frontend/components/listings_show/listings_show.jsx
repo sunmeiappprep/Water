@@ -43,6 +43,7 @@ class ListingShow extends React.Component {
             ],
             description:"",
             rating:0,
+            datesInvalid:[],
 
         }
         this.handleDelete = this.handleDelete.bind(this)
@@ -152,6 +153,11 @@ class ListingShow extends React.Component {
         this.setState({rating: rating});
     }
 
+    
+    onhandleDates = (datesArray) => {
+        this.setState({datesInvalid: datesArray});
+    }
+
 
 
     render(){        
@@ -211,7 +217,9 @@ class ListingShow extends React.Component {
 
         
         if (!listing) return null;           
-        console.log(this.state.description,this.state.rating)
+        // console.log(this.state.description,this.state.rating)
+        // console.log("these are invaild",this.state.datesInvalid)
+
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">
@@ -278,7 +286,7 @@ class ListingShow extends React.Component {
                     <div className="listing-mid-section">
                         <div className="mid-left-section">
                             <Perks avgRating={reviewAvg} listingId={listing.id}/>
-                            <div ><BookingDate listingId={listing.id} onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
+                            <div ><BookingDate onhandleDates={this.onhandleDates} listingId={listing.id} onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
                                 
                             <div className="random-description">
                                 {
@@ -291,7 +299,7 @@ class ListingShow extends React.Component {
                             </div>
                         </div>
                         <div className="mid-right-section">
-                            <Checkin  listingId={listing.id} avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length} check_in={this.state.check_in} check_out={this.state.check_out}/>
+                            <Checkin datesInvalid={this.state.datesInvalid} listingId={listing.id} avg={reviewAvg} price={listing.price} reviewnumber={this.state.reviews.length} check_in={this.state.check_in} check_out={this.state.check_out}/>
                         </div>
                     </div>
                     {/* if (reviews){ */}
