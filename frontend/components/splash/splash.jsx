@@ -46,8 +46,15 @@ class Splash extends React.Component {
               <Link to="/" className='midLink'>Experiences</Link>
               <Link to="/" className='midLink'>Online Experiences</Link> */}
             </section>         
-            <GreetingContainer/>
-            <ShowBookings/>
+            <div className="twoButton">
+            <div>
+                <ShowBookings/>
+
+            </div>
+            <div>
+                <GreetingContainer className="greeting_container2"/>
+            </div>
+        </div>
            
         </section>
 

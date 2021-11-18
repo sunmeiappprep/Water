@@ -16,6 +16,7 @@ import Checkin from '../checkin/checkin_container';
 // import 'bootstrap/dist/css/bootstrap.css';
 import ProgressBar from "@ramonak/react-progress-bar";
 import StarRateIcon from '@mui/icons-material/StarRate';
+import ShowBookings from '../show_bookings/show_bookings_container';
 
 
 // import "react-datepicker/dist/react-datepicker.css";
@@ -224,7 +225,14 @@ class ListingShow extends React.Component {
                             <SearchContainer/>
 
                             </section>          
-                            <GreetingContainer className="greeting_container"/>      
+                            <div className="twoButton">
+                            <div>
+                                <ShowBookings/>
+                            </div>
+                                <div>
+                                    <GreetingContainer className="greeting_container2"/>
+                                </div>
+                            </div>   
                          </section>
                     </div>
                 <div className="search_container">

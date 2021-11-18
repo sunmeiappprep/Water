@@ -8,6 +8,7 @@ import SearchContainer  from '../search/search_container';
 import Nav from '../nav/nav';
 import 'regenerator-runtime/runtime'
 import { CollectionsBookmarkOutlined } from '@material-ui/icons';
+import ShowBookings from '../show_bookings/show_bookings_container';
 
 class Booking extends React.Component {
     constructor(props){
@@ -139,7 +140,15 @@ class Booking extends React.Component {
                             <SearchContainer/>
 
                             </section>          
-                            <GreetingContainer className="greeting_container"/>      
+                            <div className="twoButton">
+                            <div>
+                                <ShowBookings/>
+
+                            </div>
+                            <div>
+                                <GreetingContainer className="greeting_container2"/>
+                            </div>
+        </div>      
                         </section>
                     </div>
                     <div className="search_container">

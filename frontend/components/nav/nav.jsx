@@ -4,6 +4,7 @@ import Modal from '../modal/modal';
 // import Logo from '../splash/logo.png'
 import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
+import ShowBookings from '../show_bookings/show_bookings_container';
 
 const Nav = () => (
     <div>
@@ -17,8 +18,17 @@ const Nav = () => (
                  <SearchContainer/>
 
             </section>
-            
-        <GreetingContainer className="greeting_container2"/>
+        <div className="twoButton">
+            <div>
+                <ShowBookings/>
+
+            </div>
+            <div>
+                <GreetingContainer className="greeting_container2"/>
+            </div>
+
+        </div>
+ 
          </section>
         {/* <div className="search_container">
         </div >  */}

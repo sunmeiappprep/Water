@@ -16,7 +16,7 @@ class ListingMap extends Component {
       lat: 	40.730610,
       lng: -73.935242
     },
-    zoom: 11
+    zoom: 3
   };
   
   componentDidMount(){

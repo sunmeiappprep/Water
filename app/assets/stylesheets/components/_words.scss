@@ -80,7 +80,7 @@ label {
 }
 
 a{
- text-decoration: none; 
+//  text-decoration: none; 
 }
 
  .navbar0{
@@ -242,7 +242,7 @@ a{
     margin-left: auto;
     margin-right: auto;
 
-    margin-top: 11px; 
+    // margin-top: 11px; 
     // padding: 10px;
  }
 
@@ -377,37 +377,45 @@ a{
 // }
 
 
-.login-signup-button,.logout,.My-Profile {
-	box-shadow:inset 0px 1px 0px 0px #bee2f9;
-	background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
-	background-color:#63b8ee;
-	border-radius:6px;
-	border:1px solid #3866a3;
-	display:inline-block;
-	cursor:pointer;
-	color:#14396a;
-	font-family:Arial;
-	font-size:11px;
-	font-weight:bold;
-	padding:6px 8px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #7cacde;
-  display:inline-flex
+.login-signup-button,.logout,.My-Profile  {
+	box-shadow:inset 0px 1px 0px 0px #bee2f9 !important;
+  background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%) !important;
+	background-color:#63b8ee !important;
+	border-radius:6px !important;
+	border:1px solid #3866a3 !important;
+	display:inline-block !important;
+	cursor:pointer !important;
+	color:#14396a !important;
+	font-family:Arial !important;
+	font-size:11px !important;
+	font-weight:bold !important;
+	padding:6px 8px !important;
+	text-decoration:none !important;
+	text-shadow:0px 1px 0px #7cacde !important;
+
   
 }
-.login-signup-button:hover,.My-Profile {
+.login-signup-button:hover,.logout,.My-Profile {
 	background:linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
 	background-color:#468ccf;
 }
-.login-signup-button:active,.My-Profile {
+.login-signup-button:active{
 	position:relative;
 	top:1px;
 }
+a:visited {
+  color:black !important;
 
+}
+
+a:link {
+  color: black;
+}
 
 .My-Profile:visited{
   color:#14396a;
   text-decoration: none;
+
 }
 
 
@@ -464,6 +472,7 @@ a{
     // margin-left: 250px;
 
   }
+
 
 
   .modal-background {
@@ -539,4 +548,20 @@ a{
   max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.twoButton,.login-signup{
+  // display: flex;
+
+  padding-right: 8px;
+}
+
+.twoButton > div{
+  // display: flex;
+
+  padding:1px 6px
+}
+
+.listing-info43{
+  // text-align-last: right !important;
 }

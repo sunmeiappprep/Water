@@ -209,7 +209,7 @@
   align-items:flex-start
 }
   
-.Delete-Booking,.logout{
+.Delete-Booking{
 	box-shadow: 3px 8px 0px 0px #8a2a21;
 	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
 	background-color:#c62d1f;
@@ -393,11 +393,16 @@ img {
   background-color: #fff;
   margin: 0;
   text-decoration: none;
+  // width: 100%;
 
   // border-bottom: gray solid 1px;
 
 
 
+}
+
+.listing-info{
+  width: 100%;
 }
 
 .listing-info2{
@@ -419,7 +424,7 @@ img {
   display: flex;
   flex-direction: row;
     // text-align-last: right;
-    // text-align: right;
+    text-align: right;
     justify-content:space-between;
     font-size: 20px !important;
     text-decoration: none !important;
@@ -428,8 +433,10 @@ img {
 }
 
 .listing-info42{
-  display: inline-flex;
-  justify-content:space-between !important;
+  // display: inline-flex;
+  display: flex;
+  flex-direction: row;
+  // justify-content:space-between !important;
 
     //  text-align-last: right;
 
