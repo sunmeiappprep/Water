@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import Modal from '../modal/modal';
 import GreetingContainer from '../greeting/greeting_container';
 import SearchContainer  from '../search/search_container';
+import ShowBookings from '../show_bookings/show_bookings_container';
+
 class ListingSearch extends React.Component {
     constructor(props){
         super(props);
@@ -35,6 +37,8 @@ class ListingSearch extends React.Component {
           
             {/* <Modal></Modal> */}
             <GreetingContainer className="greeting_container"/>
+            
+            
             {/* <Modal isOpen={true}>
               <h5>asd</h5>
               <p>asdasd</p>

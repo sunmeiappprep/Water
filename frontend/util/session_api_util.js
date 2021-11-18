@@ -6,13 +6,20 @@ export const login = user => (
   })
 )
 
-export const signup = user => (
-  $.ajax({
-    url: `/api/user`,
-    method: `POST`,
-    data: {user}
-  })
-)
+export const signup = user => {
+  // debugger
+  return (
+    $.ajax({
+      url: `/api/users`,
+      method: `POST`,
+      data: {user}
+    })
+  )
+}
+
+
+
+
 
 export const logout = () => (
   $.ajax({

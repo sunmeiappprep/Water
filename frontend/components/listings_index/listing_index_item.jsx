@@ -12,7 +12,7 @@ class ListingIndexItem extends React.Component {
             return (sum/this.props.listing.reviews.length).toFixed(2)
         }
         else{
-            return "No review Yet"
+            return "No review"
         }
 
         
@@ -42,9 +42,18 @@ class ListingIndexItem extends React.Component {
                         <img className="leftsidePic2" src={listing.photoAWS} width="250px" height="250px" />
                     </div>
                     <div className="listing-info">   
-                        <div  className="listing-info1">
-                            {listing.title}            
-                        </div>         
+                        {
+                            listing.title.length < 39 ?
+                            <div  className="listing-info1">
+                            {listing.title}{listing.title}{listing.title}
+                            </div>
+                            :
+                            <div  className="listing-info1">
+                            {listing.title}
+                            {/* <div></div>    */}
+                        </div> 
+                        }
+                        
                         <div className="listing-info2">
                             <br></br>
                         </div>
@@ -67,9 +76,17 @@ class ListingIndexItem extends React.Component {
 
                         </div>
                         <div className="listing-info4">
-                            <div className="listing-info42">
-                                {reviewAvg}<div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div><div className="listing-info422">{reviewCount}(reviews)</div>
-                            </div>
+                            {
+                                reviewCount > 0 ?
+                                <div className="listing-info42">
+                                    {reviewAvg}<div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div><div className="listing-info422">{reviewCount}(reviews)</div>
+                                </div>
+                                :
+                                <div className="listing-info42">
+                                 {/* {reviewAvg}<div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div><div className="listing-info422">{reviewCount}(reviews)</div> */}
+                                </div>
+                            }
+                           
                             <div className="listing-info43">
                                 ${listing.price}/night
                             </div>

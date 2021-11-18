@@ -5,7 +5,7 @@ class BookingIndexItem extends React.Component {
         super(props);
         this.state = {
             booking :"",
-            deleted : false
+            deleted : false,
         }
         this.handleDelete = this.handleDelete.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
@@ -35,7 +35,9 @@ class BookingIndexItem extends React.Component {
         let end = (new Date(`${this.props.out[2]}-${this.props.out[1]}-${this.props.out[0]}`))
         start = start.addDays(1)
         end = end.addDays(1)
-
+        if (end < start) {
+            return false
+        }
 
         while (start < end){
             for( let  x = 0; x < this.props.datesInvalid.length; x++){
@@ -105,20 +107,37 @@ class BookingIndexItem extends React.Component {
                 <h1 className="bookingpagetxt">You are checking out on {booking.check_out}</h1>
                 <h1 className="bookingpagetxt">Visiting {onelisting.title}</h1>
                 <h1 className="bookingpagetxt">In {onelisting.city}</h1>
-                <div className="deleteandedit">
+
+                {
+                    this.props.toggleEdit ?
+                    <div className="deleteandedit">
                     <div>
                     <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
 
+                    
+
                     </div>
-                    {
-                        this.props.datesInvalid.length > 0 ? 
-                        <div>
+                    <div>
                         <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Submit new edited dates</button> 
-                        </div>
-                        :null
-                    }
+                    </div>
+            
                    
-                </div>
+                    </div>:
+                    null
+                }
+
+                {/* <div className="deleteandedit">
+                    <div>
+                    <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
+
+                    
+
+                    </div>
+                    <div>
+                        <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Submit new edited dates</button> 
+                    </div>
+  
+                </div> */}
 
             </div>
             <div>

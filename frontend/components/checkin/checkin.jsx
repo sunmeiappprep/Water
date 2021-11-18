@@ -77,6 +77,7 @@ export default class Checkin extends Component {
 
         //     }
         // }
+
         
         Date.prototype.addDays = function(days) {
             var date = new Date(this.valueOf());
@@ -102,6 +103,10 @@ export default class Checkin extends Component {
         // if (start.addDays(1) === "Invalid Date"){
         //     console.log(start.addMonth(1))
         // }
+        
+        if (end < start) {
+            return false
+        }
 
 
         while (start < end){
