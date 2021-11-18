@@ -38,11 +38,7 @@ class ReviewShow extends React.Component {
     handleDelete(e){
         e.preventDefault()
         this.props.deleteReview(e.target.value)
-        // console.log(this.props.cdp())
-        // this.props.cdp()
-        // this.setState({
-        //     deleted: true
-        // })
+
         window.location.reload()
     }
 
@@ -52,14 +48,6 @@ class ReviewShow extends React.Component {
         // console.log(this.state)
         let arr = e.target.id.split(",")
    
-        // this.setState({id:arr[0]}) 
-        // this.setState({description:arr[1]+"asd"})  
-
-        // this.setState({rating:arr[2]})  
-
-        // this.setState({listing_id:arr[3]})  
-
-        // this.setState({reviewer_id:arr[4]})     
         const review = {
             id: arr[0],
             rating: this.props.editRating,
@@ -70,27 +58,14 @@ class ReviewShow extends React.Component {
         }
         window.location.reload()
 
-        // console.log(review)
-        // console.log(arr[0])
-        // console.log(arr[1])
-        // console.log(arr[2])
-        // console.log(arr[3])
-        // console.log(arr[4])
+
         this.props.updateReview(review)
 
 
 
 
 
-        // console.log(e.target.id[2])
 
-        // console.log(e.target.id[3])
-        // console.log(e.target.id[4])
-
-
-
-        // this.props.deleteReview(e.target.value)
-        // window.location.reload()
     }
 
 

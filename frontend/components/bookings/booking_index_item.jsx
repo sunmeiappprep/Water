@@ -14,31 +14,15 @@ class BookingIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.booking)
-        // this.setState({booking:2}), ()=>{
 
-        // } 
         this.setState({ booking: this.props.booking }, () => {
-            // console.log(this.state.booking);
           });
       }
 
-    // componentDidUpdate(pp,prevState){
-    //    if (this.state.deleted === true){
-            
-    //    }
-    // }
+
 
     checkIfcoll(){
-        // if (this.props.datesInvalid.length > 0 ){
-        //     for( let  x = 0; x < this.props.datesInvalid.length; x++){
-        //         console.log(new Date(this.props.datesInvalid[x].check_in),new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
-        //         console.log(new Date(this.props.datesInvalid[x].check_in) 
-        //         > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
-                
 
-        //     }
-        // }
         
         Date.prototype.addDays = function(days) {
             var date = new Date(this.valueOf());
@@ -51,22 +35,13 @@ class BookingIndexItem extends React.Component {
         let end = (new Date(`${this.props.out[2]}-${this.props.out[1]}-${this.props.out[0]}`))
         start = start.addDays(1)
         end = end.addDays(1)
-        // console.log(start)
-        // console.log(start.addDays(1))
-
-        // console.log(end)
-        // if (start.addDays(1) === "Invalid Date"){
-        //     console.log(start.addMonth(1))
-        // }
 
 
         while (start < end){
             for( let  x = 0; x < this.props.datesInvalid.length; x++){
                 let currentSetin = new Date(this.props.datesInvalid[x].check_in)
                 let currentSetout = new Date(this.props.datesInvalid[x].check_out)
-                // console.log(currentSetin,start,currentSetout)
-                // console.log(new Date(this.props.datesInvalid[x].check_in) 
-                // > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
+
                 if (currentSetin < start && start < currentSetout) {
                    return false
                 }
@@ -75,7 +50,6 @@ class BookingIndexItem extends React.Component {
             }
             start = start.addDays(1)
 
-            // if (start )
         }
 
     }
