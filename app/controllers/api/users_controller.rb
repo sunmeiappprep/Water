@@ -18,6 +18,17 @@ class Api::UsersController < ApplicationController
     render "api/users/show" 
   end
 
+  def update 
+    currentuser = current_user.id
+    @user = User.find(params[:id])
+
+    if @user.id === currentuser.id && @user.update_attributes(user_params)
+      render :show
+    else
+      render json: ["Update user info did not work"], status: 422
+    end
+  end
+
 
 
 
