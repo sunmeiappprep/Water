@@ -114,26 +114,14 @@ class Booking extends React.Component {
 
     render(){
         const {removeBooking,history} = this.props;
-        // booking2 = []
-        // bookings.each 
+
         const currentUserId = this.props.currentUser[0].id
 
-        
-        // setInterval(() => {
-        //     console.log(currentUserId)
-        //     console.log(this.state.bookings.bookings)
-            
-        // }, 1000);
-        // setInterval( )
-        // const reduceBook = this.reduceBooking(bookings,currentUserId)
-        // console.log(this.props.bookings)
-        // console.log(this.state.bookings.bookings === this.props.bookings)
 
-        // console.log(this.state.edited)
+
         const {edited} = this.state
         const {bookings} = this.props
-        // console.log(filterbooking)
-        // console.log(this.state.edited)   
+
         if (!edited) return null
         return(            
             

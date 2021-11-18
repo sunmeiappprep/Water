@@ -19,6 +19,8 @@ export default class Checkin extends Component {
         }
         this.handleClick = this.handleClick.bind(this)
         this.toggle = this.toggle.bind(this)
+        this.checkIfcoll = this.checkIfcoll.bind(this);
+
     }
 
     // componentWillMount() {     
@@ -43,18 +45,84 @@ export default class Checkin extends Component {
     handleClick(e) {
         e.preventDefault()
         // console.log(e)
-        const booking2 = {
-            check_in:this.state.check_in,
-            check_out:this.state.check_out,   
-            renter_id:this.props.currentUser,   
-            listing_id:this.props.listingId,
+        let editConflict = this.checkIfcoll()
+        // console.log(editConflict)
+        if (editConflict === false){
+            alert ("There is a conflict with the selected dates")
+        }else{
+            const booking2 = {
+                check_in:this.state.check_in,
+                check_out:this.state.check_out,   
+                renter_id:this.props.currentUser,   
+                listing_id:this.props.listingId,
+    
+                
+            }        
+            // console.log(booking2)
+    
+            this.props.createBooking(booking2);
+            window.location.reload()
+        }
 
-            
-        }        
-        console.log(booking2)
 
-        this.props.createBooking(booking2);
-        window.location.reload()
+    }
+
+    checkIfcoll(){
+        // if (this.props.datesInvalid.length > 0 ){
+        //     for( let  x = 0; x < this.props.datesInvalid.length; x++){
+        //         console.log(new Date(this.props.datesInvalid[x].check_in),new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
+        //         console.log(new Date(this.props.datesInvalid[x].check_in) 
+        //         > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
+                
+
+        //     }
+        // }
+        
+        Date.prototype.addDays = function(days) {
+            var date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        }
+        let splitCheckin = this.state.check_in.split("/")
+        let splitCheckout = this.state.check_out.split("/")
+
+        let start = (new Date(`${splitCheckin[2]}-${splitCheckin[1]}-${splitCheckin[0]}`))
+        // console.log(splitCheckin)
+
+        // console.log(("checkin",`${splitCheckin[2]}-${splitCheckin[1]}-${splitCheckin[0]}`))
+        let end = (new Date(`${splitCheckout[2]}-${splitCheckout[1]}-${splitCheckout[0]}`))
+        start = start.addDays(1)
+        end = end.addDays(1)
+        // console.log(start)
+
+        // console.log(end)
+        // console.log(start.addDays(1))
+
+        // console.log(end)
+        // if (start.addDays(1) === "Invalid Date"){
+        //     console.log(start.addMonth(1))
+        // }
+
+
+        while (start < end){
+            // console.log("asd    ")
+            for( let  x = 0; x < this.props.datesInvalid.length; x++){
+                let currentSetin = new Date(this.props.datesInvalid[x].check_in)
+                let currentSetout = new Date(this.props.datesInvalid[x].check_out)
+                // console.log(currentSetin,start,currentSetout)
+                // console.log(new Date(this.props.datesInvalid[x].check_in) 
+                // > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
+                if (currentSetin < start && start < currentSetout) {
+                   return false
+                }
+                
+                
+
+            }
+            start = start.addDays(1)
+
+            // if (start )
+        }
 
     }
 
@@ -121,7 +189,7 @@ export default class Checkin extends Component {
 
     render() {
 
-        // console.log(this.props)
+        // console.log("checkin",this.props.datesInvalid)
         // console.log((this.state.dateDiff))
         // console.log()
     //   setInterval(() => {
@@ -129,7 +197,7 @@ export default class Checkin extends Component {
         
     //   }, 1000);
 
-        console.log(this.props.datesInvalid )
+        // console.log(this.state )
         return (
             <div>
                 <div className="CheckinOuter">

@@ -65,18 +65,17 @@ removeOne(){
       if (this.state.listingBookingArr[x].renter_id !== this.props.currentUser){
         newListingBookingArr.push(this.state.listingBookingArr[x])
       }
-      // this.state.listingBookingArr[x]
     }
-    // let choseOne = this.state.listingBookingArr[0]
-    // console.log(newListingBookingArr)
+
     
     this.setState({listingBookingArr:newListingBookingArr})
-    // newListingBookingArr.push('asdas')
     
     this.props.onhandleDates(newListingBookingArr)
   }
 
 }
+
+
 
 
 
@@ -90,11 +89,9 @@ componentDidUpdate(pP,pS){
         
       }
       else{
-        // console.log(this.state.bookings[x].listing_id,this.props.listingId)
       }
       
     }
-    // console.log(this.state.bookings.bookings[0].listing_id === this.props.listingId)
   this.setState({listingBookingArr:newArr})
   this.checkIfcurrentuserhavebooking()
   }
@@ -109,7 +106,6 @@ console(e){
   const month = e.getMonth()+1;
   const date = e.getDate()
   const year = e.getFullYear()
-  // console.log(date,month,year)
 }
   
 onhandlecheckin = (e) => {
@@ -117,7 +113,6 @@ onhandlecheckin = (e) => {
   const date = e.getDate()
   const year = e.getFullYear()
   this.props.onCheckin(`${date}/${month}/${year}`);    
-  // console.logx
   this.setState({in:[date,month,year]})        
 }
 
@@ -127,7 +122,6 @@ onhandlecheckout = (e) => {
   const year = e.getFullYear()
   this.props.onCheckout(`${date}/${month}/${year}`);    
   this.setState({out:[date,month,year]})       
-  // console.log(e)
   this.setState({min:e}) 
 
   var date1 = (this.state.today);
@@ -139,22 +133,16 @@ onhandlecheckout = (e) => {
     this.setState({min:e}) 
   }
 
-  // setTimeout(() => {
-  // this.setState({min:this.state.today})
-    
-  // }, 1000);
+
 }
 
 dateCallback(date,event){
-  // this.setState({min:this.state.today})
-  // console.log(date)
-  // console.log(event)
+
 
 }
 
 checkIfcurrentuserhavebooking(){
-  // console.log("checkifcurrent")
-  // console.log(this.state.listingBookingArr.length)
+
   for (let x = 0; x < this.state.listingBookingArr.length; x++){
     if (this.state.listingBookingArr[x].renter_id === this.props.currentUser && this.state.firstbooking === "a"){
        this.setState({firstbooking:this.state.listingBookingArr[x]})
@@ -237,11 +225,14 @@ isDateDisabled = ({date, view}) => {
   );
 };
 
+
     render() {
-      // console.log(this.state.listingBookingArr)
       if (this.state.listingBookingArr){
+        this.props.handleFulllist(this.state.listingBookingArr)
+
         this.checkIfcurrentuserhavebooking()
       }
+
       // console.log(this.state.bookings.length)
       // console.log(this.state.dateDiff)
       // console.log("asds")
@@ -296,11 +287,11 @@ isDateDisabled = ({date, view}) => {
         />
           </div>
 
-          <button onClick={this.removeOne}>Remove own Booking to edit</button>
+          <button onClick={this.removeOne}>Edit booking</button>
           {
             (this.state.firstbooking === "a") ?
             null :
-            <BookingIndexItem in={this.state.in} out={this.state.out} booking={this.state.firstbooking}/>
+            <BookingIndexItem datesInvalid={this.props.datesInvalid} in={this.state.in} out={this.state.out} booking={this.state.firstbooking}/>
           }
         </div>
         )

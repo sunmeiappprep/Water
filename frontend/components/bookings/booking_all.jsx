@@ -42,14 +42,11 @@ class BookingAll extends React.Component {
     }
 
     recomp(){
-        // if (this.state.bookings){
-            
-        // }
+
 
     }
     
     handleDelete(e){
-        // console.log(e)
         
         e.preventDefault();
         this.props.removeBooking(this.props.booking.id)
@@ -72,16 +69,7 @@ class BookingAll extends React.Component {
 
 
     render(){
-        // console.log("asd")
-        // const {bookings,removeBooking} = this.props;  
-        // console.log(this.state.booking.bookings)     
-        // console.log(this.state.booking)
-        // const onelisting = booking.listing
-        // if (!onelisting) return null
-        // console.log(this.state.edited)
-        // console.log(this.props)
-        // const {booking} = this.props
-        // if (!this.state.bookings) return null
+
 
     return(
         <div className="bookingpage1">

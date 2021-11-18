@@ -22,7 +22,6 @@ export const fetchListings = () => dispatch => {
 };
 
 export const fetchListing = listingid => dispatch => {
-    // debugger
     return(
     ListingUtils.fetchListing(listingid)
     .then(listing => dispatch(receiveListing(listing)))
