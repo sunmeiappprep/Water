@@ -286,7 +286,7 @@ class ListingShow extends React.Component {
                     <div className="listing-mid-section">
                         <div className="mid-left-section">
                             <Perks avgRating={reviewAvg} listingId={listing.id}/>
-                            <div ><BookingDate onhandleDates={this.onhandleDates} listingId={listing.id} onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
+                            <div ><BookingDate datesInvalid={this.state.datesInvalid} onhandleDates={this.onhandleDates} listingId={listing.id} onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
                                 
                             <div className="random-description">
                                 {

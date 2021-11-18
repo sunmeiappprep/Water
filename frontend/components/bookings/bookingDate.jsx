@@ -296,11 +296,11 @@ isDateDisabled = ({date, view}) => {
         />
           </div>
 
-          <button onClick={this.removeOne}>Remove own Booking to edit</button>
+          <button onClick={this.removeOne}>Edit booking</button>
           {
             (this.state.firstbooking === "a") ?
             null :
-            <BookingIndexItem in={this.state.in} out={this.state.out} booking={this.state.firstbooking}/>
+            <BookingIndexItem datesInvalid={this.props.datesInvalid} in={this.state.in} out={this.state.out} booking={this.state.firstbooking}/>
           }
         </div>
         )

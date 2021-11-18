@@ -9,6 +9,8 @@ class BookingIndexItem extends React.Component {
         }
         this.handleDelete = this.handleDelete.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
+        this.checkIfcoll = this.checkIfcoll.bind(this);
+
     }
 
     componentDidMount() {
@@ -27,6 +29,57 @@ class BookingIndexItem extends React.Component {
     //    }
     // }
 
+    checkIfcoll(){
+        // if (this.props.datesInvalid.length > 0 ){
+        //     for( let  x = 0; x < this.props.datesInvalid.length; x++){
+        //         console.log(new Date(this.props.datesInvalid[x].check_in),new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
+        //         console.log(new Date(this.props.datesInvalid[x].check_in) 
+        //         > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
+                
+
+        //     }
+        // }
+        
+        Date.prototype.addDays = function(days) {
+            var date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        }
+
+        let start = (new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]}`))
+        // console.log(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`)
+        let end = (new Date(`${this.props.out[2]}-${this.props.out[1]}-${this.props.out[0]}`))
+        start = start.addDays(1)
+        end = end.addDays(1)
+        // console.log(start)
+        // console.log(start.addDays(1))
+
+        // console.log(end)
+        // if (start.addDays(1) === "Invalid Date"){
+        //     console.log(start.addMonth(1))
+        // }
+
+
+        while (start < end){
+            for( let  x = 0; x < this.props.datesInvalid.length; x++){
+                let currentSetin = new Date(this.props.datesInvalid[x].check_in)
+                let currentSetout = new Date(this.props.datesInvalid[x].check_out)
+                // console.log(currentSetin,start,currentSetout)
+                // console.log(new Date(this.props.datesInvalid[x].check_in) 
+                // > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
+                if (currentSetin < start && start < currentSetout) {
+                   return false
+                }
+                
+
+            }
+            start = start.addDays(1)
+
+            // if (start )
+        }
+
+    }
+
    
     handleDelete(e){
         // console.log(e)
@@ -41,22 +94,33 @@ class BookingIndexItem extends React.Component {
 
       handleEdit(e){
         e.preventDefault();
-        console.log(this.props)
-        let testing ={
-            id:this.props.booking.id,
-            check_in:`${this.props.in[0]}/${this.props.in[1]}/${this.props.in[2]}`,
-            check_out:`${this.props.out[0]}/${this.props.out[1]}/${this.props.out[2]}`,
-            renter_id: this.props.renter_id,
-            listing_id: this.props.booking.listing_id,
+        // console.log(this.props)
+        let editConflict = this.checkIfcoll()
+        // console.log(editConflict)
+        if (editConflict === false){
+            alert ("There is a conflict with the selected dates")
         }
-        this.props.updateBooking(testing)
-        window.location.reload()
+        else{
+            let testing ={
+                id:this.props.booking.id,
+                check_in:`${this.props.in[0]}/${this.props.in[1]}/${this.props.in[2]}`,
+                check_out:`${this.props.out[0]}/${this.props.out[1]}/${this.props.out[2]}`,
+                renter_id: this.props.renter_id,
+                listing_id: this.props.booking.listing_id,
+            }
+            this.props.updateBooking(testing)
+            window.location.reload() 
+        }
+
+
       }
 
 
     render(){
         // console.log("asd")
         // console.log(this.props)
+        console.log("This is booking index item",this.props.datesInvalid)
+        const checkIfcoll = this.checkIfcoll()
         const {booking,removeBooking} = this.props;       
         const onelisting = booking.listing
         if (!onelisting) return null
@@ -72,14 +136,20 @@ class BookingIndexItem extends React.Component {
                     <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
 
                     </div>
-                    <div>
-                    <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Submit new edited dates</button> 
-
-                    </div>
+                    {
+                        this.props.datesInvalid.length > 0 ? 
+                        <div>
+                        <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Submit new edited dates</button> 
+                        </div>
+                        :null
+                    }
+                   
                 </div>
 
             </div>
-           
+            <div>
+                {checkIfcoll}
+            </div>
             {/* <button className="delete-photo" onClick={this.handleDelete}>Delete Photo</button>  */}
 
             {/* <div className="listing-picture"> */}
