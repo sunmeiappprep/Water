@@ -119,7 +119,7 @@ class BookingIndexItem extends React.Component {
     render(){
         // console.log("asd")
         // console.log(this.props)
-        console.log("This is booking index item",this.props.datesInvalid)
+        // console.log("This is booking index item",this.props.datesInvalid)
         const checkIfcoll = this.checkIfcoll()
         const {booking,removeBooking} = this.props;       
         const onelisting = booking.listing

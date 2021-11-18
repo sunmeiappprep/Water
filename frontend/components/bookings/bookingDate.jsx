@@ -80,6 +80,8 @@ removeOne(){
 
 
 
+
+
 componentDidUpdate(pP,pS){
   if(pS.bookings.length !== this.state.bookings.length){
     let newArr = [];
@@ -237,11 +239,14 @@ isDateDisabled = ({date, view}) => {
   );
 };
 
+
     render() {
-      // console.log(this.state.listingBookingArr)
       if (this.state.listingBookingArr){
+        this.props.handleFulllist(this.state.listingBookingArr)
+
         this.checkIfcurrentuserhavebooking()
       }
+
       // console.log(this.state.bookings.length)
       // console.log(this.state.dateDiff)
       // console.log("asds")

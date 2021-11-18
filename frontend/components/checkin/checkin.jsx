@@ -44,9 +44,9 @@ export default class Checkin extends Component {
     
     handleClick(e) {
         e.preventDefault()
-        console.log(e)
+        // console.log(e)
         let editConflict = this.checkIfcoll()
-        console.log(editConflict)
+        // console.log(editConflict)
         if (editConflict === false){
             alert ("There is a conflict with the selected dates")
         }else{
@@ -58,10 +58,10 @@ export default class Checkin extends Component {
     
                 
             }        
-            console.log(booking2)
+            // console.log(booking2)
     
             this.props.createBooking(booking2);
-            // window.location.reload()
+            window.location.reload()
         }
 
 
@@ -89,13 +89,13 @@ export default class Checkin extends Component {
         let start = (new Date(`${splitCheckin[2]}-${splitCheckin[1]}-${splitCheckin[0]}`))
         // console.log(splitCheckin)
 
-        console.log(("checkin",`${splitCheckin[2]}-${splitCheckin[1]}-${splitCheckin[0]}`))
+        // console.log(("checkin",`${splitCheckin[2]}-${splitCheckin[1]}-${splitCheckin[0]}`))
         let end = (new Date(`${splitCheckout[2]}-${splitCheckout[1]}-${splitCheckout[0]}`))
         start = start.addDays(1)
         end = end.addDays(1)
-        console.log(start)
+        // console.log(start)
 
-        console.log(end)
+        // console.log(end)
         // console.log(start.addDays(1))
 
         // console.log(end)
@@ -105,11 +105,11 @@ export default class Checkin extends Component {
 
 
         while (start < end){
-            console.log("asd    ")
+            // console.log("asd    ")
             for( let  x = 0; x < this.props.datesInvalid.length; x++){
                 let currentSetin = new Date(this.props.datesInvalid[x].check_in)
                 let currentSetout = new Date(this.props.datesInvalid[x].check_out)
-                console.log(currentSetin,start,currentSetout)
+                // console.log(currentSetin,start,currentSetout)
                 // console.log(new Date(this.props.datesInvalid[x].check_in) 
                 // > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
                 if (currentSetin < start && start < currentSetout) {
@@ -189,7 +189,7 @@ export default class Checkin extends Component {
 
     render() {
 
-        console.log("checkin",this.props.datesInvalid)
+        // console.log("checkin",this.props.datesInvalid)
         // console.log((this.state.dateDiff))
         // console.log()
     //   setInterval(() => {
