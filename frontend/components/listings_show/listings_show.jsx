@@ -45,6 +45,7 @@ class ListingShow extends React.Component {
             rating:0,
             datesInvalid:[],
             fullbooking:[],
+            toggleEdit:false,
 
         }
         this.handleDelete = this.handleDelete.bind(this)
@@ -146,9 +147,17 @@ class ListingShow extends React.Component {
         this.setState({fullbooking: fullbooking});
     }
 
+    onToggleEdit = () => {
+        if (this.state.toggleEdit === false){
+            this.setState({toggleEdit: true});
+        }
+        else{
+            this.setState({toggleEdit: false});
+        }
+    }
     render(){        
+        // console.log(this.state.toggleEdit)
 
-        
         let reviewAvg = this.avgReview()
         if (reviewAvg !== NaN){
         }
@@ -267,7 +276,7 @@ class ListingShow extends React.Component {
                     <div className="listing-mid-section">
                         <div className="mid-left-section">
                             <Perks avgRating={reviewAvg} listingId={listing.id}/>
-                            <div ><BookingDate handleFulllist={this.onhandleFulllist} datesInvalid={this.state.datesInvalid} onhandleDates={this.onhandleDates} listingId={listing.id} onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
+                            <div ><BookingDate toggleEdit={this.onToggleEdit} handleFulllist={this.onhandleFulllist} datesInvalid={this.state.datesInvalid} onhandleDates={this.onhandleDates} listingId={listing.id} onCheckin={this.handlecheckin} onCheckout={this.handlecheckout}/></div>
                                 
                             <div className="random-description">
                                 {

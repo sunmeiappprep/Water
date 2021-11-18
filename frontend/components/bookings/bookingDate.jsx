@@ -19,7 +19,8 @@ class BookingDate extends React.Component {
         dateDiff:-1,
         bookings: [],
         listingBookingArr:[],
-        firstbooking:"a"
+        firstbooking:"a",
+        toggleEdit:false,
     
     }
     this.removeOne = this.removeOne.bind(this)
@@ -46,6 +47,8 @@ componentDidMount(){
   // this.setState({listingBookingArr:newArr})
 }
 
+
+
 removeOne(){
   // for (let x = 0; x <this.state.listingBookingArr.length; x++){
   //   if (this.state.listingBookingArr === this.props.listingId){
@@ -58,6 +61,15 @@ removeOne(){
   //   }
     
   // }
+  // this.props.toggleEdit()
+
+  if (this.state.toggleEdit === false){
+    this.setState({toggleEdit: true});
+  }
+  else{
+      this.setState({toggleEdit: false});
+  }
+
   let newListingBookingArr = []
 
   if (this.state.listingBookingArr.length > 0){
@@ -232,7 +244,7 @@ isDateDisabled = ({date, view}) => {
 
         this.checkIfcurrentuserhavebooking()
       }
-
+      console.log(this.state.toggleEdit)
       // console.log(this.state.bookings.length)
       // console.log(this.state.dateDiff)
       // console.log("asds")
@@ -291,7 +303,7 @@ isDateDisabled = ({date, view}) => {
           {
             (this.state.firstbooking === "a") ?
             null :
-            <BookingIndexItem datesInvalid={this.props.datesInvalid} in={this.state.in} out={this.state.out} booking={this.state.firstbooking}/>
+            <BookingIndexItem toggleEdit={this.state.toggleEdit} datesInvalid={this.props.datesInvalid} in={this.state.in} out={this.state.out} booking={this.state.firstbooking}/>
           }
         </div>
         )
