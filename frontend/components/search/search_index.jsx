@@ -39,7 +39,7 @@ class SearchIndex extends React.Component {
     render(){
         const {listings,location} = this.props;   
         let que = window.location.href.split("?")
-        let realterm = que[1]   
+        let realterm = que[1].split("%20").join(" ").toLowerCase()   
 
         let listing2 =[]
 
@@ -50,7 +50,7 @@ class SearchIndex extends React.Component {
             filter.push(listings[x])
         }
 
-        // console.log(this.state.listings)
+        // console.log(realterm)
 
         return(            
             <div className="listings-index-box">

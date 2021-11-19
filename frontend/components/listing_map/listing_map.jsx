@@ -10,49 +10,51 @@ class ListingMap extends Component {
   constructor(props){
     super(props);
     this.state = {
-      superreal:""
+      superreal:"",
+      city:"cancun",
+      defaultProps:{
+        center: {
+          lat: 	40.730610,
+          lng: -73.935242
+        },
+        maui: {
+          lat: 	20.7984,
+          lng: 156.3319
+        },
+        virginia: {
+          lat: 	20.7984,
+          lng: 156.3319
+        },
+        cancun: {
+          lat: 	21.161312209604535,
+          lng: -86.82624108472126
+        },
+        "renaissance island": {
+          lat: 	12.505347176750035,
+          lng:  -70.02535357453823
+        },
+        "north bergen": {
+          lat: 	40.8043,
+          lng: 74.0121
+        },
+        "virginia beach": {
+          lat: 	36.8529,
+          lng: 75.9780
+        },
+        "honolulu": {
+          lat: 21.3069,
+          lng: 157.8583
+        },
+        "miami": {
+          lat: 	25.806760443856547,
+          lng: -80.13436802217939
+        },
+        zoom: 11
+      },
     }
   }
 
-  static defaultProps = {
-    center: {
-      lat: 	40.730610,
-      lng: -73.935242
-    },
-    maui: {
-      lat: 	20.7984,
-      lng: 156.3319
-    },
-    virginia: {
-      lat: 	20.7984,
-      lng: 156.3319
-    },
-    cancun: {
-      lat: 	21.161312209604535,
-      lng: -86.82624108472126
-    },
-    "renaissance island": {
-      lat: 	12.5009,
-      lng: 70.0291
-    },
-    "north bergen": {
-      lat: 	40.8043,
-      lng: 74.0121
-    },
-    "virginia beach": {
-      lat: 	36.8529,
-      lng: 75.9780
-    },
-    "honolulu": {
-      lat: 21.3069,
-      lng: 157.8583
-    },
-    "miami": {
-      lat: 	25.806760443856547,
-      lng: -80.13436802217939
-    },
-    zoom: 11
-  };
+
   
   componentDidMount(){
     this.props.fetchListings()
@@ -80,17 +82,25 @@ class ListingMap extends Component {
     //   superreal =this.props.realterm
     // }
     //  this.props.realterm
-    let ultrareal = ""
-    if (this.setState.superreal){
-      ultrareal = this.setState.superreal
-    }
-    
+    // let ultrareal = ""
+    // if (this.setState.superreal){
+    //   ultrareal = this.setState.superreal
+    // }
+
+    // if (this.props.realterm){
+    //   let asd = this.props.realterm
+    //   console.log(asd)
+    //   console.log(this.state.defaultProps.cancun)
+    // }
+    var yourVariable = this.props.realterm
+    console.log(yourVariable)
+      
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
-          defaultCenter={this.props.ultrareal}
-          defaultZoom={this.props.zoom}
+          defaultCenter={this.state.defaultProps[yourVariable]}
+          defaultZoom={this.state.defaultProps.zoom}
         >
           {   
             listings.map((listing, i) => {
