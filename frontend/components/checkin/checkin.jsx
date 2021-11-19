@@ -234,7 +234,7 @@ export default class Checkin extends Component {
                     </div>
                     <div className="checkinCheckout">
                         <div className="checkinDiv">
-                            <label>Check In:
+                            <label className="labelsName">Check In:
                                 <input className="CheckTextBox" type="text"
                                 value={this.state.check_in}
                                 onChange={(e)=> this.setState({in:e.target.value})}
@@ -243,7 +243,7 @@ export default class Checkin extends Component {
                             </label>
                         </div>
                         <div className="checkoutDiv">
-                            <label>Check Out:
+                            <label className="labelsName">Check Out:
                                 <input  className="CheckTextBox" type="text" 
                                 value={this.state.check_out}
                                 onChange={(e)=> this.setState({check_out:e.target.value})}
@@ -255,7 +255,7 @@ export default class Checkin extends Component {
 
                     </div>
                     <div className="guest">
-                        <label>Guest:
+                        <label className="labelsName">Guest:
                                     <input type="text" 
                                     value={this.state.guest}
                                     onChange={(e)=> this.setState({guest:e.target.value})}
