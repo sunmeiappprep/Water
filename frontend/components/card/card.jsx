@@ -10,13 +10,21 @@ class Card extends React.Component {
         const text = `${this.props.name} \n` ;
         const text2 = `${this.props.drive} Hour Drive`
         const filtercity = `${this.props.name}`
+        const lag = {
+            center: {
+              lat: 	36.2048,
+              lng: 138.2529
+            },
+            zoom: 10
+          };
+
         return (
             <div className="card">
             <Link to={
     { 
         pathname: "/listings",
         filtercity: {filtercity},
-        // testing = 5,
+        
     }
 }>
     <img className='card2' src={this.props.site}  alt="cardsmall" />
@@ -24,9 +32,11 @@ class Card extends React.Component {
                 {/* <Link to="/listings" filtercity={filtercity} > <img className='card2' src={this.props.site}  alt="cardsmall" /></Link> */}
                 
                 <div className='test'> 
-                    <section className="upperText">{text} </section>
+                    <div 
+                    className="upperText">{text} 
+                    </div>
                     <div>
-                        <section className="lowerText"> {text2}</section>
+                    <div className="lowerText"> {text2}</div>
                     </div>
                    
                 </div>

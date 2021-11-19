@@ -24,7 +24,7 @@ class ListingMap extends Component {
   }
 
   render() {
- 
+    console.log(this.props)
     
     // let lat = ""
     // let long = ""

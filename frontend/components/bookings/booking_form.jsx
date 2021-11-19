@@ -53,7 +53,7 @@ export default class BookingForm extends Component {
 
         return (
             <div>
-                <label>Check In:
+                <label >Check In:
                     <input type="text"
                     value={this.state.in}
                     onChange={(e)=> this.setState({in:e.target.value})}

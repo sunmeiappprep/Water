@@ -21,6 +21,7 @@ class BookingDate extends React.Component {
         listingBookingArr:[],
         firstbooking:"a",
         toggleEdit:false,
+        cc:""
     
     }
     this.removeOne = this.removeOne.bind(this)
@@ -244,7 +245,7 @@ isDateDisabled = ({date, view}) => {
 
         this.checkIfcurrentuserhavebooking()
       }
-      console.log(this.state.toggleEdit)
+      // console.log(this.state.toggleEdit)
       // console.log(this.state.bookings.length)
       // console.log(this.state.dateDiff)
       // console.log("asds")
@@ -270,7 +271,8 @@ isDateDisabled = ({date, view}) => {
       // }
       // const removeOne = this.removeOne;
 
- 
+      console.log(this.state.cc[0])
+      // console.log(new Date())
         return (
         <div className="calendar-con">
           
@@ -284,7 +286,15 @@ isDateDisabled = ({date, view}) => {
             showNeighboringMonth={false}
             tileDisabled={this.isDateDisabled}
             minDate={new Date()}
-
+            nextAriaLabel="Next"
+            navigationAriaLabel="Next"
+            nextLabel="Next"
+            prevLabel="Previous"
+            next2Label={null}
+            prev2Label={null}
+            onActiveStartDateChange={({ action, activeStartDate, value, view }) => this.setState({cc:[activeStartDate,view]})}
+            // navigationAriaLive=
+         
           />
           </div>
 
@@ -293,9 +303,17 @@ isDateDisabled = ({date, view}) => {
           value={this.state.valueCheckOut}
           showNeighboringMonth={false}
           tileDisabled={this.isDateDisabled}
-          minDate={new Date()}
-          onClickDay={this.dateCallback}
+          minDate={new Date(2021, 0, 1)}
+          nextLabel="Next"
+          prevLabel="Previous"
+          next2Label={null}
+          prev2Label={null}
+          activeStartDate={this.state.cc[0]}
 
+
+
+          // onClickDay={this.dateCallback}
+          // activeStartDate={new Date(2022, 0, 1)}
         />
           </div>
 
