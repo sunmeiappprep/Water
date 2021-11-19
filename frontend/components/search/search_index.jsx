@@ -37,18 +37,28 @@ class SearchIndex extends React.Component {
     // }
     
     render(){
-        const {listings,location} = this.props;   
+        const {listings,location} = this.props;  
         let que = window.location.href.split("?")
-        let realterm = que[1].split("%20").join(" ").toLowerCase()   
+        let realterm;
+        let filter = []
+
+        if(que.length >= 2){
+            realterm = que[1].split("%20").join(" ").toLowerCase()
+            for (let x = 0 ; x  < listings.length ; x++){
+                if (listings[x].city.toLowerCase() === realterm.toLowerCase())
+                filter.push(listings[x])
+            }
+        }else{
+            for (let x = 0 ; x  < listings.length ; x++){
+                filter.push(listings[x])
+                realterm = "center"
+            }
+        }
 
         let listing2 =[]
 
         // }
-        let filter = []
-        for (let x = 0 ; x  < listings.length ; x++){
-            if (listings[x].city.toLowerCase() === realterm.toLowerCase())
-            filter.push(listings[x])
-        }
+ 
 
         // console.log(realterm)
 

@@ -210,7 +210,7 @@ class ListingShow extends React.Component {
         
         if (!listing) return null;           
 
-
+        // console.log(listing.photoAWS)
         return(
             <div className= "listing-show-box">
                 <div className="listings-index-box">

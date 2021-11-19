@@ -14,25 +14,61 @@ import Dropdown from 'react-dropdown'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ListingIndexItem from '../listings_index/listing_index_item';
 import ShowBookings from '../show_bookings/show_bookings_container';
+import { Photo } from '@material-ui/icons';
 class Splash extends React.Component {
   constructor(props){
     super(props)
     // this.openModal = this.openModal.bind(this)
+    this.state = {
+      first:"",
+      second:"",
+      stateListings:""
+    }
   }
 
-  
+  componentWillMount(){
+
+    this.setState({listings:this.props.listings})
+
+  }
+
+  componentDidMount(){
+    this.props.fetchListings()
+    .then
+    (listings => this.setState({listings:listings.listings}))
+
+  }
+
+  componentDidUpdate(pP,PS){
+    // if (pP.listings !== this.state.stateListings){
+    //   this.setState({stateListings:this.props.listings})
+    // }
+  }
 
   render() {
     const loginB = <GreetingContainer/>
     const icon = <AccountCircleIcon/>
-    {/* const signUp = <button onClick={() => openModal('signup')}>Signup</button> */}
-    // const options = [
-    //   <button className="login-signup" onClick={() => openModal('login')}>Login</button>,
-    //   <button className="login-signup" onClick={() => openModal('signup')}>Signup</button>
-    //   ];
+
     const options = [
       loginB
     ];
+    let first = "";
+    let second = "";
+    let third = "";
+    let fourth = "";
+
+    if (this.props.listings.length > 0){
+      first = this.props.listings[0]
+      second = this.props.listings[1]
+      third = this.props.listings[2]
+      fourth = this.props.listings[3]
+    
+  }
+
+    // console.log(first.id)
+
+    
+    // console.log(this.state.listings)
 
     return (
       <div>
@@ -80,7 +116,7 @@ class Splash extends React.Component {
               <Card site="https://a0.muscache.com/im/pictures/847cfb7f-788d-42dc-9148-f375348dde76.jpg?im_q=medq&im_w=240" name="Maui" drive="5"/>    
           </div>
           <div className="explore_nearby2">                   
-              <Card site="https://a0.muscache.com/im/pictures/560c06e1-a396-4414-9e38-4fbe8e9f04c4.jpg?im_q=medq&im_w=240" name="Honolulu" drive="5"/>
+              <Card site={"https://a0.muscache.com/im/pictures/560c06e1-a396-4414-9e38-4fbe8e9f04c4.jpg?im_q=medq&im_w=240"} name="Honolulu" drive="5"/>
               <Card site="https://a0.muscache.com/im/pictures/a161fb95-6875-4aaa-aecd-3a46dead3220.jpg?im_q=medq&im_w=240" name="Virginia Beach" drive="8"/>
               <Card site="https://a0.muscache.com/im/pictures/71ae2609-6082-4f31-aa20-8629d7fab7d7.jpg?im_q=medq&im_w=240" name="Phuket" drive="7"/>    
               <Card site="https://a0.muscache.com/im/pictures/f7ac6e57-65cb-446b-8631-331072463af4.jpg?im_q=medq&im_w=240" name="North Bergen" drive="1"/>    
@@ -90,15 +126,15 @@ class Splash extends React.Component {
       <div className="live_Anywhere_con">
         <h1 className='en'>Live anywhere</h1>
           <div className="Live_anywhere">                   
-              <Biggercard site="https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480" category="Outdoor Getaways"/>
-              <Biggercard site="https://a0.muscache.com/im/pictures/36f53e61-db8d-403c-9122-5b761c0e4264.jpg?im_w=480" category="Unique stays"/>
-              <Biggercard site="https://a0.muscache.com/im/pictures/7d82ca14-56e5-4465-8218-dcfa7d69b6ac.jpg?im_w=480" category="Entire homes" />
-              <Biggercard site="https://a0.muscache.com/im/pictures/10a638e1-6aff-4313-8033-1275cec83987.jpg?im_w=480" category="Pets allowed" />       
+              <Biggercard listingId={first.id} site={first.photoAWS} category="Outdoor Getaways"/>
+              <Biggercard listingId={second.id} site={second.photoAWS} category="Unique stays"/>
+              <Biggercard listingId={third.id} site={third.photoAWS} category="Entire homes" />
+              <Biggercard listingId={fourth.id} site={fourth.photoAWS} category="Pets allowed" />       
           </div>        
       </div>
-        <div className='hosting'>
-          <Longestcard/>
-        </div>
+        {/* <div className='hosting'> */}
+          {/* <Longestcard/> */}
+        {/* </div> */}
       </div>
       </div>
       

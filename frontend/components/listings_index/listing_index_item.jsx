@@ -33,13 +33,13 @@ class ListingIndexItem extends React.Component {
 
         const reviewAvg = this.reviewsAvg()
         const reviewCount = this.reviewCount()
-
     return(
         <div className="leftside">  
             <li>
                 <div className="leftsidePic">
                     <div className="leftsidePic3">
                         <img className="leftsidePic2" src={listing.photoAWS} width="250px" height="250px" />
+                        
                     </div>
                     <div className="listing-info">   
                         {

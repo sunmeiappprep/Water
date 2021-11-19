@@ -60,17 +60,26 @@ class ListingMap extends Component {
   
   componentDidMount(){
     this.props.fetchListings()
+    const {listings,place,realterm} = this.props
+
+    var yourVariable = this.props.realterm
+    if (yourVariable == "center"){
+      this.setState({zoom:3})
+    }else{
+      this.setState({zoom:11})
+    }
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     
 
     const {listings,place,realterm} = this.props
 
     var yourVariable = this.props.realterm
+
     console.log(yourVariable)
-    console.log(this.state.defaultProps[yourVariable])
+    // console.log(this.state.defaultProps[yourVariable])
       
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>
@@ -81,6 +90,8 @@ class ListingMap extends Component {
           defaultZoom={this.state.defaultProps.zoom}
           onClick={this.testing}
         >
+
+
           {   
             listings.map((listing, i) => {
               return (
