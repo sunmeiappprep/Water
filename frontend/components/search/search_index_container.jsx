@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import Search from './search';
+import SearchIndex from './search_index';
 import { fetchListings } from '../../actions/listing_actions';
 
 const mSTP = state => {
@@ -15,4 +15,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(Search);
+export default connect(mSTP, mDTP)(SearchIndex);

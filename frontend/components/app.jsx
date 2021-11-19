@@ -12,6 +12,8 @@ import { Router, Switch, Route } from "react-router-dom";
 import ListingsIndexContainer from './listings_index/listing_index_container';
 import ListingShowContainer from './listings_show/listings_show_container';
 import BookingIndexContainer from './bookings/booking_container';
+import SearchContainer from "./search/search_container"
+import SearchIndex from "./search/search_index_container"
 
 import Modal from './modal/modal';
 function App() {
@@ -29,7 +31,7 @@ function App() {
       <Route exact path="/bookings/:bookingId" component={BookingIndexContainer}/>
       <Route path="/listings" component={ListingsIndexContainer} asd="asddd" />
       <Route path="/bookings" component={BookingIndexContainer} />
-    
+      <Route exact path="/search"><SearchIndex/></Route>
     </Switch>
 
     </div>
