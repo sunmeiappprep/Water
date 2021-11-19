@@ -22,8 +22,8 @@ class Card extends React.Component {
             <div className="card">
             <Link to={
     { 
-        pathname: "/listings",
-        filtercity: {filtercity},
+        pathname: '/search',
+        search: "?" + filtercity,
         
     }
 }>
