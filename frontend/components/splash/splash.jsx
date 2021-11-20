@@ -22,7 +22,7 @@ class Splash extends React.Component {
     this.state = {
       first:"",
       second:"",
-      stateListings:""
+      stateListings:"asd"
     }
   }
 
@@ -35,7 +35,7 @@ class Splash extends React.Component {
   componentDidMount(){
     this.props.fetchListings()
     .then
-    (listings => this.setState({listings:listings.listings}))
+    (listings => this.setState({stateListings:Object.values(listings.listings)}))
 
   }
 
@@ -68,7 +68,7 @@ class Splash extends React.Component {
     // console.log(first.id)
 
     
-    // console.log(this.state.listings)
+    console.log(this.state.stateListings)
 
     return (
       <div>

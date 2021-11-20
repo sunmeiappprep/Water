@@ -79,7 +79,7 @@ class BookingAll extends React.Component {
                     <div className="bookingpagetxt">Visiting {this.props.booking.listing.title}</div>
                     <div className="bookingpagetxt">In {this.props.booking.listing.city}</div>
                 </div>
-                <div className="deleteandedit">
+                {/* <div className="deleteandedit">
                     <div>
                     <button className="delete-booking" onClick={this.handleDelete} key={this.props.booking.id}>Delete booking</button> 
 
@@ -88,7 +88,7 @@ class BookingAll extends React.Component {
                     <button className="edit-booking" onClick={this.handleEdit} key={this.props.booking.id*2}>Edit booking</button> 
 
                     </div>
-                </div>
+                </div> */}
         </div>
             {/* {
                 this.state.edited.map((booking, i) => (     
