@@ -303,7 +303,7 @@ isDateDisabled = ({date, view}) => {
           value={this.state.valueCheckOut}
           showNeighboringMonth={false}
           tileDisabled={this.isDateDisabled}
-          minDate={new Date(2021, 0, 1)}
+          minDate={new Date()}
           nextLabel="Next"
           prevLabel="Previous"
           next2Label={null}
