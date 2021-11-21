@@ -24,14 +24,28 @@ class ReviewShow extends React.Component {
     //     })
     // }
 
+    componentWillMount(){
+        this.setState({
+            reviews: this.props.review,
+        })
+    }
+
     componentDidUpdate(prevProps, prevState){
-        
+        console.log('pp',prevProps.review,"ps",this.props.review)
        
+        if (prevProps.review.length !== this.props.review.length){
+            // console.log("Testing",prevProps.reviews,this.props.reviews)
+            this.setState({
+                reviews: this.props.review
+            })
+        } 
+
         if (prevState.deleted === true){
             this.setState({
                 deleted: false
             })
         } 
+
 
     }
 

@@ -47,9 +47,12 @@ class ListingShow extends React.Component {
             datesInvalid:[],
             fullbooking:[],
             toggleEdit:false,
+            oneReview:"",
+            newarr:"",
 
         }
         this.handleDelete = this.handleDelete.bind(this)
+        this.getOneReviewFromUser = this.getOneReviewFromUser.bind(this)
 
     }
 
@@ -65,9 +68,9 @@ class ListingShow extends React.Component {
         // console.log(answer.toFixed(2))
         return answer.toFixed(2)
     }
-
+    
     componentDidMount(){
-        
+        window.scrollTo(0, 0);
         this.props.fetchListing(this.props.match.params.listingid);  
         this.props.fetchListingReviews(this.props.match.params.listingid).then(() =>
             this.setState({
@@ -104,7 +107,7 @@ class ListingShow extends React.Component {
           })
         ).then(()=> this.avgReview()
         ); 
-
+          
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -116,7 +119,58 @@ class ListingShow extends React.Component {
             })
         }
 
+        if (this.state.reviews !== prevState.reviews){
+            this.getOneReviewFromUser()
+        }
 
+        if (prevState.newarr.length !== this.state.newarr.length){
+            this.setState({newarr:this.state.newarr})
+        }
+
+        // this.props.fetchListing(this.props.match.params.listingid);
+        // this.props.fetchListingReviews(this.props.match.params.listingid).then(() =>
+        // this.setState({
+        //     reviews: this.props.reviews,
+        //     listings: this.props.listing
+        //   })
+        // ).then(()=> this.avgReview()
+        // ); 
+
+    }
+
+    getOneReviewFromUser(){
+        if(this.state.reviews.length > 0){
+            for (let x = 0; x < this.state.reviews.length ; x++) {
+                // console.log(this.state.reviews[x].reviewer_id, this.props.currentUser)
+                if (this.state.reviews[x].reviewer_id === this.props.currentUser && this.state.oneReview === ""){
+                    // console.log(this.state.reviews[x])
+                    return this.setState({
+                        oneReview:this.state.reviews[x]
+                    },
+                    // () => console.log(this.state.oneReview)
+                    )
+                }
+              
+            }
+
+        }
+
+        // if(this.state.oneReview = ""){
+        //     this.setState({
+        //         oneReview:{
+        //             description:"Leave review",
+        //             rating:5,
+        //             listing_id:4,
+        //             reviewer_id:2
+                    
+        //         }
+        //     })
+        // }
+        
+    }
+
+    componentWillUnmount(){
+        // this.setState({something: 'changed'});
     }
 
     handleDelete(reviewId){
@@ -159,6 +213,13 @@ class ListingShow extends React.Component {
     render(){        
         // console.log(this.state.toggleEdit)
 
+        // console.log("listing showing",this.state)
+        // console.log("listing showing",this.props)
+        // if (this.state.reviews){
+        //     this.getOneReviewFromUser()
+        // }
+        // console.log(this.state.oneReview)
+
         let reviewAvg = this.avgReview()
         if (reviewAvg !== NaN){
         }
@@ -191,6 +252,9 @@ class ListingShow extends React.Component {
             }
         }
         // console.log(newarr)
+        if(newarr  && (newarr.length !== this.state.newarr.length)){
+            this.setState({newarr:newarr})
+        }
         if (newarr && users[0]){
             newarr.map(review =>{
                 arr.push(<ReviewShowContainer editRating={this.state.rating} editDescription={this.state.description}  key={review.id} cdp={this.componentDidUpdate} review={review} user={users[0].id}/>)
@@ -206,6 +270,8 @@ class ListingShow extends React.Component {
             
             )
         }
+
+        
 
         
         if (!listing) return null;           
@@ -337,11 +403,18 @@ class ListingShow extends React.Component {
 
                                 </div>
                     <div className='singleReviewOuterDiv'>
-                        {arr}
+                    {
+                            this.state.reviews.length !== 0 
+                            ?
+                            arr
+                            :
+                            null
+
+                        }
                     </div>
                     
                     {
-                    (users[0]) ? <ReviewFormContainer user={users[0].id} listing={listing.id} onhandleDescription={this.handleDescription} onRating={this.handleRating}/> : null
+                    (users[0] ) ? <ReviewFormContainer user={users[0].id} oneReview={this.state.oneReview} listing={listing.id} onhandleDescription={this.handleDescription} onRating={this.handleRating}/> : null
                     }
                     <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
                     {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}

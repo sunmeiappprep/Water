@@ -4,14 +4,15 @@ export class ReviewForm extends Component {
     constructor(props){
         super(props)
         this.state = {
-            description:"",
-            rating:"",
+            description:this.props.oneReview.description,
+            rating:this.props.oneReview.rating,
             reviewer_id:props.user,
             listing_id:props.listing
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.descriptionOnchange = this.descriptionOnchange.bind(this);
         this.ratingOnchange = this.ratingOnchange.bind(this);
+        this.handleEdit = this.handleEdit.bind(this)
 
     }
 
@@ -35,14 +36,36 @@ export class ReviewForm extends Component {
             this.props.createReview(newReview)
             window.location.reload()
         }
-
-
-       
         
+    }
+
+    componentDidUpdate(pP){
+        if (this.props.oneReview && this.state.description === undefined){
+            this.setState({description:this.props.oneReview.description})
+            this.setState({rating:this.props.oneReview.rating})
+        }
         
+    }
 
 
-        
+    handleEdit(e){
+        e.preventDefault()
+        // console.log(this.state)
+        let arr = e.target.id.split(",")
+   
+        const review = {
+            id: arr[0],
+            rating: this.props.editRating,
+            description: this.props.editDescription,
+            listing_id: arr[3],
+            reviewer_id: arr[4],
+
+        }
+
+        this.props.updateReview(review)
+        window.location.reload()
+
+
     }
 
     // onhandleDescription = (e) => {
@@ -79,6 +102,7 @@ export class ReviewForm extends Component {
     // }
 
     render() {
+        console.log(this.state)
         // const {users} = this.props
         // if (users){
         //     this.setState({reviewer_id:users})
@@ -86,7 +110,7 @@ export class ReviewForm extends Component {
         // if (listing){
         //     this.setState({listing_id:listing})
         // }
-        // console.log("asd"+ users)
+        // console.log(this.state)
         // console.log(this.state.description)
         // const descriptionOnchange = this.descriptionOnchange()
         // console.log(this.state.description)
@@ -124,6 +148,7 @@ export class ReviewForm extends Component {
                     />
                     </label> */}
                     <input className="review-submit" type="submit" value='Create Review' />
+                    
                 </form>
 
             </div>
