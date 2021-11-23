@@ -21,20 +21,12 @@ class SearchIndex extends React.Component {
         super(props);
         this.state = {
             listings:[],
-            filter:[]
+            filter:[],
+            realterm:"",
+            windows:""
         }
     }
 
-    
-
-    // async componentWillMount() {        
-    //     const {listings,location} = await this.props;   
-    //     this.setState({ listings: listings });
-
-    // }
-    // componentDidMount(){
-    //     this.props.fetchListings();
-    // }
     
     render(){
         const {listings,location} = this.props;  
@@ -58,7 +50,9 @@ class SearchIndex extends React.Component {
         let listing2 =[]
 
         // }
- 
+        if(this.state.realterm !== realterm){
+            this.setState({realterm:realterm})
+        }
 
         // console.log(realterm)
 

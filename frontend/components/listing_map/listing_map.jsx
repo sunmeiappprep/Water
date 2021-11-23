@@ -13,8 +13,8 @@ class ListingMap extends Component {
     this.state = {
       defaultProps:{
         center: {
-          lat: 	40.730610,
-          lng: -73.935242
+          lat: 	51.448511539411484,
+          lng: -0.0999182710000223
         },
         maui: {
           lat: 	20.77640804978185,
@@ -61,15 +61,22 @@ class ListingMap extends Component {
   componentDidMount(){
     this.props.fetchListings()
     const {listings,place,realterm} = this.props
-
-    var yourVariable = this.props.realterm
-    if (yourVariable == "center"){
+    var yourVariable = realterm
+    console.log("Listingmap",yourVariable)
+    
+    if (yourVariable === undefined){
       this.setState({zoom:3})
     }else{
       this.setState({zoom:11})
     }
   }
 
+  componentDidUpdate(pP){
+    if (this.props.realterm !== pP.realterm){
+      this.setState({realterm:this.props.realterm},console.log(this.state.realterm))
+    }
+  }
+  
   render() {
     // console.log(this.props)
     
@@ -78,11 +85,12 @@ class ListingMap extends Component {
 
     var yourVariable = this.props.realterm
 
-    console.log(yourVariable)
+    console.log("LR",yourVariable)
     // console.log(this.state.defaultProps[yourVariable])
       
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>
+
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
           clickableIcons={true}

@@ -4,6 +4,7 @@ import { Router, Switch, Route } from "react-router-dom";
 import ListingsIndexContainer from '../listings_index/listing_index_container';
 import { NavLink } from 'react-router-dom'
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 class Search extends React.Component {
 
     constructor(props) {
@@ -21,15 +22,22 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({ "search": true });
+        this.setState({ "search": true },()=> window.location.reload());
+
+
+        
+
+
     }   
     
     handleKeypress(e) {
         if (e.key === "Enter") this.handleSubmit(e);
+
     };
 
-    componentDidUpdate() {
+    componentDidUpdate(pP,pS) {
         if (this.state.search) this.setState({search: false})
+
     }
 
     render() {
