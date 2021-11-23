@@ -48,7 +48,8 @@ class ListingMap extends Component {
           lat: 7.861337697551124,
           lng:  98.40059249307171,
         },
-        zoom: 11
+        zoom: 11,
+        zoom2: 3,
       },
     }
   }
@@ -72,9 +73,9 @@ class ListingMap extends Component {
   }
 
   componentDidUpdate(pP){
-    if (this.props.realterm !== pP.realterm){
-      this.setState({realterm:this.props.realterm},console.log(this.state.realterm))
-    }
+    // if (this.props.realterm === undefined){
+    //   this.setState({realterm:this.props.realterm},console.log(this.state.realterm))
+    // }
   }
   
   render() {
@@ -90,8 +91,10 @@ class ListingMap extends Component {
       
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>
-
-        <GoogleMapReact
+        {
+          
+          this.props.realterm ?
+          <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
           clickableIcons={true}
           defaultCenter={this.state.defaultProps[yourVariable]}
@@ -123,6 +126,41 @@ class ListingMap extends Component {
             img={<RoomIcon className="marker"/>}
           /> */}
         </GoogleMapReact>
+        :
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
+          clickableIcons={true}
+          defaultCenter={this.state.defaultProps["center"]}
+          defaultZoom={this.state.defaultProps.zoom2}
+          onClick={this.testing}
+        >
+
+
+          {   
+            listings.map((listing, i) => {
+              return (
+                <AnyReactComponent
+                  lat={listing.latitude}
+                  lng={listing.longitude}
+                  img={<RoomIcon className="marker"/>}
+                  key={listing.id}
+                  onclick={<Redirect to="/"/>}
+                  />
+                    )
+                  
+               })
+               
+          }
+
+
+          {/* <AnyReactComponent
+            lat={40.730610}
+            lng={-73.935242}
+            img={<RoomIcon className="marker"/>}
+          /> */}
+        </GoogleMapReact>
+        }
+        
       </div>
     );
   }
