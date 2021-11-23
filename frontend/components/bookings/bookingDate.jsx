@@ -278,6 +278,13 @@ isDateDisabled = ({date, view}) => {
 
       // console.log(this.state.cc[0])
       // console.log(new Date())
+      // console.log()
+      let doesthisuserhavebooking = this.state.bookings.some(booking => (booking.renter_id === this.props.currentUser) && booking.listing_id === this.props.listingId )
+      // console.log(  this.state.bookings,this.props.currentUser)
+      // console.log(  this.state,this.props)
+      // console.log( doesthisuserhavebooking)
+
+
         return (
         <div className="calendar-con">
           
@@ -322,7 +329,7 @@ isDateDisabled = ({date, view}) => {
         />
           </div>
           {
-            this.props.currentUser?
+            this.props.currentUser !== null && doesthisuserhavebooking?
           <button className="calendar_Edit" onClick={this.removeOne}>Edit booking</button>
           :
           null

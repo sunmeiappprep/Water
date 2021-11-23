@@ -116,7 +116,7 @@ export class ReviewForm extends Component {
         // console.log(this.state.description)
         return (
             <div className="review-form-container">
-                <form onSubmit={this.handleSubmit} className="review-form-container">
+                <form onSubmit={this.handleSubmit} className="review-form-container2">
                     <label>Review Editor:
                         
                         <textarea className="review-des" type="textarea" rows="4" cols="50" 

@@ -460,8 +460,9 @@ class ListingShow extends React.Component {
                     : null
                     }
 
-
-                    <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
+                    <div className="singleMapDiv">
+                        <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
+                    </div>
                     {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}
                     
 ,                 </div>               
