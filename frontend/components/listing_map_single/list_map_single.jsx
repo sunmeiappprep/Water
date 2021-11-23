@@ -12,7 +12,7 @@ class ListingMapSingle extends Component {
   }
 
   componentDidMount(){
-    this.props.fetchListing()
+    // this.props.fetchListing()
   }
 
   render() {

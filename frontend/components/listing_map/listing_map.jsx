@@ -13,8 +13,8 @@ class ListingMap extends Component {
     this.state = {
       defaultProps:{
         center: {
-          lat: 	40.730610,
-          lng: -73.935242
+          lat: 	51.448511539411484,
+          lng: -0.0999182710000223
         },
         maui: {
           lat: 	20.77640804978185,
@@ -48,7 +48,8 @@ class ListingMap extends Component {
           lat: 7.861337697551124,
           lng:  98.40059249307171,
         },
-        zoom: 11
+        zoom: 11,
+        zoom2: 3,
       },
     }
   }
@@ -61,15 +62,22 @@ class ListingMap extends Component {
   componentDidMount(){
     this.props.fetchListings()
     const {listings,place,realterm} = this.props
-
-    var yourVariable = this.props.realterm
-    if (yourVariable == "center"){
+    var yourVariable = realterm
+    console.log("Listingmap",yourVariable)
+    
+    if (yourVariable === undefined){
       this.setState({zoom:3})
     }else{
       this.setState({zoom:11})
     }
   }
 
+  componentDidUpdate(pP){
+    // if (this.props.realterm === undefined){
+    //   this.setState({realterm:this.props.realterm},console.log(this.state.realterm))
+    // }
+  }
+  
   render() {
     // console.log(this.props)
     
@@ -78,12 +86,15 @@ class ListingMap extends Component {
 
     var yourVariable = this.props.realterm
 
-    console.log(yourVariable)
+    // console.log("LR",yourVariable)
     // console.log(this.state.defaultProps[yourVariable])
       
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>
-        <GoogleMapReact
+        {
+          
+          this.props.realterm ?
+          <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
           clickableIcons={true}
           defaultCenter={this.state.defaultProps[yourVariable]}
@@ -115,6 +126,41 @@ class ListingMap extends Component {
             img={<RoomIcon className="marker"/>}
           /> */}
         </GoogleMapReact>
+        :
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
+          clickableIcons={true}
+          defaultCenter={this.state.defaultProps["center"]}
+          defaultZoom={this.state.defaultProps.zoom2}
+          onClick={this.testing}
+        >
+
+
+          {   
+            listings.map((listing, i) => {
+              return (
+                <AnyReactComponent
+                  lat={listing.latitude}
+                  lng={listing.longitude}
+                  img={<RoomIcon className="marker"/>}
+                  key={listing.id}
+                  onclick={<Redirect to="/"/>}
+                  />
+                    )
+                  
+               })
+               
+          }
+
+
+          {/* <AnyReactComponent
+            lat={40.730610}
+            lng={-73.935242}
+            img={<RoomIcon className="marker"/>}
+          /> */}
+        </GoogleMapReact>
+        }
+        
       </div>
     );
   }

@@ -2,7 +2,9 @@ import React from 'react';
 // import Text from 'react'
 import logo from './ss.jpg';
 // ...later
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { Redirect } from 'react-router';
+// import { NavLink } from 'react-router-dom';
 class Biggercard extends React.Component {
 
     render() {
@@ -10,7 +12,7 @@ class Biggercard extends React.Component {
         // let string = `/listings/${this.prop.listingId}`
         return (
             <div className="biggercard">
-                <Link to={`/listings/${this.props.listingId}`} className='midLink'><img className='biggercard2' src={this.props.site} alt="logo" /></Link> 
+                <NavLink to={`/listings/${this.props.listingId}`} className='midLink'><img className='biggercard2' src={this.props.site} alt="logo" /></NavLink> 
                 
                 <p className="display-linebreak2"> 
                     {text} 

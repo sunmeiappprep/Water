@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StarRateIcon from '@mui/icons-material/StarRate';
+import GreetingContainer from '../greeting/greeting_container';
 
 export default class Checkin extends Component {
     constructor(props){
@@ -190,6 +191,8 @@ export default class Checkin extends Component {
         let total = Math.ceil(this.props.price * ceilifference_In)
         // let total = Math.floor(this.props.price * Difference_In_Days)
         this.setState({total:total})
+
+        
     }   
 
     render() {
@@ -264,9 +267,16 @@ export default class Checkin extends Component {
                         </label>                       
                     </div>
                     <div className="ava">
-                    <label>
-                        <button className="checkAva" onClick={this.toggle}>Check Availability</button>
-                    </label>
+                        {
+                            this.props.currentUser ?
+                            <label>
+                            <button className="checkAva" onClick={this.toggle}>Check Availability</button>
+                            </label>
+                            :
+                            <GreetingContainer/>
+                            
+                        }
+
                     </div>
                     <div>
                         {

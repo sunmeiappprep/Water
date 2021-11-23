@@ -271,7 +271,7 @@ isDateDisabled = ({date, view}) => {
       // }
       // const removeOne = this.removeOne;
 
-      console.log(this.state.cc[0])
+      // console.log(this.state.cc[0])
       // console.log(new Date())
         return (
         <div className="calendar-con">
@@ -316,8 +316,12 @@ isDateDisabled = ({date, view}) => {
           // activeStartDate={new Date(2022, 0, 1)}
         />
           </div>
-
-          <button onClick={this.removeOne}>Edit booking</button>
+          {
+            this.props.currentUser?
+          <button className="calendar_Edit" onClick={this.removeOne}>Edit booking</button>
+          :
+          null
+          }
           {
             (this.state.firstbooking === "a") ?
             null :

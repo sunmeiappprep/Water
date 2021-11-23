@@ -11,12 +11,27 @@ import Nav from '../nav/nav';
 class ListingsIndex extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            windows:''
+        }
     }
 
     
 
     componentDidMount() {        
         this.props.fetchListings();
+    }
+
+    
+
+    componentDidUpdate(pP,pS){
+        // if (this.state.realterm){
+        //     console.log(this.state.realterm)
+        // }   
+
+        if (window.location.href !== this.state.windows){
+            this.setState({windows:window.location.href},)
+        }
     }
 
     render(){
