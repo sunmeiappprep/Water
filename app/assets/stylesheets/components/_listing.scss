@@ -585,13 +585,32 @@ img {
 .calendar-con{
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: lightgray;
-
+  background-color: skyblue;
+  border-radius: 25px;
   // border-color: ;
   // border-width: 90%;
 }
+
+.react-calendar,.calendar{
+  // background-color: skyblue;
+
+}
+
+.react-calendar__tile {
+  // background-color: red;
+  // color
+
+}
+
+// .react-calendar__tile{
+//   background-color: red;
+  
+// }
 
 .perkcommentcon{
   display: flex;
