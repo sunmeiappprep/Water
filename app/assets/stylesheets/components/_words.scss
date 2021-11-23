@@ -287,12 +287,13 @@ a{
     // border
 }
  .search_bar{
-     display: inline-flex;
-    //  align-content: center;
-   
+    display: flex;
+    align-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
     margin-right:auto;
     margin-left:auto;
-     border-color: gray;
+    border-color: gray;
 
  }
 
