@@ -100,6 +100,38 @@ class ListingShow extends React.Component {
              `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
             ]
         ] });
+        this.setState({ sets:{
+            0:['https://water-seeds.s3.amazonaws.com/set1.jpg',
+            'https://water-seeds.s3.amazonaws.com/set1a.jpg',
+            'https://water-seeds.s3.amazonaws.com/set1aa.jpg',
+            'https://water-seeds.s3.amazonaws.com/set1aaa.jpg'
+            ],
+            1:['https://water-seeds.s3.amazonaws.com/b.jpg',
+            'https://water-seeds.s3.amazonaws.com/bb.jpg',
+            'https://water-seeds.s3.amazonaws.com/bbb.jpg',
+            'https://water-seeds.s3.amazonaws.com/bbbb.jpg'
+            ],
+            2:['https://water-seeds.s3.amazonaws.com/c.jpg',
+            'https://water-seeds.s3.amazonaws.com/cc.jpg',
+            'https://water-seeds.s3.amazonaws.com/ccc.jpg',
+            'https://water-seeds.s3.amazonaws.com/cccc.jpg'
+            ],
+            3:['https://water-seeds.s3.amazonaws.com/d.jpg',
+            'https://water-seeds.s3.amazonaws.com/dd.jpg',
+            'https://water-seeds.s3.amazonaws.com/ddd.jpg',
+            'https://water-seeds.s3.amazonaws.com/dddd.jpg'
+            ],
+            4:['https://water-seeds.s3.amazonaws.com/e.jpg',
+            'https://water-seeds.s3.amazonaws.com/ee.jpg',
+            'https://water-seeds.s3.amazonaws.com/eeee.jpg',
+            'https://water-seeds.s3.amazonaws.com/eee.jpeg'
+            ],   
+            5:['https://water-seeds.s3.amazonaws.com/f.jpg',
+            'https://water-seeds.s3.amazonaws.com/ff.jpg',
+            'https://water-seeds.s3.amazonaws.com/fff.jpg',
+            'https://water-seeds.s3.amazonaws.com/ffff.jpg'
+            ],               
+        } });
         this.props.fetchListing(this.props.match.params.listingid);
         this.props.fetchListingReviews(this.props.match.params.listingid).then(() =>
         this.setState({
@@ -254,7 +286,7 @@ class ListingShow extends React.Component {
         }
         // console.log(newarr)
         if(newarr  && (newarr.length !== this.state.newarr.length)){
-            this.setState({newarr:newarr})
+            // this.setState({newarr:newarr})
         }
         if (newarr && users[0]){
             newarr.map(review =>{
@@ -341,10 +373,10 @@ class ListingShow extends React.Component {
                                 <img className="photo" src={listing.photoAWS} alt="photo" width="500px"/>
                             </div>
                             <div className='showing-bundle-right'>
-                            <img className="photo21" src={listing.photoAWS} alt="photo" />
-                            <img className="photo22" src={listing.photoAWS} alt="photo" />
-                            <img className="photo23" src={listing.photoAWS} alt="photo" />
-                            <img className="photo24" src={listing.photoAWS} alt="photo" />
+                            <img className="photo21" src={this.state.sets[listing.id%6][0]} alt="photo" />
+                            <img className="photo22" src={this.state.sets[listing.id%6][1]} alt="photo" />
+                            <img className="photo23" src={this.state.sets[listing.id%6][2]} alt="photo" />
+                            <img className="photo24" src={this.state.sets[listing.id%6][3]} alt="photo" />
                             </div>
       
                             {/* <img className="photo" src={listing.photoAWS} alt="photo" /> */}
@@ -428,8 +460,9 @@ class ListingShow extends React.Component {
                     : null
                     }
 
-
-                    <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
+                    <div className="singleMapDiv">
+                        <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
+                    </div>
                     {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}
                     
 ,                 </div>               

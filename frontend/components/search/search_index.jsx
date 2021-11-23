@@ -27,10 +27,11 @@ class SearchIndex extends React.Component {
         }
     }
 
-    
-    render(){
-        const {listings,location} = this.props;  
+    componentDidUpdate(){
+        if (!this.state.realterm){
+            const {listings,location} = this.props;  
         let que = window.location.href.split("?")
+        this.setState({que:que})
         let realterm;
         let filter = []
 
@@ -54,6 +55,35 @@ class SearchIndex extends React.Component {
             this.setState({realterm:realterm})
         }
 
+        this.setState({filter:filter})
+        }
+        
+    }
+
+    render(){
+        // const {listings,location} = this.props;  
+        // let que = window.location.href.split("?")
+        // let realterm;
+        // let filter = []
+
+        // if(que.length >= 2){
+        //     realterm = que[1].split("%20").join(" ").toLowerCase()
+        //     for (let x = 0 ; x  < listings.length ; x++){
+        //         if (listings[x].city.toLowerCase() === realterm.toLowerCase())
+        //         filter.push(listings[x])
+        //     }
+        // }else{
+        //     for (let x = 0 ; x  < listings.length ; x++){
+        //         filter.push(listings[x])
+        //         realterm = "center"
+        //     }
+        // }
+
+        // let listing2 =[]
+
+        // }
+
+
         // console.log(realterm)
 
         return(            
@@ -68,7 +98,7 @@ class SearchIndex extends React.Component {
                     <h1 className="every-listing">Every Listings</h1>
                             <ul className="">
                                 {   
-                                    filter.map((listing, i) => (
+                                    this.state.filter.map((listing, i) => (
                                     <Link key ={i} to={`/listings/${listing.id}`} > 
                                     <ListingIndexItem listing= {listing}  key={listing.id}/>
                                     </Link>
@@ -77,7 +107,7 @@ class SearchIndex extends React.Component {
                             </ul>   
                     </div>                 
                 <div className='index-right'>
-                    <ListingMapContainer realterm={realterm} place={listing2[listing2.length-1]}/>
+                    <ListingMapContainer realterm={this.state.realterm} />
                 </div>      
                 </div>               
                 

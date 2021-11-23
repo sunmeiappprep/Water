@@ -122,7 +122,7 @@ export class ReviewFormEdit extends Component {
         // console.log(this.state.description)
         return (
             <div className="review-form-container">
-                <form onSubmit={this.handleEdit} className="review-form-container">
+                <form onSubmit={this.handleEdit} className="review-form-container2">
                     <label>Review Editor:
                         
                         <textarea className="review-des" type="textarea" rows="4" cols="50" 
@@ -132,7 +132,7 @@ export class ReviewFormEdit extends Component {
                     />
                     </label>
                     <label>Rating:
-                        <input type="number"
+                        <input type="text"
                         value={this.state.rating}
                         onChange={this.ratingOnchange}
                         className="rating-input"
@@ -154,8 +154,8 @@ export class ReviewFormEdit extends Component {
                     />
                     </label> */}
                     <div className="review_edit_button_div">
-                        <input className="review-submit" type="submit" value='Edit review' />
-                        <button onClick={this.handleDelete}>Delete</button>
+                        <input className="review_edit_button" type="submit" value='Edit review' />
+                        <button className="review_edit_button" onClick={this.handleDelete}>Delete</button>
                     </div>
                     
                 </form>

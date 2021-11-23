@@ -108,7 +108,10 @@ componentDidUpdate(pP,pS){
   this.setState({listingBookingArr:newArr})
   this.checkIfcurrentuserhavebooking()
   }
-  
+  if (this.state.listingBookingArr){
+    this.props.handleFulllist(this.state.listingBookingArr)
+    this.checkIfcurrentuserhavebooking()
+  }
  
 }
 
@@ -158,7 +161,9 @@ checkIfcurrentuserhavebooking(){
 
   for (let x = 0; x < this.state.listingBookingArr.length; x++){
     if (this.state.listingBookingArr[x].renter_id === this.props.currentUser && this.state.firstbooking === "a"){
-       this.setState({firstbooking:this.state.listingBookingArr[x]})
+       this.setState({firstbooking:this.state.listingBookingArr[x]},() => 
+      console.log(this.state.firstbooking)
+      )
     }
   }
 
@@ -240,11 +245,11 @@ isDateDisabled = ({date, view}) => {
 
 
     render() {
-      if (this.state.listingBookingArr){
-        this.props.handleFulllist(this.state.listingBookingArr)
 
-        this.checkIfcurrentuserhavebooking()
-      }
+      // if (this.state.listingBookingArr){
+      //   this.props.handleFulllist(this.state.listingBookingArr)
+      //   this.checkIfcurrentuserhavebooking()
+      // }
       // console.log(this.state.toggleEdit)
       // console.log(this.state.bookings.length)
       // console.log(this.state.dateDiff)
@@ -273,6 +278,13 @@ isDateDisabled = ({date, view}) => {
 
       // console.log(this.state.cc[0])
       // console.log(new Date())
+      // console.log()
+      let doesthisuserhavebooking = this.state.bookings.some(booking => (booking.renter_id === this.props.currentUser) && booking.listing_id === this.props.listingId )
+      // console.log(  this.state.bookings,this.props.currentUser)
+      // console.log(  this.state,this.props)
+      // console.log( doesthisuserhavebooking)
+
+
         return (
         <div className="calendar-con">
           
@@ -292,7 +304,7 @@ isDateDisabled = ({date, view}) => {
             prevLabel="Previous"
             next2Label={null}
             prev2Label={null}
-            onActiveStartDateChange={({ action, activeStartDate, value, view }) => this.setState({cc:[activeStartDate,view]})}
+            // onActiveStartDateChange={({ action, activeStartDate, value, view }) => this.setState({cc:[activeStartDate,view]})}
             // navigationAriaLive=
          
           />
@@ -308,7 +320,7 @@ isDateDisabled = ({date, view}) => {
           prevLabel="Previous"
           next2Label={null}
           prev2Label={null}
-          activeStartDate={this.state.cc[0]}
+          // activeStartDate={this.state.cc[0]}
 
 
 
@@ -317,7 +329,7 @@ isDateDisabled = ({date, view}) => {
         />
           </div>
           {
-            this.props.currentUser?
+            this.props.currentUser !== null && doesthisuserhavebooking?
           <button className="calendar_Edit" onClick={this.removeOne}>Edit booking</button>
           :
           null
