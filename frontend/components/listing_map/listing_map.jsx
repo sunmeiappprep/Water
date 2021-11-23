@@ -86,7 +86,7 @@ class ListingMap extends Component {
 
     var yourVariable = this.props.realterm
 
-    console.log("LR",yourVariable)
+    // console.log("LR",yourVariable)
     // console.log(this.state.defaultProps[yourVariable])
       
     return (      

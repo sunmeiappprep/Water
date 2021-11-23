@@ -667,7 +667,7 @@ img {
 }
 
 .personIconCircle{
-  background-color: red;
+  // background-color: red;
   border-radius: 25px;
   // width: 50%;
   // height: 50%;
@@ -891,4 +891,8 @@ a:visited {
 .calendar_Edit:active {
 	position:relative;
 	top:1px;
+}
+
+.review_edit_button_div{
+  text-align: center;
 }

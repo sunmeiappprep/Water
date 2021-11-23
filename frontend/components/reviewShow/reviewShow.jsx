@@ -28,10 +28,11 @@ class ReviewShow extends React.Component {
         this.setState({
             reviews: this.props.review,
         })
+        this.setState({colors:['red','green','blue','navy','yellow']})
     }
 
     componentDidUpdate(prevProps, prevState){
-        console.log('pp',prevProps.review,"ps",this.props.review)
+        // console.log('pp',prevProps.review,"ps",this.props.review)
        
         if (prevProps.review.length !== this.props.review.length){
             // console.log("Testing",prevProps.reviews,this.props.reviews)
@@ -96,14 +97,25 @@ class ReviewShow extends React.Component {
         let dateYear = dateString.slice(0,4)
         let month = monthNames[dateMonth-1]
         // console.log(dateYear)
+        const style = {
+            background: this.state.colors[review.reviewer_id %  this.state.colors.length-1],
+            // border-radius: 25px,
+          };
+        // console.log(review.reviewer_id)
+        console.log(review.reviewer_id %  this.state.colors.length )
+        console.log(this.state.colors[review.reviewer_id %  this.state.colors.length ])
+        
+
         return(
-           
-            
+   
 
             <div className='singleReview'>
                 <div >
                     <div className='singleReviewUpperCon'>
-                        <div className="personIconCircle">
+                        <div className="personIconCircle" 
+                        style={style}
+                        >
+
                             <div className="personalicon">
                             <PersonIcon fontSize={"large"}/>
 
@@ -129,7 +141,7 @@ class ReviewShow extends React.Component {
 
                 {/* {review.rating} */}
                 {/* {review.reviewer} */}
-                {
+                {/* {
                     (review.reviewer.id === user)
                     ?
                     <button className="DeleteReview" value={review.id} onClick={this.handleDelete}>Delete </button>
@@ -137,7 +149,7 @@ class ReviewShow extends React.Component {
                     null
                 }
                     <button className="EditReview" id={[review.id,review.description,review.rating,review.listing_id,review.reviewer_id]} onClick={this.handleEdit}>Edit</button>
-                
+                 */}
 
                 {/* {
                     (review.reviewer.id === user)

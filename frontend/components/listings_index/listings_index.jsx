@@ -30,7 +30,7 @@ class ListingsIndex extends React.Component {
         // }   
 
         if (window.location.href !== this.state.windows){
-            this.setState({windows:window.location.href},() => console.log(this.state.windows))
+            this.setState({windows:window.location.href},)
         }
     }
 

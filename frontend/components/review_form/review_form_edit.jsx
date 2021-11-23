@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class ReviewForm extends Component {
+export class ReviewFormEdit extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -13,6 +13,7 @@ export class ReviewForm extends Component {
         this.descriptionOnchange = this.descriptionOnchange.bind(this);
         this.ratingOnchange = this.ratingOnchange.bind(this);
         this.handleEdit = this.handleEdit.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
 
     }
 
@@ -50,15 +51,14 @@ export class ReviewForm extends Component {
 
     handleEdit(e){
         e.preventDefault()
-        // console.log(this.state)
+        console.log()
         let arr = e.target.id.split(",")
-   
         const review = {
-            id: arr[0],
-            rating: this.props.editRating,
-            description: this.props.editDescription,
-            listing_id: arr[3],
-            reviewer_id: arr[4],
+            id: this.props.oneReview.id,
+            rating: this.state.rating,
+            description: this.state.description,
+            listing_id: this.props.oneReview.listing_id,
+            reviewer_id:  this.props.oneReview.reviewer_id,
 
         }
 
@@ -66,6 +66,12 @@ export class ReviewForm extends Component {
         window.location.reload()
 
 
+    }
+
+    handleDelete(e){
+        e.preventDefault()
+        this.props.deleteReview(this.props.oneReview.id)
+        window.location.reload()
     }
 
     // onhandleDescription = (e) => {
@@ -116,7 +122,7 @@ export class ReviewForm extends Component {
         // console.log(this.state.description)
         return (
             <div className="review-form-container">
-                <form onSubmit={this.handleSubmit} className="review-form-container">
+                <form onSubmit={this.handleEdit} className="review-form-container">
                     <label>Review Editor:
                         
                         <textarea className="review-des" type="textarea" rows="4" cols="50" 
@@ -148,7 +154,8 @@ export class ReviewForm extends Component {
                     />
                     </label> */}
                     <div className="review_edit_button_div">
-                        <input className="review-submit" type="submit" value='Create Review' />
+                        <input className="review-submit" type="submit" value='Edit review' />
+                        <button onClick={this.handleDelete}>Delete</button>
                     </div>
                     
                 </form>
@@ -161,4 +168,4 @@ export class ReviewForm extends Component {
     }
 }
 
-export default ReviewForm
+export default ReviewFormEdit

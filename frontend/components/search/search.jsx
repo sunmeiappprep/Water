@@ -50,7 +50,7 @@ class Search extends React.Component {
                     type="search"
                     onChange={(e)=> this.setState({term:e.target.value})}
                     onKeyPress={(e) => this.handleKeypress(e)}
-                    placeholder="Where are you going?"
+                    placeholder="Miami,Cancun,Virginia Beach,Honolulu,Phuket,Virginia Beach"
                 />
            
         

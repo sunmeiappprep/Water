@@ -17,6 +17,7 @@ import Checkin from '../checkin/checkin_container';
 import ProgressBar from "@ramonak/react-progress-bar";
 import StarRateIcon from '@mui/icons-material/StarRate';
 import ShowBookings from '../show_bookings/show_bookings_container';
+import ReviewFormEdit from '../review_form/review_form_edit_container';
 
 
 // import "react-datepicker/dist/react-datepicker.css";
@@ -270,8 +271,12 @@ class ListingShow extends React.Component {
             
             )
         }
+        let hasReview;
+        if (this.props.currentUser !== null){
+            hasReview = (reviews.some((review)=> review.reviewer_id === this.props.currentUser))
 
-        
+        }
+        // console.log(hasReview)
 
         
         if (!listing) return null;           
@@ -414,8 +419,16 @@ class ListingShow extends React.Component {
                     </div>
                     
                     {
-                    (users[0] ) ? <ReviewFormContainer user={users[0].id} oneReview={this.state.oneReview} listing={listing.id} onhandleDescription={this.handleDescription} onRating={this.handleRating}/> : null
+                    (users[0] ) && (hasReview === false) ? <ReviewFormContainer user={users[0].id} oneReview={this.state.oneReview} listing={listing.id} onhandleDescription={this.handleDescription} onRating={this.handleRating}/> 
+                    : null
                     }
+
+                    {
+                    (users[0] ) && (hasReview === true) ? <ReviewFormEdit  user={users[0].id} oneReview={this.state.oneReview} listing={listing.id} onhandleDescription={this.handleDescription} onRating={this.handleRating}></ReviewFormEdit> 
+                    : null
+                    }
+
+
                     <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
                     {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}
                     
