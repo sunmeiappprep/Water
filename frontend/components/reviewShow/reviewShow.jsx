@@ -102,8 +102,8 @@ class ReviewShow extends React.Component {
             // border-radius: 25px,
           };
         // console.log(review.reviewer_id)
-        console.log(review.reviewer_id %  this.state.colors.length )
-        console.log(this.state.colors[review.reviewer_id %  this.state.colors.length ])
+        // console.log(review.reviewer_id %  this.state.colors.length )
+        // console.log(this.state.colors[review.reviewer_id %  this.state.colors.length ])
         
 
         return(

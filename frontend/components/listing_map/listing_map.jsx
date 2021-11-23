@@ -56,14 +56,14 @@ class ListingMap extends Component {
 
 
   testing(e){
-    console.log(e)
+    // console.log(e)
   }
   
   componentDidMount(){
     this.props.fetchListings()
     const {listings,place,realterm} = this.props
     var yourVariable = realterm
-    console.log("Listingmap",yourVariable)
+    // console.log("Listingmap",yourVariable)
     
     if (yourVariable === undefined){
       this.setState({zoom:3})

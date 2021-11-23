@@ -68,7 +68,7 @@ class Splash extends React.Component {
     // console.log(first.id)
 
     
-    console.log(this.state.stateListings)
+    // console.log(this.state.stateListings)
 
     return (
       <div>
