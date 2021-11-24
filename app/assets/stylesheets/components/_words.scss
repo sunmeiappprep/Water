@@ -444,11 +444,13 @@ a:link {
 }
 .upperText {
     white-space: pre-line;
-    margin-top: 2%;
+    // margin-top: auto;
+    // margin-bottom: 20px;
+    
     font-weight: 600;
     font-size: 16px;
     margin-left: 5%;
-
+    min-height: 40px;
   }
 
 
@@ -457,7 +459,7 @@ a:link {
     // margin-top: 2%;
     // font-weight: 600;
     font-size: 16px;
-    padding-top: 10px;
+    // padding-top: 10px;
     // margin-left: 5%;
 
 }
