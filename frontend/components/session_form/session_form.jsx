@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import CancelIcon from '@material-ui/icons/Cancel';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -58,11 +59,12 @@ class SessionForm extends React.Component {
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit} className="signup-form-box">
         {this.renderErrors()}
-        <div onClick={this.props.closeModal} className="close-x"><CancelIcon/></div>         
+        <div onClick={this.props.closeModal} className="close-x"><ExitToAppIcon fontSize={"large"}/></div>         
             <div >
             <br/>
             <label>Username:
               <input type="text"
+                placeholder="AirbnbUser"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="signup-input"
@@ -71,14 +73,16 @@ class SessionForm extends React.Component {
             <br/>
             <label>Password:
               <input type="password"
+                placeholder="Minimum 6 char"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="signup-input"
               />
             </label>          
             <br/>
-            <label>Email:<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>          
+            <label>Email:   
             <input type="text"
+              placeholder="email@gmail.com"
               value={this.state.email}
               onChange={this.update('email')}
               className="signup-input"
@@ -87,21 +91,26 @@ class SessionForm extends React.Component {
             <br/>                  
           <label>First name:
             <input type="text"
+              placeholder="Jane"
               value={this.state.first_name}
               onChange={this.update('first_name')}
               className="signup-input"
             />
           </label>
             <br/>
-          <label>Last name:<span>&nbsp;</span>
+          <label>Last name:
             <input type="text"
+              placeholder="Doe"
               value={this.state.last_name}
               onChange={this.update('last_name')}
               className="signup-input"
             />
           </label>       
-            <input className="session-submit" type="submit" value='Sign Up' />     
-            <input className="session-submit" type="submit" value="Demo Login" onClick={this.demoLogin}/>  
+            <div className="signup_buttons">
+                <input className="session-submit" type="submit" value='Sign Up' />     
+                <input className="session-submit" type="submit" value="Demo Login" onClick={this.demoLogin}/>  
+            </div>
+
           </div>          
         </form>
       </div>
@@ -118,6 +127,7 @@ class SessionForm extends React.Component {
             <br/>
             <label>Username:
               <input className='blank' type="text"
+                placeholder="qwe"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
@@ -126,6 +136,7 @@ class SessionForm extends React.Component {
             <br/>
             <label>Password:
               <input className='blank' type="password"
+                placeholder="qweqwe"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
@@ -135,6 +146,7 @@ class SessionForm extends React.Component {
 
             <input className="session-submit" type="submit" value='Login' />
             <input className="session-submit" type="submit" value="Demo Login" onClick={this.demoLogin}/>
+            
           </div>
         </form>
       </div>

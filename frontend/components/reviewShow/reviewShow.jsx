@@ -98,7 +98,7 @@ class ReviewShow extends React.Component {
         let month = monthNames[dateMonth-1]
         // console.log(dateYear)
         const style = {
-            background: this.state.colors[review.reviewer_id %  this.state.colors.length-1],
+            background: this.state.colors[review.reviewer_id %  this.state.colors.length],
             // border-radius: 25px,
           };
         // console.log(review.reviewer_id)
