@@ -8,6 +8,7 @@ import SearchContainer  from '../search/search_container';
 import ListingMapContainer from '../listing_map/listing_map_container';
 import { NavLink } from 'react-router-dom';
 import Nav from '../nav/nav';
+import { formControlUnstyledClasses } from '@mui/core';
 class ListingsIndex extends React.Component {
     constructor(props){
         super(props);
@@ -36,7 +37,8 @@ class ListingsIndex extends React.Component {
 
     render(){
         const filterListing = [];
-        const {listings,location} = this.props;        
+        const {listings,location} = this.props;  
+    
         if (!listings) return null;
 
         let city = []
@@ -61,6 +63,8 @@ class ListingsIndex extends React.Component {
             }            
         }
         
+
+
   
         
         return(            

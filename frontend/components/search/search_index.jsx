@@ -82,10 +82,14 @@ class SearchIndex extends React.Component {
         // let listing2 =[]
 
         // }
+        // console.log(this.state)
+        // console.log(this.props)   
 
-
-        // console.log(realterm)
-
+        // console.log(this.state.filter)
+        let capTerm;
+        if (this.state.realterm){
+            capTerm = this.state.realterm.charAt(0).toUpperCase() + this.state.realterm.slice(1)
+        }
         return(            
             <div className="listings-index-box">
                 <div className='fixedNav'>
@@ -95,7 +99,21 @@ class SearchIndex extends React.Component {
                 <div className="index-listing-con">
                     <div className='index-left'>
                     <h1 className="place-holderstay">Placeholder Stays</h1>
-                    <h1 className="every-listing">Every Listings</h1>
+                    {
+                        this.state.realterm === "center" && this.state.filter.length !== 0?
+                        <h1 className="every-listing">Every Listings</h1>
+                        : this.state.filter.length !== 0 ?
+                        <h1 className="every-listing">Results for {capTerm} </h1>
+                        : null
+
+
+                    }
+                    {
+                        this.state.filter.length === 0 ?
+                        <h1 className="every-listing">Sorry there are no listing for {capTerm}</h1>
+                        :
+                        null
+                    }
                             <ul className="">
                                 {   
                                     this.state.filter.map((listing, i) => (

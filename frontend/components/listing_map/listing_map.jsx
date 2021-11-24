@@ -16,6 +16,10 @@ class ListingMap extends Component {
           lat: 	51.448511539411484,
           lng: -0.0999182710000223
         },
+        // center: {
+        //   lat: 	20.77640804978185,
+        //   lng: -156.33815317456433
+        // },
         maui: {
           lat: 	20.77640804978185,
           lng: -156.33815317456433
@@ -49,8 +53,9 @@ class ListingMap extends Component {
           lng:  98.40059249307171,
         },
         zoom: 11,
-        zoom2: 3,
+        zoom2:3
       },
+
     }
   }
 
@@ -64,12 +69,12 @@ class ListingMap extends Component {
     const {listings,place,realterm} = this.props
     var yourVariable = realterm
     // console.log("Listingmap",yourVariable)
-    
-    if (yourVariable === undefined){
-      this.setState({zoom:3})
-    }else{
-      this.setState({zoom:11})
-    }
+    this.setState({yourVariable:this.props.realterm}, () => console.log(this.state.realterm))
+    // if (yourVariable === undefined){
+    //   this.setState({zoom2:3})
+    // }else{
+    //   this.setState({zoom2:11})
+    // }
   }
 
   componentDidUpdate(pP){
@@ -87,13 +92,14 @@ class ListingMap extends Component {
     var yourVariable = this.props.realterm
 
     // console.log("LR",yourVariable)
-    // console.log(this.state.defaultProps[yourVariable])
-      
+    console.log(this.state.zoom2)
+    console.log(this.state.defaultProps[yourVariable])
+    if ( !this.props.realterm ) return null 
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>
         {
           
-          this.props.realterm ?
+          this.props.realterm !== "center" ?
           <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
           clickableIcons={true}
@@ -132,6 +138,7 @@ class ListingMap extends Component {
           clickableIcons={true}
           defaultCenter={this.state.defaultProps["center"]}
           defaultZoom={this.state.defaultProps.zoom2}
+          // defaultZoom={"3"}
           onClick={this.testing}
         >
 

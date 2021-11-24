@@ -156,7 +156,7 @@ class Booking extends React.Component {
                     </div > 
                 </div>
                 <div className="bookingpage2">
-                <h1>These are your bookings</h1>
+                <div className="booking_msg">These are your bookings</div>
                 {   
                     edited.map((booking, i) => (     
                     booking.renter_id === currentUserId ?             
