@@ -8,7 +8,7 @@ class Card extends React.Component {
 
     render() {
         const text = `${this.props.name} \n` ;
-        const text2 = `${this.props.drive} Hour Drive`
+        const text2 = `${this.props.drive} Hours Drive`
         const filtercity = `${this.props.name}`
         const lag = {
             center: {

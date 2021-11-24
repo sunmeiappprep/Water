@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import RoomIcon from '@material-ui/icons/Room';
 import { Redirect } from 'react-router';
-
+import { Link } from 'react-router-dom';
 
 const AnyReactComponent = ({ img }) => <div>{img}</div>;
 
@@ -92,8 +92,8 @@ class ListingMap extends Component {
     var yourVariable = this.props.realterm
 
     // console.log("LR",yourVariable)
-    console.log(this.state.zoom2)
-    console.log(this.state.defaultProps[yourVariable])
+    // console.log(this.state.zoom2)
+    // console.log(this.state.defaultProps[yourVariable])
     if ( !this.props.realterm ) return null 
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>
@@ -115,7 +115,7 @@ class ListingMap extends Component {
                 <AnyReactComponent
                   lat={listing.latitude}
                   lng={listing.longitude}
-                  img={<RoomIcon className="marker"/>}
+                  img={<Link to={`listings/${listing.id}`}><RoomIcon className="marker"/></Link>}
                   key={listing.id}
                   onclick={<Redirect to="/"/>}
                   />
@@ -149,7 +149,8 @@ class ListingMap extends Component {
                 <AnyReactComponent
                   lat={listing.latitude}
                   lng={listing.longitude}
-                  img={<RoomIcon className="marker"/>}
+                  img={<Link to={`listings/${listing.id}`}><RoomIcon className="marker"/></Link>}
+
                   key={listing.id}
                   onclick={<Redirect to="/"/>}
                   />

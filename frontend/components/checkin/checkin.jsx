@@ -237,7 +237,7 @@ export default class Checkin extends Component {
                     </div>
                     <div className="checkinCheckout">
                         <div className="checkinDiv">
-                            <label className="labelsName">Check In:
+                            <label className="labelsName1">Check In:
                                 <input className="CheckTextBox" type="text"
                                 value={this.state.check_in}
                                 onChange={(e)=> this.setState({in:e.target.value})}
@@ -246,7 +246,7 @@ export default class Checkin extends Component {
                             </label>
                         </div>
                         <div className="checkoutDiv">
-                            <label className="labelsName">Check Out:
+                            <label className="labelsName2">Check Out:
                                 <input  className="CheckTextBox" type="text" 
                                 value={this.state.check_out}
                                 onChange={(e)=> this.setState({check_out:e.target.value})}
@@ -258,22 +258,23 @@ export default class Checkin extends Component {
 
                     </div>
                     <div className="guest">
-                        <label className="labelsName">Guest:
-                                    <input type="text" 
-                                    value={this.state.guest}
-                                    onChange={(e)=> this.setState({guest:e.target.value})}
-                                    className="guest"
-                                    />
+                        <label className="labelsName3">Guest:
+                                <input className="CheckTextBox2" type="text" 
+                                value={this.state.guest}
+                                onChange={(e)=> this.setState({guest:e.target.value})}
+                                />
                         </label>                       
                     </div>
                     <div className="ava">
                         {
                             this.props.currentUser ?
-                            <label>
+                            <label className="checkAvaCon">
                             <button className="checkAva" onClick={this.toggle}>Check Availability</button>
                             </label>
                             :
-                            <GreetingContainer/>
+                            <div className="checkinGreet">
+                                <GreetingContainer/>
+                            </div>
                             
                         }
 
@@ -284,15 +285,55 @@ export default class Checkin extends Component {
                             <div>
                             {
                                 this.state.total > 0 ? 
-                                <div className="avaSum">Total {this.state.total}</div>
+                                <div className="pricing_whole_con">
+                                    <div className="Pricing_con">
+                                        <div className='avaSum'>
+                                            Accommodation
+                                        </div>
+                                        <div className='avaSum2'>
+                                            {(this.state.total).toFixed(2)}
+                                        </div>
+                                    </div>
+
+                                    <div className="Pricing_con">
+                                        <div className='avaSum'>
+                                            Cleaning Fee
+                                        </div>
+                                        <div className='avaSum2'>
+                                            {(this.state.total*.03).toFixed(2)}
+                                        </div>
+                                    </div>
+                               
+
+                                    <div className="Pricing_con">
+                                        <div className='avaSum'>
+                                             Occupancy taxes and fee 
+                                        </div>
+                                        <div className='avaSum2'>
+                                        {(this.state.total*.08).toFixed(2)}
+                                        </div>
+                                    </div>
+
+                                    <div className="Pricing_con">
+                                        <div className='avaSum'>
+                                            Total
+                                        </div>
+                                        <div className='avaSum2'>
+                                        {(this.state.total+ this.state.total*.03 +this.state.total*.08).toFixed(2)}
+                                        </div>
+                                    </div>
+                                  
+                  
+
+                                </div>
                                 :
                                 null
 
                             }
                             <div>
 
-                            <label>
-                            <button  onClick={this.handleClick}>Create Booking</button>
+                            <label className="checkin-createbooking">
+                            <button className="checkin-createbooking2" onClick={this.handleClick}>Create Booking</button>
                             </label>
                             </div>
 

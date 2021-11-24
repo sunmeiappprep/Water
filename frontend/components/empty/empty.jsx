@@ -13,10 +13,21 @@ class Empty extends React.Component {
     render() {
         return (
             <div className="empty" width="500" height="500">
-                {/* <Link to="/"><img className='logo' src={'https://water-seeds.s3.amazonaws.com/logo.png'} alt="cardsmall"/></Link>  */}
+                <div className="greetingswithbutton" width="500" height="500">
+                    <div>
+                    <img className='logo3' height="800" src={"https://i.imgur.com/qSaKqmx.jpeg"} alt="cardsmall"/>
+
+                    </div>
+                    <div>
+                    <Link to="/search"><button className='redirectoAll'>Ready to travel the world?</button></Link>
+                        
+                    </div>
+                </div>
+                    
+             
                 {/* <button className="splash_button">Search for all listing</button> */}
-                <img src="" width="1" height="800" alt=""
-            />
+                {/* <img src="" width="1" height="800" alt=""
+            /> */}
             </div>
         )
     }

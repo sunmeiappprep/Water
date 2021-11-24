@@ -52,6 +52,7 @@ label {
      background-color: skyblue;
      border-bottom: 1px solid;
     padding: 10px;
+    // z-index: 100px !important;
     // box-shadow: 5px 10px #888888;
 
    
@@ -90,6 +91,8 @@ a{
      width: 100%;
     position: fixed !important;
      justify-content: center;   
+    //  z-index: 100px;
+    //  position: relative;
 // 
 
 
@@ -223,16 +226,72 @@ a{
 	top:1px;
   }
   
+.greetingswithbutton{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 70px;
+  // position: relative;
+}
           
+.redirectoAll{
+  // margin-top: 400px;
+  // margin-left: 45%;
+  // position:fixed;
+  // justify-content: center;
+  // padding: ;
+  // z-index: 999;
+  text-decoration: none;
+  background-color: transparent;
+  border:lightgray solid 3px;
+  padding: 5px;
+  color:white;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.empty{
+  z-index: -100;
+}
+
+.redirectoAll:hover{
+  // margin-top: 400px;
+  // margin-left: 45%;
+  // position:fixed;
+  // justify-content: center;
+  // padding: ;
+  // z-index: 999;
+  text-decoration: none;
+  background-color: transparent;
+  border:red solid 3px;
+  padding: 5px;
+  color:red;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+
+.greetingswithbutton button{
+  // margin-bottom: 50%;
+  // padding-bottom: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  margin-right: -50%;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  // margin-bottom: 50px;
+}
 
  
- .splash{
-    background: url("https://i.imgur.com/qSaKqmx.jpeg");
+ .logo3{
+    // background: url("https://i.imgur.com/qSaKqmx.jpeg");
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    // position: relative;
 
  }
 
@@ -295,7 +354,8 @@ a{
  .search_bar{
     display: flex;
     align-content: center;
-    margin-top: auto;
+    margin-top: 10px;
+    // margin-top: auto;
     margin-bottom: auto;
     margin-right:auto;
     margin-left:auto;
@@ -461,6 +521,8 @@ a:link {
     // margin-top: 2%;
     // font-weight: 600;
     font-size: 16px;
+    margin-left: 5%;
+
     // padding-top: 10px;
     // margin-left: 5%;
 
@@ -528,6 +590,10 @@ a:link {
     // margin-top: 10px;
     // offset: 100px;
 // }
+
+.logo2{
+  opacity: 0.1;
+}
 
 //   .leftlogo{
 //     display: flex;

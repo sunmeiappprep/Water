@@ -280,6 +280,7 @@
 
 .leftsidePic3{
   border-radius: 25px;
+  padding-right: 10px;
 }
 
 .photo21{
@@ -482,6 +483,15 @@ img {
 
 .mid-right-section{
   width: 30%;
+  margin-left: 20px;
+}
+
+.checkinGreet{
+  padding-top: 20px;
+  // margin-left: 10px;
+  margin-left: 5px;
+  // margin-right: auto;
+
 }
 
 .CheckinOuter{
@@ -497,6 +507,10 @@ img {
   margin-top: 230px;
   // margin-bottom: auto;
   }
+
+.CheckinOuter * {
+  text-align: center;
+}
 
 .priceReview{
   display: flex ;
@@ -755,15 +769,90 @@ img {
 
 .CheckTextBox{
   width: 90%;
-  // font-weight: 600;
-  // font-size: 20px;
-}
-
-.labelsName{
-    font-weight: 300;
+  border:transparent !important; 
   font-size: 16px;
+
+}
+.CheckTextBox2{
+  width: 90%;
+  border:transparent !important; 
+  font-size: 16px;
+
 }
 
+
+.labelsName1{
+  font-weight: 300;
+  font-size: 12px;
+  font-family:Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif ;
+  border-top: gray solid 1px;
+  // border-right: gray solid 1px;
+  border-left: gray solid 1px;
+  border-top-left-radius: 10px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.labelsName2{
+  font-weight: 300;
+  font-size: 12px;
+  font-family:Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif ;
+  border-top: gray solid 1px;
+  border-right: gray solid 1px;
+  border-left: gray solid 1px;
+  border-top-right-radius: 10px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.labelsName3{
+  font-weight: 300;
+  font-size: 12px;
+  font-family:Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif ;
+  border: gray solid 1px;
+  // border-top: gray solid 1px;
+  // border-right: gray solid 1px;
+  // border-left: gray solid 1px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 301px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checkin-createbooking{
+  padding:20px;
+
+
+  
+
+}
+
+.Pricing_con{
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkin-createbooking2{
+  box-shadow: inset 0px 1px 0px 0px #f5978e;
+  background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%) !important;
+  background-color: #f24537;
+  background-image: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%) !important;
+  border-radius: 14px;
+  border: 1px solid #d02718;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #810e05;
+}
 
 .checkAva {
 	box-shadow:inset 0px 1px 0px 0px #f5978e;
@@ -781,6 +870,7 @@ img {
 	padding:16px 76px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #810e05;
+  // padding-top: 20px;
 }
 .checkAva:hover {
 	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
@@ -791,9 +881,13 @@ img {
 	top:1px;
 }
 
+.checkAvaCon{
+  padding: 10px 10px 0px 10px;
+}
+
 
 .checkPrice{
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-family: Circular -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-size: 26px !important;
   font-weight: 550 !important;
 
@@ -813,6 +907,17 @@ img {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-size: 16px !important;
   text-decoration: underline;
+  color: gray
+}
+
+.pricing_whole_con{
+  padding-top: 20px;
+}
+
+.avaSum2{
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16px !important;
+  // text-decoration: underline;
   color: gray
 }
 
@@ -877,6 +982,7 @@ a:visited {
 .test{
   display: flex;
   flex-direction: column;
+  min-width: 137px
   // justify-content: space-between;
 }
 // .calendar_Edit{
@@ -974,6 +1080,8 @@ a:visited {
   // background-color: blue;
   padding: 20px;
   border-radius: 25px;
+  font-size: 16px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; ;
 }
 
 .rating-input{
@@ -994,3 +1102,7 @@ body {
 .booking_msg{
   font-size: 24px;
 }
+
+// .ReviewRatingLabel{
+//   font-size: 16px;
+// }

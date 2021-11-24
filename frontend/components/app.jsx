@@ -28,7 +28,7 @@ function App() {
     <Switch>
       <Route path="/listings/:listingid" component={ListingShowContainer} />
       {/* <Route path="/bookings/:bookingId" component={BookingShowContainer} /> */}
-      <Route exact path="/bookings/:bookingId" component={BookingIndexContainer}/>
+      <Route exact path="/bookings" component={BookingIndexContainer}/>
       <Route path="/listings" component={ListingsIndexContainer} asd="asddd" />
       <Route path="/bookings" component={BookingIndexContainer} />
       <Route exact path="/search"><SearchIndex/></Route>

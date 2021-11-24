@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import RoomIcon from '@material-ui/icons/Room';
-
+import { Link } from 'react-router-dom';
 
 const AnyReactComponent = ({ img }) => <div>{img}</div>;
 

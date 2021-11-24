@@ -117,7 +117,7 @@ export class ReviewForm extends Component {
         return (
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit} className="review-form-container2">
-                    <label>Review Editor:
+                    <label className ="ReviewRatingLabel">Review Editor:
                         
                         <textarea className="review-des" type="textarea" rows="4" cols="50" 
                         value={this.state.description}
@@ -125,7 +125,7 @@ export class ReviewForm extends Component {
                         className="description-input"
                     />
                     </label>
-                    <label>Rating:
+                    <label className ="ReviewRatingLabel" >Rating:
                         <input type="number"
                         value={this.state.rating}
                         onChange={this.ratingOnchange}
