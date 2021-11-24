@@ -55,7 +55,7 @@ class Search extends React.Component {
            
         
                 <button 
-                    className="search-icon-button" 
+                    className="searchbutton" 
                     onClick={(e) => this.handleSubmit(e)}
                 >
                     <SearchIcon />

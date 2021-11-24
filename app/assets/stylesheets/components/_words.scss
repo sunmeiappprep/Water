@@ -190,6 +190,11 @@ a{
     // padding: 20px;
     background: white;
     position: relative;
+    border-radius: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    // margin-bottom: 100px;
   }
   
   .session-submit{
@@ -281,6 +286,7 @@ a{
     border-left: none;
     background-color: white;
     margin: left;
+    height: 30px;
     // display: flex;
     // size: 300px;
     // border-color: gray;
@@ -438,20 +444,24 @@ a:link {
 }
 .upperText {
     white-space: pre-line;
-    margin-top: 2%;
+    // margin-top: auto;
+    // margin-bottom: 20px;
+    
     font-weight: 600;
     font-size: 16px;
     margin-left: 5%;
-
+    min-height: 40px;
   }
-
+.splash_button{
+  // margin-top: 50%;
+}
 
 .lowerText {
     white-space: pre-line;
     // margin-top: 2%;
     // font-weight: 600;
     font-size: 16px;
-    padding-top: 10px;
+    // padding-top: 10px;
     // margin-left: 5%;
 
 }
@@ -493,13 +503,17 @@ a:link {
   
   .modal-child {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: transparent;
     width: 20%;
     height: 40%;
     border-radius: 10px;
+  }
+
+  .signup_buttons{
+    display: flex;
   }
 //  .card{
 //     background: url("https://a0.muscache.com/im/pictures/f3ebcc73-30b2-469f-b6ba-0578fdaaa649.jpg?im_q=medq&im_w=240") no-repeat fixed center;    
