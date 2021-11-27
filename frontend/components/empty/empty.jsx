@@ -12,10 +12,10 @@ class Empty extends React.Component {
 
     render() {
         return (
-            <div className="empty" width="500" height="500">
-                <div className="greetingswithbutton" width="500" height="500">
+            <div className="empty" width="500px" height="500px">
+                <div className="greetingswithbutton" width="500px" height="500px">
                     <div>
-                    <img className='logo3' height="800" src={"https://i.imgur.com/qSaKqmx.jpeg"} alt="cardsmall"/>
+                    <img className='logo3' src={"https://i.imgur.com/qSaKqmx.jpeg"} height="500px" alt="cardsmall"/>
 
                     </div>
                     <div>

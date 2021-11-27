@@ -91,7 +91,7 @@ a{
      width: 100%;
     position: fixed !important;
      justify-content: center;   
-    //  z-index: 100px;
+     z-index: 100;
     //  position: relative;
 // 
 
@@ -232,9 +232,18 @@ a{
   justify-content: center;
   text-align: center;
   padding-top: 70px;
-  // position: relative;
+  position: relative;
 }
           
+.LinksCon{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+  padding:30px;
+}
+
 .redirectoAll{
   // margin-top: 400px;
   // margin-left: 45%;
@@ -245,10 +254,11 @@ a{
   text-decoration: none;
   background-color: transparent;
   border:lightgray solid 3px;
-  padding: 5px;
-  color:white;
+  padding: 10px;
+  color:yellow;
   border-radius: 25px;
   font-size: 24px;
+  background-color: #142d55;
 }
 
 .empty{
@@ -263,10 +273,9 @@ a{
   // padding: ;
   // z-index: 999;
   text-decoration: none;
-  background-color: transparent;
-  border:red solid 3px;
+  background-color: #4a90bf;
+  border:cyan solid 3px;
   padding: 5px;
-  color:red;
   border-radius: 25px;
   font-size: 24px;
 }
@@ -280,7 +289,7 @@ a{
   margin-right: -50%;
   top: 50%;
   left: 50%;
-  z-index: 100;
+  z-index: 2;
   // margin-bottom: 50px;
 }
 
@@ -650,4 +659,42 @@ a:link {
 
 .listing-info43{
   // text-align-last: right !important;
+}
+
+.footer_con2{
+  display: flex;
+  width: 1120px;
+  justify-content: space-between;
+
+
+}
+
+.footer_con{
+  display: flex;
+  padding-top: 10px;
+  margin-top: 40px;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+
+.footer1{
+  width: 250px;
+  
+}
+
+.footer_bold{
+  font-family:Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  color: #484848;
+  font-weight: 800;
+  padding:10px;
+  
+}
+
+.footer_subtext{
+  font-family:Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  color: #484848;
+  padding:10px;
+  // font-weight: 800;
 }

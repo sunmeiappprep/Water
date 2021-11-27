@@ -15,6 +15,8 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ListingIndexItem from '../listings_index/listing_index_item';
 import ShowBookings from '../show_bookings/show_bookings_container';
 import { Photo } from '@material-ui/icons';
+import Socials from '../socials/socials';
+import Footer from '../footer/footer';
 class Splash extends React.Component {
   constructor(props){
     super(props)
@@ -135,7 +137,9 @@ class Splash extends React.Component {
         {/* <div className='hosting'> */}
           {/* <Longestcard/> */}
         {/* </div> */}
-      </div>
+        </div>
+      <Footer/>
+      {/* <Socials/> */}
       </div>
       
 

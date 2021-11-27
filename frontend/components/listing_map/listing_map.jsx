@@ -101,6 +101,7 @@ class ListingMap extends Component {
           
           this.props.realterm !== "center" ?
           <GoogleMapReact
+          scrollwheel={false}
           bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
           clickableIcons={true}
           defaultCenter={this.state.defaultProps[yourVariable]}
@@ -134,6 +135,7 @@ class ListingMap extends Component {
         </GoogleMapReact>
         :
         <GoogleMapReact
+          scrollwheel={false}
           bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
           clickableIcons={true}
           defaultCenter={this.state.defaultProps["center"]}
