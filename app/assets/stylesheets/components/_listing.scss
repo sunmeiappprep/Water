@@ -1027,7 +1027,7 @@ a:visited {
 }
 
 
-.review_edit_button {
+.review_edit_button,.review-submit {
   // margin-left: 320px;
 	box-shadow:inset 0px 1px 0px 0px #f5978e;
 	background:linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
@@ -1045,14 +1045,16 @@ a:visited {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #810e05;
 }
-.review_edit_button:hover {
-	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+.review_edit_button:hover,.review-submit:hover {
+	background:linear-gradient(to bottom, #0ac6df 5%, #f24537 100%);
 	background-color:#c62d1f;
 }
-.review_edit_button:active {
+.review_edit_button:active,.review-submit:active {
 	position:relative;
 	top:1px;
 }
+
+
 
 .review-form-container{
   // background-color: red;

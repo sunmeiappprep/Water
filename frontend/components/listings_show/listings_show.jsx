@@ -18,7 +18,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import StarRateIcon from '@mui/icons-material/StarRate';
 import ShowBookings from '../show_bookings/show_bookings_container';
 import ReviewFormEdit from '../review_form/review_form_edit_container';
-
+import Footer from '../footer/footer';
 
 // import "react-datepicker/dist/react-datepicker.css";
 class ListingShow extends React.Component {
@@ -464,10 +464,11 @@ class ListingShow extends React.Component {
                         <ListingMapSingle listing={listing} lat={listing.latitude} lng = {listing.longitude}/>   
                     </div>
                     {/* <BookingFormContainer listingId={listing.id} in={this.state.check_in} out={this.state.check_out}/> */}
+              </div>             
                     
-,                 </div>               
             </div>
             {/* {<DeleteEditContainer/>} */}
+              <Footer/>
                 
             </div>
         )
