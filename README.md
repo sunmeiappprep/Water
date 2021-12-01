@@ -27,7 +27,7 @@ WaterBnb is a clone of airbnb with filled with water destination as its theme.
 
 # Code challenges
 
-1. ## Had to gray out mutiple booking ranges and this was the logic.
+1. ## Had to gray out multiple booking ranges and this was the logic.
 
 ```javascript
   for (let x = 0; x < bookings.length; x++){
