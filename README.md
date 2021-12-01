@@ -15,10 +15,10 @@ WaterBnb is a clone of airbnb with filled with water destination as its theme.
 - Rating will be adjusted after edit
 - Search results are Miami,Cancun,Maui,Virginia Beach,Honolulu,Phuket,Virginia Beach,North Bergen,Renaissance Island
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+<!-- ![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif) -->
 
-![Alt Text](https://imgur.com/a/AHwauvR)
-![Alt Text](hhttps://imgur.com/a/hsiYg2W)
+![Booking](https://github.com/sunmeiappprep/Water/blob/main/booking.gif)
+![Review](https://github.com/sunmeiappprep/Water/blob/main/reivew.gif)
 
 <!-- <img width="1440" alt="CreateBooking" src="">
 
