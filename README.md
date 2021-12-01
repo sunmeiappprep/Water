@@ -17,9 +17,9 @@ WaterBnb is a clone of airbnb with filled with water destination as its theme.
 
 <!-- ![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif) -->
 - Creating a booking for a listing
-![Booking](https://github.com/sunmeiappprep/Water/blob/main/booking.gif)
+![Booking](https://github.com/sunmeiappprep/Water/blob/main/booking2.gif)
 - Creating and editing a review
-![Review](https://github.com/sunmeiappprep/Water/blob/main/reivew.gif)
+![Review](https://github.com/sunmeiappprep/Water/blob/main/reivew2.gif)
 
 <!-- <img width="1440" alt="CreateBooking" src="">
 
