@@ -110,7 +110,14 @@ class SearchIndex extends React.Component {
                     }
                     {
                         this.state.filter.length === 0 ?
+                        <div>
                         <h1 className="every-listing">Sorry there are no listing for {capTerm}</h1>
+                        <div className='index-right'>
+                        <ListingMapContainer realterm={"center"} />
+                         </div>  
+
+                        </div>
+ 
                         :
                         null
                     }
@@ -123,10 +130,19 @@ class SearchIndex extends React.Component {
                                     ))
                                 }
                             </ul>   
-                    </div>                 
-                <div className='index-right'>
-                    <ListingMapContainer realterm={this.state.realterm} />
-                </div>      
+                    </div>
+                
+                 {
+                        this.state.filter.length === 0 ?
+                        <div className='index-right'>
+                        <div></div>
+                        </div>   
+                        :
+                        <div className='index-right'>
+                        <ListingMapContainer realterm={this.state.realterm} />
+                        </div>  
+                }
+    
                 </div>               
                 
             </div>
