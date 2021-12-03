@@ -54,13 +54,15 @@ WaterBnb is a clone of airbnb with filled with water destination as its theme.
 - The code above solve this problem by setting the state before componentDidMount
 
 
-# Technologies used
-
-- Ruby on Rails
-- PostgreSQL
-- Rails Active Storage with Amazon's S3
+# Frontend Technologies Used:
 - React.js
 - Redux
 - Node JS
 - HTML, CSS
+- Material UI
+- Google Map API
+- React Calendar
 
+# Backend Technologies Used:
+- Ruby on Rails
+- Rails Active Storage with Amazon's S3
