@@ -14,6 +14,9 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.handleSubmitLogin = this.handleSubmitLogin.bind(this);
+
+    
   }
 
   update(field) {
@@ -24,10 +27,56 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let arr = []
+    let arr1 = []
+    let arr2 = []
+    let arr3 = []
+    let arr4 = []
+
+    if (!this.state.username){
+      arr.push("Please enter a user name")
+    }
+    this.setState({usernameError:arr})
+
+    if (this.state.password.length < 6){
+      arr1.push("Minimum length is 6")
+    }
+    this.setState({passwordError:arr1})
+
+    if (!this.state.email.includes("@")){
+      arr2.push("Please enter a valid email")
+    }
+    this.setState({emailError:arr2})
+
+    if (!this.state.first_name){
+      arr3.push("Please enter a first name")
+    }
+    this.setState({firstnameError:arr3})
+
+    if (!this.state.last_name){
+      arr4.push("Please enter a last name")
+    }
+    this.setState({lastnameError:arr4})
+
+
+    if (this.state.username
+      && this.state.password.length >= 6
+      && this.state.first_name
+      && this.state.last_name 
+      && this.state.email.includes("@")){
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user).then(this.props.closeModal);
+      }
+
+  }
+
+
+  handleSubmitLogin(e) {
+    e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
-    // console.log(this.props)
   }
+
 
 
   componentWillUnmount() {
@@ -70,6 +119,9 @@ class SessionForm extends React.Component {
                 className="signup-input"
               />
             </label>
+            <div className='errorsCss'>
+            {this.state.usernameError}
+            </div>
             <br/>
             <label>Password:
               <input type="password"
@@ -78,7 +130,10 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 className="signup-input"
               />
-            </label>          
+            </label>     
+            <div className='errorsCss'>
+            {this.state.passwordError}
+            </div>     
             <br/>
             <label>Email:   
             <input type="text"
@@ -88,6 +143,9 @@ class SessionForm extends React.Component {
               className="signup-input"
             />
           </label>
+          <div className='errorsCss'>
+            {this.state.emailError}
+            </div>
             <br/>                  
           <label>First name:
             <input type="text"
@@ -97,6 +155,9 @@ class SessionForm extends React.Component {
               className="signup-input"
             />
           </label>
+          <div className='errorsCss'>
+            {this.state.firstnameError}
+            </div>
             <br/>
           <label>Last name:
             <input type="text"
@@ -105,7 +166,10 @@ class SessionForm extends React.Component {
               onChange={this.update('last_name')}
               className="signup-input"
             />
-          </label>       
+          </label>  
+          <div className='errorsCss'>
+            {this.state.lastnameError}
+            </div>     
             <div className="signup_buttons">
                 <input className="session-submit" type="submit" value='Sign Up' />     
                 <input className="session-submit" type="submit" value="Demo Login" onClick={this.demoLogin}/>  
@@ -120,8 +184,8 @@ class SessionForm extends React.Component {
   loginForm(){
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">     
-          {this.renderErrors()}
+        <form onSubmit={this.handleSubmitLogin} className="login-form-box">     
+         
           <div onClick={this.props.closeModal} className="close-x"><CancelIcon/></div>
           <div className="login-form">
             <br/>
@@ -143,7 +207,7 @@ class SessionForm extends React.Component {
               />
             </label>          
             <br/>
-
+            {this.renderErrors()}
             <input className="session-submit" type="submit" value='Login' />
             <input className="session-submit" type="submit" value="Demo Login" onClick={this.demoLogin}/>
             
