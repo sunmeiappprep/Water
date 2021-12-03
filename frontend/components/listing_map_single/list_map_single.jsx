@@ -30,9 +30,10 @@ class ListingMapSingle extends Component {
     return (      
       <div className='mapSingle' style={{ height: '400px', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyDyJcUgZyD8c5U1fU_8Q5JfKMDCRwdT2go" }}
+          bootstrapURLKeys={{ key: "AIzaSyBEYZTBSCwCgXAotj37hPlQFfojGhLIuOU" }}
           defaultCenter={thisProps.center}
           defaultZoom={thisProps.zoom}
+          yesIWantToUseGoogleMapApiInternals={true}
         >
         <AnyReactComponent
         lat={listing.latitude}

@@ -161,8 +161,7 @@ checkIfcurrentuserhavebooking(){
 
   for (let x = 0; x < this.state.listingBookingArr.length; x++){
     if (this.state.listingBookingArr[x].renter_id === this.props.currentUser && this.state.firstbooking === "a"){
-       this.setState({firstbooking:this.state.listingBookingArr[x]},() => 
-      console.log(this.state.firstbooking)
+       this.setState({firstbooking:this.state.listingBookingArr[x]}
       )
     }
   }
