@@ -229,7 +229,7 @@ isDateDisabled = ({date, view}) => {
 
   // console.log(this.state.listingBookingArr)
   
-  console.log(bookings)
+  // console.log(bookings)
 
   if( finalarr2.length === undefined )return null
 

@@ -69,7 +69,7 @@ class ListingMap extends Component {
     const {listings,place,realterm} = this.props
     var yourVariable = realterm
     // console.log("Listingmap",yourVariable)
-    this.setState({yourVariable:this.props.realterm}, () => console.log(this.state.realterm))
+    this.setState({yourVariable:this.props.realterm})
     // if (yourVariable === undefined){
     //   this.setState({zoom2:3})
     // }else{

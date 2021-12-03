@@ -83,10 +83,13 @@ class SessionForm extends React.Component {
     this.props.resetSessionErrors();
   }
   
+
   renderErrors() {
-    return(
-      <ul className='errorsCss'>
-        {this.props.errors.map((error, i) => (
+    // removing dup errors, super janky, find root problem
+    const uniq = [... new Set(this.props.errors)]
+    return (
+      <ul>
+        {uniq.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
@@ -103,11 +106,11 @@ class SessionForm extends React.Component {
 
   signupForm(){
     const loggedIn = this.props.sessionId ? <Redirect to="/" /> : null
+    // console.log(this.props.errors)
 
     return (
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit} className="signup-form-box">
-        {this.renderErrors()}
         <div onClick={this.props.closeModal} className="close-x"><ExitToAppIcon fontSize={"large"}/></div>         
             <div >
             <br/>
@@ -169,8 +172,13 @@ class SessionForm extends React.Component {
           </label>  
           <div className='errorsCss'>
             {this.state.lastnameError}
-            </div>     
+            </div>   
+            <div className='errorsCss'>
+            {this.renderErrors()}
+            </div>  
             <div className="signup_buttons">
+
+         
                 <input className="session-submit" type="submit" value='Sign Up' />     
                 <input className="session-submit" type="submit" value="Demo Login" onClick={this.demoLogin}/>  
             </div>

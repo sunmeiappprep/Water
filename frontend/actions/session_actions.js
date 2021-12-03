@@ -38,10 +38,12 @@ export const login = user => dispatch => {
 export const signup = user => dispatch => {
   return APIUtil.signup(user)
   .then( res => dispatch(receiveCurrentUser(res))
-  
+  , errors => dispatch(receiveSessionErrors(errors.responseJSON))
   )
 }
 export const logout = () => dispatch => {
   return APIUtil.logout()
   .then( () => dispatch(logoutCurrentUser()))
+  , errors => dispatch(receiveSessionErrors(errors.responseJSON))
+
 }

@@ -68,3 +68,5 @@ WaterBnb is a clone of airbnb with filled with water destination as its theme.
 # Backend Technologies Used:
 - Ruby on Rails
 - Rails Active Storage with Amazon's S3
+
+
