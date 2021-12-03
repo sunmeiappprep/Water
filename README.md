@@ -26,14 +26,26 @@ WaterBnb is a clone of airbnb with filled with water destination as its theme.
     componentWillMount() {
         this.setState({ randomDescriptions: [
             [
-             `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
-             Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
+             `A newly renovated large studio apartment located in a safe centralized urban neighborhood
+             15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
+             Private entrance with electronic door lock. You will also have access to shared backyard 
+             with outdoor seating.`
             ],
             [
-            `Experience this exclusive retreat nestled on the quiet, lush slopes of near the ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
+            `Experience this exclusive retreat nestled on the quiet, lush slopes of near the 
+            ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. 
+            The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon 
+            cocktail, looking out over your private pool, perfect for yoga, meditation, or morning 
+            coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding 
+            door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
             ],
             [
-             `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
+             `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE 
+             parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for 
+             you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular 
+             surf, boutique shopping, grocery, convention center, and dining are all within walking 
+             distance. Public transportation, rental car, and bike share are easily accessible. This 
+             condo is the perfect location to start your ${this.state.listings.city} getaway.`   
             ]
         ] });
 ```
