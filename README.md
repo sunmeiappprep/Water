@@ -1,21 +1,41 @@
 # [WaterBNB](https://waterbnb.herokuapp.com/#/)
 
-WaterBnb is a clone of airbnb with filled with water destination as its theme.
 
 # Overview
+- WaterBnb is a clone of airbnb with filled with water destination as its theme.
+
 - A user should be able to login and book a listing
 - A user can create a review for listing
 - Calendar will be grayed out for non available dates
 - User should be able to edit review and rating
 - Rating will be adjusted after edit
-- Search results are Miami,Cancun,Maui,Virginia Beach,Honolulu,Phuket,Virginia Beach,North Bergen,Renaissance Island
+North Bergen,Renaissance Island
 
 # Core Features
-- Showing search and clicking on map icons
+
+### Listing Search
+- User can search from the following Miami,Cancun,Maui,Virginia Beach,Honolulu,Phuket,Renaissance Island
+- Marker are clickable and redirects to the listing
+- Showing search and clicking on map icons 
 ![Search](https://github.com/sunmeiappprep/Water/blob/main/search.gif)
-- Creating a booking for a listing
+
+### Booking
+- User can create bookings with the calendar
+- Dates will be grey out if book by another user
+- Only one booking per account per listing
+- User can view a list of their bookings in the booking tab
+- User can edit booking , this will ungray their previous booking and waits for a new selection to be submitted
+- User can also delete their booking
+- Gif on creating booking and editing it afterward
 ![Booking](https://github.com/sunmeiappprep/Water/blob/main/booking2.gif)
-- Creating and editing a review
+
+
+### Review
+- User can create one review per listings
+- Only the user who created the review can edit it
+- Stars and rating bar will be adjusted after every rating
+- When a listing has a 5 star average , extra perks will appear
+- Gif on creating review and editing it afterward
 ![Review](https://github.com/sunmeiappprep/Water/blob/main/reivew2.gif)
 
 <!-- <img width="1440" alt="CreateBooking" src="">
