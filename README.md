@@ -22,19 +22,24 @@ WaterBnb is a clone of airbnb with filled with water destination as its theme.
 
 # Code Snippet
 
-- Had to gray out multiple booking ranges for react calendar and this was the logic.
-
 ```javascript
-  for (let x = 0; x < bookings.length; x++){
-    finalarr2.push(
-      new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) 
-      >= new Date(bookings[x][0], bookings[x][1]-1,bookings[x][2]) 
-      && new Date(date.getFullYear(), parseInt(date.getMonth()),date.getDate()) 
-      <= new Date(bookings[x][3], bookings[x][4]-1,bookings[x][5]))
-  }
+    componentWillMount() {
+        this.setState({ randomDescriptions: [
+            [
+             `A newly renovated large studio apartment located in a safe centralized urban neighborhood 15 mins away from the ${this.state.listings.city}, which are a short bus ride or Uber away.
+             Private entrance with electronic door lock. You will also have access to shared backyard with outdoor seating.`
+            ],
+            [
+            `Experience this exclusive retreat nestled on the quiet, lush slopes of near the ${this.state.listings.city}. Minutes to the airport, and to the city, but a world apart. The sunsets and stargazing over the ocean, are truly breathtaking. Enjoy an afternoon cocktail, looking out over your private pool, perfect for yoga, meditation, or morning coffee. From charging station/blender/grill/coffee grinder SO many details! Rear sliding door entrance has 0 steps, front has 1. ALL TAXES INCLUDED`
+            ],
+            [
+             `Freshly renovated modern place 20 min from the ${this.state.listings.city}, with FREE parking. avenue(the main strip in ${this.state.listings.city}) and is a perfect base for you Hawaii getaway. Within walking distance to many popular attractions. The beach, popular surf, boutique shopping, grocery, convention center, and dining are all within walking distance. Public transportation, rental car, and bike share are easily accessible. This condo is the perfect location to start your ${this.state.listings.city} getaway.`   
+            ]
+        ] });
 ```
 
-- Grayed out multiple booking ranges a selection for react calendar
+- Using the normal componentDidMount method didn't allow {$this.state.listings.city} to be render and threw and error on refresh.
+- The code above solve this problem by setting the state before componentDidMount
 
 
 # Technologies used
