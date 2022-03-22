@@ -1,0 +1,281 @@
+[33mcommit 10b2f08efe5af8f6e814d047e3819a11396059f7[m[33m ([m[1;36mHEAD -> [m[1;32mqweqwe[m[33m, [m[1;32mtesing101[m[33m)[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Mar 22 15:09:02 2022 -0400
+
+    anything?
+
+[33mcommit 776701a12d104dc4a25afb1897bb0c996242aeb3[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Mar 22 15:08:38 2022 -0400
+
+    anything?
+
+[33mcommit 5787e7bcb50c123343f8c87564cfbd55d3641b3f[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Mar 22 15:06:34 2022 -0400
+
+    add user select none
+
+[33mcommit 64c62b2e298e9000a36ce4a77cb960f6a6c624c8[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Mar 22 14:58:45 2022 -0400
+
+    add user select none
+
+[33mcommit bd6a01eda7d9366f745331fd8dd0d819969e432b[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Mar 22 14:52:04 2022 -0400
+
+    anything?
+
+[33mcommit 63e58c35cc43216e5f64a71afc7192a201550197[m[33m ([m[1;32mtesing100[m[33m)[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Mar 22 14:51:30 2022 -0400
+
+    anything?
+
+[33mcommit 7d728a2a6b8802b5bebdd6e1e7edfefa061f8af1[m[33m ([m[1;31morigin/main[m[33m, [m[1;31mheroku/main[m[33m, [m[1;32mtesing99[m[33m, [m[1;32mmain[m[33m, [m[1;32m99[m[33m)[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Thu Feb 10 08:29:29 2022 -0500
+
+    meta
+
+[33mcommit 648c7ffb7891a9ba672f6b92c0ab0fec22ebdd93[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 11:10:47 2021 -0500
+
+    readme
+
+[33mcommit 343df65bca5fb6f8cb98c2aea900354728b42372[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 10:56:30 2021 -0500
+
+    fix signin,  but there seems to be lag? might need to revert , messing error logging before on the dispatch
+
+[33mcommit fb6c4f5db19e7379f3c094a2ba5630383ad4a960[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 08:11:22 2021 -0500
+
+    search
+
+[33mcommit 81d4ceaf13061821e3028eec46119f8ecc8cd75b[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 08:08:54 2021 -0500
+
+    readme
+
+[33mcommit e08753d00e088952677efacf2da9203ba09ad8d9[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 07:37:34 2021 -0500
+
+    removelogger
+
+[33mcommit f3470683ac8228dbd78f6fd728c6311e96f98e1f[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 07:36:27 2021 -0500
+
+    removelogger
+
+[33mcommit 399999134c7b3763800b25185193c40e734849b3[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 07:27:37 2021 -0500
+
+    readme
+
+[33mcommit c5f4022d8778f65285cbffcc321b42557480bb91[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 06:11:31 2021 -0500
+
+    removelogger
+
+[33mcommit 05bc56156bd5f4fa9a9778af78d76d87d62fa1f9[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 06:03:21 2021 -0500
+
+    frontend signup error
+
+[33mcommit d18dd7245e8437bd2f779445e5fa5e4f0dc4f6c3[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Fri Dec 3 04:29:06 2021 -0500
+
+    fix api key
+
+[33mcommit 47d4cc4632bb7ede65d6bdc62781bdc0cb0a0831[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Thu Dec 2 17:01:19 2021 -0500
+
+    testing
+
+[33mcommit ce8640a9eed5d2d9d43a45abc0f496a4fd4f613c[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:20:23 2021 -0500
+
+    change booking
+
+[33mcommit 797ac89208d94e0775e8324d87a37190ea9608c1[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:19:59 2021 -0500
+
+    change booking
+
+[33mcommit fc9cb2a4caf06c4203a3274c870c060dadedf349[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:15:35 2021 -0500
+
+    change booking
+
+[33mcommit 677a2f695bb5bed6faa59f8820fe7e1461e819dc[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:13:53 2021 -0500
+
+    change booking
+
+[33mcommit 57db2082d27f5b541acb3798ea39177d146e1f0e[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:10:45 2021 -0500
+
+    change booking
+
+[33mcommit df3f89f5c704940447c95163b3d6a3ae21a1faf1[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:07:10 2021 -0500
+
+    imgr
+
+[33mcommit f176362401de8ddff9d5c1b096707114141cd6a6[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:06:02 2021 -0500
+
+    imgr
+
+[33mcommit fc271fad39b579930a2a84fd58a972cd96cdfc1b[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:04:24 2021 -0500
+
+    imgr
+
+[33mcommit 8852cf74285f9a45f24a5e5777bd5d1405e7fcb4[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 11:01:55 2021 -0500
+
+    imgr
+
+[33mcommit 9034bcf4c4c928547bfd5fea2cada00d29969222[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 10:59:08 2021 -0500
+
+    imgr
+
+[33mcommit 572b7d8f9c3a4544177c928b2bab3b118d846a0f[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 10:48:00 2021 -0500
+
+    readme
+
+[33mcommit 59d3b347717e98d7adad0a792024a5fa7efeb449[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Dec 1 10:40:59 2021 -0500
+
+     add video
+
+[33mcommit cf9105da9fd3f6151bc729033edcdd5b863c6020[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Sat Nov 27 17:50:41 2021 -0500
+
+    add footer to listing , style review button
+
+[33mcommit a1bc00ae82db672af205f65bfd5f871826a02757[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Sat Nov 27 17:35:03 2021 -0500
+
+    added a footer and social
+
+[33mcommit 58297c0b4c504b196a8b04259e090819c915b85d[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Wed Nov 24 16:34:10 2021 -0500
+
+    css change and addded a link to marker
+
+[33mcommit 892cadd549ffb4bc081a5ea8e325815f13f35558[m
+Merge: 770e2bd 44b2971
+Author: sunmeiappprep <77798152+sunmeiappprep@users.noreply.github.com>
+Date:   Wed Nov 24 00:52:43 2021 -0500
+
+    Merge pull request #24 from sunmeiappprep/testing74
+    
+    Testing74
+
+[33mcommit 44b297118ab5e0cc5fdc45a050402410a0e45909[m[33m ([m[1;31morigin/testing74[m[33m)[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 22:33:18 2021 -0500
+
+    still need to work on empty redirect
+
+[33mcommit 19924ef21e1be99852cdab38601b9ba801f3bcd3[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 22:18:03 2021 -0500
+
+    changed some margin at splash"
+
+[33mcommit 4b422aed1f406228584820b1fdcc47671b3add0a[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 21:48:45 2021 -0500
+
+    fix search map
+
+[33mcommit ee3b63e255d5a6363dcdb9f1bd6ee726c86bdd0a[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 20:32:07 2021 -0500
+
+    colors person icon
+
+[33mcommit f9e7a52e48e35d4f8ba337201b3c9d5b5261f2b8[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 19:46:17 2021 -0500
+
+    searchbutton fix?
+
+[33mcommit 70d89d9bacd9b055f8b0824c22bbc692508ce7c7[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 19:45:52 2021 -0500
+
+    searchbutton fix?
+
+[33mcommit 770e2bd68d39cf35bba149c0372fd3e91a44766c[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 13:23:24 2021 -0500
+
+    search bar icon
+
+[33mcommit c77465d5a61a44d666f6141e73f68caaa5ffed9d[m
+Merge: 37f52e7 f7cd89d
+Author: sunmeiappprep <77798152+sunmeiappprep@users.noreply.github.com>
+Date:   Tue Nov 23 12:50:22 2021 -0500
+
+    Merge pull request #23 from sunmeiappprep/testing74
+    
+    Testing74
+
+[33mcommit f7cd89d3448dcd058c0d7e2c7ad2fb450694a577[m[33m ([m[1;32mtesting74[m[33m)[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 12:49:54 2021 -0500
+
+    changed some css
+
+[33mcommit 6b07d9351f7cb422587a416fce39f482551bf334[m[33m ([m[1;31morigin/testing73[m[33m, [m[1;32mtesting73[m[33m)[m
+Author: Sunny Mei <sunmeiappprep@gmail.com>
+Date:   Tue Nov 23 11:46:00 2021 -0500
+
+    moved alot of render stuff to comp did update and set the state there so return can use them
+
+[33mcommit 37f52e73dbb3db8c6a613c99f36aed5bf6872604[m
+Merge: 7f8cb83 4b78c6b
+Author: sunmeiappprep <77798152+sunmeiappprep@users.noreply.github.com>
+Date:   Mon Nov 22 23:35:16 2021 -0500
+
+    Merge pull request #22 from sunmeiappprep/testing72
+    
+    Testing72
+
+[33mcommit 4b78c6bdcf56dd9c2c970b6e0e4960a62c8308c8[m[33m ([m[1;31morigin/testing72[m[33m)[m
+Author
