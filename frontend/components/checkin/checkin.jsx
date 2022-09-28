@@ -24,24 +24,7 @@ export default class Checkin extends Component {
 
     }
 
-    // componentWillMount() {     
-    //     let arr = [];
-    //     let bookings = {}
-    //     this.props.fetchBookings().then(bookings => this.setState({bookings})).then(() =>{
-    //         for (let x = 0; x < this.state.bookings.bookings.length; x++){
-    //             if (this.state.bookings.bookings[x].renter.id === this.props.currentUser[0].id){
-    //                 arr.push(this.state.bookings.bookings[x])
-    //             }
-    //         }
-    //         console.log(arr)
 
-    //     }).then(()=>{
-    //         bookings:
-    //         this.setState({bookings:arr})
-    //     })
-    //     // let bk = this.state.bookings.bookings;
-        
-    // }
     
     handleClick(e) {
         e.preventDefault()

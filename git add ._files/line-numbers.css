@@ -1,0 +1,42 @@
+.ae-workspace-dark pre[class*='language-'].line-numbers {
+  position: relative;
+  padding-left: 52px;
+  counter-reset: linenumber;
+}
+
+.ae-workspace-dark pre[class*='language-'].line-numbers > code {
+  white-space: inherit;
+}
+
+.ae-workspace-dark .line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  height: 100%;
+  top: 0;
+  font-size: 100%;
+  left: 0;
+  width: 48px; /* works for line-numbers below 1000 lines and font-size <= 18px */
+  letter-spacing: -1px;
+  padding: 10px 0;
+  background-color: #12416d;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ae-workspace-dark .line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.ae-workspace-dark .line-numbers-rows > span:before {
+  content: counter(linenumber);
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+  font-family: monospace;
+  color: white;
+}
