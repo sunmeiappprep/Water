@@ -34,35 +34,10 @@ componentWillMount(){
   this.props.fetchBookings().then(bookings => this.setState({bookings:bookings.bookings}))
 }
 
-componentDidMount(){
-  // let newArr = [];
-  // let bookingsArr = this.state.bookings.bookings
-  // for (let x = 0; x <this.state.bookings.length; x++){
-  //   if (this.state.bookings[x].listing_id === this.props.listingId){
-  //     newArr.push(bookingsArr[x])
-  //   }
-    
-  // }BookingIndexItem
-  // console.log(this.state.bookings)
-
-  // this.setState({listingBookingArr:newArr})
-}
 
 
 
 removeOne(){
-  // for (let x = 0; x <this.state.listingBookingArr.length; x++){
-  //   if (this.state.listingBookingArr === this.props.listingId){
-
-  //     newArr.push(this.state.bookings[x])
-      
-  //   }
-  //   else{
-  //     // console.log(this.state.bookings[x].listing_id,this.props.listingId)
-  //   }
-    
-  // }
-  // this.props.toggleEdit()
 
   if (this.state.toggleEdit === false){
     this.setState({toggleEdit: true});
