@@ -24,24 +24,7 @@ export default class Checkin extends Component {
 
     }
 
-    // componentWillMount() {     
-    //     let arr = [];
-    //     let bookings = {}
-    //     this.props.fetchBookings().then(bookings => this.setState({bookings})).then(() =>{
-    //         for (let x = 0; x < this.state.bookings.bookings.length; x++){
-    //             if (this.state.bookings.bookings[x].renter.id === this.props.currentUser[0].id){
-    //                 arr.push(this.state.bookings.bookings[x])
-    //             }
-    //         }
-    //         console.log(arr)
 
-    //     }).then(()=>{
-    //         bookings:
-    //         this.setState({bookings:arr})
-    //     })
-    //     // let bk = this.state.bookings.bookings;
-        
-    // }
     
     handleClick(e) {
         e.preventDefault()
@@ -69,15 +52,7 @@ export default class Checkin extends Component {
     }
 
     checkIfcoll(){
-        // if (this.props.datesInvalid.length > 0 ){
-        //     for( let  x = 0; x < this.props.datesInvalid.length; x++){
-        //         console.log(new Date(this.props.datesInvalid[x].check_in),new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
-        //         console.log(new Date(this.props.datesInvalid[x].check_in) 
-        //         > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
-                
 
-        //     }
-        // }
 
         
         Date.prototype.addDays = function(days) {
