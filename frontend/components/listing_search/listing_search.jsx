@@ -30,19 +30,13 @@ class ListingSearch extends React.Component {
                     <section className='midLinkBundle'>
                     <SearchContainer/>
 
-                {/* <Link to="/" className='midLink'>Places to stay</Link>
-                <Link to="/" className='midLink'>Experiences</Link>
-                <Link to="/" className='midLink'>Online Experiences</Link> */}
+
                  </section>
           
-            {/* <Modal></Modal> */}
             <GreetingContainer className="greeting_container"/>
             
             
-            {/* <Modal isOpen={true}>
-              <h5>asd</h5>
-              <p>asdasd</p>
-            </Modal> */}
+
            
            
         </section>
@@ -60,12 +54,7 @@ class ListingSearch extends React.Component {
                                     listing= {listing}
                                     key={listing.id}
                                 />
-                            //link dont work
-                            //     <Link key ={i} to={`/listings/${listing.id}`} style={{ textDecoration: 'none' }}> <ListingIndexItem 
-                            //     listing= {listing}
-                            //     key={listing.id}
-                            // />
-                            // </Link>
+
                             ))
                         }
                     </ul>

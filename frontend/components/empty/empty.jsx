@@ -25,9 +25,7 @@ class Empty extends React.Component {
                 </div>
                     
              
-                {/* <button className="splash_button">Search for all listing</button> */}
-                {/* <img src="" width="1" height="800" alt=""
-            /> */}
+
             </div>
         )
     }

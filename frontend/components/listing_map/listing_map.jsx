@@ -60,40 +60,25 @@ class ListingMap extends Component {
   }
 
 
-  testing(e){
-    // console.log(e)
-  }
   
   componentDidMount(){
     this.props.fetchListings()
     const {listings,place,realterm} = this.props
     var yourVariable = realterm
-    // console.log("Listingmap",yourVariable)
     this.setState({yourVariable:this.props.realterm})
-    // if (yourVariable === undefined){
-    //   this.setState({zoom2:3})
-    // }else{
-    //   this.setState({zoom2:11})
-    // }
+
   }
 
-  componentDidUpdate(pP){
-    // if (this.props.realterm === undefined){
-    //   this.setState({realterm:this.props.realterm},console.log(this.state.realterm))
-    // }
-  }
+
   
   render() {
-    // console.log(this.props)
     
 
     const {listings,place,realterm} = this.props
 
     var yourVariable = this.props.realterm
 
-    // console.log("LR",yourVariable)
-    // console.log(this.state.zoom2)
-    // console.log(this.state.defaultProps[yourVariable])
+
     if ( !this.props.realterm ) return null 
     return (      
       <div className='map' style={{ height: '1200px', width: '100%' }}>
@@ -127,11 +112,7 @@ class ListingMap extends Component {
           }
 
 
-          {/* <AnyReactComponent
-            lat={40.730610}
-            lng={-73.935242}
-            img={<RoomIcon className="marker"/>}
-          /> */}
+
         </GoogleMapReact>
         :
         <GoogleMapReact
@@ -163,11 +144,7 @@ class ListingMap extends Component {
           }
 
 
-          {/* <AnyReactComponent
-            lat={40.730610}
-            lng={-73.935242}
-            img={<RoomIcon className="marker"/>}
-          /> */}
+
         </GoogleMapReact>
         }
         

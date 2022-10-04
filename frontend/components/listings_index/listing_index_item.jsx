@@ -29,7 +29,6 @@ class ListingIndexItem extends React.Component {
 
     render(){
         const {listing} = this.props;
-        // console.log(listing.reviews)
 
         const reviewAvg = this.reviewsAvg()
         const reviewCount = this.reviewCount()
@@ -50,7 +49,6 @@ class ListingIndexItem extends React.Component {
                             :
                             <div  className="listing-info1">
                             {listing.title}
-                            {/* <div></div>    */}
                         </div> 
                         }
                         
@@ -83,7 +81,6 @@ class ListingIndexItem extends React.Component {
                                 </div>
                                 :
                                 <div className="listing-info42">
-                                 {/* {reviewAvg}<div><StarRateIcon htmlColor={'red'} fontSize={"small"}/></div><div className="listing-info422">{reviewCount}(reviews)</div> */}
                                 </div>
                             }
                            

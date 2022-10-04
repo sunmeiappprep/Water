@@ -11,9 +11,6 @@ class ListingMapSingle extends Component {
     super(props);
   }
 
-  componentDidMount(){
-    // this.props.fetchListing()
-  }
 
   render() {
     const {listing} = this.props
@@ -41,15 +38,7 @@ class ListingMapSingle extends Component {
         img={<RoomIcon className="marker"/>}
         key={listing.id}/>
                   
-           
-               
-          
 
-          {/* <AnyReactComponent
-            lat={40.730610}
-            lng={-73.935242}
-            img={<RoomIcon className="marker"/>}
-          /> */}
         </GoogleMapReact>
       </div>
     );

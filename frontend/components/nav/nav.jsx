@@ -12,9 +12,7 @@ const Nav = () => (
         <Modal />           
         <Link to="/"><img className='logo' src={'https://water-seeds.s3.amazonaws.com/logo.png'} alt="cardsmall"/></Link>                      
             <section className='midLinkBundle'>       
-                {/* <Link to="/bookings" className='midLink'>My Bookings</Link> */}
-                {/* <Link to="/" className='midLink'>Add Dates</Link>
-                <Link to="/" className='midLink'>Guest</Link> */}
+
                  <SearchContainer/>
 
             </section>
@@ -30,8 +28,7 @@ const Nav = () => (
         </div>
  
          </section>
-        {/* <div className="search_container">
-        </div >  */}
+
     </div>
   );
 

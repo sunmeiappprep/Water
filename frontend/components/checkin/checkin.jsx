@@ -78,13 +78,10 @@ export default class Checkin extends Component {
 
 
         while (start < end){
-            // console.log("asd    ")
             for( let  x = 0; x < this.props.datesInvalid.length; x++){
                 let currentSetin = new Date(this.props.datesInvalid[x].check_in)
                 let currentSetout = new Date(this.props.datesInvalid[x].check_out)
-                // console.log(currentSetin,start,currentSetout)
-                // console.log(new Date(this.props.datesInvalid[x].check_in) 
-                // > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
+     
                 if (currentSetin < start && start < currentSetout) {
                    return false
                 }
@@ -94,7 +91,6 @@ export default class Checkin extends Component {
             }
             start = start.addDays(1)
 
-            // if (start )
         }
 
     }
@@ -103,21 +99,16 @@ export default class Checkin extends Component {
     convertFormatIn(dateString){
         let x = dateString.split("/")
         let mmddyyyy = x[1]+"/"+x[0]+"/"+x[2]
-        // console.log(mmddyyyy)
         this.setState({checkinMMDDYYYY:mmddyyyy})
-        // this.diffDateFun()
     }
 
     convertFormatOut(dateString){
         let y = dateString.split("/")
         let mmddyyyy = y[1]+"/"+y[0]+"/"+y[2]
-        // console.log(mmddyyyy)
         this.setState({checkoutMMDDYYYY:mmddyyyy})
-        // this.diffDateFun()
     }
 
     componentDidUpdate(pP,Ps){
-        // console.log(pP.check_out,this.props.check_out)
         if (pP.check_in === this.props.check_in){
         }
         else{
@@ -156,7 +147,6 @@ export default class Checkin extends Component {
         this.setState({dateDiff:Difference_In_Days})
         let ceilifference_In = Math.ceil(Difference_In_Days + 1)
         let total = Math.ceil(this.props.price * ceilifference_In)
-        // let total = Math.floor(this.props.price * Difference_In_Days)
         this.setState({total:total})
 
         
@@ -164,15 +154,6 @@ export default class Checkin extends Component {
 
     render() {
 
-        // console.log("checkin",this.props.datesInvalid)
-        // console.log((this.state.dateDiff))
-        // console.log()
-    //   setInterval(() => {
-    //   console.log(this.state.bookings.bookings)
-        
-    //   }, 1000);
-
-        // console.log(this.state )
         return (
             <div>
                 <div className="CheckinOuter">
