@@ -15,36 +15,6 @@ class BookingAll extends React.Component {
 
     }
 
-    componentWillMount(){
-        // this.setState({bookings:this.props.bookings.bookings})
-
-    }
-
-    // componentDidMount() {
-    //     this.recomp()
-    //   }
-
-    componentDidUpdate(pP,pS){
-        // let arr = []
-        // if (pP.bookings.bookings !== this.state.bookings){
-        //     this.setState({bookings:this.props.bookings.bookings})
-        //     for (let x = 0; x < pP.bookings.bookings.length; x++){
-        //         if (pP.bookings.bookings[x].renter_id === this.props.currentUserId[0].id){
-        //             arr.push(pP.bookings.bookings[x])
-    
-        //         }
-        //     }
-        //     this.setState({edited:arr})
-        //     this.setState({bookings:this.props.bookings.bookings})
-        // }
-
-        
-    }
-
-    recomp(){
-
-
-    }
     
     handleDelete(e){
         
@@ -79,50 +49,8 @@ class BookingAll extends React.Component {
                     <div className="bookingpagetxt">Visiting {this.props.booking.listing.title}</div>
                     <div className="bookingpagetxt">In {this.props.booking.listing.city}</div>
                 </div>
-                {/* <div className="deleteandedit">
-                    <div>
-                    <button className="delete-booking" onClick={this.handleDelete} key={this.props.booking.id}>Delete booking</button> 
-
-                    </div>
-                    <div>
-                    <button className="edit-booking" onClick={this.handleEdit} key={this.props.booking.id*2}>Edit booking</button> 
-
-                    </div>
-                </div> */}
         </div>
-            {/* {
-                this.state.edited.map((booking, i) => (     
-                           
-                <Link key ={i} to={`/listings/${booking.listing_id}`}> 
-                <div className="bookingpagetxt">You are checking in on {booking.check_in}
-                    <div className="bookingpagetxt">You are checking out on {booking.check_out}</div>
-                    <div className="bookingpagetxt">Visiting {booking.listing.title}</div>
-                    <div className="bookingpagetxt">In {booking.listing.city}</div>
-                </div>
-         
-                </Link > 
-              
-                ))
-            } */}
-            {/* <h1>tthgdfs</h1> */}
-            {/* <div className="bookingpage1">
-                <h1 className="bookingpagetxt">You are checking in on {booking.check_in}</h1>
-                <h1 className="bookingpagetxt">You are checking out on {booking.check_out}</h1>
-   >
-                <div className="deleteandedit">
-                    <div>
-                    <button className="delete-booking" onClick={this.handleDelete} key={booking.id}>Delete booking</button> 
 
-                    </div>
-                    <div>
-                    <button className="edit-booking" onClick={this.handleEdit} key={booking.id*2}>Edit booking</button> 
-
-                    </div>
-                </div>
-
-            </div> */} 
-            {/* <h1 className="bookingpagetxt">You are checking in on</h1> */}
-        
         </div>     
     )}
 }

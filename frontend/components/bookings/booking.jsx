@@ -28,25 +28,6 @@ class Booking extends React.Component {
     }
 
 
-    // componentDidMount() {     
-    //     let arr = [];
-    //     let bookings = {}
-    //     this.props.fetchBookings().then(bookings => this.setState({bookings}))
-    //     // .then(() =>{
-    //     //     for (let x = 0; x < this.state.bookings.bookings.length; x++){
-    //     //         if (this.state.bookings.bookings[x].renter.id === this.props.currentUser[0].id){
-    //     //             arr.push(this.state.bookings.bookings[x])
-    //     //         }
-    //     //     }
-    //     //     console.log(arr)
-
-    //     // }).then(()=>{
-    //     //     bookings:
-    //     //     this.setState({bookings:arr})
-    //     // })
-    //     // let bk = this.state.bookings.bookings;
-        
-    // }
 
 
 
@@ -80,38 +61,12 @@ class Booking extends React.Component {
                         // this.setState({bookings:this.props.bookings.bookings})
                     }
                 )
-                // .then(
-                //     console.log(this.state.edited)
-                // )
-                // .then(console.log(prevState.bookings.length,this.state.bookings.bookings.length))
+  
     }   
 
-        // let arr = []
-        // if (pP.bookings.bookings !== this.state.bookings){
-        //     this.setState({bookings:this.props.bookings.bookings})
-        //     for (let x = 0; x < pP.bookings.bookings.length; x++){
-        //         if (pP.bookings.bookings[x].renter_id === this.props.currentUserId[0].id){
-        //             arr.push(pP.bookings.bookings[x])
-    
-        //         }
-        //     }
-        //     this.setState({edited:arr})
-        //     this.setState({bookings:this.props.bookings.bookings})
-        // }
+  
 }
-    // reduceBooking(bookings,id){
-    //     let booking2 = []
-    //     if(bookings[0] && id){
-    //         for (let x = 0; x < bookings.length; x++){
-    //             if(bookings[x].renter.id === id){
-    //                 booking2.push(bookings[x])
-    //             }else{
-    //             }
-    //         }
-    //         return booking2
-    //     }
-     
-    // }
+
 
     render(){
         const {removeBooking,history} = this.props;

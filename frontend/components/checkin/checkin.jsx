@@ -52,15 +52,7 @@ export default class Checkin extends Component {
     }
 
     checkIfcoll(){
-        // if (this.props.datesInvalid.length > 0 ){
-        //     for( let  x = 0; x < this.props.datesInvalid.length; x++){
-        //         console.log(new Date(this.props.datesInvalid[x].check_in),new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
-        //         console.log(new Date(this.props.datesInvalid[x].check_in) 
-        //         > new Date(`${this.props.in[2]}-${this.props.in[1]}-${this.props.in[0]+1}`))
-                
 
-        //     }
-        // }
 
         
         Date.prototype.addDays = function(days) {
@@ -78,15 +70,7 @@ export default class Checkin extends Component {
         let end = (new Date(`${splitCheckout[2]}-${splitCheckout[1]}-${splitCheckout[0]}`))
         start = start.addDays(1)
         end = end.addDays(1)
-        // console.log(start)
 
-        // console.log(end)
-        // console.log(start.addDays(1))
-
-        // console.log(end)
-        // if (start.addDays(1) === "Invalid Date"){
-        //     console.log(start.addMonth(1))
-        // }
         
         if (end < start) {
             return false

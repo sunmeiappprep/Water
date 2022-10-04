@@ -29,7 +29,6 @@ class Card extends React.Component {
 }>
     <img className='card2' src={this.props.site}  alt="cardsmall" />
 </Link>
-                {/* <Link to="/listings" filtercity={filtercity} > <img className='card2' src={this.props.site}  alt="cardsmall" /></Link> */}
                 
                 <div className='test'> 
                     <div 
@@ -41,7 +40,6 @@ class Card extends React.Component {
                    
                 </div>
                 
-               {/* <listing_index_container testing = "asd"/> */}
 
             </div>
         )

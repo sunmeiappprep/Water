@@ -5,8 +5,6 @@ import { fetchBookings } from '../../actions/booking_actions'
 import { removeBooking } from '../../actions/booking_actions'
 
 const mSTP = (state = {}) =>({    
-    // bookings: Object.values(state.entities.bookings),
-    // currentUser:Object.values(state.entities.users)
     currentUser: state.session.id
     
 })
